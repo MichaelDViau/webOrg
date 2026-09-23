@@ -42,8 +42,8 @@ export const projects: Project[] = [
       { value: "11 wks", label: "To first release" },
     ],
     image: {
-      src: "/work/harbor-line.webp",
-      alt: "Harbor Line customer portal showing a shipment list with live status and delivery estimates",
+      src: "/work/harbor-line-portal.webp",
+      alt: "Harbor Line shipper portal in dark mode, with a live shipment map, delivery status cards and on-time metrics",
       width: 1600,
       height: 1000,
     },
@@ -74,8 +74,8 @@ export const projects: Project[] = [
       { value: "AA", label: "WCAG 2.2 conformance" },
     ],
     image: {
-      src: "/work/meridian-health.webp",
-      alt: "Meridian Family Health website showing a clinic finder with locations, hours and booking links",
+      src: "/work/meridian-website.webp",
+      alt: "Meridian Family Health homepage with next available appointments, a clinic finder and an overview of services",
       width: 1600,
       height: 1000,
     },
@@ -106,8 +106,8 @@ export const projects: Project[] = [
       { value: "0", label: "Documents leaving the firm's tenant" },
     ],
     image: {
-      src: "/work/cobalt-reyes.webp",
-      alt: "Cobalt & Reyes document assistant answering a question with cited source documents listed beside it",
+      src: "/work/cobalt-assistant.webp",
+      alt: "Cobalt & Reyes research assistant answering a contract question, with cited firm precedents listed beside the answer",
       width: 1600,
       height: 1000,
     },
@@ -138,8 +138,8 @@ export const projects: Project[] = [
       { value: "92%", label: "Pages passing Core Web Vitals" },
     ],
     image: {
-      src: "/work/fieldstone.webp",
-      alt: "Fieldstone Outdoor performance dashboard comparing Core Web Vitals before and after optimization",
+      src: "/work/fieldstone-performance.webp",
+      alt: "Fieldstone site speed report with Core Web Vitals scores, a load time trend and before-and-after results by page type",
       width: 1600,
       height: 1000,
     },

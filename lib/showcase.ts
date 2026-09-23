@@ -27,8 +27,8 @@ export const showcase: ShowcaseItem[] = [
   {
     label: "Automation",
     image: {
-      src: "/work/harbor-line-automation.webp",
-      alt: "Harbor Line delivery-to-invoice workflow connecting dispatch, NetSuite, email and Slack, with recent runs and daily invoice volume",
+      src: "/work/harbor-line-workflow.webp",
+      alt: "Harbor Line delivery-to-invoice workflow built from connected steps, with run history and automation rates",
       width: 1600,
       height: 1000,
     },
