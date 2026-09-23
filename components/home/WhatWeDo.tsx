@@ -12,8 +12,9 @@ export function WhatWeDo() {
         <div className="lg:col-span-5">
           <SectionIntro
             eyebrow="What we do"
-            title={<span id="what-we-do">Six disciplines, one accountable team.</span>}
-            lead="Most of our clients come to us for one thing and stay for several. Because design, engineering, AI and performance sit under one roof, nothing gets lost between vendors."
+            id="what-we-do"
+            title="Six disciplines, one accountable team."
+            lead="Most clients come to us for one thing and stay for several. Design, engineering, AI and performance work all sit with the same team, so nothing gets lost between vendors."
           />
         </div>
 

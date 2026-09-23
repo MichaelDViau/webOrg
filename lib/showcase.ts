@@ -14,7 +14,7 @@ function fromProject(label: string, slug: string, caption?: string): ShowcaseIte
   return {
     label,
     image: project.image,
-    caption: caption ?? `${project.client} — ${project.type}`,
+    caption: caption ?? `${project.client} · ${project.type}`,
     href: `/work/${project.slug}`,
   };
 }
@@ -32,7 +32,7 @@ export const showcase: ShowcaseItem[] = [
       width: 1600,
       height: 1000,
     },
-    caption: "Harbor Line Logistics — Automation",
+    caption: "Harbor Line Logistics · Automation",
     href: "/work/harbor-line-customer-portal",
   },
   fromProject("Optimization", "fieldstone-commerce-performance"),

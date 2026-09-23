@@ -3,38 +3,31 @@ import type { Metadata, Viewport } from "next";
 import type { ReactNode } from "react";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
+import { JsonLd } from "@/components/JsonLd";
+import { services } from "@/lib/services";
+import { organizationSchema } from "@/lib/structured-data";
 import { site } from "@/lib/site";
 import "./globals.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: `${site.name} — Websites, Web Applications, AI and Automation`,
-    template: `%s — ${site.name}`,
+    default: `${site.name} | Website, Web App and AI Development`,
+    template: `%s | ${site.name}`,
   },
   description: site.description,
+  applicationName: site.name,
+  category: "technology",
   openGraph: {
     type: "website",
     siteName: site.name,
     locale: "en_US",
-    url: "/",
   },
   twitter: { card: "summary_large_image" },
 };
 
 export const viewport: Viewport = {
   themeColor: "#ffffff",
-};
-
-const organizationJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  name: site.name,
-  legalName: site.legalName,
-  url: site.url,
-  email: site.email,
-  telephone: site.phone,
-  description: site.description,
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
@@ -50,10 +43,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <Header />
         <main id="main">{children}</main>
         <Footer />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
-        />
+        <JsonLd data={organizationSchema(services.map((service) => service.name))} />
       </body>
     </html>
   );

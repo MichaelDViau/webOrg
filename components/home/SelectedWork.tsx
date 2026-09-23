@@ -13,7 +13,7 @@ export function SelectedWork() {
           <SectionIntro
             eyebrow="Selected work"
             title="Recent projects and what they changed."
-            lead="A few examples of the websites, applications and systems we've built, and the results our clients measured afterwards."
+            lead="A few examples of the websites, applications and systems we've built, and the results our clients measured afterward."
           />
           <ButtonLink href="/work" variant="secondary" withArrow className="self-start lg:self-auto">
             All work

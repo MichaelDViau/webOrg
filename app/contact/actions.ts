@@ -35,9 +35,9 @@ async function sendEmail(values: ContactValues): Promise<boolean> {
 
   const text = [
     `Name: ${values.name}`,
-    `Company: ${values.company || "—"}`,
+    `Company: ${values.company || "Not provided"}`,
     `Email: ${values.email}`,
-    `Phone: ${values.phone || "—"}`,
+    `Phone: ${values.phone || "Not provided"}`,
     `Project type: ${values.projectType}`,
     `Budget: ${values.budget}`,
     "",

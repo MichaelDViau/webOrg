@@ -19,10 +19,10 @@ export function Optimization() {
           <SectionIntro
             eyebrow="Web Optimization & Performance"
             title="Faster pages, measured with real visitor data."
-            lead="We find what's actually slowing your site down, fix it in your codebase, and set up monitoring so it stays fast after we've gone."
+            lead="We find what's actually slowing your site down, fix it in your codebase, and set up monitoring so it stays fast long after the project ends."
           />
           <TextLink href="/services/web-optimization" className="mt-10">
-            Web optimization
+            Website performance optimization
           </TextLink>
         </div>
 
@@ -31,13 +31,13 @@ export function Optimization() {
             <table className="w-full text-left">
               <thead>
                 <tr className="border-b border-line text-sm text-muted">
-                  <th scope="col" className="px-5 py-4 font-medium sm:px-6">
+                  <th scope="col" className="px-4 py-4 font-medium sm:px-6">
                     Metric (mobile, 75th percentile)
                   </th>
-                  <th scope="col" className="px-5 py-4 text-right font-medium sm:px-6">
+                  <th scope="col" className="px-4 py-4 text-right font-medium sm:px-6">
                     Before
                   </th>
-                  <th scope="col" className="px-5 py-4 text-right font-medium sm:px-6">
+                  <th scope="col" className="px-4 py-4 text-right font-medium sm:px-6">
                     After
                   </th>
                 </tr>
@@ -45,13 +45,13 @@ export function Optimization() {
               <tbody className="divide-y divide-line">
                 {metrics.map((metric) => (
                   <tr key={metric.name}>
-                    <th scope="row" className="px-5 py-5 font-normal text-ink sm:px-6">
+                    <th scope="row" className="px-4 py-4 sm:py-5 font-normal text-ink sm:px-6">
                       {metric.name}
                     </th>
-                    <td className="px-5 py-5 text-right font-mono text-sm text-muted tabular-nums sm:px-6">
+                    <td className="px-4 py-4 sm:py-5 text-right font-mono text-sm whitespace-nowrap text-muted tabular-nums sm:px-6">
                       {metric.before}
                     </td>
-                    <td className="px-5 py-5 text-right font-mono text-sm font-medium text-accent tabular-nums sm:px-6">
+                    <td className="px-4 py-4 sm:py-5 text-right font-mono text-sm font-medium whitespace-nowrap text-accent tabular-nums sm:px-6">
                       {metric.after}
                     </td>
                   </tr>

@@ -16,9 +16,9 @@ export function Seo() {
           </div>
           <div className="lg:col-span-6" data-reveal>
             <p className="text-lg leading-relaxed">
-              We handle the technical foundation of search — structure, indexing, metadata and speed — and give
-              your team clear guidance on the content that brings in qualified visitors. No link schemes, no
-              ranking guarantees.
+              We handle the technical foundation of search, including site structure, indexing, metadata and
+              speed, and give your team clear guidance on content that brings in qualified visitors. No link
+              schemes and no ranking guarantees.
             </p>
             <CheckList
               className="mt-8"
@@ -33,7 +33,7 @@ export function Seo() {
               ]}
             />
             <TextLink href="/services/seo" className="mt-10">
-              SEO services
+              Technical SEO services
             </TextLink>
           </div>
         </div>

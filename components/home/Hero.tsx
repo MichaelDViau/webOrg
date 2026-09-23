@@ -1,8 +1,8 @@
 import { ButtonLink } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
-import { HeroShowcase } from "./HeroShowcase";
 import { showcase } from "@/lib/showcase";
 import { site } from "@/lib/site";
+import { HeroShowcase } from "./HeroShowcase";
 
 export function Hero() {
   return (
@@ -13,8 +13,8 @@ export function Hero() {
             We build the software your business runs on.
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-pretty sm:text-xl">
-            {site.name} designs and builds websites, applications and internal systems for companies that need
-            them to work properly — and keep working as they grow.
+            {site.name} designs and builds websites, web applications, AI solutions and business automation for
+            startups, growing companies and established organizations.
           </p>
           <div className="mt-10 flex flex-col gap-3 sm:flex-row">
             <ButtonLink href="/contact" withArrow>

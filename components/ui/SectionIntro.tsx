@@ -6,28 +6,30 @@ interface SectionIntroProps {
   title: ReactNode;
   lead?: ReactNode;
   tone?: "light" | "dark";
-  as?: "h1" | "h2";
+  /** Id for the heading, so the surrounding section can reference it with aria-labelledby. */
+  id?: string;
   className?: string;
 }
 
-export function SectionIntro({ eyebrow, title, lead, tone = "light", as: Heading = "h2", className }: SectionIntroProps) {
+/** Eyebrow, h2 and optional lead paragraph that open a section. */
+export function SectionIntro({ eyebrow, title, lead, tone = "light", id, className }: SectionIntroProps) {
   const dark = tone === "dark";
 
   return (
     <div className={cn("max-w-3xl", className)} data-reveal>
       {eyebrow && <p className={cn("text-sm font-medium", dark ? "text-night-muted" : "text-muted")}>{eyebrow}</p>}
-      <Heading
+      <h2
+        id={id}
         className={cn(
-          "font-semibold tracking-tight",
+          "text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl",
           eyebrow && "mt-4",
-          Heading === "h1" ? "text-4xl sm:text-5xl lg:text-6xl" : "text-3xl sm:text-4xl lg:text-5xl",
           dark && "text-paper",
         )}
       >
         {title}
-      </Heading>
+      </h2>
       {lead && (
-        <p className={cn("mt-6 text-lg leading-relaxed text-pretty", dark ? "text-night-muted" : "text-body")}>
+        <p className={cn("mt-5 text-lg leading-relaxed text-pretty sm:mt-6", dark ? "text-night-muted" : "text-body")}>
           {lead}
         </p>
       )}

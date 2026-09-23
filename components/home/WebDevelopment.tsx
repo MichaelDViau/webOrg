@@ -15,8 +15,8 @@ export function WebDevelopment() {
         <div>
           <SectionIntro
             eyebrow="Web Development"
-            title="Websites built to explain, persuade and load instantly."
-            lead="We plan the content before the design, design every breakpoint on purpose, and build on modern frameworks your team can maintain. The result is a site that earns trust quickly and is easy to keep up to date."
+            title="Websites that explain clearly, earn trust and load fast."
+            lead="We plan the content before the design, design for every screen size on purpose, and build on modern frameworks your team can maintain. The result is a site that earns trust quickly and is easy to keep up to date."
           />
           <CheckList
             className="mt-8"
@@ -28,7 +28,7 @@ export function WebDevelopment() {
             ]}
           />
           <TextLink href="/services/website-development" className="mt-10">
-            Website development
+            Website development services
           </TextLink>
         </div>
 

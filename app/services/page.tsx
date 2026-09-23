@@ -5,22 +5,23 @@ import { PageHeader } from "@/components/layout/PageHeader";
 import { ArrowIcon } from "@/components/ui/ArrowIcon";
 import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
+import { pageMetadata } from "@/lib/metadata";
 import { services } from "@/lib/services";
 
-export const metadata: Metadata = {
-  title: "Services",
+export const metadata: Metadata = pageMetadata({
+  title: "Website, Software and AI Development Services",
   description:
-    "Website development, web applications, AI solutions, automation, web optimization and technical SEO for established businesses.",
-  alternates: { canonical: "/services" },
-};
+    "Website development, custom web applications, AI solutions, business automation, performance optimization and technical SEO for companies of every size.",
+  path: "/services",
+});
 
 export default function ServicesPage() {
   return (
     <>
       <PageHeader
         eyebrow="Services"
-        title="Design, engineering and the systems behind them."
-        lead="We work across the full lifecycle of a digital product, from the first conversation about what to build through to keeping it fast, secure and useful years later."
+        title="Websites, software and AI, designed and built by one team."
+        lead="We work across the full life of a digital product, from the first conversation about what to build to keeping it fast, secure and useful years later."
       />
 
       <Section padding="no-top">

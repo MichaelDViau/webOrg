@@ -6,9 +6,10 @@ import { SectionIntro } from "@/components/ui/SectionIntro";
 const columns = [
   {
     title: "AI Solutions",
+    linkLabel: "AI development services",
     href: "/services/ai-solutions",
     description:
-      "Language models applied to specific, measurable problems — with answers you can verify and data that stays under your control.",
+      "Language models applied to specific, measurable problems, with answers you can verify and data that stays under your control.",
     examples: [
       "An assistant that answers staff questions from policy documents, citing each source",
       "Extracting line items from supplier invoices into your accounting system",
@@ -17,6 +18,7 @@ const columns = [
   },
   {
     title: "Automation",
+    linkLabel: "Business automation services",
     href: "/services/automation",
     description:
       "Integrations and workflows that move data between your systems, so people stop copying it by hand.",
@@ -34,8 +36,8 @@ export function AiAutomation() {
       <Container>
         <SectionIntro
           eyebrow="AI & Automation"
-          title="Less repetitive work. More time for the work that matters."
-          lead="We start with the task, not the technology. If a process is predictable, we automate it. If it needs judgment over large amounts of text, AI may help. Often it's a combination of both."
+          title="Automate the routine. Use AI where it clearly helps."
+          lead="We start with the task, not the technology. If a process is predictable, we automate it. If it involves judgment across large amounts of text, AI may help. Often the answer is a combination of both."
         />
 
         <div className="mt-16 grid border-t border-line lg:grid-cols-2">
@@ -60,7 +62,7 @@ export function AiAutomation() {
                 ))}
               </ul>
               <TextLink href={column.href} className="mt-8">
-                {column.title}
+                {column.linkLabel}
               </TextLink>
             </div>
           ))}

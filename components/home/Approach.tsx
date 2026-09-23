@@ -1,7 +1,7 @@
 import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
 import { SectionIntro } from "@/components/ui/SectionIntro";
-import { approachSteps } from "@/lib/approach";
+import { approachSteps } from "@/lib/company";
 
 export function Approach() {
   return (
@@ -10,7 +10,7 @@ export function Approach() {
         <SectionIntro
           eyebrow="Our approach"
           title="A clear process, run by the people doing the work."
-          lead="You'll work directly with the designers and engineers on your project. No account managers relaying messages, no hand-offs to junior teams after the pitch."
+          lead="You work directly with the designers and engineers on your project. There are no account managers relaying messages and no handoffs to junior staff after the pitch."
         />
 
         <ol className="mt-16 grid gap-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">

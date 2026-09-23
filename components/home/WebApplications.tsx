@@ -2,8 +2,10 @@ import { TextLink } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
 import { SectionIntro } from "@/components/ui/SectionIntro";
+import { FeatureList } from "@/components/ui/FeatureList";
+import type { ContentItem } from "@/lib/company";
 
-const kinds = [
+const applicationTypes: ContentItem[] = [
   {
     title: "Customer portals",
     detail: "Self-service accounts, orders, documents and billing for your customers.",
@@ -32,21 +34,14 @@ export function WebApplications() {
               tone="dark"
               eyebrow="Web Applications"
               title="Custom software for work that doesn't fit off-the-shelf tools."
-              lead="We design and engineer applications from the data model up, release a focused first version in weeks, and keep improving it with your team."
+              lead="We design and build applications from the data model up, release a focused first version within weeks, and keep improving it alongside your team."
             />
             <TextLink href="/services/web-applications" tone="light" className="mt-10">
-              Web applications
+              Web application development
             </TextLink>
           </div>
 
-          <dl className="grid self-start border-b border-night-line sm:grid-cols-2 sm:gap-x-10 lg:col-span-7">
-            {kinds.map((kind) => (
-              <div key={kind.title} className="border-t border-night-line py-8" data-reveal>
-                <dt className="text-lg font-medium text-paper">{kind.title}</dt>
-                <dd className="mt-2 leading-relaxed">{kind.detail}</dd>
-              </div>
-            ))}
-          </dl>
+          <FeatureList items={applicationTypes} tone="dark" className="self-start lg:col-span-7" />
         </div>
       </Container>
     </Section>

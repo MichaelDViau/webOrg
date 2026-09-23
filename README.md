@@ -1,6 +1,6 @@
 # Michael website
 
-Marketing site for Michael, built with Next.js (App Router), TypeScript and Tailwind CSS v4. Every page is statically generated; the only client-side JavaScript is the mobile navigation and the contact form.
+Marketing site for Michael, built with Next.js (App Router), TypeScript and Tailwind CSS v4. Every page is statically generated; the only client-side JavaScript is the mobile navigation, the homepage showcase and the contact form.
 
 ## Getting started
 
@@ -34,24 +34,32 @@ Secrets are only read on the server (`app/contact/actions.ts`) and are never exp
 
 All copy lives in typed data files, so most updates don't touch components:
 
-- `lib/site.ts` — company name, contact details, navigation
-- `lib/services.ts` — the six service pages (summary, inclusions, approach, FAQs)
-- `lib/projects.ts` — case studies shown on the homepage and `/work`
-- `lib/approach.ts`, `lib/principles.ts` — process steps and "why work with us"
-- `lib/contact.ts` — form options (project types, budget ranges) and validation rules
+- `lib/site.ts`: company name, contact details, address and navigation
+- `lib/services.ts`: the six service pages, including their search titles and meta descriptions
+- `lib/projects.ts`: case studies shown on the homepage and `/work`
+- `lib/showcase.ts`: the images that change when visitors hover the disciplines in the homepage hero
+- `lib/company.ts`: process steps, working principles and the beliefs on the About page
+- `lib/contact.ts`: form options (project types, budget ranges) and validation rules
 
 Project images live in `public/work/`. Use 1600 × 1000 WebP or AVIF files; `next/image` generates responsive sizes automatically. Set `liveUrl` on a project to show a link to the live site.
+
+## SEO
+
+- Page metadata is built with `pageMetadata()` in `lib/metadata.ts`, which sets the title, description, canonical URL, Open Graph and X/Twitter tags consistently.
+- Schema.org structured data is defined in `lib/structured-data.ts` and rendered with `components/JsonLd.tsx`: the organization on every page, the website on the homepage, a service, breadcrumb and FAQ block on each service page, and an article and breadcrumb block on each case study.
+- `app/opengraph-image.png` is the default image shown when a page is shared. `app/sitemap.ts` and `app/robots.ts` generate `/sitemap.xml` and `/robots.txt`.
 
 ## Structure
 
 ```
-app/                 Routes, metadata, sitemap, robots, server action
-components/layout/   Header, footer, page header, logo
-components/home/     Homepage sections
-components/work/     Case study presentation
-components/contact/  Contact form and field primitives
-components/ui/       Buttons, sections, containers and small shared pieces
-lib/                 Content, validation and utilities
+app/                   Routes, metadata files, sitemap, robots and the contact server action
+components/layout/     Header, footer, page header and logo
+components/home/       Homepage sections
+components/services/   Service page pieces
+components/work/       Case study presentation
+components/contact/    Contact form and field primitives
+components/ui/         Buttons, sections, lists and other shared building blocks
+lib/                   Content, metadata, structured data, validation and utilities
 ```
 
 ## Security

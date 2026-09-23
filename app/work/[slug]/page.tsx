@@ -2,12 +2,15 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { JsonLd } from "@/components/JsonLd";
 import { ClosingCta } from "@/components/home/ClosingCta";
 import { ArrowIcon } from "@/components/ui/ArrowIcon";
 import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
+import { pageMetadata } from "@/lib/metadata";
 import { getProject, projects } from "@/lib/projects";
 import { getService } from "@/lib/services";
+import { breadcrumbSchema, caseStudySchema } from "@/lib/structured-data";
 
 interface CaseStudyPageProps {
   params: Promise<{ slug: string }>;
@@ -23,18 +26,20 @@ export async function generateMetadata({ params }: CaseStudyPageProps): Promise<
   const project = getProject((await params).slug);
   if (!project) return {};
 
-  return {
-    title: `${project.client}: ${project.title}`,
+  return pageMetadata({
+    title: `${project.client} Case Study: ${project.type}`,
     description: project.summary,
-    alternates: { canonical: `/work/${project.slug}` },
-    openGraph: { images: [{ url: project.image.src, width: project.image.width, height: project.image.height }] },
-  };
+    path: `/work/${project.slug}`,
+    type: "article",
+  });
 }
 
 export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
   const project = getProject((await params).slug);
   if (!project) notFound();
 
+  const path = `/work/${project.slug}`;
+  const projectServices = project.services.flatMap((slug) => getService(slug) ?? []);
   const index = projects.indexOf(project);
   const next = projects[(index + 1) % projects.length];
 
@@ -43,13 +48,19 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
       <article>
         <header className="pt-16 sm:pt-24 lg:pt-28">
           <Container>
-            <Link href="/work" className="text-sm text-muted hover:text-ink">
-              Work
-            </Link>
-            <span aria-hidden="true" className="mx-2 text-line-strong">
-              /
-            </span>
-            <span className="text-sm text-muted">{project.client}</span>
+            <nav aria-label="Breadcrumb">
+              <ol className="flex flex-wrap items-center gap-2 text-sm text-muted">
+                <li>
+                  <Link href="/work" className="inline-block py-1 hover:text-ink">
+                    Work
+                  </Link>
+                </li>
+                <li aria-hidden="true" className="text-line-strong">
+                  /
+                </li>
+                <li aria-current="page">{project.client}</li>
+              </ol>
+            </nav>
 
             <h1 className="mt-6 max-w-4xl text-4xl font-semibold tracking-tighter sm:text-5xl lg:text-6xl">
               {project.title}
@@ -68,19 +79,14 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
               <div>
                 <dt className="text-muted">Services</dt>
                 <dd className="mt-1 text-ink">
-                  {project.services.map((slug, i) => {
-                    const service = getService(slug);
-                    return (
-                      service && (
-                        <span key={slug}>
-                          {i > 0 && ", "}
-                          <Link href={`/services/${slug}`} className="hover:underline hover:underline-offset-4">
-                            {service.name}
-                          </Link>
-                        </span>
-                      )
-                    );
-                  })}
+                  {projectServices.map((service, i) => (
+                    <span key={service.slug}>
+                      {i > 0 && ", "}
+                      <Link href={`/services/${service.slug}`} className="hover:underline hover:underline-offset-4">
+                        {service.name}
+                      </Link>
+                    </span>
+                  ))}
                 </dd>
               </div>
               <div>
@@ -180,6 +186,23 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
       </Section>
 
       <ClosingCta />
+
+      <JsonLd
+        data={[
+          caseStudySchema({
+            title: project.title,
+            summary: project.summary,
+            path,
+            image: project.image.src,
+            year: project.year,
+          }),
+          breadcrumbSchema([
+            { name: "Home", path: "/" },
+            { name: "Work", path: "/work" },
+            { name: project.client, path },
+          ]),
+        ]}
+      />
     </>
   );
 }

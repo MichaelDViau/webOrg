@@ -144,7 +144,7 @@ export const projects: Project[] = [
       height: 1000,
     },
     challenge:
-      "Fieldstone's product pages had slowed steadily as marketing scripts, larger images and new features were added. Mobile visitors — 70% of traffic — were waiting almost four seconds for the main product image.",
+      "Fieldstone's product pages had slowed steadily as marketing scripts, larger images and new features were added. Mobile visitors, who make up 70% of traffic, were waiting almost four seconds for the main product image.",
     approach: [
       "Field data showed three causes accounted for most of the delay: an unoptimized hero image pipeline, render-blocking third-party scripts, and uncached API calls on every page view.",
       "We rebuilt the image pipeline with AVIF and responsive sizing, deferred non-essential scripts until after interaction, and moved product data to edge caching with background revalidation.",

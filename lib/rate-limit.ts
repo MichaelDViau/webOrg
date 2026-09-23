@@ -1,11 +1,11 @@
 import "server-only";
 
-interface Window {
+interface RateWindow {
   count: number;
   resetAt: number;
 }
 
-const windows = new Map<string, Window>();
+const windows = new Map<string, RateWindow>();
 
 /**
  * Fixed-window rate limiter held in memory. It protects a single server

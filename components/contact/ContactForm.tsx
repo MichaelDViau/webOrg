@@ -27,6 +27,10 @@ function isServiceSlug(value: string | null): value is ServiceSlug {
   return value !== null && Object.hasOwn(projectTypeByService, value);
 }
 
+function focusField(form: HTMLFormElement | null, field: ContactField) {
+  form?.querySelector<HTMLElement>(`[name="${field}"]`)?.focus();
+}
+
 export function ContactForm() {
   const [state, formAction, pending] = useActionState(submitContact, initialState);
   const [values, setValues] = useState<ContactValues>(emptyContactValues);
@@ -54,7 +58,7 @@ export function ContactForm() {
       successRef.current?.focus();
     } else if (state.status === "error") {
       const firstInvalid = contactFields.find((field) => state.errors?.[field]);
-      if (firstInvalid) formRef.current?.querySelector<HTMLElement>(`[name="${firstInvalid}"]`)?.focus();
+      if (firstInvalid) focusField(formRef.current, firstInvalid);
       else alertRef.current?.focus();
     }
   }, [state]);
@@ -80,7 +84,7 @@ export function ContactForm() {
 
     const firstInvalid = contactFields.find((field) => found[field]);
     if (firstInvalid) {
-      event.currentTarget.querySelector<HTMLElement>(`[name="${firstInvalid}"]`)?.focus();
+      focusField(event.currentTarget, firstInvalid);
       return;
     }
 
@@ -96,7 +100,7 @@ export function ContactForm() {
           <path d="M7 12.5l3.5 3.5L17 9" fill="none" stroke="currentColor" strokeWidth="1.75" />
         </svg>
         <h2 ref={successRef} tabIndex={-1} className="mt-6 text-2xl font-semibold tracking-tight focus:outline-none">
-          Thank you — we&apos;ve received your request.
+          Thank you. We&apos;ve received your request.
         </h2>
         <p className="mt-4 leading-relaxed">
           Someone from our team will read it and reply within one business day, usually sooner. If anything is
