@@ -1,6 +1,6 @@
 # Michael website
 
-Marketing site for Michael, built with Next.js (App Router), TypeScript and Tailwind CSS v4. Every page is statically generated; the only client-side JavaScript is the mobile navigation, the homepage showcase and the contact form.
+Marketing site for Michael, built with Next.js (App Router), TypeScript and Tailwind CSS v4. Marketing pages are statically generated. Client-side JavaScript is limited to the mobile navigation, the homepage showcase, the contact form, the website check and the AI assistant.
 
 ## Getting started
 
@@ -27,6 +27,9 @@ In development, contact form submissions are printed to the server console when 
 | `RESEND_API_KEY`       | Production | API key for [Resend](https://resend.com), used by the form.   |
 | `CONTACT_TO_EMAIL`     | Production | Inbox that receives project requests.                         |
 | `CONTACT_FROM_EMAIL`   | Production | Verified sender, e.g. `Michael <website@example.com>`.   |
+| `ANTHROPIC_API_KEY`    | Optional   | Enables the AI assistant. The chat widget is hidden without it. |
+| `PAGESPEED_API_KEY`    | Recommended | Google PageSpeed Insights key for the free website check.   |
+| `NEXT_PUBLIC_BOOKING_URL` | Optional | Cal.com or Calendly link. Enables `/book`; otherwise booking links go to `/contact`. |
 
 Secrets are only read on the server (`app/contact/actions.ts`) and are never exposed to the browser.
 
@@ -43,6 +46,12 @@ All copy lives in typed data files, so most updates don't touch components:
 - `lib/contact.ts`: form options (project types, budget ranges) and validation rules
 
 Project images live in `public/work/`. Use 1600 × 1000 WebP or AVIF files; `next/image` generates responsive sizes automatically. Set `liveUrl` on a project to show a link to the live site.
+
+## Lead generation features
+
+- **Free website check** (`/website-check`): runs Google PageSpeed Insights on a visitor's site and shows scores, Core Web Vitals and the top fixes (`lib/website-check.ts`, `app/website-check/actions.ts`). If the visitor leaves an email, the results are sent to `CONTACT_TO_EMAIL` as a lead. Rate-limited to 5 checks per hour per IP.
+- **AI assistant**: a chat widget on every page, answering from the site's own content (`lib/assistant.ts`) through `app/api/assistant/route.ts`. It streams replies from Claude Opus 5 at low effort with prompt caching, falls back automatically if a request is declined, only accepts same-origin requests, and is rate-limited to 20 messages per 10 minutes per IP. Set a monthly spend limit in the Anthropic Console.
+- **Online booking** (`/book`): embeds your scheduling page when `NEXT_PUBLIC_BOOKING_URL` is set, and every "Book a free call" link points to it.
 
 ## SEO
 

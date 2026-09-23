@@ -30,7 +30,7 @@ export function WaysToWork() {
               <h3 className="text-2xl font-semibold tracking-tight">{model.title}</h3>
               <p className="mt-3 leading-relaxed">{model.summary}</p>
               <CheckList items={model.points} className="mt-6 mb-8" />
-              <TextLink href="/contact" className="mt-auto">
+              <TextLink href={model.href} className="mt-auto">
                 {model.cta}
               </TextLink>
             </div>

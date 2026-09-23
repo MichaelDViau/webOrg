@@ -34,7 +34,7 @@ export function Footer() {
           <nav aria-label="Company" className="lg:col-span-2">
             <h2 className="text-sm font-medium text-ink">Company</h2>
             <ul className="mt-3 space-y-1">
-              {mainNav.map((item) => (
+              {[...mainNav, { label: "Free website check", href: "/website-check" }].map((item) => (
                 <li key={item.href}>
                   <Link href={item.href} className={linkClass}>
                     {item.label}

@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import { ContactForm } from "@/components/contact/ContactForm";
 import { Container } from "@/components/ui/Container";
 import { pageMetadata } from "@/lib/metadata";
-import { phoneHref, site } from "@/lib/site";
+import { ButtonLink } from "@/components/ui/Button";
+import { bookingUrl, phoneHref, site } from "@/lib/site";
 
 export const metadata: Metadata = pageMetadata({
   title: "Contact Us and Start a Project",
@@ -47,6 +48,15 @@ export default function ContactPage() {
               </li>
             ))}
           </ol>
+
+          {bookingUrl && (
+            <>
+              <h2 className="mt-12 text-sm font-medium text-ink">Prefer to pick a time?</h2>
+              <ButtonLink href="/book" variant="secondary" withArrow className="mt-4">
+                Book a free 30-minute call
+              </ButtonLink>
+            </>
+          )}
 
           <h2 className="mt-12 text-sm font-medium text-ink">Prefer to reach us directly?</h2>
           <address className="mt-4 space-y-2 not-italic">

@@ -1,6 +1,5 @@
 "use server";
 
-import { headers } from "next/headers";
 import {
   contactFields,
   normalizeContactValues,
@@ -8,7 +7,9 @@ import {
   type ContactErrors,
   type ContactValues,
 } from "@/lib/contact";
+import { sendNotification } from "@/lib/email";
 import { rateLimit } from "@/lib/rate-limit";
+import { clientIp } from "@/lib/request";
 import { site } from "@/lib/site";
 
 export interface ContactState {
@@ -19,21 +20,8 @@ export interface ContactState {
 
 const MIN_FILL_TIME_MS = 3000;
 
-async function sendEmail(values: ContactValues): Promise<boolean> {
-  const apiKey = process.env.RESEND_API_KEY;
-  const to = process.env.CONTACT_TO_EMAIL;
-  const from = process.env.CONTACT_FROM_EMAIL;
-
-  if (!apiKey || !to || !from) {
-    if (process.env.NODE_ENV !== "production") {
-      console.info("Contact form submission (email delivery not configured in development):", values);
-      return true;
-    }
-    console.error("Contact form email is not configured. Set RESEND_API_KEY, CONTACT_TO_EMAIL and CONTACT_FROM_EMAIL.");
-    return false;
-  }
-
-  const text = [
+function formatInquiry(values: ContactValues): string {
+  return [
     `Name: ${values.name}`,
     `Company: ${values.company || "Not provided"}`,
     `Email: ${values.email}`,
@@ -43,25 +31,6 @@ async function sendEmail(values: ContactValues): Promise<boolean> {
     "",
     values.message,
   ].join("\n");
-
-  const response = await fetch("https://api.resend.com/emails", {
-    method: "POST",
-    headers: { Authorization: `Bearer ${apiKey}`, "Content-Type": "application/json" },
-    body: JSON.stringify({
-      from,
-      to: [to],
-      reply_to: values.email,
-      subject: `New project inquiry: ${values.name}${values.company ? `, ${values.company}` : ""}`,
-      text,
-    }),
-    signal: AbortSignal.timeout(10_000),
-  }).catch(() => null);
-
-  if (!response?.ok) {
-    console.error("Contact form email failed", response?.status);
-    return false;
-  }
-  return true;
 }
 
 export async function submitContact(_previous: ContactState, formData: FormData): Promise<ContactState> {
@@ -72,9 +41,7 @@ export async function submitContact(_previous: ContactState, formData: FormData)
     return { status: "success" };
   }
 
-  const requestHeaders = await headers();
-  const ip = requestHeaders.get("x-forwarded-for")?.split(",")[0]?.trim() || requestHeaders.get("x-real-ip") || "unknown";
-  if (!rateLimit(`contact:${ip}`, { limit: 5, windowMs: 10 * 60 * 1000 })) {
+  if (!rateLimit(`contact:${await clientIp()}`, { limit: 5, windowMs: 10 * 60 * 1000 })) {
     return {
       status: "error",
       message: `You've sent several requests in a short time. Please wait a few minutes, or email us at ${site.email}.`,
@@ -89,7 +56,11 @@ export async function submitContact(_previous: ContactState, formData: FormData)
     return { status: "error", message: "Please correct the highlighted fields.", errors };
   }
 
-  const sent = await sendEmail(values);
+  const sent = await sendNotification({
+    subject: `New project inquiry: ${values.name}${values.company ? `, ${values.company}` : ""}`,
+    text: formatInquiry(values),
+    replyTo: values.email,
+  });
   if (!sent) {
     return {
       status: "error",

@@ -44,6 +44,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
   const path = `/services/${service.slug}`;
   const related = projects.find((project) => project.services.includes(service.slug));
   const otherServices = services.filter((other) => other.slug !== service.slug);
+  const offersWebsiteCheck = service.slug === "web-optimization" || service.slug === "seo";
 
   return (
     <>
@@ -52,9 +53,15 @@ export default async function ServicePage({ params }: ServicePageProps) {
           <ButtonLink href={`/contact?service=${service.slug}`} withArrow>
             Start a Project
           </ButtonLink>
-          <ButtonLink href="/work" variant="secondary">
-            See our work
-          </ButtonLink>
+          {offersWebsiteCheck ? (
+            <ButtonLink href="/website-check" variant="secondary">
+              Free website check
+            </ButtonLink>
+          ) : (
+            <ButtonLink href="/work" variant="secondary">
+              See our work
+            </ButtonLink>
+          )}
         </div>
       </PageHeader>
 

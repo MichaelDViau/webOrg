@@ -4,9 +4,10 @@ import type { ReactNode } from "react";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
 import { JsonLd } from "@/components/JsonLd";
+import { AssistantWidget } from "@/components/assistant/AssistantWidget";
 import { services } from "@/lib/services";
 import { organizationSchema } from "@/lib/structured-data";
-import { site } from "@/lib/site";
+import { bookingHref, mainNav, site } from "@/lib/site";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -30,6 +31,16 @@ export const viewport: Viewport = {
   themeColor: "#ffffff",
 };
 
+/** The assistant appears only when an Anthropic API key is configured. */
+const assistantEnabled = Boolean(process.env.ANTHROPIC_API_KEY);
+
+const assistantLinks = [
+  ...mainNav.map((item) => item.href),
+  ...services.map((service) => `/services/${service.slug}`),
+  "/website-check",
+  bookingHref,
+];
+
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" className={GeistSans.variable}>
@@ -43,6 +54,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <Header />
         <main id="main">{children}</main>
         <Footer />
+        {assistantEnabled && <AssistantWidget linkablePaths={assistantLinks} bookingHref={bookingHref} />}
         <JsonLd data={organizationSchema(services.map((service) => service.name))} />
       </body>
     </html>

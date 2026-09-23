@@ -1,4 +1,4 @@
-import { site } from "./site";
+import { bookingHref, site } from "./site";
 
 export interface ContentItem {
   title: string;
@@ -130,6 +130,7 @@ export interface EngagementModel {
   summary: string;
   points: string[];
   cta: string;
+  href: string;
 }
 
 /** How clients can start working with us. Shown on the homepage. */
@@ -139,18 +140,21 @@ export const engagementModels: EngagementModel[] = [
     summary: "A 30-minute call about your goals. You leave with honest advice, whether or not you hire us.",
     points: ["No cost and no obligation", "Clear next steps and rough budget", "Straight answers about what you need"],
     cta: "Book a free call",
+    href: bookingHref,
   },
   {
     title: "Fixed-scope project",
     summary: "A website, application, AI or automation project with an agreed scope, timeline and price for each phase.",
     points: ["Written proposal before work starts", "Progress you can see every two weeks", "Launch, training and handover included"],
     cta: "Start a project",
+    href: "/contact",
   },
   {
     title: "Ongoing support and growth",
     summary: "A monthly plan to keep your site or software fast, secure and improving after launch.",
     points: ["Updates, fixes and security patches", "Monitoring and monthly reporting", "New features when you need them"],
     cta: "Ask about support",
+    href: "/contact",
   },
 ];
 

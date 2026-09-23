@@ -35,10 +35,20 @@ export default function PrivacyPage() {
               </p>
             </section>
             <section>
+              <h2 className="text-2xl font-semibold tracking-tight">Website check and AI assistant</h2>
+              <p className="mt-4">
+                When you use the free website check, the address you enter is sent to Google PageSpeed Insights for
+                testing. If you also enter your email, we receive it with your results so we can follow up. Messages
+                you send to the AI assistant are processed by Anthropic to generate answers and are not used to
+                identify you. Please don&apos;t share sensitive personal information in the assistant.
+              </p>
+            </section>
+            <section>
               <h2 className="text-2xl font-semibold tracking-tight">Service providers</h2>
               <p className="mt-4">
                 Form submissions are delivered by email through a transactional email provider and hosted with
-                our website infrastructure provider. Both process data on our behalf and are not permitted to use
+                our website infrastructure provider. Consultation bookings are handled by our scheduling
+                provider. Both process data on our behalf and are not permitted to use
                 it for their own purposes.
               </p>
             </section>

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { TextLink } from "@/components/ui/Button";
+import { ButtonLink, TextLink } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
 import { SectionIntro } from "@/components/ui/SectionIntro";
@@ -21,9 +21,12 @@ export function Optimization() {
             title="Faster pages, measured with real visitor data."
             lead="We find what's actually slowing your site down, fix it in your codebase, and set up monitoring so it stays fast long after the project ends."
           />
-          <TextLink href="/services/web-optimization" className="mt-10">
-            Website performance optimization
-          </TextLink>
+          <div className="mt-10 flex flex-col items-start gap-5">
+            <ButtonLink href="/website-check" variant="secondary" withArrow>
+              Test your website for free
+            </ButtonLink>
+            <TextLink href="/services/web-optimization">Website performance optimization</TextLink>
+          </div>
         </div>
 
         <figure className="min-w-0 lg:col-span-7" data-reveal>

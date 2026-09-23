@@ -17,6 +17,13 @@ export const site = {
 
 export const location = `${site.address.locality}, ${site.address.regionName}`;
 
+/**
+ * Public scheduling link (Cal.com, Calendly or similar) for free consultations.
+ * When it isn't set, "book a call" links fall back to the contact form.
+ */
+export const bookingUrl = process.env.NEXT_PUBLIC_BOOKING_URL || null;
+export const bookingHref = bookingUrl ? "/book" : "/contact";
+
 /** Phone number in the format expected by `tel:` links. */
 export const phoneHref = `tel:${site.phone.replace(/[^+\d]/g, "")}`;
 

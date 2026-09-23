@@ -16,6 +16,7 @@
   --color-night-line: #2a2b2d;
   --color-night-muted: #a0a0a4;
   --color-accent: #0e6a4f;
+  --color-warn: #b54708;
   --color-danger: #b42318;
 
   --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);

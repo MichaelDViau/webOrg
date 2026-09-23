@@ -12,6 +12,8 @@ const contentSecurityPolicy = [
   "object-src 'none'",
   "base-uri 'self'",
   "form-action 'self'",
+  // Scheduling embeds on /book
+  "frame-src https://cal.com https://*.cal.com https://calendly.com https://*.calendly.com",
   "frame-ancestors 'none'",
   "upgrade-insecure-requests",
 ].join("; ");
