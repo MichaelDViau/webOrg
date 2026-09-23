@@ -6,7 +6,7 @@ interface ScoreRingProps {
 }
 
 function scoreTone(score: number) {
-  if (score >= 90) return "text-accent";
+  if (score >= 90) return "text-success";
   return score >= 50 ? "text-warn" : "text-danger";
 }
 

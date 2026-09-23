@@ -56,7 +56,7 @@ export function HeroShowcase({ items, initialIndex = 0 }: HeroShowcaseProps) {
                 onClick={() => setActive(index)}
                 className={cn(
                   "min-h-11 w-full border-t-2 pt-3 pb-1 text-left text-sm transition-colors duration-200 sm:-mt-px sm:w-auto sm:pt-4",
-                  selected ? "border-ink font-medium text-ink" : "border-line text-muted hover:text-ink sm:border-transparent",
+                  selected ? "border-accent font-medium text-ink" : "border-line text-muted hover:text-ink sm:border-transparent",
                 )}
               >
                 {item.label}

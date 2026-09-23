@@ -10,7 +10,7 @@ import { ScoreRing } from "./ScoreRing";
 const initialState: WebsiteCheckState = { status: "idle" };
 
 const ratingStyles = {
-  good: "text-accent",
+  good: "text-success",
   average: "text-warn",
   poor: "text-danger",
 } as const;

@@ -96,7 +96,7 @@ export function ContactForm() {
   if (state.status === "success") {
     return (
       <div role="status" className="rounded-lg border border-line bg-canvas p-8 sm:p-10">
-        <svg viewBox="0 0 24 24" aria-hidden="true" className="size-8 text-accent">
+        <svg viewBox="0 0 24 24" aria-hidden="true" className="size-8 text-success">
           <circle cx="12" cy="12" r="11" fill="none" stroke="currentColor" strokeWidth="1.5" />
           <path d="M7 12.5l3.5 3.5L17 9" fill="none" stroke="currentColor" strokeWidth="1.75" />
         </svg>

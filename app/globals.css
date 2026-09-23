@@ -2,19 +2,31 @@
 
 /* Design tokens: fonts, colors and easing used across the site. */
 @theme {
-  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-instrument-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-instrument-serif), ui-serif, Georgia, serif;
 
+  /* Neutrals are tinted slightly toward the slate brand color. */
   --color-paper: #ffffff;
-  --color-canvas: #f6f6f4;
-  --color-ink: #111112;
-  --color-body: #3d3d40;
-  --color-muted: #6a6a6e;
-  --color-line: #e4e4e0;
-  --color-line-strong: #cfcfca;
-  --color-night: #111213;
-  --color-night-line: #2a2b2d;
-  --color-night-muted: #a0a0a4;
-  --color-accent: #0e6a4f;
+  --color-canvas: #f4f6f7;
+  --color-ink: #172125;
+  --color-body: #3a4549;
+  --color-muted: #5f6b70;
+  --color-line: #e2e7ea;
+  --color-line-strong: #c9d2d6;
+  --color-night: #1b2428;
+  --color-night-line: #2e3a3f;
+  --color-night-muted: #a3adb2;
+
+  /*
+   * Brand slate. The base tone is used for lines, indicators and icons;
+   * small text uses the deeper tone on light backgrounds and the lighter
+   * tone on dark ones, so it stays above WCAG AA contrast.
+   */
+  --color-accent: #607d8b;
+  --color-accent-strong: #4f6975;
+  --color-accent-light: #90a4ae;
+
+  --color-success: #1f7a55;
   --color-warn: #b54708;
   --color-danger: #b42318;
 
@@ -75,15 +87,30 @@
 }
 
 /*
- * Heading scale. Defined once so every page uses the same four sizes:
- * display (homepage hero), title (page titles), heading (section headings)
- * and subheading (headings inside sections).
+ * Heading scale. Defined once so every page uses the same four sizes.
+ * Display, title and heading use the serif; subheading stays in the sans
+ * so smaller headings remain crisp.
  */
 @utility text-display {
+  font-family: var(--font-display);
+  font-size: 2.875rem;
+  line-height: 1;
+  letter-spacing: -0.01em;
+  font-weight: 400;
+  @media (width >= 40rem) {
+    font-size: 3.75rem;
+  }
+  @media (width >= 64rem) {
+    font-size: 4.5rem;
+  }
+}
+
+@utility text-title {
+  font-family: var(--font-display);
   font-size: 2.5rem;
   line-height: 1.05;
-  letter-spacing: -0.035em;
-  font-weight: 600;
+  letter-spacing: -0.01em;
+  font-weight: 400;
   @media (width >= 40rem) {
     font-size: 3.25rem;
   }
@@ -92,29 +119,17 @@
   }
 }
 
-@utility text-title {
-  font-size: 2.25rem;
+@utility text-heading {
+  font-family: var(--font-display);
+  font-size: 2.125rem;
   line-height: 1.1;
-  letter-spacing: -0.03em;
-  font-weight: 600;
+  letter-spacing: -0.01em;
+  font-weight: 400;
   @media (width >= 40rem) {
-    font-size: 2.75rem;
+    font-size: 2.625rem;
   }
   @media (width >= 64rem) {
     font-size: 3rem;
-  }
-}
-
-@utility text-heading {
-  font-size: 1.875rem;
-  line-height: 1.15;
-  letter-spacing: -0.025em;
-  font-weight: 600;
-  @media (width >= 40rem) {
-    font-size: 2.25rem;
-  }
-  @media (width >= 64rem) {
-    font-size: 2.5rem;
   }
 }
 
@@ -131,7 +146,7 @@
 /* Custom chevron for native select elements, so they match the text inputs. */
 @utility select-chevron {
   appearance: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4 6l4 4 4-4' fill='none' stroke='%236a6a6e' stroke-width='1.5'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4 6l4 4 4-4' fill='none' stroke='%235f6b70' stroke-width='1.5'/%3E%3C/svg%3E");
   background-position: right 0.875rem center;
   background-repeat: no-repeat;
   background-size: 1rem;

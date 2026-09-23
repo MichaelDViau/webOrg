@@ -7,7 +7,7 @@ export function WhyUs() {
   return (
     <Section tone="night">
       <Container>
-        <p className="text-sm font-medium" data-reveal>
+        <p className="text-sm font-medium text-accent-light" data-reveal>
           Why work with us
         </p>
         <h2

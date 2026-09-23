@@ -54,7 +54,7 @@ export function Optimization() {
                     <td className="px-4 py-4 text-right sm:py-5 text-sm whitespace-nowrap text-muted tabular-nums sm:px-6">
                       {metric.before}
                     </td>
-                    <td className="px-4 py-4 text-right sm:py-5 text-sm font-medium whitespace-nowrap text-accent tabular-nums sm:px-6">
+                    <td className="px-4 py-4 text-right sm:py-5 text-sm font-medium whitespace-nowrap text-accent-strong tabular-nums sm:px-6">
                       {metric.after}
                     </td>
                   </tr>

@@ -24,7 +24,7 @@ export default function ContactPage() {
       {/* On phones the form follows the introduction; on large screens it sits in its own column. */}
       <Container className="grid gap-12 lg:grid-cols-12 lg:grid-rows-[auto_1fr] lg:gap-x-16 lg:gap-y-12">
         <div className="lg:col-span-5">
-          <p className="text-sm font-medium text-muted">Contact</p>
+          <p className="text-sm font-medium text-accent-strong">Contact</p>
           <h1 className="mt-4 text-title">Start a project</h1>
           <p className="mt-6 max-w-md text-lg leading-relaxed">
             Tell us about the problem you&apos;re trying to solve. A rough idea is enough, and we&apos;ll help you

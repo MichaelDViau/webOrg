@@ -9,7 +9,7 @@ export function Seo() {
       <Container>
         <div className="grid gap-12 border-t border-line pt-12 lg:grid-cols-12 lg:gap-16 lg:pt-16">
           <div className="lg:col-span-6" data-reveal>
-            <p className="text-sm font-medium text-muted">SEO & Digital Growth</p>
+            <p className="text-sm font-medium text-accent-strong">SEO & Digital Growth</p>
             <h2 className="mt-4 text-heading">
               Search visibility starts with how your site is built.
             </h2>

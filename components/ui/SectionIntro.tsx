@@ -17,7 +17,7 @@ export function SectionIntro({ eyebrow, title, lead, tone = "light", id, classNa
 
   return (
     <div className={cn("max-w-3xl", className)} data-reveal>
-      {eyebrow && <p className={cn("text-sm font-medium", dark ? "text-night-muted" : "text-muted")}>{eyebrow}</p>}
+      {eyebrow && <p className={cn("text-sm font-medium", dark ? "text-accent-light" : "text-accent-strong")}>{eyebrow}</p>}
       <h2
         id={id}
         className={cn(

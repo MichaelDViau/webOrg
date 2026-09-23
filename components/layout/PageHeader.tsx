@@ -20,7 +20,7 @@ export function PageHeader({ eyebrow, title, lead, eyebrowIsHeading = false, chi
   return (
     <section className="border-b border-line pt-14 pb-14 sm:pt-24 sm:pb-20 lg:pt-28">
       <Container>
-        <Eyebrow className="text-sm font-medium text-muted">{eyebrow}</Eyebrow>
+        <Eyebrow className="text-sm font-medium text-accent-strong">{eyebrow}</Eyebrow>
         <Title className="mt-4 max-w-4xl text-title text-balance text-ink">
           {title}
         </Title>

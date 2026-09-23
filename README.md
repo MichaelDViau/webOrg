@@ -47,6 +47,11 @@ All copy lives in typed data files, so most updates don't touch components:
 
 Project images live in `public/work/`. Use 1600 × 1000 WebP or AVIF files; `next/image` generates responsive sizes automatically. Set `liveUrl` on a project to show a link to the live site.
 
+## Brand
+
+- Typefaces: Instrument Sans for body and interface text, Instrument Serif for display headings. Both are self-hosted from `@fontsource` packages through `next/font/local` (`app/fonts.ts`).
+- Colors and the heading scale are defined once in `app/globals.css`. The brand slate `#607D8B` is used for lines, indicators and the logo; the deeper `accent-strong` shade is used for small text so it meets WCAG AA contrast.
+
 ## Lead generation features
 
 - **Free website check** (`/website-check`): runs Google PageSpeed Insights on a visitor's site and shows scores, Core Web Vitals and the top fixes (`lib/website-check.ts`, `app/website-check/actions.ts`). If the visitor leaves an email, the results are sent to `CONTACT_TO_EMAIL` as a lead. Rate-limited to 5 checks per hour per IP.
