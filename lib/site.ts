@@ -1,10 +1,10 @@
 export const site = {
-  name: "Nocturne",
-  legalName: "Nocturne Studio LLC",
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://nocturne.studio",
+  name: "Michael De Lagrave Viau",
+  legalName: "Michael De Lagrave Viau",
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.example.com",
   description:
-    "Nocturne designs and builds websites, web applications, AI and automation systems for businesses that depend on their software working well.",
-  email: "hello@nocturne.studio",
+    "Michael De Lagrave Viau designs and builds websites, web applications, AI and automation systems for businesses that depend on their software working well.",
+  email: "hello@example.com",
   phone: "+1 (512) 555-0147",
   location: "Austin, Texas",
   hours: "Monday–Friday, 9am–6pm CT",

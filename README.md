@@ -1,6 +1,6 @@
-# Nocturne website
+# Michael De Lagrave Viau website
 
-Marketing site for Nocturne, built with Next.js (App Router), TypeScript and Tailwind CSS v4. Every page is statically generated; the only client-side JavaScript is the mobile navigation and the contact form.
+Marketing site for Michael De Lagrave Viau, built with Next.js (App Router), TypeScript and Tailwind CSS v4. Every page is statically generated; the only client-side JavaScript is the mobile navigation and the contact form.
 
 ## Getting started
 
@@ -26,7 +26,7 @@ In development, contact form submissions are printed to the server console when 
 | `NEXT_PUBLIC_SITE_URL` | Yes        | Canonical site URL used for metadata, sitemap and schema.org. |
 | `RESEND_API_KEY`       | Production | API key for [Resend](https://resend.com), used by the form.   |
 | `CONTACT_TO_EMAIL`     | Production | Inbox that receives project requests.                         |
-| `CONTACT_FROM_EMAIL`   | Production | Verified sender, e.g. `Nocturne <website@nocturne.studio>`.   |
+| `CONTACT_FROM_EMAIL`   | Production | Verified sender, e.g. `Michael De Lagrave Viau <website@example.com>`.   |
 
 Secrets are only read on the server (`app/contact/actions.ts`) and are never exposed to the browser.
 
@@ -63,6 +63,6 @@ lib/                 Content, validation and utilities
 ## Before launch
 
 - Replace the sample case studies in `lib/projects.ts` and the images in `public/work/` with real client work (and confirm each client's permission to publish).
-- Confirm the company details in `lib/site.ts` (name, email, phone, location).
+- Replace the placeholder email address and domain (`example.com`) and confirm the phone number and location in `lib/site.ts`.
 - Review `app/privacy/page.tsx` with legal counsel.
 - Set the environment variables above in your hosting provider.

@@ -13,8 +13,8 @@ export function Hero() {
             We build the software your business runs on.
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-pretty sm:text-xl">
-            {site.name} is a design and engineering team for companies that need their website, applications and
-            internal systems to work properly — and keep working as they grow.
+            {site.name} designs and builds websites, applications and internal systems for companies that need
+            them to work properly — and keep working as they grow.
           </p>
           <div className="mt-10 flex flex-col gap-3 sm:flex-row">
             <ButtonLink href="/contact" withArrow>

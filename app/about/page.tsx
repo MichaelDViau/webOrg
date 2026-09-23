@@ -46,7 +46,7 @@ export default function AboutPage() {
       <PageHeader
         eyebrow="About"
         title="We don't build technology simply because we can. We build it because it solves a problem."
-        lead={`${site.name} is a design and engineering company based in ${site.location}. We work with established businesses on the websites, applications and systems they rely on every day.`}
+        lead={`${site.name} is a design and engineering studio based in ${site.location}. We work with established businesses on the websites, applications and systems they rely on every day.`}
       />
 
       <Section>

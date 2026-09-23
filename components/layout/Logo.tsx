@@ -11,7 +11,7 @@ export function Logo({ className }: { className?: string }) {
     >
       <svg viewBox="0 0 24 24" aria-hidden="true" className="size-6">
         <rect width="24" height="24" rx="5" fill="currentColor" />
-        <path d="M7 17V7l10 10V7" fill="none" stroke="var(--color-paper)" strokeWidth="2" />
+        <path d="M6.5 17V7l5.5 6 5.5-6v10" fill="none" stroke="var(--color-paper)" strokeWidth="2" />
       </svg>
       <span className="text-lg font-semibold tracking-tight">{site.name}</span>
     </Link>
