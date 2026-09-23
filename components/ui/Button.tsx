@@ -6,6 +6,7 @@ import { ArrowIcon } from "./ArrowIcon";
 const variants = {
   primary: "bg-ink text-paper hover:bg-ink/85",
   secondary: "border border-line-strong text-ink hover:border-ink",
+  inverse: "bg-paper text-ink hover:bg-paper/85",
 } as const;
 
 const sizes = {

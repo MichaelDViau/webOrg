@@ -38,7 +38,7 @@ All copy lives in typed data files, so most updates don't touch components:
 - `lib/services.ts`: the six service pages, including their search titles and meta descriptions
 - `lib/projects.ts`: case studies shown on the homepage and `/work`
 - `lib/showcase.ts`: the images that change when visitors hover the disciplines in the homepage hero
-- `lib/technology.ts`: the technology groups shown on the homepage (each service also lists its own `stack`)
+- `lib/technology.ts`: the homepage technology summary and the full web and AI catalogs on `/technology` (each service also lists its own `stack`)
 - `lib/company.ts`: process steps, working principles and the beliefs on the About page
 - `lib/contact.ts`: form options (project types, budget ranges) and validation rules
 

@@ -36,7 +36,7 @@ export function Header() {
       <Container className="flex h-16 items-center justify-between gap-6 lg:h-18">
         <Logo />
 
-        <nav aria-label="Main" className="hidden md:block">
+        <nav aria-label="Main" className="hidden lg:block">
           <ul className="flex items-center gap-8">
             {mainNav.map((item) => (
               <li key={item.href}>
@@ -63,7 +63,7 @@ export function Header() {
           </div>
           <button
             type="button"
-            className="-mr-2 inline-flex size-10 items-center justify-center text-ink md:hidden"
+            className="-mr-2 inline-flex size-10 items-center justify-center text-ink lg:hidden"
             aria-expanded={open}
             aria-controls={menuId}
             aria-label={open ? "Close menu" : "Open menu"}
@@ -83,7 +83,7 @@ export function Header() {
       <div
         id={menuId}
         hidden={!open}
-        className="fixed inset-x-0 top-16 bottom-0 overflow-y-auto border-t border-line bg-paper md:hidden"
+        className="fixed inset-x-0 top-16 bottom-0 overflow-y-auto border-t border-line bg-paper lg:hidden"
       >
         <Container className="flex flex-col py-6">
           <nav aria-label="Mobile">
