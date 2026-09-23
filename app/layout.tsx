@@ -1,3 +1,4 @@
+import { GeistSans } from "geist/font/sans";
 import type { Metadata, Viewport } from "next";
 import type { ReactNode } from "react";
 import { Footer } from "@/components/layout/Footer";
@@ -7,7 +8,6 @@ import { AssistantWidget } from "@/components/assistant/AssistantWidget";
 import { services } from "@/lib/services";
 import { organizationSchema } from "@/lib/structured-data";
 import { bookingHref, mainNav, site } from "@/lib/site";
-import { instrumentSans, instrumentSerif } from "./fonts";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -43,7 +43,7 @@ const assistantLinks = [
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en" className={`${instrumentSans.variable} ${instrumentSerif.variable}`}>
+    <html lang="en" className={GeistSans.variable}>
       <body>
         <a
           href="#main"

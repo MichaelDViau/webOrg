@@ -49,7 +49,7 @@ Project images live in `public/work/`. Use 1600 × 1000 WebP or AVIF files; `nex
 
 ## Brand
 
-- Typefaces: Instrument Sans for body and interface text, Instrument Serif for display headings. Both are self-hosted from `@fontsource` packages through `next/font/local` (`app/fonts.ts`).
+- Typeface: Geist Sans, self-hosted through the `geist` package.
 - Colors and the heading scale are defined once in `app/globals.css`. The brand slate `#607D8B` is used for lines, indicators and the logo; the deeper `accent-strong` shade is used for small text so it meets WCAG AA contrast.
 
 ## Lead generation features

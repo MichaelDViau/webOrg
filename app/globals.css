@@ -2,8 +2,7 @@
 
 /* Design tokens: fonts, colors and easing used across the site. */
 @theme {
-  --font-sans: var(--font-instrument-sans), ui-sans-serif, system-ui, sans-serif;
-  --font-display: var(--font-instrument-serif), ui-serif, Georgia, serif;
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
 
   /* Neutrals are tinted slightly toward the slate brand color. */
   --color-paper: #ffffff;
@@ -87,30 +86,15 @@
 }
 
 /*
- * Heading scale. Defined once so every page uses the same four sizes.
- * Display, title and heading use the serif; subheading stays in the sans
- * so smaller headings remain crisp.
+ * Heading scale. Defined once so every page uses the same four sizes:
+ * display (homepage hero), title (page titles), heading (section headings)
+ * and subheading (headings inside sections).
  */
 @utility text-display {
-  font-family: var(--font-display);
-  font-size: 2.875rem;
-  line-height: 1;
-  letter-spacing: -0.01em;
-  font-weight: 400;
-  @media (width >= 40rem) {
-    font-size: 3.75rem;
-  }
-  @media (width >= 64rem) {
-    font-size: 4.5rem;
-  }
-}
-
-@utility text-title {
-  font-family: var(--font-display);
   font-size: 2.5rem;
   line-height: 1.05;
-  letter-spacing: -0.01em;
-  font-weight: 400;
+  letter-spacing: -0.035em;
+  font-weight: 600;
   @media (width >= 40rem) {
     font-size: 3.25rem;
   }
@@ -119,17 +103,29 @@
   }
 }
 
-@utility text-heading {
-  font-family: var(--font-display);
-  font-size: 2.125rem;
+@utility text-title {
+  font-size: 2.25rem;
   line-height: 1.1;
-  letter-spacing: -0.01em;
-  font-weight: 400;
+  letter-spacing: -0.03em;
+  font-weight: 600;
   @media (width >= 40rem) {
-    font-size: 2.625rem;
+    font-size: 2.75rem;
   }
   @media (width >= 64rem) {
     font-size: 3rem;
+  }
+}
+
+@utility text-heading {
+  font-size: 1.875rem;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  font-weight: 600;
+  @media (width >= 40rem) {
+    font-size: 2.25rem;
+  }
+  @media (width >= 64rem) {
+    font-size: 2.5rem;
   }
 }
 
