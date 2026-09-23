@@ -10,7 +10,7 @@ interface ClosingCtaProps {
 
 export function ClosingCta({
   title = "Tell us what you're working on.",
-  lead = "Share a few details about your project and we'll reply within one business day. If we're not the right fit, we'll say so and point you somewhere better.",
+  lead = "Share a few details and we'll reply within one business day to set up a free consultation. No obligation, and if we're not the right fit, we'll say so and point you somewhere better.",
 }: ClosingCtaProps) {
   return (
     <Section>

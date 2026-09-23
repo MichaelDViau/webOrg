@@ -1,5 +1,6 @@
 import { ButtonLink } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
+import { promises } from "@/lib/company";
 import { showcase } from "@/lib/showcase";
 import { site } from "@/lib/site";
 import { HeroShowcase } from "./HeroShowcase";
@@ -24,9 +25,19 @@ export function Hero() {
               Explore Our Services
             </ButtonLink>
           </div>
+          <ul aria-label="Our commitments" className="mt-8 grid gap-x-8 gap-y-2 text-sm text-muted sm:flex sm:flex-wrap">
+            {promises.map((promise) => (
+              <li key={promise} className="flex items-center gap-2">
+                <svg viewBox="0 0 16 16" aria-hidden="true" className="size-3.5 shrink-0 text-accent">
+                  <path d="M2.5 8.5l3.5 3.5 7.5-8" fill="none" stroke="currentColor" strokeWidth="1.75" />
+                </svg>
+                {promise}
+              </li>
+            ))}
+          </ul>
         </div>
 
-        <HeroShowcase items={showcase} initialIndex={1} />
+        <HeroShowcase items={showcase} />
       </Container>
     </section>
   );

@@ -4,13 +4,16 @@ import { AiAutomation } from "@/components/home/AiAutomation";
 import { Approach } from "@/components/home/Approach";
 import { ClosingCta } from "@/components/home/ClosingCta";
 import { Hero } from "@/components/home/Hero";
+import { HomeFaq } from "@/components/home/HomeFaq";
 import { Optimization } from "@/components/home/Optimization";
 import { Seo } from "@/components/home/Seo";
 import { SelectedWork } from "@/components/home/SelectedWork";
 import { TechStack } from "@/components/home/TechStack";
+import { WaysToWork } from "@/components/home/WaysToWork";
 import { WebApplications } from "@/components/home/WebApplications";
 import { WebDevelopment } from "@/components/home/WebDevelopment";
 import { WhatWeDo } from "@/components/home/WhatWeDo";
+import { WhoWeHelp } from "@/components/home/WhoWeHelp";
 import { WhyUs } from "@/components/home/WhyUs";
 import { pageMetadata } from "@/lib/metadata";
 import { site } from "@/lib/site";
@@ -28,6 +31,7 @@ export default function HomePage() {
   return (
     <>
       <Hero />
+      <WhoWeHelp />
       <WhatWeDo />
       <WebDevelopment />
       <WebApplications />
@@ -38,6 +42,8 @@ export default function HomePage() {
       <Approach />
       <SelectedWork />
       <WhyUs />
+      <WaysToWork />
+      <HomeFaq />
       <ClosingCta />
       <JsonLd data={websiteSchema()} />
     </>

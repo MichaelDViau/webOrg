@@ -5,6 +5,9 @@ import { SectionIntro } from "@/components/ui/SectionIntro";
 import { ProjectFeature } from "@/components/work/ProjectFeature";
 import { projects } from "@/lib/projects";
 
+/** The Meridian website already appears in the hero and the Web Development section. */
+const featuredProjects = projects.filter((project) => project.slug !== "meridian-health-website");
+
 export function SelectedWork() {
   return (
     <Section>
@@ -21,7 +24,7 @@ export function SelectedWork() {
         </div>
 
         <div className="mt-16 space-y-20 sm:space-y-28">
-          {projects.slice(1, 4).map((project, index) => (
+          {featuredProjects.map((project, index) => (
             <ProjectFeature key={project.slug} project={project} reverse={index % 2 === 1} />
           ))}
         </div>

@@ -13,7 +13,7 @@ export const metadata: Metadata = pageMetadata({
 
 const nextSteps = [
   "We read every request and reply within one business day.",
-  "We schedule a 30-minute call to understand your goals, constraints and timeline.",
+  "We schedule a free 30-minute call to understand your goals, constraints and timeline.",
   "You receive a written proposal with scope, timeline and a fixed estimate for the first phase.",
 ];
 
@@ -27,7 +27,7 @@ export default function ContactPage() {
           <h1 className="mt-4 text-4xl font-semibold tracking-tighter sm:text-5xl lg:text-6xl">Start a project</h1>
           <p className="mt-6 max-w-md text-lg leading-relaxed">
             Tell us about the problem you&apos;re trying to solve. A rough idea is enough, and we&apos;ll help you
-            shape the details.
+            shape the details. The first consultation is free, with no obligation.
           </p>
         </div>
 
