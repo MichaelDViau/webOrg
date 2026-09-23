@@ -19,6 +19,10 @@ export interface Service {
   headline: string;
   /** Opening paragraph on the service page. */
   intro: string;
+  /** Short, jargon-free explanation for readers who aren't technical. */
+  plain: string;
+  /** Technologies we typically use for this service. */
+  stack: string[];
   included: { title: string; detail: string }[];
   approach: string[];
   engagement: { label: string; value: string }[];
@@ -36,6 +40,22 @@ export const services: Service[] = [
     headline: "A good website makes the decision easier for the person reading it.",
     intro:
       "We design and build company and marketing websites that explain what you do, earn trust and turn visitors into conversations. Each site is built from scratch around your content and goals, then handed over with a content management system your team can use without calling us.",
+    plain:
+      "A fast, good-looking website that works on every phone and computer, shows up in Google, and that you can update yourself without calling a developer.",
+    stack: [
+      "HTML5",
+      "CSS3",
+      "JavaScript",
+      "TypeScript",
+      "React",
+      "Next.js",
+      "Astro",
+      "Tailwind CSS",
+      "WordPress",
+      "Sanity",
+      "Vercel",
+      "Cloudflare",
+    ],
     included: [
       {
         title: "Content and structure",
@@ -99,6 +119,22 @@ export const services: Service[] = [
     headline: "Software that fits your operations, not the other way around.",
     intro:
       "When off-the-shelf software forces your team into workarounds and spreadsheets, a custom application is often the better long-term investment. We build customer portals, internal tools, dashboards and SaaS products for startups and established companies alike, from the data model through to the interface, and we support them after launch.",
+    plain:
+      "Custom software that runs in the browser, like a customer portal, booking system or internal dashboard, built around the way your business already works.",
+    stack: [
+      "TypeScript",
+      "React",
+      "Next.js",
+      "Node.js",
+      "Python",
+      "PostgreSQL",
+      "Redis",
+      "Prisma",
+      "GraphQL",
+      "Docker",
+      "AWS",
+      "GitHub Actions",
+    ],
     included: [
       {
         title: "Discovery and scoping",
@@ -154,13 +190,27 @@ export const services: Service[] = [
   {
     slug: "ai-solutions",
     name: "AI Solutions",
-    summary: "Practical AI features and assistants, built on your data and measured against real work.",
+    summary: "AI assistants and tools that save your team time, built on your own data.",
     seoTitle: "AI Development and Integration Services",
     metaDescription:
       "AI development and integration for businesses: knowledge assistants, document processing and AI product features, with measured accuracy and privacy controls.",
     headline: "AI is most useful when it is pointed at a specific, measurable problem.",
     intro:
       "We help businesses put large language models to work where they make a measurable difference: answering questions from internal documents, drafting routine responses, extracting data and adding AI features to existing products. We are just as direct about where AI is not the right tool.",
+    plain:
+      "Tools that read, write and answer questions for you, like an assistant that knows your company documents or software that pulls data out of invoices automatically.",
+    stack: [
+      "OpenAI",
+      "Anthropic Claude",
+      "Google Gemini",
+      "Llama",
+      "Python",
+      "LangChain",
+      "pgvector",
+      "Azure AI",
+      "Node.js",
+      "Evaluation pipelines",
+    ],
     included: [
       {
         title: "Opportunity assessment",
@@ -216,13 +266,29 @@ export const services: Service[] = [
   {
     slug: "automation",
     name: "Automation",
-    summary: "Integrations and workflows that remove repetitive work between the systems you already use.",
+    summary: "Your software systems share information automatically, so your team stops doing repetitive work.",
     seoTitle: "Business Process Automation and Integration",
     metaDescription:
       "Business process automation and system integration that removes manual data entry, speeds up approvals and connects your CRM, accounting and operations tools.",
     headline: "Your team shouldn't have to be the integration between your systems.",
     intro:
       "Copying data between tools, chasing approvals and assembling the same report every Monday adds up to hours every week. We map those processes, automate the predictable parts, and make the exceptions visible to the people who need to handle them.",
+    plain:
+      "Your software systems pass information to each other automatically, so your team stops copying data, chasing approvals and building the same reports by hand.",
+    stack: [
+      "n8n",
+      "Make",
+      "Zapier",
+      "Node.js",
+      "Python",
+      "REST APIs",
+      "Webhooks",
+      "Salesforce",
+      "HubSpot",
+      "NetSuite",
+      "QuickBooks",
+      "Microsoft 365",
+    ],
     included: [
       {
         title: "Process mapping",
@@ -274,13 +340,26 @@ export const services: Service[] = [
   {
     slug: "web-optimization",
     name: "Web Optimization",
-    summary: "Measurable improvements to speed, Core Web Vitals and front-end efficiency.",
+    summary: "Faster websites that keep visitors on the page and rank better in Google.",
     seoTitle: "Website Speed and Performance Optimization",
     metaDescription:
       "Website performance optimization based on real visitor data: faster load times, better Core Web Vitals and Lighthouse scores, and monitoring that keeps them there.",
     headline: "Speed is the first thing your customers notice.",
     intro:
       "Slow pages cost you conversions and search visibility. We use data from real visitors to find exactly what is slowing your site down, fix the causes in your codebase, and set up monitoring so performance doesn't quietly slip again.",
+    plain:
+      "We make your website load faster, especially on phones. Faster pages keep visitors from leaving and help you rank higher in Google.",
+    stack: [
+      "Lighthouse",
+      "Core Web Vitals",
+      "Chrome DevTools",
+      "WebPageTest",
+      "Next.js",
+      "Image optimization (AVIF, WebP)",
+      "Cloudflare",
+      "CDN caching",
+      "Sentry",
+    ],
     included: [
       {
         title: "Performance audit",
@@ -332,13 +411,25 @@ export const services: Service[] = [
   {
     slug: "seo",
     name: "SEO",
-    summary: "Technical SEO, site structure and metadata that help search engines understand your site.",
+    summary: "Help Google find, understand and rank your website, so customers can find you.",
     seoTitle: "Technical SEO Services",
     metaDescription:
       "Technical SEO for business websites: site structure, indexing, metadata, structured data and page speed, implemented by engineers rather than listed in a report.",
     headline: "Good SEO starts with a site that is easy to crawl and easy to understand.",
     intro:
       "We focus on the technical foundation of search: how your site is structured, how quickly it loads, how its pages are indexed and how clearly your content is described to search engines. It is the part of SEO most closely tied to how a site is built, and the part most often neglected.",
+    plain:
+      "We fix the technical things that stop Google from finding and understanding your website, so the right customers can find you.",
+    stack: [
+      "Google Search Console",
+      "Google Analytics 4",
+      "Schema.org",
+      "XML sitemaps",
+      "Screaming Frog",
+      "Core Web Vitals",
+      "Next.js",
+      "WordPress",
+    ],
     included: [
       {
         title: "Technical audit",

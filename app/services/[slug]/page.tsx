@@ -9,6 +9,7 @@ import { ButtonLink } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { FeatureList } from "@/components/ui/FeatureList";
 import { Section } from "@/components/ui/Section";
+import { TechList } from "@/components/ui/TechList";
 import { ProjectFeature } from "@/components/work/ProjectFeature";
 import { pageMetadata } from "@/lib/metadata";
 import { projects } from "@/lib/projects";
@@ -56,6 +57,20 @@ export default async function ServicePage({ params }: ServicePageProps) {
           </ButtonLink>
         </div>
       </PageHeader>
+
+      {/* Plain-language summary and the technology behind it */}
+      <Section tone="canvas" padding="compact">
+        <Container className="grid gap-10 py-4 lg:grid-cols-12 lg:gap-16">
+          <div className="lg:col-span-5" data-reveal>
+            <h2 className="text-sm font-medium text-muted">In plain terms</h2>
+            <p className="mt-3 text-xl leading-relaxed text-ink sm:text-2xl">{service.plain}</p>
+          </div>
+          <div className="lg:col-span-7" data-reveal>
+            <h2 className="text-sm font-medium text-muted">Technology we use</h2>
+            <TechList tools={service.stack} label={`${service.name} technologies`} className="mt-4" />
+          </div>
+        </Container>
+      </Section>
 
       {/* Scope */}
       <Section>

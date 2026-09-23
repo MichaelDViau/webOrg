@@ -7,6 +7,7 @@ import { Hero } from "@/components/home/Hero";
 import { Optimization } from "@/components/home/Optimization";
 import { Seo } from "@/components/home/Seo";
 import { SelectedWork } from "@/components/home/SelectedWork";
+import { TechStack } from "@/components/home/TechStack";
 import { WebApplications } from "@/components/home/WebApplications";
 import { WebDevelopment } from "@/components/home/WebDevelopment";
 import { WhatWeDo } from "@/components/home/WhatWeDo";
@@ -33,6 +34,7 @@ export default function HomePage() {
       <AiAutomation />
       <Optimization />
       <Seo />
+      <TechStack />
       <Approach />
       <SelectedWork />
       <WhyUs />
