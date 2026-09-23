@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import { ContactForm } from "@/components/contact/ContactForm";
 import { Container } from "@/components/ui/Container";
 import { pageMetadata } from "@/lib/metadata";
-import { photos } from "@/lib/photos";
 import { ButtonLink } from "@/components/ui/Button";
 import { bookingUrl, phoneHref, site } from "@/lib/site";
 
@@ -74,15 +72,6 @@ export default function ContactPage() {
             </p>
             <p className="text-muted">{site.hours}</p>
           </address>
-
-          <Image
-            src={photos.documentReview.src}
-            alt={photos.documentReview.alt}
-            width={photos.documentReview.width}
-            height={photos.documentReview.height}
-            sizes="(min-width: 1280px) 460px, (min-width: 1024px) 38vw, calc(100vw - 40px)"
-            className="mt-12 h-auto w-full rounded-lg"
-          />
         </div>
       </Container>
     </section>

@@ -43,7 +43,7 @@ All copy lives in typed data files, so most updates don't touch components:
 - `lib/showcase.ts`: the images that change when visitors hover the disciplines in the homepage hero
 - `lib/technology.ts`: the homepage technology summary and the full web and AI catalogs on `/technology` (each service also lists its own `stack`)
 - `lib/company.ts`: process steps, working principles and the beliefs on the About page
-- `lib/photos.ts`: the office and team photos on the homepage, About and Contact pages (files in `public/photos/`)
+- `lib/photos.ts`: the office and team photos on the homepage and About page (files in `public/photos/`)
 - `lib/contact.ts`: form options (project types, budget ranges) and validation rules
 
 Project images live in `public/work/`. Use 1600 × 1000 WebP or AVIF files; `next/image` generates responsive sizes automatically. Set `liveUrl` on a project to show a link to the live site.

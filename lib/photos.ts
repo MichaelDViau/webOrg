@@ -5,19 +5,13 @@ export interface Photo {
   height: number;
 }
 
-/** Studio photography used across the homepage, About and Contact pages. */
+/** Studio photography used across the homepage and About page. */
 export const photos = {
   teamAtWork: {
     src: "/photos/team-at-work.webp",
     alt: "Designers and developers working side by side at a long desk in a bright office",
     width: 1920,
     height: 826,
-  },
-  documentReview: {
-    src: "/photos/document-review.webp",
-    alt: "Two colleagues reviewing a project plan together at a meeting table",
-    width: 1920,
-    height: 1280,
   },
   planningSession: {
     src: "/photos/planning-session.webp",
