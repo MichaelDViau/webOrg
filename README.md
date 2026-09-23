@@ -43,6 +43,7 @@ All copy lives in typed data files, so most updates don't touch components:
 - `lib/showcase.ts`: the images that change when visitors hover the disciplines in the homepage hero
 - `lib/technology.ts`: the homepage technology summary and the full web and AI catalogs on `/technology` (each service also lists its own `stack`)
 - `lib/company.ts`: process steps, working principles and the beliefs on the About page
+- `lib/photos.ts`: the office and team photos on the homepage, About and Contact pages (files in `public/photos/`)
 - `lib/contact.ts`: form options (project types, budget ranges) and validation rules
 
 Project images live in `public/work/`. Use 1600 × 1000 WebP or AVIF files; `next/image` generates responsive sizes automatically. Set `liveUrl` on a project to show a link to the live site.
@@ -87,5 +88,6 @@ lib/                   Content, metadata, structured data, validation and utilit
 
 - Replace the sample case studies in `lib/projects.ts` and the images in `public/work/` with real client work (and confirm each client's permission to publish).
 - Replace the placeholder email address and domain (`example.com`) and confirm the phone number and location in `lib/site.ts`.
+- Replace the photos in `public/photos/` with photos of your own team and workspace when you have them, or confirm the license for the current ones.
 - Review `app/privacy/page.tsx` with legal counsel.
 - Set the environment variables above in your hosting provider.

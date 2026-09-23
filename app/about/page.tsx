@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { ClosingCta } from "@/components/home/ClosingCta";
 import { PageHeader } from "@/components/layout/PageHeader";
 import { Container } from "@/components/ui/Container";
@@ -6,6 +7,7 @@ import { FeatureList } from "@/components/ui/FeatureList";
 import { Section } from "@/components/ui/Section";
 import { beliefs, principles } from "@/lib/company";
 import { pageMetadata } from "@/lib/metadata";
+import { photos } from "@/lib/photos";
 import { location, site } from "@/lib/site";
 
 export const metadata: Metadata = pageMetadata({
@@ -21,7 +23,17 @@ export default function AboutPage() {
         eyebrow="About"
         title="We don't build technology simply because we can. We build it because it solves a problem."
         lead={`${site.name} is a software design and engineering company based in ${location}. We work with startups, growing businesses and established organizations on the websites, applications and systems they rely on every day.`}
-      />
+      >
+        <Image
+          src={photos.teamAtWork.src}
+          alt={photos.teamAtWork.alt}
+          width={photos.teamAtWork.width}
+          height={photos.teamAtWork.height}
+          sizes="(min-width: 1280px) 1216px, calc(100vw - 40px)"
+          preload
+          className="mt-12 h-auto w-full rounded-lg sm:mt-16"
+        />
+      </PageHeader>
 
       {/* What we believe */}
       <Section>
@@ -41,6 +53,16 @@ export default function AboutPage() {
               </section>
             ))}
           </div>
+
+          <Image
+            src={photos.meetingRoom.src}
+            alt={photos.meetingRoom.alt}
+            width={photos.meetingRoom.width}
+            height={photos.meetingRoom.height}
+            sizes="(min-width: 1280px) 1216px, calc(100vw - 40px)"
+            className="mt-16 h-auto w-full rounded-lg lg:mt-20"
+            data-reveal
+          />
         </Container>
       </Section>
 
