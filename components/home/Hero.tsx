@@ -1,14 +1,10 @@
-import Image from "next/image";
 import { ButtonLink } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
-import { projects } from "@/lib/projects";
+import { HeroShowcase } from "./HeroShowcase";
+import { showcase } from "@/lib/showcase";
 import { site } from "@/lib/site";
 
-const disciplines = ["Websites", "Web Apps", "AI Solutions", "Automation", "Optimization"];
-
 export function Hero() {
-  const featured = projects[0];
-
   return (
     <section className="overflow-hidden pt-16 sm:pt-24 lg:pt-28">
       <Container>
@@ -30,31 +26,7 @@ export function Hero() {
           </div>
         </div>
 
-        <ul
-          aria-label="What we build"
-          className="mt-16 flex flex-wrap gap-x-6 gap-y-2 border-t border-line pt-6 text-sm text-muted sm:gap-x-10"
-        >
-          {disciplines.map((item) => (
-            <li key={item}>{item}</li>
-          ))}
-        </ul>
-
-        <figure className="mt-10 sm:mt-14">
-          <div className="overflow-hidden rounded-lg border border-line bg-canvas">
-            <Image
-              src={featured.image.src}
-              alt={featured.image.alt}
-              width={featured.image.width}
-              height={featured.image.height}
-              sizes="(min-width: 1280px) 1216px, calc(100vw - 40px)"
-              priority
-              className="h-auto w-full"
-            />
-          </div>
-          <figcaption className="mt-3 text-sm text-muted">
-            {featured.client} — {featured.type.toLowerCase()} built by {site.name}.
-          </figcaption>
-        </figure>
+        <HeroShowcase items={showcase} initialIndex={1} />
       </Container>
     </section>
   );

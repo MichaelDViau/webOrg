@@ -96,7 +96,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
                 width={project.image.width}
                 height={project.image.height}
                 sizes="(min-width: 1280px) 1216px, calc(100vw - 40px)"
-                priority
+                preload
                 className="h-auto w-full"
               />
             </div>
