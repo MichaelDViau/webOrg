@@ -21,7 +21,7 @@ export function SectionIntro({ eyebrow, title, lead, tone = "light", id, classNa
       <h2
         id={id}
         className={cn(
-          "text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl",
+          "text-heading",
           eyebrow && "mt-4",
           dark && "text-paper",
         )}

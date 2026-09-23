@@ -16,7 +16,7 @@ export function Approach() {
         <ol className="mt-16 grid gap-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
           {approachSteps.map((step, index) => (
             <li key={step.title} className="border-t-2 border-ink pt-6" data-reveal>
-              <span className="font-mono text-sm text-muted">Step {index + 1}</span>
+              <span className="text-sm text-muted tabular-nums">Step {index + 1}</span>
               <h3 className="mt-3 text-xl font-semibold tracking-tight">{step.title}</h3>
               <p className="mt-3 leading-relaxed">{step.detail}</p>
             </li>

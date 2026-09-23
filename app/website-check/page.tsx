@@ -37,7 +37,7 @@ export default function WebsiteCheckPage() {
       <Section>
         <Container className="grid gap-10 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-5">
-            <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">Why these scores matter</h2>
+            <h2 className="text-subheading">Why these scores matter</h2>
             <p className="mt-4 text-lg leading-relaxed">
               Google uses page speed and technical quality when ranking websites, and most visitors leave a page that
               takes more than a few seconds to load on their phone.

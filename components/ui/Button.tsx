@@ -14,6 +14,15 @@ const sizes = {
   md: "h-12 px-6",
 } as const;
 
+/** Shared classes so links and form buttons look identical. */
+export function buttonClass(variant: keyof typeof variants = "primary", size: keyof typeof sizes = "md"): string {
+  return cn(
+    "group inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium transition-colors duration-200 disabled:cursor-not-allowed disabled:opacity-60",
+    variants[variant],
+    sizes[size],
+  );
+}
+
 interface ButtonLinkProps extends ComponentProps<typeof Link> {
   variant?: keyof typeof variants;
   size?: keyof typeof sizes;
@@ -29,15 +38,7 @@ export function ButtonLink({
   ...props
 }: ButtonLinkProps) {
   return (
-    <Link
-      className={cn(
-        "group inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium transition-colors duration-200",
-        variants[variant],
-        sizes[size],
-        className,
-      )}
-      {...props}
-    >
+    <Link className={cn(buttonClass(variant, size), className)} {...props}>
       {children}
       {withArrow && <ArrowIcon className="group-hover:translate-x-0.5" />}
     </Link>
@@ -61,5 +62,31 @@ export function TextLink({ tone = "dark", className, children, ...props }: TextL
       {children}
       <ArrowIcon className="group-hover:translate-x-0.5" />
     </Link>
+  );
+}
+
+export function Spinner() {
+  return (
+    <svg viewBox="0 0 16 16" aria-hidden="true" className="size-4 animate-spin">
+      <circle cx="8" cy="8" r="6.5" fill="none" stroke="currentColor" strokeOpacity="0.3" strokeWidth="1.5" />
+      <path d="M14.5 8A6.5 6.5 0 0 0 8 1.5" fill="none" stroke="currentColor" strokeWidth="1.5" />
+    </svg>
+  );
+}
+
+interface SubmitButtonProps {
+  pending: boolean;
+  label: string;
+  pendingLabel: string;
+  className?: string;
+}
+
+/** Primary form submit button with a loading state. */
+export function SubmitButton({ pending, label, pendingLabel, className }: SubmitButtonProps) {
+  return (
+    <button type="submit" disabled={pending} className={cn(buttonClass(), className)}>
+      {pending && <Spinner />}
+      {pending ? pendingLabel : label}
+    </button>
   );
 }

@@ -12,8 +12,8 @@ export function HomeFaq() {
       <Container className="grid gap-10 lg:grid-cols-12 lg:gap-16">
         <SectionIntro
           id="faq"
-          eyebrow="Questions"
-          title="Answers before you ask."
+          eyebrow="FAQ"
+          title="Frequently asked questions"
           lead="The questions business owners ask us most often. Anything else, just ask on a call."
           className="lg:col-span-4"
         />

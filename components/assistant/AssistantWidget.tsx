@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useEffect, useId, useRef, useState, type FormEvent, type ReactNode } from "react";
 import { assistantLimits, suggestedQuestions } from "@/lib/assistant";
+import { buttonClass } from "@/components/ui/Button";
 import { cn } from "@/lib/cn";
 
 interface ChatMessage {
@@ -141,7 +142,7 @@ export function AssistantWidget({ linkablePaths, bookingHref }: AssistantWidgetP
         aria-expanded={open}
         aria-controls={panelId}
         onClick={() => setOpen((value) => !value)}
-        className="fixed right-4 bottom-4 z-30 inline-flex h-12 items-center gap-2 rounded-full bg-ink px-5 text-sm font-medium text-paper shadow-lg transition-colors hover:bg-ink/85 sm:right-6 sm:bottom-6"
+        className="fixed right-4 bottom-4 z-30 inline-flex h-11 items-center gap-2 rounded-md bg-ink px-4 text-sm font-medium text-paper shadow-md transition-colors hover:bg-ink/85 sm:right-6 sm:bottom-6"
       >
         <svg viewBox="0 0 20 20" aria-hidden="true" className="size-4">
           {open ? (
@@ -163,7 +164,7 @@ export function AssistantWidget({ linkablePaths, bookingHref }: AssistantWidgetP
         role="dialog"
         aria-labelledby={titleId}
         hidden={!open}
-        className="fixed inset-x-4 bottom-20 z-30 flex h-136 max-h-[calc(100dvh-7rem)] flex-col overflow-hidden rounded-lg border border-line bg-paper shadow-xl sm:inset-x-auto sm:right-6 sm:bottom-22 sm:w-96"
+        className="fixed inset-x-4 bottom-20 z-30 flex h-136 max-h-[calc(100dvh-7rem)] flex-col overflow-hidden rounded-lg border border-line bg-paper shadow-lg sm:inset-x-auto sm:right-6 sm:bottom-22 sm:w-96"
       >
         <div className="border-b border-line px-5 py-4">
           <h2 id={titleId} className="text-base font-semibold">
@@ -239,12 +240,12 @@ export function AssistantWidget({ linkablePaths, bookingHref }: AssistantWidgetP
                   }
                 }}
                 placeholder="Type your question"
-                className="max-h-32 min-h-11 flex-1 resize-none rounded-md border border-line-strong px-3 py-2.5 text-base text-ink focus:border-ink focus:outline-none sm:text-sm"
+                className="max-h-32 min-h-10 flex-1 resize-none rounded-md border border-line-strong px-3 py-2 text-base text-ink focus:border-ink focus:outline-none sm:text-sm"
               />
               <button
                 type="submit"
                 disabled={busy || !draft.trim()}
-                className="h-11 shrink-0 rounded-md bg-ink px-4 text-sm font-medium text-paper transition-colors hover:bg-ink/85 disabled:cursor-not-allowed disabled:bg-ink/40"
+                className={cn(buttonClass("primary", "sm"), "shrink-0")}
               >
                 Send
               </button>

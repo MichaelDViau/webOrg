@@ -36,7 +36,7 @@ export function AiAutomation() {
       <Container>
         <SectionIntro
           eyebrow="AI & Automation"
-          title="Automate the routine. Use AI where it clearly helps."
+          title="Automation and AI that save your team real time."
           lead="We start with the task, not the technology. If a process is predictable, we automate it. If it involves judgment across large amounts of text, AI may help. Often the answer is a combination of both."
         />
 

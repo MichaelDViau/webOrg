@@ -62,7 +62,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
               </ol>
             </nav>
 
-            <h1 className="mt-6 max-w-4xl text-4xl font-semibold tracking-tighter sm:text-5xl lg:text-6xl">
+            <h1 className="mt-6 max-w-4xl text-title">
               {project.title}
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-relaxed sm:text-xl">{project.summary}</p>
@@ -127,7 +127,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
               {project.results.map((result) => (
                 <div key={result.label} data-reveal>
                   <dt className="text-sm text-muted">{result.label}</dt>
-                  <dd className="mt-2 text-4xl font-semibold tracking-tight text-ink tabular-nums sm:text-5xl">
+                  <dd className="mt-2 text-3xl font-semibold tracking-tight text-ink tabular-nums sm:text-4xl">
                     {result.value}
                   </dd>
                 </div>
@@ -137,11 +137,11 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
             <div className="mt-20 grid gap-16 lg:grid-cols-12">
               <div className="space-y-16 lg:col-span-7">
                 <section data-reveal>
-                  <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">The challenge</h2>
+                  <h2 className="text-subheading">The challenge</h2>
                   <p className="mt-6 text-lg leading-relaxed">{project.challenge}</p>
                 </section>
                 <section data-reveal>
-                  <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">What we did</h2>
+                  <h2 className="text-subheading">What we did</h2>
                   <div className="mt-6 space-y-6 text-lg leading-relaxed">
                     {project.approach.map((paragraph) => (
                       <p key={paragraph}>{paragraph}</p>
@@ -149,7 +149,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
                   </div>
                 </section>
                 <section data-reveal>
-                  <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">The outcome</h2>
+                  <h2 className="text-subheading">The outcome</h2>
                   <p className="mt-6 text-lg leading-relaxed">{project.outcome}</p>
                 </section>
               </div>

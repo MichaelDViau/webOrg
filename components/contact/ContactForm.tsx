@@ -19,6 +19,7 @@ import {
 } from "@/lib/contact";
 import type { ServiceSlug } from "@/lib/services";
 import { site } from "@/lib/site";
+import { SubmitButton } from "@/components/ui/Button";
 import { describedBy, Field, inputClass } from "./Field";
 
 const initialState: ContactState = { status: "idle" };
@@ -238,19 +239,7 @@ export function ContactForm() {
             Privacy policy
           </Link>
         </p>
-        <button
-          type="submit"
-          disabled={pending}
-          className="inline-flex h-12 shrink-0 items-center justify-center gap-2 rounded-md bg-ink px-6 text-sm font-medium text-paper transition-colors duration-200 hover:bg-ink/85 disabled:cursor-not-allowed disabled:bg-ink/60"
-        >
-          {pending && (
-            <svg viewBox="0 0 16 16" aria-hidden="true" className="size-4 animate-spin">
-              <circle cx="8" cy="8" r="6.5" fill="none" stroke="currentColor" strokeOpacity="0.3" strokeWidth="1.5" />
-              <path d="M14.5 8A6.5 6.5 0 0 0 8 1.5" fill="none" stroke="currentColor" strokeWidth="1.5" />
-            </svg>
-          )}
-          {pending ? "Sending…" : "Send request"}
-        </button>
+        <SubmitButton pending={pending} label="Send request" pendingLabel="Sending…" className="shrink-0" />
       </div>
       <p aria-live="polite" className="sr-only">
         {pending ? "Sending your request." : ""}

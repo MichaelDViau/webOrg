@@ -33,10 +33,10 @@ export default function ServicesPage() {
                   href={`/services/${service.slug}`}
                   className="group grid gap-4 py-10 sm:py-12 lg:grid-cols-12 lg:gap-16"
                 >
-                  <span className="font-mono text-sm text-muted lg:col-span-1 lg:pt-2">
+                  <span className="text-sm text-muted tabular-nums lg:col-span-1 lg:pt-2">
                     {String(index + 1).padStart(2, "0")}
                   </span>
-                  <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl lg:col-span-4">{service.name}</h2>
+                  <h2 className="text-subheading lg:col-span-4">{service.name}</h2>
                   <span className="lg:col-span-6">
                     <span className="block text-lg leading-relaxed">{service.summary}</span>
                     <span className="mt-3 block text-sm text-muted">

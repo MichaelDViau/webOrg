@@ -12,8 +12,8 @@ export function WaysToWork() {
         <SectionIntro
           id="ways-to-work"
           eyebrow="Ways to work with us"
-          title="Start small. Grow when it makes sense."
-          lead="Most clients begin with a free conversation. There's no pressure and no long contract to sign before you know us."
+          title="Most clients start with a free conversation."
+          lead="There's no pressure and no long contract to sign before you know us. Choose the level of involvement that fits your project."
         />
 
         <div className="mt-14 grid border-y border-line sm:mt-16 lg:grid-cols-3">

@@ -48,13 +48,13 @@ export function Optimization() {
               <tbody className="divide-y divide-line">
                 {metrics.map((metric) => (
                   <tr key={metric.name}>
-                    <th scope="row" className="px-4 py-4 sm:py-5 font-normal text-ink sm:px-6">
+                    <th scope="row" className="px-4 py-4 font-normal sm:py-5 text-ink sm:px-6">
                       {metric.name}
                     </th>
-                    <td className="px-4 py-4 sm:py-5 text-right font-mono text-sm whitespace-nowrap text-muted tabular-nums sm:px-6">
+                    <td className="px-4 py-4 text-right sm:py-5 text-sm whitespace-nowrap text-muted tabular-nums sm:px-6">
                       {metric.before}
                     </td>
-                    <td className="px-4 py-4 sm:py-5 text-right font-mono text-sm font-medium whitespace-nowrap text-accent tabular-nums sm:px-6">
+                    <td className="px-4 py-4 text-right sm:py-5 text-sm font-medium whitespace-nowrap text-accent tabular-nums sm:px-6">
                       {metric.after}
                     </td>
                   </tr>

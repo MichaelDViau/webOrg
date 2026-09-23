@@ -13,7 +13,7 @@ export function WhatWeDo() {
           <SectionIntro
             eyebrow="What we do"
             id="what-we-do"
-            title="Six disciplines, one accountable team."
+            title="One team for your website, software and AI."
             lead="Most clients come to us for one thing and stay for several. Design, engineering, AI and performance work all sit with the same team, so nothing gets lost between vendors."
           />
         </div>
@@ -25,7 +25,7 @@ export function WhatWeDo() {
                 href={`/services/${service.slug}`}
                 className="group grid grid-cols-12 items-baseline gap-4 py-6 sm:py-7"
               >
-                <span className="col-span-2 font-mono text-sm text-muted sm:col-span-1">
+                <span className="col-span-2 text-sm text-muted tabular-nums sm:col-span-1">
                   {String(index + 1).padStart(2, "0")}
                 </span>
                 <span className="col-span-10 sm:col-span-10">

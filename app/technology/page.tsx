@@ -57,7 +57,7 @@ export default function TechnologyPage() {
       <Section tone="canvas">
         <Container>
           <div className="max-w-3xl">
-            <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl" data-reveal>
+            <h2 className="text-subheading" data-reveal>
             Not sure which of these you need?
           </h2>
           <p className="mt-4 text-lg leading-relaxed" data-reveal>

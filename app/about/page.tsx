@@ -35,7 +35,7 @@ export default function AboutPage() {
               >
                 <p className="text-sm font-medium text-muted lg:col-span-3 lg:pt-2">{belief.topic}</p>
                 <div className="lg:col-span-8">
-                  <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">{belief.title}</h2>
+                  <h2 className="text-subheading">{belief.title}</h2>
                   <p className="mt-4 max-w-2xl text-lg leading-relaxed">{belief.detail}</p>
                 </div>
               </section>
@@ -47,7 +47,7 @@ export default function AboutPage() {
       {/* How we work */}
       <Section tone="night">
         <Container className="grid gap-10 lg:grid-cols-12 lg:gap-16">
-          <h2 className="text-3xl font-semibold tracking-tight text-paper sm:text-4xl lg:col-span-4" data-reveal>
+          <h2 className="text-heading text-paper lg:col-span-4" data-reveal>
             How we work with clients
           </h2>
           <FeatureList items={principles} tone="dark" className="lg:col-span-8" />

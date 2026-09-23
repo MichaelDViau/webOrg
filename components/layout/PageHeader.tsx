@@ -21,7 +21,7 @@ export function PageHeader({ eyebrow, title, lead, eyebrowIsHeading = false, chi
     <section className="border-b border-line pt-14 pb-14 sm:pt-24 sm:pb-20 lg:pt-28">
       <Container>
         <Eyebrow className="text-sm font-medium text-muted">{eyebrow}</Eyebrow>
-        <Title className="mt-4 max-w-4xl text-4xl font-semibold tracking-tighter text-balance text-ink sm:text-5xl lg:text-6xl">
+        <Title className="mt-4 max-w-4xl text-title text-balance text-ink">
           {title}
         </Title>
         {lead && <p className="mt-6 max-w-2xl text-lg leading-relaxed text-pretty sm:text-xl">{lead}</p>}

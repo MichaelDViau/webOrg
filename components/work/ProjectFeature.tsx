@@ -21,7 +21,7 @@ export function ProjectFeature({ project, reverse = false, headingLevel: Heading
         tabIndex={-1}
         aria-hidden="true"
         className={cn(
-          "group block overflow-hidden rounded-lg border border-line bg-canvas lg:col-span-7",
+          "block overflow-hidden rounded-lg border border-line bg-canvas lg:col-span-7",
           reverse && "lg:order-2",
         )}
       >
@@ -31,7 +31,7 @@ export function ProjectFeature({ project, reverse = false, headingLevel: Heading
           width={project.image.width}
           height={project.image.height}
           sizes="(min-width: 1280px) 700px, (min-width: 1024px) 56vw, calc(100vw - 40px)"
-          className="h-auto w-full transition-transform duration-500 ease-out-soft group-hover:scale-101"
+          className="h-auto w-full"
         />
       </Link>
 
@@ -39,7 +39,7 @@ export function ProjectFeature({ project, reverse = false, headingLevel: Heading
         <p className="text-sm text-muted">
           {project.client} · {project.type}
         </p>
-        <Heading className="mt-3 text-2xl font-semibold tracking-tight sm:text-3xl">
+        <Heading className="mt-3 text-subheading">
           <Link href={href} className="hover:underline hover:underline-offset-4">
             {project.title}
           </Link>

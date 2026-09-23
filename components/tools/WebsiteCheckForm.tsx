@@ -3,7 +3,7 @@
 import { useActionState, useEffect, useRef } from "react";
 import { runWebsiteCheck, type WebsiteCheckState } from "@/app/website-check/actions";
 import { inputClass } from "@/components/contact/Field";
-import { ButtonLink } from "@/components/ui/Button";
+import { ButtonLink, SubmitButton } from "@/components/ui/Button";
 import { cn } from "@/lib/cn";
 import { ScoreRing } from "./ScoreRing";
 
@@ -61,19 +61,7 @@ export function WebsiteCheckForm() {
             className={cn(inputClass, "mt-2")}
           />
         </div>
-        <button
-          type="submit"
-          disabled={pending}
-          className="inline-flex h-12 items-center justify-center gap-2 rounded-md bg-ink px-6 text-sm font-medium text-paper transition-colors hover:bg-ink/85 disabled:cursor-not-allowed disabled:bg-ink/60 lg:col-span-2"
-        >
-          {pending && (
-            <svg viewBox="0 0 16 16" aria-hidden="true" className="size-4 animate-spin">
-              <circle cx="8" cy="8" r="6.5" fill="none" stroke="currentColor" strokeOpacity="0.3" strokeWidth="1.5" />
-              <path d="M14.5 8A6.5 6.5 0 0 0 8 1.5" fill="none" stroke="currentColor" strokeWidth="1.5" />
-            </svg>
-          )}
-          {pending ? "Checking…" : "Run free check"}
-        </button>
+        <SubmitButton pending={pending} label="Run free check" pendingLabel="Checking…" className="lg:col-span-2" />
         <p id="check-email-hint" className="text-sm text-muted lg:col-span-12">
           Add your email if you&apos;d like us to follow up with a personal review. We&apos;ll only use it for that.
         </p>

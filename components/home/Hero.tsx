@@ -10,7 +10,7 @@ export function Hero() {
     <section className="overflow-hidden pt-16 sm:pt-24 lg:pt-28">
       <Container>
         <div className="max-w-4xl">
-          <h1 className="text-5xl font-semibold tracking-tighter sm:text-6xl lg:text-7xl">
+          <h1 className="text-display">
             We build the software your business runs on.
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-pretty sm:text-xl">
@@ -25,12 +25,12 @@ export function Hero() {
               Explore Our Services
             </ButtonLink>
           </div>
-          <ul aria-label="Our commitments" className="mt-8 grid gap-x-8 gap-y-2 text-sm text-muted sm:flex sm:flex-wrap">
+          <ul
+            aria-label="Our commitments"
+            className="mt-8 grid grid-cols-2 gap-x-6 gap-y-2 text-sm text-muted sm:flex sm:flex-wrap sm:gap-x-0"
+          >
             {promises.map((promise) => (
-              <li key={promise} className="flex items-center gap-2">
-                <svg viewBox="0 0 16 16" aria-hidden="true" className="size-3.5 shrink-0 text-accent">
-                  <path d="M2.5 8.5l3.5 3.5 7.5-8" fill="none" stroke="currentColor" strokeWidth="1.75" />
-                </svg>
+              <li key={promise} className="sm:border-l sm:border-line sm:px-4 sm:first:border-l-0 sm:first:pl-0">
                 {promise}
               </li>
             ))}

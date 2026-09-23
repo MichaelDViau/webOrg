@@ -7,22 +7,19 @@ interface TechListProps {
   className?: string;
 }
 
-/** Wrapping list of technology names shown as small outlined tags. */
+/** Technology names laid out as a plain multi-column list, like a spec sheet. */
 export function TechList({ tools, label, tone = "light", className }: TechListProps) {
-  const dark = tone === "dark";
-
   return (
-    <ul aria-label={label} className={cn("flex flex-wrap content-start gap-2", className)}>
+    <ul
+      aria-label={label}
+      className={cn(
+        "grid content-start grid-cols-2 gap-x-6 gap-y-2 text-sm sm:grid-cols-3",
+        tone === "dark" ? "text-paper/90" : "text-ink",
+        className,
+      )}
+    >
       {tools.map((tool) => (
-        <li
-          key={tool}
-          className={cn(
-            "rounded-md border px-3 py-1.5 text-sm",
-            dark ? "border-night-line text-paper/90" : "border-line-strong bg-paper text-ink",
-          )}
-        >
-          {tool}
-        </li>
+        <li key={tool}>{tool}</li>
       ))}
     </ul>
   );

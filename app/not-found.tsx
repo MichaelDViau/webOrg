@@ -11,8 +11,8 @@ export default function NotFound() {
   return (
     <section className="py-32 sm:py-40">
       <Container>
-        <p className="font-mono text-sm text-muted">404</p>
-        <h1 className="mt-4 text-4xl font-semibold tracking-tighter sm:text-5xl">This page doesn&apos;t exist.</h1>
+        <p className="text-sm text-muted tabular-nums">404</p>
+        <h1 className="mt-4 text-title">This page doesn&apos;t exist.</h1>
         <p className="mt-6 max-w-lg text-lg leading-relaxed">
           The link may be out of date, or the page may have moved.
         </p>

@@ -8,8 +8,8 @@ const tones = {
 } as const;
 
 const spacing = {
-  top: "pt-16 sm:pt-28 lg:pt-32",
-  bottom: "pb-16 sm:pb-28 lg:pb-32",
+  top: "pt-16 sm:pt-24 lg:pt-28",
+  bottom: "pb-16 sm:pb-24 lg:pb-28",
   compact: "py-12 sm:py-16",
 } as const;
 

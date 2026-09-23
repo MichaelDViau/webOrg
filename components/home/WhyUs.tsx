@@ -11,7 +11,7 @@ export function WhyUs() {
           Why work with us
         </p>
         <h2
-          className="mt-6 max-w-5xl text-3xl font-semibold tracking-tight text-paper sm:text-4xl lg:text-5xl"
+          className="mt-6 max-w-5xl text-heading text-paper"
           data-reveal
         >
           We don&apos;t build technology simply because we can. We build it because it solves a problem.

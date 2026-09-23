@@ -68,11 +68,11 @@ export default async function ServicePage({ params }: ServicePageProps) {
       {/* Plain-language summary and the technology behind it */}
       <Section tone="canvas" padding="compact">
         <Container className="grid gap-10 py-4 lg:grid-cols-12 lg:gap-16">
-          <div className="lg:col-span-5" data-reveal>
+          <div className="lg:col-span-5">
             <h2 className="text-sm font-medium text-muted">In plain terms</h2>
             <p className="mt-3 text-xl leading-relaxed text-ink sm:text-2xl">{service.plain}</p>
           </div>
-          <div className="lg:col-span-7" data-reveal>
+          <div className="lg:col-span-7">
             <h2 className="text-sm font-medium text-muted">Technology we use</h2>
             <TechList tools={service.stack} label={`${service.name} technologies`} className="mt-4" />
           </div>
@@ -82,7 +82,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
       {/* Scope */}
       <Section>
         <Container className="grid gap-10 lg:grid-cols-12 lg:gap-16">
-          <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl lg:col-span-4" data-reveal>
+          <h2 className="text-heading lg:col-span-4" data-reveal>
             What&apos;s included
           </h2>
           <FeatureList items={service.included} className="lg:col-span-8" />
@@ -93,7 +93,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
       <Section tone="canvas">
         <Container className="grid gap-12 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-7" data-reveal>
-            <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">How we approach it</h2>
+            <h2 className="text-heading">How we approach it</h2>
             <div className="mt-8 space-y-6 text-lg leading-relaxed">
               {service.approach.map((paragraph) => (
                 <p key={paragraph}>{paragraph}</p>
@@ -125,7 +125,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
 
       <Section tone={related ? "canvas" : "paper"}>
         <Container className="grid gap-10 lg:grid-cols-12 lg:gap-16">
-          <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl lg:col-span-4">Common questions</h2>
+          <h2 className="text-heading lg:col-span-4">Common questions</h2>
           <FaqList faqs={service.faqs} className="lg:col-span-8" />
         </Container>
       </Section>

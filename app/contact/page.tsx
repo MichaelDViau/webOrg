@@ -25,7 +25,7 @@ export default function ContactPage() {
       <Container className="grid gap-12 lg:grid-cols-12 lg:grid-rows-[auto_1fr] lg:gap-x-16 lg:gap-y-12">
         <div className="lg:col-span-5">
           <p className="text-sm font-medium text-muted">Contact</p>
-          <h1 className="mt-4 text-4xl font-semibold tracking-tighter sm:text-5xl lg:text-6xl">Start a project</h1>
+          <h1 className="mt-4 text-title">Start a project</h1>
           <p className="mt-6 max-w-md text-lg leading-relaxed">
             Tell us about the problem you&apos;re trying to solve. A rough idea is enough, and we&apos;ll help you
             shape the details. The first consultation is free, with no obligation.
@@ -43,7 +43,7 @@ export default function ContactPage() {
           <ol className="mt-4 divide-y divide-line border-y border-line">
             {nextSteps.map((step, index) => (
               <li key={step} className="flex gap-4 py-4 leading-relaxed">
-                <span className="font-mono text-sm text-muted">{index + 1}</span>
+                <span className="text-sm text-muted tabular-nums">{index + 1}</span>
                 <span>{step}</span>
               </li>
             ))}
