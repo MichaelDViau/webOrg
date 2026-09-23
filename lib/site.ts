@@ -1,9 +1,9 @@
 export const site = {
-  name: "Michael De Lagrave Viau",
-  legalName: "Michael De Lagrave Viau",
+  name: "Michael",
+  legalName: "Michael",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.example.com",
   description:
-    "Michael De Lagrave Viau designs and builds websites, web applications, AI and automation systems for businesses that depend on their software working well.",
+    "Michael designs and builds websites, web applications, AI and automation systems for businesses that depend on their software working well.",
   email: "hello@example.com",
   phone: "+1 (512) 555-0147",
   location: "Austin, Texas",

@@ -1,6 +1,6 @@
-# Michael De Lagrave Viau website
+# Michael website
 
-Marketing site for Michael De Lagrave Viau, built with Next.js (App Router), TypeScript and Tailwind CSS v4. Every page is statically generated; the only client-side JavaScript is the mobile navigation and the contact form.
+Marketing site for Michael, built with Next.js (App Router), TypeScript and Tailwind CSS v4. Every page is statically generated; the only client-side JavaScript is the mobile navigation and the contact form.
 
 ## Getting started
 
@@ -26,7 +26,7 @@ In development, contact form submissions are printed to the server console when 
 | `NEXT_PUBLIC_SITE_URL` | Yes        | Canonical site URL used for metadata, sitemap and schema.org. |
 | `RESEND_API_KEY`       | Production | API key for [Resend](https://resend.com), used by the form.   |
 | `CONTACT_TO_EMAIL`     | Production | Inbox that receives project requests.                         |
-| `CONTACT_FROM_EMAIL`   | Production | Verified sender, e.g. `Michael De Lagrave Viau <website@example.com>`.   |
+| `CONTACT_FROM_EMAIL`   | Production | Verified sender, e.g. `Michael <website@example.com>`.   |
 
 Secrets are only read on the server (`app/contact/actions.ts`) and are never exposed to the browser.
 
