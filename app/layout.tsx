@@ -7,6 +7,7 @@ import { JsonLd } from "@/components/JsonLd";
 import { AssistantWidget } from "@/components/assistant/AssistantWidget";
 import { services } from "@/lib/services";
 import { organizationSchema } from "@/lib/structured-data";
+import { themeScript } from "@/lib/theme";
 import { bookingHref, mainNav, site } from "@/lib/site";
 import "./globals.css";
 
@@ -43,7 +44,11 @@ const assistantLinks = [
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en" className={GeistSans.variable}>
+    // The theme script may set data-theme before hydration, hence suppressHydrationWarning.
+    <html lang="en" className={GeistSans.variable} suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+      </head>
       <body>
         <a
           href="#main"

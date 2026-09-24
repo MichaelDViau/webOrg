@@ -8,6 +8,7 @@ import { Container } from "@/components/ui/Container";
 import { cn } from "@/lib/cn";
 import { mainNav } from "@/lib/site";
 import { Logo } from "./Logo";
+import { ThemeToggle } from "./ThemeToggle";
 
 function isActive(pathname: string, href: string) {
   return pathname === href || pathname.startsWith(`${href}/`);
@@ -56,6 +57,7 @@ export function Header() {
         </nav>
 
         <div className="flex items-center gap-2">
+          <ThemeToggle />
           <div className="hidden sm:block">
             <ButtonLink href="/contact" size="sm">
               Contact Us

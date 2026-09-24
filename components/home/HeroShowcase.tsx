@@ -97,7 +97,7 @@ export function HeroShowcase({ items, initialIndex = 0 }: HeroShowcaseProps) {
             href={current.href}
             className="group inline-flex min-h-11 items-center gap-1.5 font-medium text-ink hover:underline hover:underline-offset-4"
           >
-            See how we did it<span className="sr-only">: {current.caption}</span>
+            {current.linkLabel}<span className="sr-only">: {current.caption}</span>
             <ArrowIcon className="group-hover:translate-x-0.5" />
           </Link>
         </figcaption>

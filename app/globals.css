@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+/* Dark theme is opt-in: the header toggle sets data-theme="dark" on <html>. */
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
 /* Design tokens: fonts, colors and easing used across the site. */
 @theme {
   --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
@@ -30,6 +33,43 @@
   --color-danger: #b42318;
 
   --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/*
+ * Dark theme: the same tokens with plain, slate-tinted neutrals, so every
+ * component switches without its own dark styles. Ink and paper swap, which
+ * keeps primary buttons and the hero blocks as high-contrast inversions.
+ */
+[data-theme="dark"] {
+  color-scheme: dark;
+
+  --color-paper: #121719;
+  --color-canvas: #181f22;
+  --color-ink: #eceff0;
+  --color-body: #c2c9cc;
+  --color-muted: #8f9a9f;
+  --color-line: #263034;
+  --color-line-strong: #36434a;
+  --color-night: #0b0f11;
+  --color-night-line: #222b2f;
+  --color-night-muted: #a3adb2;
+
+  --color-accent: #7f98a4;
+  --color-accent-strong: #9fb2bb;
+  --color-accent-light: #b4c3ca;
+
+  --color-success: #5cb48c;
+  --color-warn: #e0925a;
+  --color-danger: #ea7b70;
+}
+
+/*
+ * Night sections are dark in both themes, so inside them paper and ink keep
+ * their light-theme values (light headings, light inverse buttons).
+ */
+[data-theme="dark"] .bg-night {
+  --color-paper: #ffffff;
+  --color-ink: #172125;
 }
 
 /* Base element styles. */
