@@ -37,7 +37,7 @@ export function Hero() {
           </p>
           <div className="mt-10 flex flex-col gap-3 sm:flex-row">
             <ButtonLink href="/contact" withArrow>
-              Start a Project
+              Contact Us
             </ButtonLink>
             <ButtonLink href="/services" variant="secondary">
               Explore Our Services

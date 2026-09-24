@@ -58,7 +58,7 @@ export function Header() {
         <div className="flex items-center gap-2">
           <div className="hidden sm:block">
             <ButtonLink href="/contact" size="sm">
-              Start a Project
+              Contact Us
             </ButtonLink>
           </div>
           <button
@@ -112,7 +112,7 @@ export function Header() {
             </ul>
           </nav>
           <ButtonLink href="/contact" withArrow className="mt-8" onClick={() => setOpen(false)}>
-            Start a Project
+            Contact Us
           </ButtonLink>
         </Container>
       </div>

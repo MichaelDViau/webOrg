@@ -51,7 +51,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
       <PageHeader eyebrow={service.name} eyebrowIsHeading title={service.headline} lead={service.intro}>
         <div className="mt-10 flex flex-col gap-3 sm:flex-row">
           <ButtonLink href={`/contact?service=${service.slug}`} withArrow>
-            Start a Project
+            Contact Us
           </ButtonLink>
           {offersWebsiteCheck ? (
             <ButtonLink href="/website-check" variant="secondary">

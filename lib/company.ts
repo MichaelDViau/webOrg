@@ -146,7 +146,7 @@ export const engagementModels: EngagementModel[] = [
     title: "Fixed-scope project",
     summary: "A website, application, AI or automation project with an agreed scope, timeline and price for each phase.",
     points: ["Written proposal before work starts", "Progress you can see every two weeks", "Launch, training and handover included"],
-    cta: "Start a project",
+    cta: "Contact us",
     href: "/contact",
   },
   {
