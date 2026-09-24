@@ -37,5 +37,7 @@ export const mainNav: NavItem[] = [
   { label: "Technology", href: "/technology" },
   { label: "Work", href: "/work" },
   { label: "About", href: "/about" },
-  { label: "Contact", href: "/contact" },
 ];
+
+/** Contact is reached through the header's "Contact Us" button rather than the main navigation. */
+export const contactNavItem: NavItem = { label: "Contact", href: "/contact" };
