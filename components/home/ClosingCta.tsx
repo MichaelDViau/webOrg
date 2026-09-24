@@ -22,7 +22,7 @@ export function ClosingCta({
           </div>
           <div className="flex flex-col gap-6 lg:col-span-5 lg:items-start lg:justify-end">
             <ButtonLink href="/contact" withArrow>
-              Start a Project
+              Contact Us
             </ButtonLink>
             <p className="text-sm text-muted">
               Or email{" "}

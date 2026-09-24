@@ -6,7 +6,7 @@ import { ButtonLink } from "@/components/ui/Button";
 import { bookingUrl, phoneHref, site } from "@/lib/site";
 
 export const metadata: Metadata = pageMetadata({
-  title: "Contact Us and Start a Project",
+  title: "Contact Us",
   description:
     "Tell us about your website, web application, AI or automation project. We reply to every request within one business day.",
   path: "/contact",
@@ -25,7 +25,7 @@ export default function ContactPage() {
       <Container className="grid gap-12 lg:grid-cols-12 lg:grid-rows-[auto_1fr] lg:gap-x-16 lg:gap-y-12">
         <div className="lg:col-span-5">
           <p className="text-sm font-medium text-accent-strong">Contact</p>
-          <h1 className="mt-4 text-title">Start a project</h1>
+          <h1 className="mt-4 text-title">Contact us</h1>
           <p className="mt-6 max-w-md text-lg leading-relaxed">
             Tell us about the problem you&apos;re trying to solve. A rough idea is enough, and we&apos;ll help you
             shape the details. The first consultation is free, with no obligation.
