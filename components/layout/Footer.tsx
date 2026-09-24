@@ -1,25 +1,29 @@
-import Link from "next/link";
+import Link from "@/components/i18n/Link";
 import { Container } from "@/components/ui/Container";
-import { services } from "@/lib/services";
+import { format } from "@/lib/i18n/format";
+import { getContent } from "@/lib/i18n/server";
 import { contactNavItem, location, mainNav, phoneHref, site } from "@/lib/site";
 import { Logo } from "./Logo";
 
 const linkClass = "inline-block py-1 text-sm text-muted transition-colors hover:text-ink";
 
-export function Footer() {
+export async function Footer() {
+  const { ui, services } = await getContent();
+  const t = ui.footer;
+
   return (
     <footer className="border-t border-line bg-canvas">
       <Container className="py-14 sm:py-20">
         <div className="grid grid-cols-2 gap-x-6 gap-y-10 lg:grid-cols-12 lg:gap-12">
           <div className="col-span-2 lg:col-span-4">
-            <Logo />
+            <Logo label={format(ui.logoLabel, { name: site.name })} />
             <p className="mt-5 max-w-xs text-sm leading-relaxed text-muted">
-              Websites, web applications, AI and automation for businesses of every size.
+              {t.tagline}
             </p>
           </div>
 
-          <nav aria-label="Services" className="lg:col-span-3">
-            <h2 className="text-sm font-medium text-ink">Services</h2>
+          <nav aria-label={t.services} className="lg:col-span-3">
+            <h2 className="text-sm font-medium text-ink">{t.services}</h2>
             <ul className="mt-3 space-y-1">
               {services.map((service) => (
                 <li key={service.slug}>
@@ -31,10 +35,13 @@ export function Footer() {
             </ul>
           </nav>
 
-          <nav aria-label="Company" className="lg:col-span-2">
-            <h2 className="text-sm font-medium text-ink">Company</h2>
+          <nav aria-label={t.company} className="lg:col-span-2">
+            <h2 className="text-sm font-medium text-ink">{t.company}</h2>
             <ul className="mt-3 space-y-1">
-              {[...mainNav, contactNavItem, { label: "Free website check", href: "/website-check" }].map((item) => (
+              {[
+                ...[...mainNav, contactNavItem].map((item) => ({ href: item.href, label: ui.nav[item.key] })),
+                { label: t.websiteCheck, href: "/website-check" },
+              ].map((item) => (
                 <li key={item.href}>
                   <Link href={item.href} className={linkClass}>
                     {item.label}
@@ -45,7 +52,7 @@ export function Footer() {
           </nav>
 
           <div className="col-span-2 lg:col-span-3">
-            <h2 className="text-sm font-medium text-ink">Contact</h2>
+            <h2 className="text-sm font-medium text-ink">{t.contact}</h2>
             <address className="mt-3 space-y-1 text-sm not-italic text-muted">
               <p>
                 <a href={`mailto:${site.email}`} className={linkClass}>
@@ -64,10 +71,10 @@ export function Footer() {
 
         <div className="mt-14 flex flex-col gap-3 border-t border-line pt-8 text-sm text-muted sm:flex-row sm:items-center sm:justify-between">
           <p>
-            © {new Date().getFullYear()} {site.legalName}. All rights reserved.
+            © {new Date().getFullYear()} {site.legalName}. {t.rights}
           </p>
           <Link href="/privacy" className={linkClass}>
-            Privacy Policy
+            {t.privacy}
           </Link>
         </div>
       </Container>

@@ -1,9 +1,9 @@
 import Image from "next/image";
-import Link from "next/link";
+import Link from "@/components/i18n/Link";
 import { ArrowIcon } from "@/components/ui/ArrowIcon";
 import { cn } from "@/lib/cn";
 import type { Project } from "@/lib/projects";
-import { getService } from "@/lib/services";
+import { getContent } from "@/lib/i18n/server";
 
 interface ProjectFeatureProps {
   project: Project;
@@ -11,7 +11,8 @@ interface ProjectFeatureProps {
   headingLevel?: "h2" | "h3";
 }
 
-export function ProjectFeature({ project, reverse = false, headingLevel: Heading = "h3" }: ProjectFeatureProps) {
+export async function ProjectFeature({ project, reverse = false, headingLevel: Heading = "h3" }: ProjectFeatureProps) {
+  const { ui, services } = await getContent();
   const href = `/work/${project.slug}`;
 
   return (
@@ -59,11 +60,11 @@ export function ProjectFeature({ project, reverse = false, headingLevel: Heading
         </dl>
 
         <p className="mt-6 text-sm text-muted">
-          <span className="sr-only">Services: </span>
-          {project.services.map((slug) => getService(slug)?.name).join(" · ")}
+          <span className="sr-only">{ui.projectFeature.services}</span>
+          {project.services.map((slug) => services.find((service) => service.slug === slug)?.name).join(" · ")}
         </p>
         <p className="mt-2 text-sm text-muted">
-          <span className="sr-only">Technologies: </span>
+          <span className="sr-only">{ui.projectFeature.technologies}</span>
           {project.stack.join(", ")}
         </p>
 

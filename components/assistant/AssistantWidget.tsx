@@ -1,8 +1,10 @@
 "use client";
 
-import Link from "next/link";
+import Link from "@/components/i18n/Link";
 import { useEffect, useId, useRef, useState, type FormEvent, type ReactNode } from "react";
-import { assistantLimits, suggestedQuestions } from "@/lib/assistant";
+import { assistantLimits } from "@/lib/assistant";
+import type { Ui } from "@/lib/content/en/ui";
+import { useLocale } from "@/components/i18n/Link";
 import { buttonClass } from "@/components/ui/Button";
 import { cn } from "@/lib/cn";
 
@@ -15,10 +17,8 @@ interface AssistantWidgetProps {
   /** Site paths the assistant may mention; these are rendered as links. */
   linkablePaths: string[];
   bookingHref: string;
+  labels: Ui["assistant"];
 }
-
-const GREETING =
-  "Hi! Ask me anything about our websites, web apps, AI and automation work. I can also help you figure out where to start.";
 
 /** Renders assistant text, turning known site paths and email addresses into links. */
 function renderWithLinks(text: string, linkablePaths: string[]): ReactNode[] {
@@ -48,7 +48,8 @@ function renderWithLinks(text: string, linkablePaths: string[]): ReactNode[] {
   return parts;
 }
 
-export function AssistantWidget({ linkablePaths, bookingHref }: AssistantWidgetProps) {
+export function AssistantWidget({ linkablePaths, bookingHref, labels: t }: AssistantWidgetProps) {
+  const locale = useLocale();
   const [open, setOpen] = useState(false);
   const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [draft, setDraft] = useState("");
@@ -105,13 +106,13 @@ export function AssistantWidget({ linkablePaths, bookingHref }: AssistantWidgetP
       const response = await fetch("/api/assistant", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ messages: history }),
+        body: JSON.stringify({ messages: history, locale }),
         signal: controller.signal,
       });
 
       if (!response.ok || !response.body) {
         const data = (await response.json().catch(() => null)) as { error?: string } | null;
-        appendToReply(data?.error ?? "Sorry, I couldn't answer just now. Please try again.");
+        appendToReply(data?.error ?? t.failed);
         return;
       }
 
@@ -123,7 +124,7 @@ export function AssistantWidget({ linkablePaths, bookingHref }: AssistantWidgetP
         appendToReply(decoder.decode(value, { stream: true }));
       }
     } catch {
-      if (!controller.signal.aborted) appendToReply("Sorry, the connection was interrupted. Please try again.");
+      if (!controller.signal.aborted) appendToReply(t.interrupted);
     } finally {
       setBusy(false);
     }
@@ -156,7 +157,7 @@ export function AssistantWidget({ linkablePaths, bookingHref }: AssistantWidgetP
             />
           )}
         </svg>
-        {open ? "Close" : "Ask a question"}
+        {open ? t.close : t.open}
       </button>
 
       <div
@@ -168,19 +169,19 @@ export function AssistantWidget({ linkablePaths, bookingHref }: AssistantWidgetP
       >
         <div className="border-b border-line px-5 py-4">
           <h2 id={titleId} className="text-base font-semibold">
-            Ask us anything
+            {t.title}
           </h2>
           <p className="mt-0.5 text-xs text-muted">
-            AI assistant. Answers can be imperfect, so please don&apos;t share sensitive information.
+            {t.disclaimer}
           </p>
         </div>
 
         <div ref={logRef} role="log" aria-live="polite" className="flex-1 space-y-4 overflow-y-auto px-5 py-4 text-sm">
-          <p className="max-w-[90%] rounded-lg bg-canvas px-3.5 py-2.5 leading-relaxed">{GREETING}</p>
+          <p className="max-w-[90%] rounded-lg bg-canvas px-3.5 py-2.5 leading-relaxed">{t.greeting}</p>
 
           {messages.length === 0 && (
-            <ul aria-label="Suggested questions" className="flex flex-col items-start gap-2">
-              {suggestedQuestions.map((question) => (
+            <ul aria-label={t.suggested} className="flex flex-col items-start gap-2">
+              {t.suggestions.map((question) => (
                 <li key={question}>
                   <button
                     type="button"
@@ -202,11 +203,11 @@ export function AssistantWidget({ linkablePaths, bookingHref }: AssistantWidgetP
                 message.role === "user" ? "ml-auto bg-ink text-paper" : "bg-canvas",
               )}
             >
-              <span className="sr-only">{message.role === "user" ? "You: " : "Assistant: "}</span>
+              <span className="sr-only">{message.role === "user" ? t.you : t.assistant}</span>
               {message.role === "assistant"
                 ? message.content
                   ? renderWithLinks(message.content, linkablePaths)
-                  : <span className="text-muted">Thinking…</span>
+                  : <span className="text-muted">{t.thinking}</span>
                 : message.content}
             </div>
           ))}
@@ -215,16 +216,16 @@ export function AssistantWidget({ linkablePaths, bookingHref }: AssistantWidgetP
         <div className="border-t border-line px-4 py-3">
           {atLimit ? (
             <p className="text-sm leading-relaxed">
-              For anything more, the team will be glad to help.{" "}
+              {t.limit}{" "}
               <Link href={bookingHref} className="font-medium text-ink underline underline-offset-2">
-                Book a free consultation
+                {t.book}
               </Link>
               .
             </p>
           ) : (
             <form onSubmit={handleSubmit} className="flex items-end gap-2">
               <label htmlFor={`${panelId}-input`} className="sr-only">
-                Your question
+                {t.inputLabel}
               </label>
               <textarea
                 id={`${panelId}-input`}
@@ -239,7 +240,7 @@ export function AssistantWidget({ linkablePaths, bookingHref }: AssistantWidgetP
                     void send(draft);
                   }
                 }}
-                placeholder="Type your question"
+                placeholder={t.placeholder}
                 className="max-h-32 min-h-10 flex-1 resize-none rounded-md border border-line-strong px-3 py-2 text-base text-ink focus:border-ink focus:outline-none sm:text-sm"
               />
               <button
@@ -247,7 +248,7 @@ export function AssistantWidget({ linkablePaths, bookingHref }: AssistantWidgetP
                 disabled={busy || !draft.trim()}
                 className={cn(buttonClass("primary", "sm"), "shrink-0")}
               >
-                Send
+                {t.send}
               </button>
             </form>
           )}

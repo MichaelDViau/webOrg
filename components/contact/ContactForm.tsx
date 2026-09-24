@@ -1,8 +1,8 @@
 "use client";
 
-import Link from "next/link";
+import Link from "@/components/i18n/Link";
 import { useActionState, useEffect, useRef, useState, startTransition, type FormEvent } from "react";
-import { submitContact, type ContactState } from "@/app/contact/actions";
+import { submitContact, type ContactState } from "@/lib/actions/contact";
 import {
   budgetRanges,
   contactFields,
@@ -14,25 +14,33 @@ import {
   validateContact,
   validateContactField,
   type ContactErrors,
+  type ContactErrorText,
   type ContactField,
   type ContactValues,
 } from "@/lib/contact";
-import type { ServiceSlug } from "@/lib/services";
+import type { Ui } from "@/lib/content/en/ui";
+import type { Locale } from "@/lib/i18n/config";
+import { format } from "@/lib/i18n/format";
+import { isServiceSlug } from "@/lib/services";
 import { site } from "@/lib/site";
 import { SubmitButton } from "@/components/ui/Button";
 import { describedBy, Field, inputClass } from "./Field";
 
 const initialState: ContactState = { status: "idle" };
 
-function isServiceSlug(value: string | null): value is ServiceSlug {
-  return value !== null && Object.hasOwn(projectTypeByService, value);
-}
-
 function focusField(form: HTMLFormElement | null, field: ContactField) {
   form?.querySelector<HTMLElement>(`[name="${field}"]`)?.focus();
 }
 
-export function ContactForm() {
+interface ContactFormProps {
+  locale: Locale;
+  labels: Ui["contactForm"];
+  errorText: ContactErrorText;
+  projectTypeLabels: Ui["projectTypes"];
+  budgetLabels: Ui["budgetRanges"];
+}
+
+export function ContactForm({ locale, labels: t, errorText, projectTypeLabels, budgetLabels }: ContactFormProps) {
   const [state, formAction, pending] = useActionState(submitContact, initialState);
   const [values, setValues] = useState<ContactValues>(emptyContactValues);
   const [errors, setErrors] = useState<ContactErrors>({});
@@ -65,7 +73,7 @@ export function ContactForm() {
   }, [state]);
 
   function revalidate(field: ContactField, next: ContactValues) {
-    setErrors((current) => ({ ...current, [field]: validateContactField(field, normalizeContactValues(next)) }));
+    setErrors((current) => ({ ...current, [field]: validateContactField(field, normalizeContactValues(next), errorText, locale) }));
   }
 
   function update(field: ContactField, value: string) {
@@ -80,7 +88,7 @@ export function ContactForm() {
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    const found = validateContact(normalizeContactValues(values));
+    const found = validateContact(normalizeContactValues(values), errorText, locale);
     setErrors(found);
 
     const firstInvalid = contactFields.find((field) => found[field]);
@@ -101,11 +109,10 @@ export function ContactForm() {
           <path d="M7 12.5l3.5 3.5L17 9" fill="none" stroke="currentColor" strokeWidth="1.75" />
         </svg>
         <h2 ref={successRef} tabIndex={-1} className="mt-6 text-2xl font-semibold tracking-tight focus:outline-none">
-          Thank you. We&apos;ve received your request.
+          {t.successTitle}
         </h2>
         <p className="mt-4 leading-relaxed">
-          Someone from our team will read it and reply within one business day, usually sooner. If anything is
-          urgent, email us at{" "}
+          {t.successBody}{" "}
           <a href={`mailto:${site.email}`} className="text-ink underline underline-offset-4">
             {site.email}
           </a>
@@ -124,7 +131,7 @@ export function ContactForm() {
     onBlur: () => validateOnBlur(field),
   });
 
-  const messageHint = `At least ${limits.messageMin} characters. Goals, timeline and any existing systems are helpful.`;
+  const messageHint = format(t.messageHint, { min: limits.messageMin });
 
   return (
     <form ref={formRef} action={formAction} onSubmit={handleSubmit} noValidate className="space-y-6">
@@ -140,7 +147,7 @@ export function ContactForm() {
       )}
 
       <div className="grid gap-6 sm:grid-cols-2">
-        <Field id="name" label="Name" error={errors.name}>
+        <Field id="name" label={t.name} optionalLabel={t.optional} error={errors.name}>
           <input
             {...control("name")}
             type="text"
@@ -151,7 +158,7 @@ export function ContactForm() {
             onChange={(event) => update("name", event.target.value)}
           />
         </Field>
-        <Field id="company" label="Company" optional error={errors.company}>
+        <Field id="company" label={t.company} optional optionalLabel={t.optional} error={errors.company}>
           <input
             {...control("company")}
             type="text"
@@ -161,7 +168,7 @@ export function ContactForm() {
             onChange={(event) => update("company", event.target.value)}
           />
         </Field>
-        <Field id="email" label="Email" error={errors.email}>
+        <Field id="email" label={t.email} optionalLabel={t.optional} error={errors.email}>
           <input
             {...control("email")}
             type="email"
@@ -173,7 +180,7 @@ export function ContactForm() {
             onChange={(event) => update("email", event.target.value)}
           />
         </Field>
-        <Field id="phone" label="Phone" optional error={errors.phone}>
+        <Field id="phone" label={t.phone} optional optionalLabel={t.optional} error={errors.phone}>
           <input
             {...control("phone")}
             type="tel"
@@ -183,7 +190,7 @@ export function ContactForm() {
             onChange={(event) => update("phone", event.target.value)}
           />
         </Field>
-        <Field id="projectType" label="Project type" error={errors.projectType}>
+        <Field id="projectType" label={t.projectType} optionalLabel={t.optional} error={errors.projectType}>
           <select
             {...control("projectType")}
             required
@@ -191,14 +198,16 @@ export function ContactForm() {
             onChange={(event) => update("projectType", event.target.value)}
           >
             <option value="" disabled>
-              Select a project type
+              {t.projectTypePlaceholder}
             </option>
             {projectTypes.map((type) => (
-              <option key={type}>{type}</option>
+              <option key={type} value={type}>
+                {projectTypeLabels[type]}
+              </option>
             ))}
           </select>
         </Field>
-        <Field id="budget" label="Budget range" error={errors.budget}>
+        <Field id="budget" label={t.budget} optionalLabel={t.optional} error={errors.budget}>
           <select
             {...control("budget")}
             required
@@ -206,16 +215,18 @@ export function ContactForm() {
             onChange={(event) => update("budget", event.target.value)}
           >
             <option value="" disabled>
-              Select a budget range
+              {t.budgetPlaceholder}
             </option>
             {budgetRanges.map((range) => (
-              <option key={range}>{range}</option>
+              <option key={range} value={range}>
+                {budgetLabels[range]}
+              </option>
             ))}
           </select>
         </Field>
       </div>
 
-      <Field id="message" label="Project description" error={errors.message} hint={messageHint}>
+      <Field id="message" label={t.message} optionalLabel={t.optional} error={errors.message} hint={messageHint}>
         <textarea
           {...control("message", messageHint)}
           rows={6}
@@ -227,22 +238,23 @@ export function ContactForm() {
       </Field>
 
       <div aria-hidden="true" className="sr-only">
-        <label htmlFor="website">Website</label>
+        <label htmlFor="website">{t.honeypot}</label>
         <input id="website" name="website" type="text" tabIndex={-1} autoComplete="off" defaultValue="" />
       </div>
       <input type="hidden" name="startedAt" value={startedAt} />
+      <input type="hidden" name="locale" value={locale} />
 
       <div className="flex flex-col gap-4 pt-2 sm:flex-row sm:items-center sm:justify-between">
         <p className="text-sm text-muted">
-          We&apos;ll only use these details to respond to your inquiry.{" "}
+          {t.privacyNote}{" "}
           <Link href="/privacy" className="text-ink underline underline-offset-4">
-            Privacy policy
+            {t.privacyLink}
           </Link>
         </p>
-        <SubmitButton pending={pending} label="Send request" pendingLabel="Sending…" className="shrink-0" />
+        <SubmitButton pending={pending} label={t.submit} pendingLabel={t.submitting} className="shrink-0" />
       </div>
       <p aria-live="polite" className="sr-only">
-        {pending ? "Sending your request." : ""}
+        {pending ? t.sendingStatus : ""}
       </p>
     </form>
   );

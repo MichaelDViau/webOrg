@@ -1,3 +1,6 @@
+import type { Ui } from "./content/en/ui";
+import { format } from "./i18n/format";
+
 /** Scores are 0 to 100, as shown in Lighthouse. */
 export interface CheckScores {
   performance: number;
@@ -40,11 +43,11 @@ export interface LighthouseReport {
 }
 
 const METRICS = [
-  { id: "largest-contentful-paint", label: "Largest Contentful Paint" },
-  { id: "first-contentful-paint", label: "First Contentful Paint" },
-  { id: "total-blocking-time", label: "Total Blocking Time" },
-  { id: "cumulative-layout-shift", label: "Cumulative Layout Shift" },
-  { id: "speed-index", label: "Speed Index" },
+  "largest-contentful-paint",
+  "first-contentful-paint",
+  "total-blocking-time",
+  "cumulative-layout-shift",
+  "speed-index",
 ] as const;
 
 function toScore(value: number | null | undefined): number {
@@ -57,11 +60,19 @@ function toRating(score: number | null | undefined): CheckMetric["rating"] {
   return score >= 0.5 ? "average" : "poor";
 }
 
-/** Turns a Lighthouse report (as returned by PageSpeed Insights) into a short, readable summary. */
-export function summarizeReport(report: LighthouseReport, requestedUrl: string): WebsiteCheckResult {
+/**
+ * Turns a Lighthouse report (as returned by PageSpeed Insights) into a short, readable summary.
+ * Metric names and savings come from `t`; audit titles are already in the language requested from PageSpeed.
+ */
+export function summarizeReport(
+  report: LighthouseReport,
+  requestedUrl: string,
+  t: Ui["websiteCheck"],
+): WebsiteCheckResult {
   const { categories, audits } = report;
 
-  const metrics = METRICS.flatMap(({ id, label }) => {
+  const metrics = METRICS.flatMap((id) => {
+    const label = t.metrics[id];
     const audit = audits[id];
     return audit?.displayValue ? [{ label, value: audit.displayValue, rating: toRating(audit.score) }] : [];
   });
@@ -72,7 +83,7 @@ export function summarizeReport(report: LighthouseReport, requestedUrl: string):
     .sort((a, b) => (b.details?.overallSavingsMs ?? 0) - (a.details?.overallSavingsMs ?? 0))
     .map((audit) => ({
       title: audit.title ?? "",
-      savings: `Could save about ${((audit.details?.overallSavingsMs ?? 0) / 1000).toFixed(1)} s`,
+      savings: format(t.savings, { seconds: ((audit.details?.overallSavingsMs ?? 0) / 1000).toFixed(1) }),
     }));
 
   // Then failed SEO and accessibility checks, which are usually quick wins.

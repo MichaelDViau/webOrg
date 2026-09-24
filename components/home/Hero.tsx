@@ -1,8 +1,9 @@
 import type { ReactNode } from "react";
 import { ButtonLink } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
-import { promises } from "@/lib/company";
-import { showcase } from "@/lib/showcase";
+import { format } from "@/lib/i18n/format";
+import { getContent } from "@/lib/i18n/server";
+import { buildShowcase } from "@/lib/showcase";
 import { site } from "@/lib/site";
 import { HeroShowcase } from "./HeroShowcase";
 
@@ -15,7 +16,10 @@ function Knockout({ children }: { children: ReactNode }) {
   );
 }
 
-export function Hero() {
+export async function Hero() {
+  const { ui, company, projects } = await getContent();
+  const t = ui.home.hero;
+
   return (
     <section className="overflow-hidden pt-16 sm:pt-24 lg:pt-28">
       <Container>
@@ -25,29 +29,28 @@ export function Hero() {
            * Two lines from sm up; on phones each phrase gets its own line so the blocks never wrap mid-phrase.
            */}
           <h1 className="text-display">
-            We build <br className="sm:hidden" />
-            <Knockout>the software</Knockout>
+            {t.lead} <br className="sm:hidden" />
+            <Knockout>{t.block1}</Knockout>
             <br />
-            <Knockout>your business</Knockout> <br className="sm:hidden" />
-            runs on.
+            <Knockout>{t.block2}</Knockout> <br className="sm:hidden" />
+            {t.tail}
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-pretty sm:text-xl">
-            {site.name} designs and builds websites, web applications, AI solutions and business automation for
-            startups, growing companies and established organizations.
+            {format(t.intro, { name: site.name })}
           </p>
           <div className="mt-10 flex flex-col gap-3 sm:flex-row">
             <ButtonLink href="/contact" withArrow>
-              Contact Us
+              {ui.contactUs}
             </ButtonLink>
             <ButtonLink href="/services" variant="secondary">
-              Explore Our Services
+              {t.explore}
             </ButtonLink>
           </div>
           <ul
-            aria-label="Our commitments"
+            aria-label={t.commitments}
             className="mt-8 grid grid-cols-2 gap-x-6 gap-y-2 text-sm text-muted sm:flex sm:flex-wrap sm:gap-x-0"
           >
-            {promises.map((promise) => (
+            {company.promises.map((promise) => (
               <li key={promise} className="sm:border-l sm:border-line sm:px-4 sm:first:border-l-0 sm:first:pl-0">
                 {promise}
               </li>
@@ -55,7 +58,7 @@ export function Hero() {
           </ul>
         </div>
 
-        <HeroShowcase items={showcase} />
+        <HeroShowcase items={buildShowcase(projects, ui.showcase)} label={t.whatWeBuild} />
       </Container>
     </section>
   );
