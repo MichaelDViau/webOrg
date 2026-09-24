@@ -1,1 +1,9 @@
-export { en as fr } from "../en";
+import type { ContentSource } from "@/lib/i18n/content";
+import { company } from "./company";
+import { photoAlts } from "./photos";
+import { projects } from "./projects";
+import { services } from "./services";
+import { technology } from "./technology";
+import { ui } from "./ui";
+
+export const fr: ContentSource = { ui, company, services, projects, technology, photoAlts };
