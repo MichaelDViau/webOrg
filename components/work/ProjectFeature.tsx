@@ -68,7 +68,7 @@ export function ProjectFeature({ project, reverse = false, headingLevel: Heading
         </p>
 
         <Link href={href} className="group mt-8 inline-flex items-center gap-1.5 font-medium text-ink hover:underline hover:underline-offset-4">
-          View case study<span className="sr-only">: {project.client}</span>
+          See how we did it<span className="sr-only">: {project.client}</span>
           <ArrowIcon className="group-hover:translate-x-0.5" />
         </Link>
       </div>
