@@ -73,12 +73,12 @@ export function Header() {
         </nav>
 
         <div className="flex items-center gap-2">
-          <ThemeToggle />
           <div className="hidden sm:block">
             <ButtonLink href="/contact" size="sm">
               Contact Us
             </ButtonLink>
           </div>
+          <ThemeToggle />
           <button
             type="button"
             className="-mr-2 inline-flex size-10 items-center justify-center text-ink lg:hidden"
