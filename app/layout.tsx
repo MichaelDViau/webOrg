@@ -8,7 +8,7 @@ import { AssistantWidget } from "@/components/assistant/AssistantWidget";
 import { services } from "@/lib/services";
 import { organizationSchema } from "@/lib/structured-data";
 import { themeScript } from "@/lib/theme";
-import { bookingHref, mainNav, site } from "@/lib/site";
+import { bookingHref, contactNavItem, mainNav, site } from "@/lib/site";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -37,6 +37,7 @@ const assistantEnabled = Boolean(process.env.ANTHROPIC_API_KEY);
 
 const assistantLinks = [
   ...mainNav.map((item) => item.href),
+  contactNavItem.href,
   ...services.map((service) => `/services/${service.slug}`),
   "/website-check",
   bookingHref,
