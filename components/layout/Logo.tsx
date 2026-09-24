@@ -9,9 +9,9 @@ export function Logo({ className }: { className?: string }) {
       aria-label={`${site.name} home`}
       className={cn("inline-flex items-center gap-2.5 text-ink", className)}
     >
-      <svg viewBox="0 0 24 24" aria-hidden="true" className="size-6">
-        <rect width="24" height="24" rx="5" fill="var(--color-accent)" />
-        <path d="M6.5 17V7l5.5 6 5.5-6v10" fill="none" stroke="var(--color-paper)" strokeWidth="2" />
+      {/* Two interlocking ink blocks, echoing the homepage headline. */}
+      <svg viewBox="0 0 1000 211" aria-hidden="true" className="h-3.5 w-auto">
+        <path d="M413 0H1000V120H626V211H0V96H413Z" fill="currentColor" />
       </svg>
       <span className="text-lg font-semibold tracking-tight">{site.name}</span>
     </Link>
