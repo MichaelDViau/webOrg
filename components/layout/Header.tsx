@@ -17,7 +17,15 @@ function isActive(pathname: string, href: string) {
 export function Header() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const menuId = useId();
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 0);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   useEffect(() => {
     if (!open) return;
@@ -33,7 +41,15 @@ export function Header() {
   }, [open]);
 
   return (
-    <header className="sticky top-0 z-40 border-b border-line bg-paper">
+    // Once the page scrolls, the bar turns 80% opaque with a light blur so content shows through.
+    // It stays solid while the mobile menu is open: backdrop-filter would make the header the
+    // containing block for the menu's fixed panel and collapse it.
+    <header
+      className={cn(
+        "sticky top-0 z-40 border-b border-line transition-colors duration-200",
+        scrolled && !open ? "bg-paper/80 backdrop-blur-md" : "bg-paper",
+      )}
+    >
       <Container className="flex h-16 items-center justify-between gap-6 lg:h-18">
         <Logo />
 
