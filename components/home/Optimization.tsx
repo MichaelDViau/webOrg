@@ -65,7 +65,7 @@ export function Optimization() {
           <figcaption className="mt-3 text-sm text-muted">
             Fieldstone Outdoor product pages, before and after an eight-week performance program.{" "}
             <Link href="/work/fieldstone-commerce-performance" className="text-ink underline underline-offset-4">
-              See how we did it
+              Read the full breakdown
             </Link>
           </figcaption>
         </figure>

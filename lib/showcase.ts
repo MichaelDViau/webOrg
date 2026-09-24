@@ -5,6 +5,7 @@ export interface ShowcaseItem {
   image: { src: string; alt: string; width: number; height: number };
   caption: string;
   href: string;
+  linkLabel: string;
 }
 
 function fromProject(label: string, slug: string, caption?: string): ShowcaseItem {
@@ -16,6 +17,7 @@ function fromProject(label: string, slug: string, caption?: string): ShowcaseIte
     image: project.image,
     caption: caption ?? `${project.client} · ${project.type}`,
     href: `/work/${project.slug}`,
+    linkLabel: project.linkLabel,
   };
 }
 
@@ -34,6 +36,7 @@ export const showcase: ShowcaseItem[] = [
     },
     caption: "Harbor Line Logistics · Automation",
     href: "/work/harbor-line-customer-portal",
+    linkLabel: "Follow the workflow",
   },
   fromProject("Optimization", "fieldstone-commerce-performance"),
 ];

@@ -20,6 +20,8 @@ export interface Project {
   challenge: string;
   approach: string[];
   outcome: string;
+  /** Text for links to the project page, so each project reads differently in lists. */
+  linkLabel: string;
   /** Public URL of the live project, when the client allows linking to it. */
   liveUrl?: string;
 }
@@ -27,6 +29,7 @@ export interface Project {
 export const projects: Project[] = [
   {
     slug: "harbor-line-customer-portal",
+    linkLabel: "Inside the customer portal",
     client: "Harbor Line Logistics",
     title: "A shipment portal that replaced 400 support emails a week",
     type: "Web Application",
@@ -59,6 +62,7 @@ export const projects: Project[] = [
   },
   {
     slug: "meridian-health-website",
+    linkLabel: "Walk through the new site",
     client: "Meridian Family Health",
     title: "A clinic website patients can actually navigate",
     type: "Website",
@@ -91,6 +95,7 @@ export const projects: Project[] = [
   },
   {
     slug: "cobalt-legal-document-assistant",
+    linkLabel: "How the assistant works",
     client: "Cobalt & Reyes LLP",
     title: "A document assistant that cites its sources",
     type: "AI Solution",
@@ -123,6 +128,7 @@ export const projects: Project[] = [
   },
   {
     slug: "fieldstone-commerce-performance",
+    linkLabel: "Where the speed came from",
     client: "Fieldstone Outdoor",
     title: "Cutting load times in half on a high-traffic storefront",
     type: "Web Optimization",
