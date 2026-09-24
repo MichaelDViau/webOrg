@@ -31,20 +31,37 @@ In development, contact form submissions are printed to the server console when 
 | `PAGESPEED_API_KEY`    | Recommended | Google PageSpeed Insights key for the free website check.   |
 | `NEXT_PUBLIC_BOOKING_URL` | Optional | Cal.com or Calendly link. Enables `/book`; otherwise booking links go to `/contact`. |
 
-Secrets are only read on the server (`app/contact/actions.ts`) and are never exposed to the browser.
+Secrets are only read on the server (`lib/actions/contact.ts`) and are never exposed to the browser.
+
+## Languages
+
+The site is available in English (`/services`), Spanish (`/es/services`) and French (`/fr/services`). Visitors switch with the globe menu in the header, which opens the same page in the other language.
+
+- Pages live under `app/[lang]` and are prerendered for every language. `proxy.ts` serves English at unprefixed URLs and redirects `/en/...` to them, so each page has one address per language.
+- Server Components read the current language with `getLocale()` or `getContent()` from `lib/i18n/server.ts`. Client Components receive their text as props.
+- Internal links use `components/i18n/Link.tsx`, which keeps the visitor's language (`/work` becomes `/es/work` on Spanish pages).
+- Every page lists its translations for search engines (`hreflang`), and the sitemap includes all three languages.
+- Spanish uses the formal "usted". French is written for North American readers ("vous", "courriel").
 
 ## Editing content
 
-All copy lives in typed data files, so most updates don't touch components:
+All copy lives in typed data files, so most updates don't touch components. Each language has its own folder, `lib/content/en`, `lib/content/es` and `lib/content/fr`, with the same files; TypeScript reports anything missing from a translation:
 
-- `lib/site.ts`: company name, contact details, address and navigation
-- `lib/services.ts`: the six service pages, including their search titles and meta descriptions
-- `lib/projects.ts`: case studies shown on the homepage and `/work`
+- `ui.ts`: interface text for every page, form, error message and the assistant
+- `services.ts`: the six service pages, including their search titles, meta descriptions and technology lists
+- `projects.ts`: case study text shown on the homepage and `/work`
+- `technology.ts`: the homepage technology summary and the full web and AI catalogs on `/technology`
+- `company.ts`: process steps, working principles, the beliefs on the About page and the homepage FAQ
+- `photos.ts`: alt text for the office and team photos
+
+Details shared by every language stay in `lib/`:
+
+- `lib/site.ts`: company name, contact details, address and navigation links
+- `lib/projects.ts`: each project's year, services, technology and image
+- `lib/services.ts`: the service slugs and their order
 - `lib/showcase.ts`: the images that change when visitors hover the disciplines in the homepage hero
-- `lib/technology.ts`: the homepage technology summary and the full web and AI catalogs on `/technology` (each service also lists its own `stack`)
-- `lib/company.ts`: process steps, working principles and the beliefs on the About page
-- `lib/photos.ts`: the office and team photos on the homepage and About page (files in `public/photos/`)
-- `lib/contact.ts`: form options (project types, budget ranges) and validation rules
+- `lib/photos.ts`: the photo files (in `public/photos/`)
+- `lib/contact.ts`: form options (project types, budget ranges) and validation rules. Submitted values stay in English so notification emails read the same whatever the visitor's language.
 
 Project images live in `public/work/`. Use 1600 × 1000 WebP or AVIF files; `next/image` generates responsive sizes automatically. Set `liveUrl` on a project to show a link to the live site.
 
@@ -55,8 +72,8 @@ Project images live in `public/work/`. Use 1600 × 1000 WebP or AVIF files; `nex
 
 ## Lead generation features
 
-- **Free website check** (`/website-check`): runs Google PageSpeed Insights on a visitor's site and shows scores, Core Web Vitals and the top fixes (`lib/website-check.ts`, `app/website-check/actions.ts`). If the visitor leaves an email, the results are sent to `CONTACT_TO_EMAIL` as a lead. Rate-limited to 5 checks per hour per IP.
-- **AI assistant**: a chat widget on every page, answering from the site's own content (`lib/assistant.ts`) through `app/api/assistant/route.ts`. It streams replies from Claude Opus 5 at low effort with prompt caching, falls back automatically if a request is declined, only accepts same-origin requests, and is rate-limited to 20 messages per 10 minutes per IP. Set a monthly spend limit in the Anthropic Console.
+- **Free website check** (`/website-check`): runs Google PageSpeed Insights on a visitor's site and shows scores, Core Web Vitals and the top fixes (`lib/website-check.ts`, `lib/actions/website-check.ts`). If the visitor leaves an email, the results are sent to `CONTACT_TO_EMAIL` as a lead. Rate-limited to 5 checks per hour per IP.
+- **AI assistant**: a chat widget on every page, answering in the page language from the site's own content (`lib/assistant.ts`) through `app/api/assistant/route.ts`. It streams replies from Claude Opus 5 at low effort with prompt caching, falls back automatically if a request is declined, only accepts same-origin requests, and is rate-limited to 20 messages per 10 minutes per IP. Set a monthly spend limit in the Anthropic Console.
 - **Online booking** (`/book`): embeds your scheduling page when `NEXT_PUBLIC_BOOKING_URL` is set, and every "Book a free call" link points to it.
 
 ## SEO
@@ -68,14 +85,20 @@ Project images live in `public/work/`. Use 1600 × 1000 WebP or AVIF files; `nex
 ## Structure
 
 ```
-app/                   Routes, metadata files, sitemap, robots and the contact server action
-components/layout/     Header, footer, page header and logo
+app/[lang]/            Pages, one version per language
+app/                   Metadata files, sitemap, robots and the assistant API route
+proxy.ts               Serves English at unprefixed URLs
+components/layout/     Header, footer, page header, logo, theme toggle and language menu
+components/i18n/       Language-aware link
 components/home/       Homepage sections
 components/services/   Service page pieces
 components/work/       Case study presentation
 components/contact/    Contact form and field primitives
 components/ui/         Buttons, sections, lists and other shared building blocks
-lib/                   Content, metadata, structured data, validation and utilities
+lib/content/           Copy for each language
+lib/i18n/              Languages, path helpers and content lookup
+lib/actions/           Contact and website check server actions
+lib/                   Shared data, metadata, structured data, validation and utilities
 ```
 
 ## Security
@@ -86,8 +109,8 @@ lib/                   Content, metadata, structured data, validation and utilit
 
 ## Before launch
 
-- Replace the sample case studies in `lib/projects.ts` and the images in `public/work/` with real client work (and confirm each client's permission to publish).
+- Replace the sample case studies in `lib/projects.ts` and `lib/content/*/projects.ts` and the images in `public/work/` with real client work (and confirm each client's permission to publish).
 - Replace the placeholder email address and domain (`example.com`) and confirm the phone number and location in `lib/site.ts`.
 - Replace the photos in `public/photos/` with photos of your own team and workspace when you have them, or confirm the license for the current ones.
-- Review `app/privacy/page.tsx` with legal counsel.
+- Review the privacy policy (`privacy` in `lib/content/*/ui.ts`) with legal counsel, and have a native speaker review the Spanish and French copy.
 - Set the environment variables above in your hosting provider.
