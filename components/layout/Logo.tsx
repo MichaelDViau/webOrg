@@ -1,12 +1,13 @@
-import Link from "next/link";
+import Link from "@/components/i18n/Link";
 import { site } from "@/lib/site";
 import { cn } from "@/lib/cn";
 
-export function Logo({ className }: { className?: string }) {
+/** `label` is the accessible name, e.g. "Michael home", in the page language. */
+export function Logo({ label, className }: { label: string; className?: string }) {
   return (
     <Link
       href="/"
-      aria-label={`${site.name} home`}
+      aria-label={label}
       className={cn("inline-flex items-center gap-2.5 text-ink", className)}
     >
       {/* Two interlocking ink blocks, echoing the homepage headline. */}

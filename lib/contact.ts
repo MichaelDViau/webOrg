@@ -1,4 +1,9 @@
+import type { Ui } from "./content/en/ui";
+import type { Locale } from "./i18n/config";
+import { format } from "./i18n/format";
 import type { ServiceSlug } from "./services";
+
+/** Submitted values stay in English, so notification emails read the same in every language. */
 
 export const projectTypes = [
   "Website",
@@ -76,45 +81,53 @@ export function normalizeContactValues(input: Partial<Record<ContactField, unkno
   };
 }
 
-export function validateContactField(field: ContactField, values: ContactValues): string | undefined {
+export type ContactErrorText = Ui["contactErrors"];
+
+/** Returns the error for one field in the visitor's language, or undefined if it's valid. */
+export function validateContactField(
+  field: ContactField,
+  values: ContactValues,
+  t: ContactErrorText,
+  locale: Locale,
+): string | undefined {
   const value = values[field];
 
   switch (field) {
     case "name":
-      if (!value) return "Please enter your name.";
-      if (value.length > limits.name) return `Please keep your name under ${limits.name} characters.`;
+      if (!value) return t.nameRequired;
+      if (value.length > limits.name) return format(t.nameTooLong, { max: limits.name });
       return;
     case "company":
-      if (value.length > limits.company) return `Please keep the company name under ${limits.company} characters.`;
+      if (value.length > limits.company) return format(t.companyTooLong, { max: limits.company });
       return;
     case "email":
-      if (!value) return "Please enter your email address.";
+      if (!value) return t.emailRequired;
       if (value.length > limits.email || !EMAIL_PATTERN.test(value))
-        return "Please enter a valid email address, like name@company.com.";
+        return t.emailInvalid;
       return;
     case "phone":
       if (value && (value.length > limits.phone || !PHONE_PATTERN.test(value)))
-        return "Please enter a valid phone number, or leave this field blank.";
+        return t.phoneInvalid;
       return;
     case "projectType":
-      if (!projectTypes.includes(value as (typeof projectTypes)[number])) return "Please choose a project type.";
+      if (!projectTypes.includes(value as (typeof projectTypes)[number])) return t.projectTypeRequired;
       return;
     case "budget":
-      if (!budgetRanges.includes(value as (typeof budgetRanges)[number])) return "Please choose a budget range.";
+      if (!budgetRanges.includes(value as (typeof budgetRanges)[number])) return t.budgetRequired;
       return;
     case "message":
       if (value.length < limits.messageMin)
-        return `Please tell us a little more about your project (at least ${limits.messageMin} characters).`;
+        return format(t.messageTooShort, { min: limits.messageMin });
       if (value.length > limits.messageMax)
-        return `Please keep your description under ${limits.messageMax.toLocaleString("en-US")} characters.`;
+        return format(t.messageTooLong, { max: limits.messageMax.toLocaleString(locale) });
       return;
   }
 }
 
-export function validateContact(values: ContactValues): ContactErrors {
+export function validateContact(values: ContactValues, t: ContactErrorText, locale: Locale): ContactErrors {
   const errors: ContactErrors = {};
   for (const field of contactFields) {
-    const error = validateContactField(field, values);
+    const error = validateContactField(field, values, t, locale);
     if (error) errors[field] = error;
   }
   return errors;

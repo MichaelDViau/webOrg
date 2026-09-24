@@ -2,8 +2,6 @@ export const site = {
   name: "Michael",
   legalName: "Michael",
   url: (process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.example.com").replace(/\/$/, ""),
-  description:
-    "Michael designs and builds websites, web applications, AI solutions and business automation for startups, growing companies and established organizations.",
   email: "hello@example.com",
   phone: "+1 (512) 555-0147",
   address: {
@@ -12,7 +10,6 @@ export const site = {
     regionName: "Texas",
     country: "US",
   },
-  hours: "Monday to Friday, 9am to 6pm Central",
 } as const;
 
 export const location = `${site.address.locality}, ${site.address.regionName}`;
@@ -28,16 +25,17 @@ export const bookingHref = bookingUrl ? "/book" : "/contact";
 export const phoneHref = `tel:${site.phone.replace(/[^+\d]/g, "")}`;
 
 export interface NavItem {
-  label: string;
+  /** Key into the `nav` labels of the current language. */
+  key: "services" | "technology" | "work" | "about" | "contact";
   href: string;
 }
 
 export const mainNav: NavItem[] = [
-  { label: "Services", href: "/services" },
-  { label: "Technology", href: "/technology" },
-  { label: "Work", href: "/work" },
-  { label: "About", href: "/about" },
+  { key: "services", href: "/services" },
+  { key: "technology", href: "/technology" },
+  { key: "work", href: "/work" },
+  { key: "about", href: "/about" },
 ];
 
 /** Contact is reached through the header's "Contact Us" button rather than the main navigation. */
-export const contactNavItem: NavItem = { label: "Contact", href: "/contact" };
+export const contactNavItem: NavItem = { key: "contact", href: "/contact" };

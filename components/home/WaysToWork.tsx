@@ -3,21 +3,24 @@ import { CheckList } from "@/components/ui/CheckList";
 import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
 import { SectionIntro } from "@/components/ui/SectionIntro";
-import { engagementModels } from "@/lib/company";
+import { getContent } from "@/lib/i18n/server";
 
-export function WaysToWork() {
+export async function WaysToWork() {
+  const { ui, company } = await getContent();
+  const t = ui.home.waysToWork;
+
   return (
     <Section aria-labelledby="ways-to-work">
       <Container>
         <SectionIntro
           id="ways-to-work"
-          eyebrow="Ways to work with us"
-          title="Most clients start with a free conversation."
-          lead="There's no pressure and no long contract to sign before you know us. Choose the level of involvement that fits your project."
+          eyebrow={t.eyebrow}
+          title={t.title}
+          lead={t.lead}
         />
 
         <div className="mt-14 grid border-y border-line sm:mt-16 lg:grid-cols-3">
-          {engagementModels.map((model, index) => (
+          {company.engagementModels.map((model, index) => (
             <div
               key={model.title}
               className={

@@ -1,20 +1,23 @@
-import Link from "next/link";
+import Link from "@/components/i18n/Link";
 import { ArrowIcon } from "@/components/ui/ArrowIcon";
 import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
 import { SectionIntro } from "@/components/ui/SectionIntro";
-import { services } from "@/lib/services";
+import { getContent } from "@/lib/i18n/server";
 
-export function WhatWeDo() {
+export async function WhatWeDo() {
+  const { ui, services } = await getContent();
+  const t = ui.home.whatWeDo;
+
   return (
     <Section aria-labelledby="what-we-do">
       <Container className="grid gap-12 lg:grid-cols-12 lg:gap-16">
         <div className="lg:col-span-5">
           <SectionIntro
-            eyebrow="What we do"
+            eyebrow={t.eyebrow}
             id="what-we-do"
-            title="One team for your website, software and AI."
-            lead="Most clients come to us for one thing and stay for several. Design, engineering, AI and performance work all sit with the same team, so nothing gets lost between vendors."
+            title={t.title}
+            lead={t.lead}
           />
         </div>
 
