@@ -3,9 +3,12 @@ import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
 import { SectionIntro } from "@/components/ui/SectionIntro";
 import { TechGroupList } from "@/components/ui/TechGroupList";
-import { techStack } from "@/lib/technology";
+import { getContent } from "@/lib/i18n/server";
 
-export function TechStack() {
+export async function TechStack() {
+  const { ui, technology } = await getContent();
+  const t = ui.home.techStack;
+
   return (
     <Section tone="night" aria-labelledby="technology">
       <Container>
@@ -13,16 +16,16 @@ export function TechStack() {
           <SectionIntro
             tone="dark"
             id="technology"
-            eyebrow="Technology"
-            title="The technology we use, explained in plain English."
-            lead="You don't need to know what any of these names mean. We choose established, well-supported tools so your project is fast, secure and easy to maintain, and any good developer can work on it later. For technical teams, here is what we use most."
+            eyebrow={t.eyebrow}
+            title={t.title}
+            lead={t.lead}
           />
           <ButtonLink href="/technology" variant="inverse" withArrow className="self-start lg:self-auto">
-            Full technology stack
+            {t.cta}
           </ButtonLink>
         </div>
 
-        <TechGroupList groups={techStack} tone="dark" className="mt-14 sm:mt-16" />
+        <TechGroupList groups={technology.techStack} tone="dark" className="mt-14 sm:mt-16" />
       </Container>
     </Section>
   );

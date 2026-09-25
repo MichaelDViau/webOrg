@@ -4,31 +4,29 @@ import { CheckList } from "@/components/ui/CheckList";
 import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
 import { SectionIntro } from "@/components/ui/SectionIntro";
-import { getProject } from "@/lib/projects";
+import { getContent } from "@/lib/i18n/server";
+import { findProject } from "@/lib/projects";
 
-export function WebDevelopment() {
-  const project = getProject("meridian-health-website");
+export async function WebDevelopment() {
+  const { ui, projects } = await getContent();
+  const t = ui.home.webDevelopment;
+  const project = findProject(projects, "meridian-health-website");
 
   return (
     <Section tone="canvas">
       <Container className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
         <div>
           <SectionIntro
-            eyebrow="Web Development"
-            title="Websites that explain clearly, earn trust and load fast."
-            lead="We plan the content before the design, design for every screen size on purpose, and build on modern frameworks your team can maintain. The result is a site that earns trust quickly and is easy to keep up to date."
+            eyebrow={t.eyebrow}
+            title={t.title}
+            lead={t.lead}
           />
           <CheckList
             className="mt-8"
-            items={[
-              "Content strategy and site structure",
-              "Custom design, built from scratch",
-              "A CMS configured for your editors",
-              "Accessibility and SEO built in from the start",
-            ]}
+            items={t.points}
           />
           <TextLink href="/services/website-development" className="mt-10">
-            Website development services
+            {t.link}
           </TextLink>
         </div>
 

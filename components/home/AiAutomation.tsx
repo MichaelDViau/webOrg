@@ -2,42 +2,23 @@ import { TextLink } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
 import { SectionIntro } from "@/components/ui/SectionIntro";
+import { getContent } from "@/lib/i18n/server";
 
-const columns = [
-  {
-    title: "AI Solutions",
-    linkLabel: "AI development services",
-    href: "/services/ai-solutions",
-    description:
-      "Language models applied to specific, measurable problems, with answers you can verify and data that stays under your control.",
-    examples: [
-      "An assistant that answers staff questions from policy documents, citing each source",
-      "Extracting line items from supplier invoices into your accounting system",
-      "Drafting first responses to routine support tickets for review",
-    ],
-  },
-  {
-    title: "Automation",
-    linkLabel: "Business automation services",
-    href: "/services/automation",
-    description:
-      "Integrations and workflows that move data between your systems, so people stop copying it by hand.",
-    examples: [
-      "New CRM deals creating projects, folders and invoices automatically",
-      "Weekly operations reports assembled and sent without anyone touching a spreadsheet",
-      "Approval requests routed, reminded and logged across teams",
-    ],
-  },
-];
+export async function AiAutomation() {
+  const { ui } = await getContent();
+  const t = ui.home.aiAutomation;
+  const columns = [
+    { ...t.ai, href: "/services/ai-solutions" },
+    { ...t.automation, href: "/services/automation" },
+  ];
 
-export function AiAutomation() {
   return (
     <Section>
       <Container>
         <SectionIntro
-          eyebrow="AI & Automation"
-          title="Automation and AI that save your team real time."
-          lead="We start with the task, not the technology. If a process is predictable, we automate it. If it involves judgment across large amounts of text, AI may help. Often the answer is a combination of both."
+          eyebrow={t.eyebrow}
+          title={t.title}
+          lead={t.lead}
         />
 
         <div className="mt-16 grid border-t border-line lg:grid-cols-2">
@@ -53,7 +34,7 @@ export function AiAutomation() {
             >
               <h3 className="text-2xl font-semibold tracking-tight">{column.title}</h3>
               <p className="mt-4 max-w-lg leading-relaxed">{column.description}</p>
-              <p className="mt-8 text-sm font-medium text-ink">In practice</p>
+              <p className="mt-8 text-sm font-medium text-ink">{t.inPractice}</p>
               <ul className="mt-3 divide-y divide-line border-y border-line">
                 {column.examples.map((example) => (
                   <li key={example} className="py-4 leading-relaxed">

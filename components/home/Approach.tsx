@@ -2,17 +2,20 @@ import Image from "next/image";
 import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
 import { SectionIntro } from "@/components/ui/SectionIntro";
-import { approachSteps } from "@/lib/company";
-import { photos } from "@/lib/photos";
+import { format } from "@/lib/i18n/format";
+import { getContent } from "@/lib/i18n/server";
 
-export function Approach() {
+export async function Approach() {
+  const { ui, company, photos } = await getContent();
+  const t = ui.home.approach;
+
   return (
     <Section tone="canvas">
       <Container>
         <SectionIntro
-          eyebrow="Our approach"
-          title="A clear process, run by the people doing the work."
-          lead="You work directly with the designers and engineers on your project. There are no account managers relaying messages and no handoffs to junior staff after the pitch."
+          eyebrow={t.eyebrow}
+          title={t.title}
+          lead={t.lead}
         />
 
         <div className="mt-14 grid gap-4 sm:grid-cols-12 lg:gap-6" data-reveal>
@@ -36,9 +39,9 @@ export function Approach() {
         </div>
 
         <ol className="mt-16 grid gap-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
-          {approachSteps.map((step, index) => (
+          {company.approachSteps.map((step, index) => (
             <li key={step.title} className="border-t-2 border-ink pt-6" data-reveal>
-              <span className="text-sm text-muted tabular-nums">Step {index + 1}</span>
+              <span className="text-sm text-muted tabular-nums">{format(t.step, { number: index + 1 })}</span>
               <h3 className="mt-3 text-xl font-semibold tracking-tight">{step.title}</h3>
               <p className="mt-3 leading-relaxed">{step.detail}</p>
             </li>

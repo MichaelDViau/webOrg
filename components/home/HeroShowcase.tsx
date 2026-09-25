@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
+import Link from "@/components/i18n/Link";
 import { useEffect, useState } from "react";
 import { ArrowIcon } from "@/components/ui/ArrowIcon";
 import { cn } from "@/lib/cn";
@@ -9,6 +9,8 @@ import type { ShowcaseItem } from "@/lib/showcase";
 
 interface HeroShowcaseProps {
   items: ShowcaseItem[];
+  /** Accessible name for the list of discipline tabs. */
+  label: string;
   initialIndex?: number;
 }
 
@@ -17,7 +19,7 @@ interface HeroShowcaseProps {
  * Only the initial image loads with the page; the others are fetched once the
  * browser is idle, or earlier if the visitor starts interacting with the labels.
  */
-export function HeroShowcase({ items, initialIndex = 0 }: HeroShowcaseProps) {
+export function HeroShowcase({ items, label, initialIndex = 0 }: HeroShowcaseProps) {
   const [active, setActive] = useState(initialIndex);
   const [loadAll, setLoadAll] = useState(false);
   const current = items[active];
@@ -37,7 +39,7 @@ export function HeroShowcase({ items, initialIndex = 0 }: HeroShowcaseProps) {
   return (
     <div>
       <ul
-        aria-label="What we build"
+        aria-label={label}
         onPointerEnter={() => setLoadAll(true)}
         className="mt-12 grid grid-cols-3 gap-x-4 sm:mt-16 sm:flex sm:flex-wrap sm:gap-x-10 sm:border-t sm:border-line"
       >

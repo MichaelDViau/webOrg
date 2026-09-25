@@ -1,11 +1,13 @@
 import type { MetadataRoute } from "next";
-import { projects } from "@/lib/projects";
-import { services } from "@/lib/services";
+import { localizePath, locales } from "@/lib/i18n/config";
+import { projectSlugs } from "@/lib/projects";
+import { serviceSlugs } from "@/lib/services";
 import { bookingUrl, site } from "@/lib/site";
 
+/** Every page in every language, each entry listing its translations for search engines. */
 export default function sitemap(): MetadataRoute.Sitemap {
   const paths = [
-    "",
+    "/",
     "/services",
     "/technology",
     "/work",
@@ -14,9 +16,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/website-check",
     ...(bookingUrl ? ["/book"] : []),
     "/privacy",
-    ...services.map((service) => `/services/${service.slug}`),
-    ...projects.map((project) => `/work/${project.slug}`),
+    ...serviceSlugs.map((slug) => `/services/${slug}`),
+    ...projectSlugs.map((slug) => `/work/${slug}`),
   ];
 
-  return paths.map((path) => ({ url: `${site.url}${path}` }));
+  const url = (path: string, locale: (typeof locales)[number]) => {
+    const localized = localizePath(path, locale);
+    return `${site.url}${localized === "/" ? "" : localized}`;
+  };
+
+  return paths.flatMap((path) =>
+    locales.map((locale) => ({
+      url: url(path, locale),
+      alternates: { languages: Object.fromEntries(locales.map((option) => [option, url(path, option)])) },
+    })),
+  );
 }

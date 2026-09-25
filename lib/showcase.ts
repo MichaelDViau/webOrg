@@ -1,4 +1,5 @@
-import { getProject } from "./projects";
+import type { Ui } from "./content/en/ui";
+import { findProject, type Project } from "./projects";
 
 export interface ShowcaseItem {
   label: string;
@@ -8,35 +9,32 @@ export interface ShowcaseItem {
   linkLabel: string;
 }
 
-function fromProject(label: string, slug: string, caption?: string): ShowcaseItem {
-  const project = getProject(slug);
-  if (!project) throw new Error(`Unknown project "${slug}" in hero showcase`);
-
-  return {
-    label,
-    image: project.image,
-    caption: caption ?? `${project.client} · ${project.type}`,
-    href: `/work/${project.slug}`,
-    linkLabel: project.linkLabel,
-  };
-}
-
 /** Disciplines listed under the homepage headline, each paired with an example of the work. */
-export const showcase: ShowcaseItem[] = [
-  fromProject("Websites", "meridian-health-website"),
-  fromProject("Web Apps", "harbor-line-customer-portal"),
-  fromProject("AI Solutions", "cobalt-legal-document-assistant"),
-  {
-    label: "Automation",
-    image: {
-      src: "/work/harbor-line-workflow.webp",
-      alt: "Harbor Line delivery-to-invoice workflow built from connected steps, with run history and automation rates",
-      width: 1600,
-      height: 1000,
+export function buildShowcase(projects: Project[], text: Ui["showcase"]): ShowcaseItem[] {
+  const fromProject = (label: string, slug: string): ShowcaseItem => {
+    const project = findProject(projects, slug);
+    if (!project) throw new Error(`Unknown project "${slug}" in hero showcase`);
+    return {
+      label,
+      image: project.image,
+      caption: `${project.client} · ${project.type}`,
+      href: `/work/${project.slug}`,
+      linkLabel: project.linkLabel,
+    };
+  };
+  const harborLine = findProject(projects, "harbor-line-customer-portal");
+
+  return [
+    fromProject(text.websites, "meridian-health-website"),
+    fromProject(text.webApps, "harbor-line-customer-portal"),
+    fromProject(text.ai, "cobalt-legal-document-assistant"),
+    {
+      label: text.automation,
+      image: { src: "/work/harbor-line-workflow.webp", alt: text.automationAlt, width: 1600, height: 1000 },
+      caption: `${harborLine?.client} · ${text.automationType}`,
+      href: "/work/harbor-line-customer-portal",
+      linkLabel: text.automationLink,
     },
-    caption: "Harbor Line Logistics · Automation",
-    href: "/work/harbor-line-customer-portal",
-    linkLabel: "Follow the workflow",
-  },
-  fromProject("Optimization", "fieldstone-commerce-performance"),
-];
+    fromProject(text.optimization, "fieldstone-commerce-performance"),
+  ];
+}

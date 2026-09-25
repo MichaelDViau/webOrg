@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { themeStorageKey } from "@/lib/theme";
 
 /** Moon in light mode, sun in dark mode. The icon follows the CSS dark variant, so it is right before hydration. */
-export function ThemeToggle() {
+export function ThemeToggle({ label }: { label: string }) {
   const [dark, setDark] = useState(false);
 
   useEffect(() => {
@@ -31,7 +31,7 @@ export function ThemeToggle() {
   return (
     <button
       type="button"
-      aria-label="Dark theme"
+      aria-label={label}
       aria-pressed={dark}
       onClick={toggle}
       className="inline-flex size-10 items-center justify-center rounded-md text-ink transition-colors hover:bg-canvas"

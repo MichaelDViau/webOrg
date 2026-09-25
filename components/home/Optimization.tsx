@@ -1,31 +1,28 @@
-import Link from "next/link";
+import Link from "@/components/i18n/Link";
 import { ButtonLink, TextLink } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
 import { SectionIntro } from "@/components/ui/SectionIntro";
+import { getContent } from "@/lib/i18n/server";
 
-const metrics = [
-  { name: "Largest Contentful Paint", before: "3.8 s", after: "1.6 s" },
-  { name: "Interaction to Next Paint", before: "410 ms", after: "140 ms" },
-  { name: "Cumulative Layout Shift", before: "0.21", after: "0.02" },
-  { name: "JavaScript transferred", before: "1.2 MB", after: "480 KB" },
-];
+export async function Optimization() {
+  const { ui } = await getContent();
+  const t = ui.home.optimization;
 
-export function Optimization() {
   return (
     <Section tone="canvas">
       <Container className="grid gap-12 lg:grid-cols-12 lg:gap-16">
         <div className="lg:col-span-5">
           <SectionIntro
-            eyebrow="Web Optimization & Performance"
-            title="Faster pages, measured with real visitor data."
-            lead="We find what's actually slowing your site down, fix it in your codebase, and set up monitoring so it stays fast long after the project ends."
+            eyebrow={t.eyebrow}
+            title={t.title}
+            lead={t.lead}
           />
           <div className="mt-10 flex flex-col items-start gap-5">
             <ButtonLink href="/website-check" variant="secondary" withArrow>
-              Test your website for free
+              {t.testCta}
             </ButtonLink>
-            <TextLink href="/services/web-optimization">Website performance optimization</TextLink>
+            <TextLink href="/services/web-optimization">{t.serviceLink}</TextLink>
           </div>
         </div>
 
@@ -35,18 +32,18 @@ export function Optimization() {
               <thead>
                 <tr className="border-b border-line text-sm text-muted">
                   <th scope="col" className="px-4 py-4 font-medium sm:px-6">
-                    Metric (mobile, 75th percentile)
+                    {t.metricHeader}
                   </th>
                   <th scope="col" className="px-4 py-4 text-right font-medium sm:px-6">
-                    Before
+                    {t.before}
                   </th>
                   <th scope="col" className="px-4 py-4 text-right font-medium sm:px-6">
-                    After
+                    {t.after}
                   </th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-line">
-                {metrics.map((metric) => (
+                {t.metrics.map((metric) => (
                   <tr key={metric.name}>
                     <th scope="row" className="px-4 py-4 font-normal sm:py-5 text-ink sm:px-6">
                       {metric.name}
@@ -63,9 +60,9 @@ export function Optimization() {
             </table>
           </div>
           <figcaption className="mt-3 text-sm text-muted">
-            Fieldstone Outdoor product pages, before and after an eight-week performance program.{" "}
+            {t.caption}{" "}
             <Link href="/work/fieldstone-commerce-performance" className="text-ink underline underline-offset-4">
-              Read the full breakdown
+              {t.captionLink}
             </Link>
           </figcaption>
         </figure>
