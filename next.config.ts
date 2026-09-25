@@ -34,6 +34,24 @@ const nextConfig: NextConfig = {
   images: {
     formats: ["image/avif", "image/webp"],
   },
+  // English pages live at unprefixed URLs (/services) but are rendered from app/[lang], so those
+  // requests are rewritten to /en/...; Spanish and French URLs carry their own prefix. Paths with a
+  // dot (icons, images, robots.txt) and Next.js internals are left alone.
+  async rewrites() {
+    return {
+      beforeFiles: [
+        { source: "/", destination: "/en" },
+        { source: "/:path((?!(?:en|es|fr|api|_next)(?:/|$))[^.]*)", destination: "/en/:path" },
+      ],
+    };
+  },
+  // Each page has a single English address, so /en/... redirects to the unprefixed URL.
+  async redirects() {
+    return [
+      { source: "/en", destination: "/", permanent: true },
+      { source: "/en/:path*", destination: "/:path*", permanent: true },
+    ];
+  },
   async headers() {
     return [{ source: "/:path*", headers: securityHeaders }];
   },
