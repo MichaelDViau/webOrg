@@ -37,7 +37,7 @@ Secrets are only read on the server (`lib/actions/contact.ts`) and are never exp
 
 The site is available in English (`/services`), Spanish (`/es/services`) and French (`/fr/services`). Visitors switch with the globe menu in the header, which opens the same page in the other language.
 
-- Pages live under `app/[lang]` and are prerendered for every language. `proxy.ts` serves English at unprefixed URLs and redirects `/en/...` to them, so each page has one address per language.
+- Pages live under `app/[lang]` and are prerendered for every language. Rewrites in `next.config.ts` serve English at unprefixed URLs and redirect `/en/...` to them, so each page has one address per language.
 - Server Components read the current language with `getLocale()` or `getContent()` from `lib/i18n/server.ts`. Client Components receive their text as props.
 - Internal links use `components/i18n/Link.tsx`, which keeps the visitor's language (`/work` becomes `/es/work` on Spanish pages).
 - Every page lists its translations for search engines (`hreflang`), and the sitemap includes all three languages.
@@ -87,7 +87,6 @@ Project images live in `public/work/`. Use 1600 × 1000 WebP or AVIF files; `nex
 ```
 app/[lang]/            Pages, one version per language
 app/                   Metadata files, sitemap, robots and the assistant API route
-proxy.ts               Serves English at unprefixed URLs
 components/layout/     Header, footer, page header, logo, theme toggle and language menu
 components/i18n/       Language-aware link
 components/home/       Homepage sections

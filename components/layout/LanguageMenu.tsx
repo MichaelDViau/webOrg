@@ -22,11 +22,16 @@ export function LanguageMenu({ label }: { label: string }) {
   const rootRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
   const closeTimer = useRef<ReturnType<typeof setTimeout>>(undefined);
+  // Set when hovering opened the menu, so the click that usually follows doesn't close it again.
+  const openedByHover = useRef(false);
 
   const cancelClose = () => clearTimeout(closeTimer.current);
   const scheduleClose = () => {
     cancelClose();
-    closeTimer.current = setTimeout(() => setOpen(false), CLOSE_DELAY_MS);
+    closeTimer.current = setTimeout(() => {
+      openedByHover.current = false;
+      setOpen(false);
+    }, CLOSE_DELAY_MS);
   };
 
   useEffect(() => {
@@ -57,6 +62,7 @@ export function LanguageMenu({ label }: { label: string }) {
       onPointerEnter={(event) => {
         if (event.pointerType !== "mouse") return;
         cancelClose();
+        if (!open) openedByHover.current = true;
         setOpen(true);
       }}
       onPointerLeave={(event) => {
@@ -72,7 +78,13 @@ export function LanguageMenu({ label }: { label: string }) {
         aria-label={label}
         aria-expanded={open}
         aria-controls={menuId}
-        onClick={() => setOpen((value) => !value)}
+        onClick={() => {
+          if (openedByHover.current) {
+            openedByHover.current = false;
+            return;
+          }
+          setOpen((value) => !value);
+        }}
         className="inline-flex h-10 items-center justify-center gap-1 rounded-md px-2 text-ink transition-colors hover:bg-canvas"
       >
         <svg viewBox="0 0 20 20" aria-hidden="true" className="size-5">
