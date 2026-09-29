@@ -45,7 +45,7 @@ export async function DemoScreen({ screen }: { screen: DemoScreenData }) {
   const { ui } = await getContent();
 
   return (
-    <figure data-reveal>
+    <figure className="min-w-0" data-reveal>
       <div className="mb-3 flex flex-wrap items-center justify-between gap-x-4 gap-y-2">
         <h3 className="text-lg font-medium text-ink">{screen.title}</h3>
         <DemoBadge />
@@ -63,8 +63,8 @@ export async function DemoScreen({ screen }: { screen: DemoScreenData }) {
             </p>
             <dl className="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-3">
               {screen.kpis.map((kpi) => (
-                <div key={kpi.label} className="rounded-md border border-line bg-canvas px-4 py-3">
-                  <dt className="text-xs text-muted">{kpi.label}</dt>
+                <div key={kpi.label} className="min-w-0 rounded-md border border-line bg-canvas px-4 py-3">
+                  <dt className="text-xs text-muted [overflow-wrap:anywhere]">{kpi.label}</dt>
                   <dd className="mt-1 text-xl font-semibold tracking-tight text-ink">{kpi.value}</dd>
                 </div>
               ))}

@@ -7,7 +7,7 @@ import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
 import { JsonLd } from "@/components/JsonLd";
 import { Analytics } from "@/components/Analytics";
-import { AssistantWidget } from "@/components/assistant/AssistantWidget";
+import { AssistantLoader } from "@/components/assistant/AssistantLoader";
 import { isLocale, localizePath, locales, ogLocales } from "@/lib/i18n/config";
 import { getContentFor } from "@/lib/i18n/content";
 import { format } from "@/lib/i18n/format";
@@ -94,7 +94,7 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
         <main id="main">{children}</main>
         <Footer />
         {assistantEnabled && (
-          <AssistantWidget linkablePaths={assistantLinks} bookingHref={auditHref} labels={ui.assistant} />
+          <AssistantLoader linkablePaths={assistantLinks} bookingHref={auditHref} labels={ui.assistant} />
         )}
         <JsonLd data={organizationSchema(content)} />
         <Analytics />

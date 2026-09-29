@@ -28,6 +28,7 @@ export function LanguageSwitch({ label }: { label: string }) {
               )}
               <NextLink
                 href={localizePath(path, option)}
+                prefetch={false}
                 hrefLang={option}
                 lang={option}
                 aria-label={localeNames[option]}

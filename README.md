@@ -1,6 +1,8 @@
 # Michael website
 
-Marketing site for Michael, built with Next.js (App Router), TypeScript and Tailwind CSS v4. Marketing pages are statically generated. Client-side JavaScript is limited to the mobile navigation, the homepage showcase, the contact form, the website check and the AI assistant.
+The company website, built as the guideline describes: it has one job, to get serious business owners to **book a Digital Systems Audit** (or ask for a **free Snapshot** of their site). It is not a portfolio. It works in English, French (Quebec) and Spanish.
+
+Built with Next.js (App Router), TypeScript and Tailwind CSS v4. Pages are statically generated. Client-side JavaScript is limited to the header menu, the forms, the instant speed check and the AI assistant (which loads only once the browser is idle).
 
 ## Getting started
 
@@ -10,106 +12,137 @@ cp .env.example .env.local   # then fill in the values
 npm run dev
 ```
 
-In development, contact form submissions are printed to the server console when email delivery isn't configured. In production, the form reports an error instead of silently dropping requests.
+| Script                 | Purpose                                                                     |
+| ---------------------- | --------------------------------------------------------------------------- |
+| `npm run dev`          | Local development server                                                    |
+| `npm run build`        | Production build (type-checked)                                             |
+| `npm run start`        | Serve the production build                                                  |
+| `npm run typecheck`    | TypeScript check without a build                                            |
+| `npm run launch-check` | Lists every placeholder and review still open before launch (exits 1 if any) |
 
-| Script              | Purpose                          |
-| ------------------- | -------------------------------- |
-| `npm run dev`       | Local development server         |
-| `npm run build`     | Production build (type-checked)  |
-| `npm run start`     | Serve the production build       |
-| `npm run typecheck` | TypeScript check without a build |
+In development, form submissions and confirmation emails are printed to the server console when email isn't configured. In production, the forms report an error instead of silently dropping requests.
 
-## Environment variables
+## The pages
 
-| Variable               | Required   | Description                                                   |
-| ---------------------- | ---------- | ------------------------------------------------------------- |
-| `NEXT_PUBLIC_SITE_URL` | Yes        | Canonical site URL used for metadata, sitemap and schema.org. |
-| `RESEND_API_KEY`       | Production | API key for [Resend](https://resend.com), used by the form.   |
-| `CONTACT_TO_EMAIL`     | Production | Inbox that receives project requests.                         |
-| `CONTACT_FROM_EMAIL`   | Production | Verified sender, e.g. `Michael <website@example.com>`.   |
-| `ANTHROPIC_API_KEY`    | Optional   | Enables the AI assistant. The chat widget is hidden without it. |
-| `PAGESPEED_API_KEY`    | Recommended | Google PageSpeed Insights key for the free website check.   |
-| `NEXT_PUBLIC_BOOKING_URL` | Optional | Cal.com or Calendly link. Enables `/book`; otherwise booking links go to `/contact`. |
+| Section       | Address                                             | Its job                                                  |
+| ------------- | --------------------------------------------------- | -------------------------------------------------------- |
+| Home          | `/`                                                 | Eight blocks, in the guideline's order                   |
+| Audit         | `/audit`                                            | Convert high-intent visitors (price, credit, booking form) |
+| Snapshot      | `/snapshot`                                         | The low-commitment second action                         |
+| Services      | `/services`, `/services/<slug>` (7)                 | Outcomes, scope, phases, "from" price, related demo      |
+| Industries    | `/industries`, `/industries/<slug>` (3)             | Prove we understand their world                          |
+| Work          | `/work`, `/work/<slug>` (3 concept demos)           | Proof, clearly labeled "Concept demo: not a client project" |
+| How we work   | `/how-we-work`                                      | Reduce the feeling of risk                               |
+| Standards     | `/standards`, `/standards/<slug>` (5)               | Security, performance, accessibility, AI policy, privacy |
+| About         | `/about`, `/partners`                               | Human credibility, an honest "we're new"                 |
+| Insights      | `/insights`, `/insights/<slug>`                     | Articles and the newsletter form                         |
+| Contact       | `/contact`, `/book`                                 | Short form, booking calendar, reply promise              |
+| Legal         | `/privacy`, `/terms`, `/cookies`, `/aviso-de-privacidad` | Privacy policy, terms, cookie notice, Mexican privacy notice |
+| Tool          | `/website-check`                                    | Instant automated speed check (Google Lighthouse)        |
 
-Secrets are only read on the server (`lib/actions/contact.ts`) and are never exposed to the browser.
+The top menu is Services · Industries · Audit · Work · How we work · About, a **Book an audit** button, and an EN / FR / ES switch at the top right. Standards, Insights, Partners, Contact and Legal are in the footer.
 
 ## Languages
 
-The site is available in English (`/services`), Spanish (`/es/services`) and French (`/fr/services`). Visitors switch with the globe menu in the header, which opens the same page in the other language.
+English lives at unprefixed URLs (`/services`), French at `/fr/services` and Spanish at `/es/services`. Each page has one address per language, lists its translations for search engines (`hreflang`), and appears in the sitemap in all three.
 
-- Pages live under `app/[lang]` and are prerendered for every language. Rewrites in `next.config.ts` serve English at unprefixed URLs and redirect `/en/...` to them, so each page has one address per language.
+- Pages live under `app/[lang]` and are prerendered for every language. Rewrites in `next.config.ts` serve English at unprefixed URLs and redirect `/en/...` to them.
 - Server Components read the current language with `getLocale()` or `getContent()` from `lib/i18n/server.ts`. Client Components receive their text as props.
-- Internal links use `components/i18n/Link.tsx`, which keeps the visitor's language (`/work` becomes `/es/work` on Spanish pages).
-- Every page lists its translations for search engines (`hreflang`), and the sitemap includes all three languages.
-- Spanish uses the formal "usted". French is written for North American readers ("vous", "courriel").
+- Internal links use `components/i18n/Link.tsx`, which keeps the visitor's language.
+- French is written for Quebec ("vous", "courriel"). Spanish uses the formal "usted".
+- **A native speaker should review the French and Spanish before launch.** The guideline asks for French written natively for Quebec, not machine-translated.
 
 ## Editing content
 
-All copy lives in typed data files, so most updates don't touch components. Each language has its own folder, `lib/content/en`, `lib/content/es` and `lib/content/fr`, with the same files; TypeScript reports anything missing from a translation:
+All copy lives in typed data files, so most updates don't touch components. Each language has its own folder, `lib/content/en`, `fr` and `es`, with the same files. English defines the shape, and TypeScript reports anything missing from a translation.
 
-- `ui.ts`: interface text for every page, form, error message and the assistant
-- `services.ts`: the six service pages, including their search titles, meta descriptions and technology lists
-- `projects.ts`: case study text shown on the homepage and `/work`
-- `technology.ts`: the homepage technology summary and the full web and AI catalogs on `/technology`
-- `company.ts`: process steps, working principles, the beliefs on the About page and the homepage FAQ
-- `photos.ts`: alt text for the office and team photos
+| File               | What it holds                                                                 |
+| ------------------ | ----------------------------------------------------------------------------- |
+| `ui.ts`            | Navigation, buttons, prices' wording, forms, errors, the confirmation email, the assistant |
+| `home.ts`          | The eight home page blocks                                                    |
+| `audit.ts`         | The audit page and the Snapshot page                                          |
+| `services.ts`      | The seven service pages and the services overview                             |
+| `industries.ts`    | The three industry pages and the overview                                     |
+| `work.ts`          | The three concept demos, including the sample data on each screen             |
+| `how-we-work.ts`   | The process, ownership and the answers for IT reviewers                       |
+| `standards.ts`     | The five standards and the overview                                           |
+| `about.ts`         | About and Partners                                                            |
+| `insights.ts`      | The articles and the Insights index                                           |
+| `legal.ts`         | Privacy policy, terms, cookie notice, Mexican privacy notice                  |
 
-Details shared by every language stay in `lib/`:
+Details shared by every language stay in `lib/`: `site.ts` (company name, contact, navigation), `pricing.ts` (every price), `services.ts`, `industries.ts`, `demos.ts`, `standards.ts` and `insights.ts` (slugs, order and links between them).
 
-- `lib/site.ts`: company name, contact details, address and navigation links
-- `lib/projects.ts`: each project's year, services, technology and image
-- `lib/services.ts`: the service slugs and their order
-- `lib/showcase.ts`: the images that change when visitors hover the disciplines in the homepage hero
-- `lib/photos.ts`: the photo files (in `public/photos/`)
-- `lib/contact.ts`: form options (project types, budget ranges) and validation rules. Submitted values stay in English so notification emails read the same whatever the visitor's language.
+To add an article, add its slug and date in `lib/insights.ts` and its text in each language's `insights.ts`.
 
-Project images live in `public/work/`. Use 1600 × 1000 WebP or AVIF files; `next/image` generates responsive sizes automatically. Set `liveUrl` on a project to show a link to the live site.
+### Prices
 
-## Brand
+Every price comes from `lib/pricing.ts`. The audit is US$1,500–7,500, credited in full to a project signed within 60 days. Service "from" prices are set to `0` and show as **0000** until you fill them in; change a number there and every page and language updates. `npm run launch-check` fails while any is still `0`.
 
-- Typeface: Geist Sans, self-hosted through the `geist` package.
-- Colors and the heading scale are defined once in `app/globals.css`. The brand slate `#607D8B` is used for lines, indicators and the logo; the deeper `accent-strong` shade is used for small text so it meets WCAG AA contrast.
+### Tone
 
-## Lead generation features
+The guideline's rules for words are enforced by `npm run launch-check`, which fails on phrases such as "10x", "skyrocket", "game-changer", "digital transformation", "synergy", "cutting-edge", "AI-powered", "trusted by hundreds" and a guaranteed speed score. Never invent clients, logos, testimonials, numbers, awards or years of experience. Concept demos use obviously fictional sample data.
 
-- **Free website check** (`/website-check`): runs Google PageSpeed Insights on a visitor's site and shows scores, Core Web Vitals and the top fixes (`lib/website-check.ts`, `lib/actions/website-check.ts`). If the visitor leaves an email, the results are sent to `CONTACT_TO_EMAIL` as a lead. Rate-limited to 5 checks per hour per IP.
-- **AI assistant**: a chat widget on every page, answering in the page language from the site's own content (`lib/assistant.ts`) through `app/api/assistant/route.ts`. It streams replies from Claude Opus 5 at low effort with prompt caching, falls back automatically if a request is declined, only accepts same-origin requests, and is rate-limited to 20 messages per 10 minutes per IP. Set a monthly spend limit in the Anthropic Console.
-- **Online booking** (`/book`): embeds your scheduling page when `NEXT_PUBLIC_BOOKING_URL` is set, and every "Book a free call" link points to it.
+## The lead flow
 
-## SEO
+Every form follows the same path: **instant confirmation in the visitor's language → entry in HubSpot, routed to the right person → a person replies within one business hour → discovery call.**
 
-- Page metadata is built with `pageMetadata()` in `lib/metadata.ts`, which sets the title, description, canonical URL, Open Graph and X/Twitter tags consistently.
-- Schema.org structured data is defined in `lib/structured-data.ts` and rendered with `components/JsonLd.tsx`: the organization on every page, the website on the homepage, a service, breadcrumb and FAQ block on each service page, and an article and breadcrumb block on each case study.
-- `app/opengraph-image.png` is the default image shown when a page is shared. `app/sitemap.ts` and `app/robots.ts` generate `/sitemap.xml` and `/robots.txt`.
+- The audit and contact forms have five groups of fields at most (name and role, company and website, email and phone, what to fix, preferred language) plus a consent checkbox that links to the privacy policy. The Snapshot form is shorter. The newsletter form sits at the bottom of articles.
+- Spam protection without puzzles: a hidden field, a minimum fill time and a rate limit per IP.
+- `lib/actions/lead.ts` validates on the server, notifies the team by email (with the source page, language and a "reply due" line), sends the visitor an automatic confirmation in their preferred language (at most twice per address per hour), and submits to HubSpot. The request counts as received if either the team email or HubSpot has it.
+- `lib/crm.ts` uses the HubSpot Forms API. Create one form per action in HubSpot (audit, Snapshot, contact, newsletter), give them the fields `email`, `firstname`, `lastname`, `jobtitle`, `company`, `website`, `phone`, `message` and `hs_language`, and route each with a HubSpot workflow. Without HubSpot configured, email alone is used.
 
-## Structure
+## Environment variables
 
-```
-app/[lang]/            Pages, one version per language
-app/                   Metadata files, sitemap, robots and the assistant API route
-components/layout/     Header, footer, page header, logo, theme toggle and language menu
-components/i18n/       Language-aware link
-components/home/       Homepage sections
-components/services/   Service page pieces
-components/work/       Case study presentation
-components/contact/    Contact form and field primitives
-components/ui/         Buttons, sections, lists and other shared building blocks
-lib/content/           Copy for each language
-lib/i18n/              Languages, path helpers and content lookup
-lib/actions/           Contact and website check server actions
-lib/                   Shared data, metadata, structured data, validation and utilities
-```
+| Variable                                 | Required   | Description                                                                 |
+| ---------------------------------------- | ---------- | --------------------------------------------------------------------------- |
+| `NEXT_PUBLIC_SITE_URL`                   | Yes        | Canonical site URL used for metadata, sitemap and schema.org.               |
+| `RESEND_API_KEY`                         | Production | [Resend](https://resend.com) key, used for the team notification and the confirmation. |
+| `CONTACT_TO_EMAIL`                       | Production | Inbox that receives requests and the replies to confirmations.              |
+| `CONTACT_FROM_EMAIL`                     | Production | Verified sender, e.g. `Michael <website@example.com>`.                      |
+| `HUBSPOT_PORTAL_ID`, `HUBSPOT_FORM_*`    | Production | Portal ID and one form GUID each for audit, Snapshot, contact and newsletter. |
+| `NEXT_PUBLIC_BOOKING_URL`                | Recommended | Cal.com or Calendly link. Enables `/book`.                                 |
+| `NEXT_PUBLIC_PLAUSIBLE_DOMAIN`           | Recommended | Turns on privacy-friendly analytics (no cookies, no consent banner). Events: `audit_request`, `snapshot_request`, `contact_request`, `newsletter_signup`, each with the page and language. |
+| `NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION`   | Recommended | Google Search Console token, from day one.                                 |
+| `PAGESPEED_API_KEY`                      | Recommended | Google PageSpeed Insights key for the instant speed check.                 |
+| `ANTHROPIC_API_KEY`                      | Optional   | Enables the AI assistant. The chat widget is hidden without it.            |
 
-## Security
+Secrets are only read on the server and are never exposed to the browser. For confirmations to reach inboxes, set up SPF, DKIM and DMARC on the sending domain.
 
-- Strict security headers (CSP, HSTS, frame protection, referrer and permissions policies) in `next.config.ts`.
-- The contact form validates and normalizes all input on the server, uses a honeypot field and minimum fill time to filter bots, and is rate-limited per IP. The rate limiter is in memory; if you deploy across several instances, back it with a shared store such as Redis.
-- Email is sent as plain text, so submitted content can't inject markup.
+## Look and feel
+
+- Typeface: Geist Sans, self-hosted through the `geist` package. Colors and the heading scale are defined once in `app/globals.css`. One deep accent color plus neutrals; the deeper `accent-strong` shade is used for small text so it meets WCAG AA contrast.
+- The signature illustration is the **system map** (`components/illustrations/SystemMap.tsx`), plain HTML and CSS so it reads in every language. There are no stock photos: the About page shows a real photo of the founder once you set `founderPhoto` in `lib/site.ts`.
+- Share images are in `public/og/` (one per language, 1200 × 630).
+
+## Search (SEO)
+
+- Page metadata is built with `pageMetadata()` in `lib/metadata.ts`: title, description, canonical URL, Open Graph and X/Twitter tags, and the `hreflang` alternates.
+- Structured data (`lib/structured-data.ts`): the organization on every page, the website on the home page, service, breadcrumb and FAQ blocks, and an article block on each article.
+- `app/sitemap.ts` and `app/robots.ts` generate `/sitemap.xml` and `/robots.txt`. `/.well-known/security.txt` tells researchers how to report a vulnerability.
+- Old addresses from the previous version of the site redirect to their replacements (see `redirects()` in `next.config.ts`).
+
+## Performance, accessibility and security
+
+- Static pages, one self-hosted font, no images on most pages, and no third-party scripts unless you enable analytics. The AI assistant loads only when the browser is idle. Target: good Core Web Vitals in real-user data (LCP ≤ 2.5 s, INP ≤ 200 ms, CLS ≤ 0.1). Check them in Search Console once there is traffic.
+- WCAG 2.2 AA baseline: skip link, visible focus, labeled fields with error messages, contrast in light and dark themes, reduced-motion support. The pages were checked with axe in both themes at desktop and phone widths, in all three languages.
+- Strict security headers (CSP, HSTS, frame protection, referrer, permissions and cross-origin policies) in `next.config.ts`. Forms validate on the server, and email is sent as plain text so submitted content can't inject markup. The rate limiter is in memory; if you deploy across several instances, back it with a shared store such as Redis.
 
 ## Before launch
 
-- Replace the sample case studies in `lib/projects.ts` and `lib/content/*/projects.ts` and the images in `public/work/` with real client work (and confirm each client's permission to publish).
-- Replace the placeholder email address and domain (`example.com`) and confirm the phone number and location in `lib/site.ts`.
-- Replace the photos in `public/photos/` with photos of your own team and workspace when you have them, or confirm the license for the current ones.
-- Review the privacy policy (`privacy` in `lib/content/*/ui.ts`) with legal counsel, and have a native speaker review the Spanish and French copy.
-- Set the environment variables above in your hosting provider.
+Run `npm run launch-check` with your production environment variables. It lists the blocking items. The people-only steps are:
+
+- Fill in the service "from" prices in `lib/pricing.ts`.
+- Replace the placeholder email address in `lib/site.ts`, and set the registered address (`legalAddress`) used in the Mexican privacy notice. Confirm the location and business hours, and the countries served.
+- Add a real photo of the founder (`founderPhoto`) and, if you want, the founder's story on the About page.
+- Have your lawyer write or review the privacy policy, terms, cookie notice and Mexican privacy notice in all three languages, including your Quebec Law 25 duties (Part 18 of the manual).
+- Have a native speaker review the French (Quebec) and Spanish text.
+- Confirm each commitment on the standards pages against the Digital Systems Operating Manual.
+- Create the HubSpot forms and routing, set up SPF/DKIM/DMARC, and test every form in all three languages end to end, including the reply within one business hour.
+- Put domain, hosting, HubSpot, analytics and email accounts in the company's name, protected by the password manager and MFA.
+- Add Search Console and analytics, and check Core Web Vitals on mobile.
+
+## Later
+
+- The guideline suggests a headless CMS (for example Payload or Sanity) so pages can be edited in three languages without a developer. Content is typed data files for now, which keeps the site fast and dependency-free.
+- Replace concept demos with case studies only when a real client approves one in writing, with measured results. Partner logos only with written permission.
+- Two articles a month; rewrite pages that don't convert. Measure every month: audit and Snapshot requests (by page and language), the visit-to-inquiry rate on service and industry pages, time to first personal reply, Core Web Vitals in real-user data, and newsletter sign-ups.

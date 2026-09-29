@@ -30,7 +30,7 @@ export async function pageMetadata({
   const url = localizePath(path, locale);
   const fullTitle = absoluteTitle ? title : `${title} | ${site.name}`;
   const images = [
-    { url: "/opengraph-image.png", width: 1200, height: 630, alt: format(ui.site.shareImageAlt, { name: site.name }) },
+    { url: `/og/${locale}.png`, width: 1200, height: 630, alt: format(ui.site.shareImageAlt, { name: site.name }) },
   ];
 
   return {
