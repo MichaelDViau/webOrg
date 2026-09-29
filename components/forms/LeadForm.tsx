@@ -113,7 +113,7 @@ export function LeadForm({ locale, intent, labels: t, errorText, hours, canBook 
 
   if (state.status === "success") {
     return (
-      <div role="status" className="rounded-lg border border-line bg-canvas p-8 sm:p-10">
+      <div role="status" className="rounded border border-line bg-canvas p-6 sm:p-8">
         <svg viewBox="0 0 24 24" aria-hidden="true" className="size-8 text-success">
           <circle cx="12" cy="12" r="11" fill="none" stroke="currentColor" strokeWidth="1.5" />
           <path d="M7 12.5l3.5 3.5L17 9" fill="none" stroke="currentColor" strokeWidth="1.75" />
@@ -130,8 +130,8 @@ export function LeadForm({ locale, intent, labels: t, errorText, hours, canBook 
         </p>
         {intent === "audit" && canBook && (
           <div className="mt-8">
-            <p className="text-sm font-medium text-ink">{t.bookTitle}</p>
-            <ButtonLink href="/book" variant="secondary" withArrow className="mt-3">
+            <p className="text-lg font-semibold text-ink">{t.bookTitle}</p>
+            <ButtonLink href="/book" variant="secondary" className="mt-3">
               {t.bookCall}
             </ButtonLink>
           </div>

@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Link from "@/components/i18n/Link";
 import { ClosingCta } from "@/components/home/ClosingCta";
 import { PageHeader } from "@/components/layout/PageHeader";
-import { ArrowIcon } from "@/components/ui/ArrowIcon";
 import { TextLink } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
@@ -19,26 +18,18 @@ export default async function StandardsPage() {
 
   return (
     <>
-      <PageHeader eyebrow={t.eyebrow} title={t.title} lead={t.lead} />
+      <PageHeader title={t.title} lead={t.lead} />
 
       <Section padding="no-top">
         <Container>
-          <ul>
-            {standards.map((standard, index) => (
-              <li key={standard.slug} className="border-b border-line" data-reveal>
-                <Link
-                  href={`/standards/${standard.slug}`}
-                  className="group grid gap-4 py-8 sm:py-10 lg:grid-cols-12 lg:gap-12"
-                >
-                  <span className="text-sm text-muted tabular-nums lg:col-span-1 lg:pt-2">
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
-                  <h2 className="text-subheading lg:col-span-4">{standard.name}</h2>
-                  <span className="text-lg leading-relaxed lg:col-span-6">{standard.card}</span>
-                  <ArrowIcon
-                    size="md"
-                    className="hidden text-muted group-hover:translate-x-1 group-hover:text-ink lg:col-span-1 lg:block lg:justify-self-end"
-                  />
+          <ul className="divide-y divide-line border-b border-line">
+            {standards.map((standard) => (
+              <li key={standard.slug} data-reveal>
+                <Link href={`/standards/${standard.slug}`} className="group grid gap-x-8 gap-y-1 py-6 lg:grid-cols-12">
+                  <h2 className="text-xl font-semibold tracking-tight text-ink underline-offset-4 group-hover:underline lg:col-span-4">
+                    {standard.name}
+                  </h2>
+                  <span className="text-lg leading-relaxed text-body lg:col-span-8">{standard.card}</span>
                   <span className="sr-only">{t.readStandard}</span>
                 </Link>
               </li>

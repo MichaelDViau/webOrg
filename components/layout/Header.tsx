@@ -152,7 +152,7 @@ export function Header({ nav, labels }: HeaderProps) {
             </ul>
           </nav>
           <div className="mt-8 flex flex-col gap-3">
-            <ButtonLink href={auditHref} withArrow onClick={() => setOpen(false)}>
+            <ButtonLink href={auditHref} onClick={() => setOpen(false)}>
               {labels.audit}
             </ButtonLink>
             <ButtonLink href={snapshotHref} variant="secondary" onClick={() => setOpen(false)}>

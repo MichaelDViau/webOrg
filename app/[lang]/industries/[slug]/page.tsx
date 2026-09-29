@@ -4,7 +4,6 @@ import { notFound } from "next/navigation";
 import { JsonLd } from "@/components/JsonLd";
 import { ClosingCta } from "@/components/home/ClosingCta";
 import { PageHeader } from "@/components/layout/PageHeader";
-import { ArrowIcon } from "@/components/ui/ArrowIcon";
 import { Container } from "@/components/ui/Container";
 import { CtaPair } from "@/components/ui/CtaPair";
 import { FaqList } from "@/components/ui/FaqList";
@@ -59,7 +58,7 @@ export default async function IndustryPage({ params }: IndustryPageProps) {
 
   return (
     <>
-      <PageHeader eyebrow={ui.nav.industries} title={industry.headline} lead={industry.lead}>
+      <PageHeader title={industry.headline} lead={industry.lead}>
         <CtaPair className="mt-10" />
       </PageHeader>
 
@@ -68,13 +67,13 @@ export default async function IndustryPage({ params }: IndustryPageProps) {
           <h2 className="text-heading" data-reveal>
             {t.inTheirWords}
           </h2>
-          <ul className="mt-12 grid gap-x-8 gap-y-10 sm:grid-cols-2">
+          <ul className="mt-8 grid gap-x-10 gap-y-8 sm:grid-cols-2">
             {industry.problems.map((problem) => (
-              <li key={problem.quote} className="border-l-2 border-ink pl-5" data-reveal>
-                <p className="text-xl leading-snug text-ink">
+              <li key={problem.quote} data-reveal>
+                <p className="text-xl leading-snug font-semibold text-ink">
                   <q>{problem.quote}</q>
                 </p>
-                <p className="mt-3 text-lg leading-relaxed text-body">{problem.detail}</p>
+                <p className="mt-2 text-lg leading-relaxed text-body">{problem.detail}</p>
               </li>
             ))}
           </ul>
@@ -97,13 +96,7 @@ export default async function IndustryPage({ params }: IndustryPageProps) {
           </div>
           <div data-reveal>
             <p className="max-w-2xl text-lg leading-relaxed">{industry.softwareIntro}</p>
-            <ul className="mt-6 flex flex-wrap gap-2">
-              {industry.software.map((name) => (
-                <li key={name} className="rounded-full border border-line-strong bg-paper px-4 py-1.5 text-sm text-ink">
-                  {name}
-                </li>
-              ))}
-            </ul>
+            <p className="mt-3 text-lg leading-relaxed text-ink">{industry.software.join(", ")}.</p>
           </div>
         </Container>
       </Section>
@@ -111,7 +104,7 @@ export default async function IndustryPage({ params }: IndustryPageProps) {
       {demo && (
         <Section>
           <Container>
-            <h2 className="mb-6 text-sm font-medium text-muted">{t.theDemo}</h2>
+            <h2 className="mb-4 text-xl font-semibold text-ink">{t.theDemo}</h2>
             <div className="max-w-2xl">
               <DemoCard demo={demo} />
             </div>
@@ -131,32 +124,30 @@ export default async function IndustryPage({ params }: IndustryPageProps) {
       <Section tone="canvas" padding="compact">
         <Container className="grid gap-10 sm:grid-cols-2">
           <div>
-            <h2 className="text-sm font-medium text-muted">{t.relatedServices}</h2>
+            <h2 className="text-xl font-semibold text-ink">{t.relatedServices}</h2>
             <ul className="mt-4 space-y-1">
               {relatedServices.map((service) => (
                 <li key={service.slug}>
                   <Link
                     href={`/services/${service.slug}`}
-                    className="group inline-flex items-center gap-1.5 py-1 text-lg text-ink hover:underline hover:underline-offset-4"
+                    className="inline-block py-1 text-lg text-ink underline underline-offset-4 hover:no-underline"
                   >
                     {service.name}
-                    <ArrowIcon className="group-hover:translate-x-0.5" />
                   </Link>
                 </li>
               ))}
             </ul>
           </div>
           <div>
-            <h2 className="text-sm font-medium text-muted">{t.otherIndustries}</h2>
+            <h2 className="text-xl font-semibold text-ink">{t.otherIndustries}</h2>
             <ul className="mt-4 space-y-1">
               {otherIndustries.map((other) => (
                 <li key={other.slug}>
                   <Link
                     href={`/industries/${other.slug}`}
-                    className="group inline-flex items-center gap-1.5 py-1 text-lg text-ink hover:underline hover:underline-offset-4"
+                    className="inline-block py-1 text-lg text-ink underline underline-offset-4 hover:no-underline"
                   >
                     {other.name}
-                    <ArrowIcon className="group-hover:translate-x-0.5" />
                   </Link>
                 </li>
               ))}

@@ -2,29 +2,22 @@ import type { Home } from "@/lib/content/en/home";
 
 type MapText = Home["hero"]["map"];
 
-/** A thin arrow between two columns, shown only where the columns sit side by side. */
+/** A plain line with an arrowhead between two columns, shown only where the columns sit side by side. */
 function Arrow() {
   return (
-    <svg viewBox="0 0 48 12" aria-hidden="true" className="h-3 w-12 text-accent">
-      <path d="M0 6h44M39 1.5 45 6l-6 4.5" fill="none" stroke="currentColor" strokeWidth="1.5" />
+    <svg viewBox="0 0 40 10" aria-hidden="true" className="h-2.5 w-10 text-body">
+      <path d="M0 5h37M32 1l5 4-5 4" fill="none" stroke="currentColor" strokeWidth="1.25" />
     </svg>
   );
 }
 
-function Column({ title, items, tone }: { title: string; items: string[]; tone: "plain" | "core" }) {
+function Column({ title, items }: { title: string; items: string[] }) {
   return (
     <div>
-      <p className="flex h-8 items-end pb-2 text-sm font-medium text-muted">{title}</p>
+      <p className="flex h-8 items-end pb-2 text-base font-semibold text-ink">{title}</p>
       <ul className="space-y-3">
         {items.map((item) => (
-          <li
-            key={item}
-            className={
-              tone === "core"
-                ? "flex h-14 items-center rounded-md border border-accent bg-canvas px-4 font-medium text-ink"
-                : "flex h-14 items-center rounded-md border border-line bg-paper px-4 text-ink"
-            }
-          >
+          <li key={item} className="flex h-12 items-center border border-line-strong bg-paper px-4 text-lg text-ink">
             {item}
           </li>
         ))}
@@ -34,21 +27,21 @@ function Column({ title, items, tone }: { title: string; items: string[]; tone: 
 }
 
 /**
- * The signature illustration: a system map showing how a business's tools connect. It is plain HTML and
- * CSS so it reads in every language, scales to any screen and works with screen readers.
+ * A system map: how a business's tools connect. Plain HTML and CSS, so it reads in every language, scales
+ * to any screen and works with screen readers.
  */
 export function SystemMap({ map }: { map: MapText }) {
   return (
     <figure aria-label={map.title}>
-      <div className="grid gap-y-6 rounded-lg border border-line bg-canvas p-5 sm:p-8 md:grid-cols-[1fr_3rem_1fr_3rem_1fr] md:gap-y-0">
-        <Column title={map.sources.title} items={map.sources.items} tone="plain" />
+      <div className="grid gap-y-6 border border-line bg-canvas p-5 sm:p-6 md:grid-cols-[1fr_2.75rem_1fr_2.75rem_1fr] md:gap-y-0">
+        <Column title={map.sources.title} items={map.sources.items} />
 
-        {/* Between columns: arrows across on wide screens, a small chevron down on narrow ones. */}
+        {/* Between columns: arrows across on wide screens; nothing on narrow ones, where columns stack. */}
         <div aria-hidden="true" className="hidden md:block">
           <div className="h-8" />
           <div className="space-y-3">
             {map.sources.items.map((item) => (
-              <div key={item} className="flex h-14 items-center justify-center">
+              <div key={item} className="flex h-12 items-center justify-center">
                 <Arrow />
               </div>
             ))}
@@ -56,24 +49,24 @@ export function SystemMap({ map }: { map: MapText }) {
         </div>
 
         <div>
-          <Column title={map.core.title} items={map.core.items} tone="core" />
-          <p className="mt-3 rounded-md bg-ink px-4 py-2.5 text-sm text-paper">{map.core.foot}</p>
+          <Column title={map.core.title} items={map.core.items} />
+          <p className="mt-3 text-base text-body">{map.core.foot}</p>
         </div>
 
         <div aria-hidden="true" className="hidden md:block">
           <div className="h-8" />
           <div className="space-y-3">
             {map.core.items.map((item) => (
-              <div key={item} className="flex h-14 items-center justify-center">
+              <div key={item} className="flex h-12 items-center justify-center">
                 <Arrow />
               </div>
             ))}
           </div>
         </div>
 
-        <Column title={map.results.title} items={map.results.items} tone="plain" />
+        <Column title={map.results.title} items={map.results.items} />
       </div>
-      <figcaption className="mt-3 text-sm text-muted">{map.caption}</figcaption>
+      <figcaption className="mt-3 text-base text-body">{map.caption}</figcaption>
     </figure>
   );
 }

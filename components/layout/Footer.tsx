@@ -26,7 +26,7 @@ export async function Footer() {
           </div>
 
           <nav aria-label={t.services} className="lg:col-span-3">
-            <h2 className="text-sm font-medium text-ink">{t.services}</h2>
+            <h2 className="text-lg font-semibold text-ink">{t.services}</h2>
             <ul className="mt-3 space-y-1">
               {services.map((service) => (
                 <li key={service.slug}>
@@ -40,7 +40,7 @@ export async function Footer() {
 
           <div className="lg:col-span-3">
             <nav aria-label={t.industries}>
-              <h2 className="text-sm font-medium text-ink">{t.industries}</h2>
+              <h2 className="text-lg font-semibold text-ink">{t.industries}</h2>
               <ul className="mt-3 space-y-1">
                 {industries.map((industry) => (
                   <li key={industry.slug}>
@@ -54,7 +54,7 @@ export async function Footer() {
           </div>
 
           <nav aria-label={t.company} className="col-span-2 sm:col-span-1 lg:col-span-3">
-            <h2 className="text-sm font-medium text-ink">{t.company}</h2>
+            <h2 className="text-lg font-semibold text-ink">{t.company}</h2>
             <ul className="mt-3 space-y-1">
               {footerNav.company.map((item) => (
                 <li key={item.href}>
@@ -69,7 +69,7 @@ export async function Footer() {
 
         <div className="mt-12 grid gap-6 border-t border-line pt-8 text-base text-body sm:grid-cols-2 lg:grid-cols-12">
           <address className="not-italic lg:col-span-6">
-            <h2 className="text-sm font-medium text-ink">{t.contact}</h2>
+            <h2 className="text-lg font-semibold text-ink">{t.contact}</h2>
             <p className="mt-2">
               <a href={`mailto:${site.email}`} className={linkClass}>
                 {site.email}
@@ -84,7 +84,7 @@ export async function Footer() {
             </p>
           </address>
           <nav aria-label={t.legal} className="lg:col-span-6 lg:justify-self-end">
-            <h2 className="text-sm font-medium text-ink">{t.legal}</h2>
+            <h2 className="text-lg font-semibold text-ink">{t.legal}</h2>
             <ul className="mt-2 flex flex-wrap gap-x-6 gap-y-1 lg:justify-end">
               {footerNav.legal.map((item) => (
                 <li key={item.href}>

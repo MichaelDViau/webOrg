@@ -4,7 +4,6 @@ import { notFound } from "next/navigation";
 import { JsonLd } from "@/components/JsonLd";
 import { ClosingCta } from "@/components/home/ClosingCta";
 import { PageHeader } from "@/components/layout/PageHeader";
-import { ArrowIcon } from "@/components/ui/ArrowIcon";
 import { CheckList } from "@/components/ui/CheckList";
 import { Container } from "@/components/ui/Container";
 import { FeatureList } from "@/components/ui/FeatureList";
@@ -43,7 +42,7 @@ export default async function StandardPage({ params }: StandardPageProps) {
 
   return (
     <>
-      <PageHeader eyebrow={ui.nav.standards} title={standard.headline} lead={standard.lead} />
+      <PageHeader title={standard.headline} lead={standard.lead} />
 
       <Section padding="no-top">
         <Container className="space-y-8 sm:space-y-10">
@@ -91,16 +90,15 @@ export default async function StandardPage({ params }: StandardPageProps) {
 
       <Section tone={standard.targets ? "canvas" : "paper"} padding="compact">
         <Container>
-          <h2 className="text-sm font-medium text-muted">{t.otherStandards}</h2>
+          <h2 className="text-xl font-semibold text-ink">{t.otherStandards}</h2>
           <ul className="mt-4 flex flex-wrap gap-x-8 gap-y-2">
             {others.map((other) => (
               <li key={other.slug}>
                 <Link
                   href={`/standards/${other.slug}`}
-                  className="group inline-flex items-center gap-1.5 py-1 text-lg text-ink hover:underline hover:underline-offset-4"
+                  className="inline-block py-1 text-lg text-ink underline underline-offset-4 hover:no-underline"
                 >
                   {other.name}
-                  <ArrowIcon className="group-hover:translate-x-0.5" />
                 </Link>
               </li>
             ))}

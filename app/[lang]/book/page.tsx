@@ -20,14 +20,12 @@ export default async function BookPage() {
   return (
     <>
       <PageHeader
-        eyebrow={t.eyebrow}
-        eyebrowIsHeading
         title={t.title}
         lead={t.lead}
       />
       <Section padding="compact">
         <Container>
-          <div className="overflow-hidden rounded-lg border border-line bg-paper">
+          <div className="overflow-hidden rounded border border-line bg-paper">
             <iframe
               src={bookingUrl}
               title={t.frameTitle}

@@ -19,7 +19,7 @@ export default async function PartnersPage() {
 
   return (
     <>
-      <PageHeader eyebrow={t.eyebrow} title={t.title} lead={t.lead} />
+      <PageHeader title={t.title} lead={t.lead} />
 
       <Section padding="no-top">
         <Container>
@@ -28,7 +28,7 @@ export default async function PartnersPage() {
           </h2>
           <ul className="mt-12 grid gap-x-8 gap-y-10 lg:grid-cols-3">
             {t.check.map((item) => (
-              <li key={item.title} className="flex flex-col border-t-2 border-ink pt-6" data-reveal>
+              <li key={item.title} className="flex flex-col" data-reveal>
                 <h3 className="text-xl font-semibold tracking-tight">{item.title}</h3>
                 <p className="mt-3 leading-relaxed">{item.detail}</p>
                 <TextLink href={item.href} className="mt-5 self-start">
@@ -56,7 +56,7 @@ export default async function PartnersPage() {
           </h2>
           <div data-reveal>
             <p className="max-w-2xl text-lg leading-relaxed">{t.termsBody}</p>
-            <ButtonLink href="/contact" withArrow className="mt-8">
+            <ButtonLink href="/contact" className="mt-8">
               {t.cta}
             </ButtonLink>
           </div>

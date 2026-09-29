@@ -4,7 +4,6 @@ import { notFound } from "next/navigation";
 import { JsonLd } from "@/components/JsonLd";
 import { NewsletterForm } from "@/components/forms/NewsletterForm";
 import { ClosingCta } from "@/components/home/ClosingCta";
-import { ArrowIcon } from "@/components/ui/ArrowIcon";
 import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
 import { articleSlugs } from "@/lib/insights";
@@ -105,25 +104,23 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
               <div className="space-y-8 lg:sticky lg:top-28">
                 {service && (
                   <div>
-                    <h2 className="text-sm font-medium text-ink">{t.relatedService}</h2>
+                    <h2 className="text-lg font-semibold text-ink">{t.relatedService}</h2>
                     <Link
                       href={`/services/${service.slug}`}
-                      className="group mt-2 inline-flex items-center gap-1.5 text-ink hover:underline hover:underline-offset-4"
+                      className="mt-2 inline-block text-ink underline underline-offset-4 hover:no-underline"
                     >
                       {service.name}
-                      <ArrowIcon className="group-hover:translate-x-0.5" />
                     </Link>
                   </div>
                 )}
                 {industry && (
                   <div>
-                    <h2 className="text-sm font-medium text-ink">{t.relatedIndustry}</h2>
+                    <h2 className="text-lg font-semibold text-ink">{t.relatedIndustry}</h2>
                     <Link
                       href={`/industries/${industry.slug}`}
-                      className="group mt-2 inline-flex items-center gap-1.5 text-ink hover:underline hover:underline-offset-4"
+                      className="mt-2 inline-block text-ink underline underline-offset-4 hover:no-underline"
                     >
                       {industry.name}
-                      <ArrowIcon className="group-hover:translate-x-0.5" />
                     </Link>
                   </div>
                 )}

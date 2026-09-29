@@ -26,7 +26,7 @@ export default async function AboutPage() {
 
   return (
     <>
-      <PageHeader eyebrow={t.eyebrow} title={t.title} lead={format(t.lead, { name: site.name })} />
+      <PageHeader title={t.title} lead={format(t.lead, { name: site.name })} />
 
       <Section padding="no-top">
         <Container className="space-y-8 sm:space-y-10">
@@ -55,7 +55,7 @@ export default async function AboutPage() {
                 width={founderPhoto.width}
                 height={founderPhoto.height}
                 sizes="(min-width: 1024px) 280px, 100vw"
-                className="h-auto w-full max-w-xs rounded-lg"
+                className="h-auto w-full max-w-xs rounded"
               />
             )}
             <div className="max-w-2xl space-y-6 text-lg leading-relaxed">
@@ -90,7 +90,7 @@ export default async function AboutPage() {
               {format(t.newBody, { year: site.foundedYear })}
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <ButtonLink href="/work" variant="inverse" withArrow>
+              <ButtonLink href="/work" variant="inverse">
                 {t.newLinks.demos}
               </ButtonLink>
               <ButtonLink href="/standards" variant="outlineInverse">

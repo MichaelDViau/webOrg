@@ -47,10 +47,10 @@ export async function Hero() {
           <CtaPair long className="mt-10" />
           <ul
             aria-label={t.factsLabel}
-            className="mt-8 grid gap-x-8 gap-y-3 text-base leading-relaxed text-body sm:grid-cols-3"
+            className="mt-8 max-w-2xl list-disc space-y-1.5 pl-5 text-lg leading-relaxed text-body marker:text-ink"
           >
             {facts.map((fact) => (
-              <li key={fact} className="border-t border-line pt-3">
+              <li key={fact} className="pl-1">
                 {fact}
               </li>
             ))}

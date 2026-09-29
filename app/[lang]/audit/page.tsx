@@ -33,9 +33,9 @@ export default async function AuditPage() {
 
   return (
     <>
-      <PageHeader eyebrow={t.eyebrow} eyebrowIsHeading title={t.title} lead={t.lead}>
+      <PageHeader title={t.title} lead={t.lead}>
         <div className="mt-10 flex flex-col gap-3 sm:flex-row">
-          <ButtonLink href="#book" withArrow>
+          <ButtonLink href="#book">
             {ui.cta.audit}
           </ButtonLink>
           <ButtonLink href="/snapshot" variant="secondary">
@@ -48,14 +48,14 @@ export default async function AuditPage() {
       <Section tone="canvas" padding="compact">
         <Container className="grid gap-8 py-4 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-5" data-reveal>
-            <h2 className="text-sm font-medium text-muted">{t.priceTitle}</h2>
+            <h2 className="text-xl font-semibold text-ink">{t.priceTitle}</h2>
             <p className="mt-2 text-4xl font-semibold tracking-tight text-ink sm:text-5xl">
               {format(t.priceLabel, { price })}
             </p>
-            <p className="mt-3 leading-relaxed">{t.priceDetail}</p>
+            <p className="mt-3 text-lg leading-relaxed">{t.priceDetail}</p>
           </div>
           <div className="lg:col-span-7" data-reveal>
-            <h2 className="text-sm font-medium text-muted">{t.creditTitle}</h2>
+            <h2 className="text-xl font-semibold text-ink">{t.creditTitle}</h2>
             <p className="mt-2 max-w-xl text-2xl leading-snug text-ink">{format(t.creditBody, { days })}</p>
           </div>
         </Container>
@@ -77,16 +77,15 @@ export default async function AuditPage() {
           <h2 className="text-heading" data-reveal>
             {t.receiveTitle}
           </h2>
-          <ul className="mt-12 grid gap-x-8 gap-y-10 lg:grid-cols-3">
-            {t.receive.map((item, index) => (
-              <li key={item.title} className="border-t-2 border-ink pt-6" data-reveal>
-                <span className="text-sm text-muted tabular-nums">{String(index + 1).padStart(2, "0")}</span>
-                <h3 className="mt-3 text-xl font-semibold tracking-tight">{item.title}</h3>
-                <p className="mt-3 leading-relaxed">{item.detail}</p>
+          <ul className="mt-8 grid gap-x-10 gap-y-8 lg:grid-cols-3">
+            {t.receive.map((item) => (
+              <li key={item.title} data-reveal>
+                <h3 className="text-xl font-semibold tracking-tight">{item.title}</h3>
+                <p className="mt-2 text-lg leading-relaxed">{item.detail}</p>
               </li>
             ))}
           </ul>
-          <div className="mt-14">
+          <div className="mt-12">
             <SystemMap map={{ ...home.hero.map, caption: t.mapCaption }} />
           </div>
         </Container>
@@ -122,10 +121,10 @@ export default async function AuditPage() {
               {t.formTitle}
             </h2>
             <p className="mt-5 text-lg leading-relaxed">{t.formLead}</p>
-            <p className="mt-6 text-sm text-muted">{ui.site.hours}</p>
+            <p className="mt-6 text-base text-body">{ui.site.hours}</p>
           </div>
           <div className="lg:col-span-8">
-            <div className="rounded-lg border border-line bg-paper p-6 sm:p-10">
+            <div className="rounded border border-line bg-paper p-6 sm:p-8">
               <LeadForm
                 locale={locale}
                 intent="audit"
@@ -160,7 +159,7 @@ export default async function AuditPage() {
             <h2 className="text-subheading">{t.smallerTitle}</h2>
             <p className="mt-2 max-w-xl leading-relaxed">{t.smallerBody}</p>
           </div>
-          <ButtonLink href="/snapshot" variant="secondary" withArrow className="shrink-0">
+          <ButtonLink href="/snapshot" variant="secondary" className="shrink-0">
             {ui.cta.snapshot}
           </ButtonLink>
         </Container>

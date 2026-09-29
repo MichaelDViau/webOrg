@@ -23,7 +23,7 @@ export async function CtaPair({ tone = "light", long = false, secondLabel, class
 
   return (
     <div className={cn("flex flex-col gap-3 sm:flex-row", className)}>
-      <ButtonLink href={auditHref} variant={dark ? "inverse" : "primary"} withArrow>
+      <ButtonLink href={auditHref} variant={dark ? "inverse" : "primary"}>
         {long ? ui.cta.auditLong : ui.cta.audit}
       </ButtonLink>
       <ButtonLink href={snapshotHref} variant={dark ? "outlineInverse" : "secondary"}>

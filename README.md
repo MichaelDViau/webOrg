@@ -112,6 +112,7 @@ Secrets are only read on the server and are never exposed to the browser. For co
 
 - **The home headline keeps its "Z" in every language**: a plain lead-in and a black block on the first line, a black block and plain text on the second (`lead`, `block1`, `block2`, `tail` in `home.ts`, for example "We build [the systems] / [your business] runs on."). Its size follows the screen width so the two lines never wrap; on phones each phrase gets its own line. When you edit or translate it, keep all four parts and check the result at several widths.
 - Typeface: Geist Sans, self-hosted through the `geist` package. Colors and the heading scale are defined once in `app/globals.css`. One deep accent color plus neutrals; the deeper `accent-strong` shade is used for small text so it meets WCAG AA contrast.
+- **Keep the UI plain.** No pill labels or dots, no tinted status pills, no fake window chrome, no chip lists, no numbered `01 02 03` rows for lists that aren't a sequence, no small labels above headings, and no arrow on every link. Use headings, paragraphs, bullets, underlined links, solid buttons and simple bordered boxes. The demo label is a plain solid rectangle.
 - The signature illustration is the **system map** (`components/illustrations/SystemMap.tsx`), plain HTML and CSS so it reads in every language. There are no stock photos: the About page shows a real photo of the founder once you set `founderPhoto` in `lib/site.ts`.
 - Share images are in `public/og/` (one per language, 1200 × 630).
 
