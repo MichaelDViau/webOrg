@@ -13,7 +13,7 @@ const badgeTones: Record<Tone, string> = {
 
 function StatusBadge({ tone, children }: { tone: Tone; children: string }) {
   return (
-    <span className={cn("inline-flex shrink-0 items-center rounded-full border px-2.5 py-0.5 text-xs font-medium", badgeTones[tone])}>
+    <span className={cn("inline-flex shrink-0 items-center rounded-sm border px-2 py-0.5 text-xs font-medium", badgeTones[tone])}>
       {children}
     </span>
   );
@@ -22,13 +22,8 @@ function StatusBadge({ tone, children }: { tone: Tone; children: string }) {
 /** The window around every demo screen: a title bar with the app name, and a sample-data footer. */
 function Frame({ app, sampleData, children }: { app: string; sampleData: string; children: ReactNode }) {
   return (
-    <div className="overflow-hidden rounded-lg border border-line-strong bg-paper shadow-sm" data-demo-frame>
+    <div className="overflow-hidden rounded border border-line-strong bg-paper" data-demo-frame>
       <div className="flex items-center gap-3 border-b border-line bg-canvas px-4 py-3">
-        <span aria-hidden="true" className="flex gap-1.5">
-          <span className="size-2.5 rounded-full bg-line-strong" />
-          <span className="size-2.5 rounded-full bg-line-strong" />
-          <span className="size-2.5 rounded-full bg-line-strong" />
-        </span>
         <span className="text-sm font-medium text-ink">{app}</span>
       </div>
       <div className="p-4 sm:p-6">{children}</div>

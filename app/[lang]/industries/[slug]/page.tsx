@@ -99,7 +99,7 @@ export default async function IndustryPage({ params }: IndustryPageProps) {
             <p className="max-w-2xl text-lg leading-relaxed">{industry.softwareIntro}</p>
             <ul className="mt-6 flex flex-wrap gap-2">
               {industry.software.map((name) => (
-                <li key={name} className="rounded-full border border-line-strong bg-paper px-4 py-1.5 text-sm text-ink">
+                <li key={name} className="rounded-sm border border-line-strong bg-paper px-3 py-1.5 text-base text-ink">
                   {name}
                 </li>
               ))}
