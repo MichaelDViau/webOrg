@@ -83,7 +83,7 @@ export function Header({ nav, labels }: HeaderProps) {
                   aria-current={isActive(pathname, item.href) ? "page" : undefined}
                   className={cn(
                     "text-sm transition-colors duration-200 hover:text-ink",
-                    isActive(pathname, item.href) ? "font-medium text-ink" : "text-muted",
+                    isActive(pathname, item.href) ? "font-medium text-ink" : "text-body",
                   )}
                 >
                   {item.label}

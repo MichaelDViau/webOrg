@@ -27,7 +27,7 @@ export async function Hero() {
   );
 
   return (
-    <section className="overflow-hidden pt-16 sm:pt-24 lg:pt-28">
+    <section className="overflow-hidden pt-12 sm:pt-16 lg:pt-20">
       <Container>
         <div className="max-w-4xl">
           {/*
@@ -42,14 +42,20 @@ export async function Hero() {
             )}
             <Knockout>{t.block1}</Knockout>
             <br />
-            <Knockout>{t.block2}</Knockout> <br className="sm:hidden" />
-            {t.tail}
+            <Knockout>{t.block2}</Knockout>
+            {t.tail && (
+              <>
+                {" "}
+                <br className="sm:hidden" />
+                {t.tail}
+              </>
+            )}
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-pretty sm:text-xl">{t.intro}</p>
           <CtaPair long className="mt-10" />
           <ul
             aria-label={t.factsLabel}
-            className="mt-8 grid gap-x-8 gap-y-3 text-sm leading-relaxed text-muted sm:grid-cols-3"
+            className="mt-8 grid gap-x-8 gap-y-3 text-base leading-relaxed text-body sm:grid-cols-3"
           >
             {facts.map((fact) => (
               <li key={fact} className="border-t border-line pt-3">
@@ -59,7 +65,7 @@ export async function Hero() {
           </ul>
         </div>
 
-        <div className="mt-12 sm:mt-16">
+        <div className="mt-10 sm:mt-14">
           <SystemMap map={t.map} />
         </div>
       </Container>

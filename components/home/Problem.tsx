@@ -14,7 +14,7 @@ export async function Problem() {
         <SectionIntro id="problem" eyebrow={t.eyebrow} title={t.title} />
         <ul className="mt-14 grid gap-x-8 gap-y-10 sm:mt-16 lg:grid-cols-3">
           {t.items.map((item) => (
-            <li key={item} className="border-t-2 border-ink pt-6 text-xl leading-snug text-ink" data-reveal>
+            <li key={item} className="border-t-2 border-ink pt-5 text-xl leading-snug text-ink" data-reveal>
               {item}
             </li>
           ))}

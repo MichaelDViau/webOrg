@@ -9,7 +9,7 @@ export const ui: Ui = {
     description:
       "{name} diseña, construye y opera sitios web, portales de clientes, software interno y automatizaciones para empresas de servicios y operaciones ya establecidas.",
     hours: "De lunes a viernes, de 9:00 a 18:00, hora del centro",
-    shareImageAlt: "{name}: los sistemas que hacen funcionar su empresa, bien construidos y bien cuidados",
+    shareImageAlt: "{name}: los sistemas que hacen funcionar su empresa",
     audienceType: "Empresas de servicios y operaciones establecidas",
     countriesLabel: "Países donde trabajamos",
     countries: ["Estados Unidos", "Canadá", "México"],
@@ -64,7 +64,7 @@ export const ui: Ui = {
   },
 
   footer: {
-    tagline: "Los sistemas que hacen funcionar su empresa, bien construidos y bien cuidados.",
+    tagline: "Los sistemas que hacen funcionar su empresa.",
     services: "Servicios",
     industries: "Sectores",
     company: "Empresa",

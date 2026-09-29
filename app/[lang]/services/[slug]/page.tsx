@@ -70,11 +70,11 @@ export default async function ServicePage({ params }: ServicePageProps) {
 
       {/* The problem, in the client's words */}
       <Section tone="canvas">
-        <Container className="grid gap-10 lg:grid-cols-12 lg:gap-16">
-          <h2 className="text-heading lg:col-span-4" data-reveal>
+        <Container className="space-y-8 sm:space-y-10">
+          <h2 className="text-heading" data-reveal>
             {t.problem}
           </h2>
-          <div className="lg:col-span-8" data-reveal>
+          <div data-reveal>
             <ul className="space-y-4">
               {service.problemQuotes.map((quote) => (
                 <li key={quote} className="border-l-2 border-ink pl-5 text-xl leading-snug text-ink sm:text-2xl">
@@ -89,21 +89,21 @@ export default async function ServicePage({ params }: ServicePageProps) {
 
       {/* What changes */}
       <Section>
-        <Container className="grid gap-10 lg:grid-cols-12 lg:gap-16">
-          <h2 className="text-heading lg:col-span-4" data-reveal>
+        <Container className="space-y-8 sm:space-y-10">
+          <h2 className="text-heading" data-reveal>
             {t.changes}
           </h2>
-          <CheckList items={service.changes} className="text-lg lg:col-span-8" />
+          <CheckList items={service.changes} className="text-lg" />
         </Container>
       </Section>
 
       {/* What's included */}
       <Section tone="canvas">
-        <Container className="grid gap-10 lg:grid-cols-12 lg:gap-16">
-          <h2 className="text-heading lg:col-span-4" data-reveal>
+        <Container className="space-y-8 sm:space-y-10">
+          <h2 className="text-heading" data-reveal>
             {t.included}
           </h2>
-          <FeatureList items={service.included} className="lg:col-span-8" />
+          <FeatureList items={service.included} />
         </Container>
       </Section>
 
@@ -149,9 +149,9 @@ export default async function ServicePage({ params }: ServicePageProps) {
       <TrustStrip />
 
       <Section>
-        <Container className="grid gap-10 lg:grid-cols-12 lg:gap-16">
-          <h2 className="text-heading lg:col-span-4">{t.questions}</h2>
-          <FaqList faqs={service.faqs} className="lg:col-span-8" />
+        <Container className="space-y-8 sm:space-y-10">
+          <h2 className="text-heading">{t.questions}</h2>
+          <FaqList faqs={service.faqs} />
         </Container>
       </Section>
 

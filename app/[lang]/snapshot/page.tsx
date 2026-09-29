@@ -45,7 +45,7 @@ export default async function SnapshotPage() {
           <div className="lg:col-span-7">
             <div className="rounded-lg border border-line p-6 sm:p-10">
               <h2 className="text-2xl font-semibold tracking-tight">{t.formTitle}</h2>
-              <p className="mt-2 mb-8 text-muted">{t.formLead}</p>
+              <p className="mt-2 mb-8 text-lg text-body">{t.formLead}</p>
               <LeadForm
                 locale={locale}
                 intent="snapshot"

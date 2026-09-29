@@ -21,7 +21,7 @@ export async function WhoWeHelp() {
               <h3 className="text-xl font-semibold tracking-tight">{industry.name}</h3>
               <ul className="mt-4 space-y-3">
                 {industry.homeProblems.map((problem) => (
-                  <li key={problem} className="border-l-2 border-line-strong pl-4 leading-relaxed">
+                  <li key={problem} className="border-l-2 border-line-strong pl-4 text-lg leading-relaxed">
                     <q>{problem}</q>
                   </li>
                 ))}

@@ -13,8 +13,8 @@ export const home = {
     // The headline alternates plain text and ink blocks: [lead] [block1] / [block2] [tail]
     lead: "",
     block1: "The systems",
-    block2: "your business runs on,",
-    tail: "engineered and looked after.",
+    block2: "your business",
+    tail: "runs on.",
     intro:
       "We design, build and run websites, client portals, internal software and automations for established service and operations businesses. One accountable team, from diagnosis to daily operation, in English, French and Spanish.",
     /** Facts under the buttons: the cost to start, the reply promise and ownership. */
@@ -68,6 +68,7 @@ export const home = {
     title: "Five kinds of systems, each with one clear job.",
     lead: "Every one starts from a problem you can name, and ends with something you can measure.",
     linkLabel: "See how it works",
+    also: "Also available:",
     /** In the order of `homeBuildSlugs` in lib/services.ts; each card links to its service page. */
     cards: [
       {

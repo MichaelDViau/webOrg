@@ -9,7 +9,7 @@ export const ui: Ui = {
     description:
       "{name} conçoit, construit et exploite des sites web, des portails clients, des logiciels internes et des automatisations pour les entreprises de services et d'exploitation établies.",
     hours: "Du lundi au vendredi, de 9 h à 18 h, heure du Centre",
-    shareImageAlt: "{name} : les systèmes qui font tourner votre entreprise, conçus et entretenus avec soin",
+    shareImageAlt: "{name} : les systèmes qui font tourner votre entreprise",
     audienceType: "Entreprises de services et d'exploitation établies",
     countriesLabel: "Pays desservis",
     countries: ["États-Unis", "Canada", "Mexique"],
@@ -64,7 +64,7 @@ export const ui: Ui = {
   },
 
   footer: {
-    tagline: "Les systèmes qui font tourner votre entreprise, conçus et entretenus avec soin.",
+    tagline: "Les systèmes qui font tourner votre entreprise.",
     services: "Services",
     industries: "Secteurs",
     company: "Entreprise",

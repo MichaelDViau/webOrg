@@ -28,6 +28,10 @@ export const servicePricing: Record<ServiceSlug, { from: number; per: "project" 
   "ai-with-judgment": { from: 0, per: "project" },
   "integrations-and-data": { from: 0, per: "project" },
   "managed-plans": { from: 0, per: "month" },
+  "custom-software": { from: 0, per: "project" },
+  "cloud-modernization": { from: 0, per: "project" },
+  devops: { from: 0, per: "project" },
+  "strategy-design": { from: 0, per: "project" },
 };
 
 /** Amount formatted for the language: 15000 becomes "15,000" (en, es) or "15 000" (fr). Unset prices show "0000". */

@@ -5,7 +5,7 @@ import { getContent } from "@/lib/i18n/server";
 import { footerNav, site } from "@/lib/site";
 import { Logo } from "./Logo";
 
-const linkClass = "inline-block py-1 text-sm text-muted transition-colors hover:text-ink";
+const linkClass = "inline-block py-1 text-base text-body transition-colors hover:text-ink hover:underline hover:underline-offset-4";
 
 export async function Footer() {
   const { ui, services, industries } = await getContent();
@@ -19,8 +19,8 @@ export async function Footer() {
         <div className="grid grid-cols-2 gap-x-6 gap-y-10 lg:grid-cols-12 lg:gap-12">
           <div className="col-span-2 lg:col-span-3">
             <Logo label={format(ui.logoLabel, { name: site.name })} />
-            <p className="mt-5 max-w-xs text-sm leading-relaxed text-muted">{t.tagline}</p>
-            <p className="mt-3 max-w-xs text-sm leading-relaxed text-muted">
+            <p className="mt-5 max-w-xs text-base leading-relaxed text-body">{t.tagline}</p>
+            <p className="mt-3 max-w-xs text-base leading-relaxed text-body">
               {format(t.newCompany, { year: site.foundedYear })}
             </p>
           </div>
@@ -67,7 +67,7 @@ export async function Footer() {
           </nav>
         </div>
 
-        <div className="mt-12 grid gap-6 border-t border-line pt-8 text-sm text-muted sm:grid-cols-2 lg:grid-cols-12">
+        <div className="mt-12 grid gap-6 border-t border-line pt-8 text-base text-body sm:grid-cols-2 lg:grid-cols-12">
           <address className="not-italic lg:col-span-6">
             <h2 className="text-sm font-medium text-ink">{t.contact}</h2>
             <p className="mt-2">
@@ -97,7 +97,7 @@ export async function Footer() {
           </nav>
         </div>
 
-        <p className="mt-8 text-sm text-muted">
+        <p className="mt-8 text-base text-muted">
           © {new Date().getFullYear()} {site.legalName}. {t.rights}
         </p>
       </Container>

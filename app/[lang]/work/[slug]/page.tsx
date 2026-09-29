@@ -57,22 +57,22 @@ export default async function DemoPage({ params }: DemoPageProps) {
       </PageHeader>
 
       <Section tone="canvas">
-        <Container className="grid gap-10 lg:grid-cols-12 lg:gap-16">
-          <h2 className="text-heading lg:col-span-4" data-reveal>
+        <Container className="space-y-8 sm:space-y-10">
+          <h2 className="text-heading" data-reveal>
             {t.problem}
           </h2>
-          <p className="max-w-2xl text-xl leading-relaxed text-ink lg:col-span-8" data-reveal>
+          <p className="max-w-2xl text-xl leading-relaxed text-ink" data-reveal>
             {demo.problem}
           </p>
         </Container>
       </Section>
 
       <Section>
-        <Container className="grid gap-10 lg:grid-cols-12 lg:gap-16">
-          <h2 className="text-heading lg:col-span-4" data-reveal>
+        <Container className="space-y-8 sm:space-y-10">
+          <h2 className="text-heading" data-reveal>
             {t.whatItDoes}
           </h2>
-          <FeatureList items={demo.does} className="lg:col-span-8" />
+          <FeatureList items={demo.does} />
         </Container>
       </Section>
 

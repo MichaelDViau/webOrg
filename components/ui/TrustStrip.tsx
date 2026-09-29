@@ -27,8 +27,8 @@ export async function TrustStrip() {
         <ul className="mt-6 grid gap-x-8 gap-y-6 sm:grid-cols-2 lg:grid-cols-4">
           {t.items.map((item) => (
             <li key={item.title} className="border-t-2 border-ink pt-4">
-              <p className="font-medium text-ink">{item.title}</p>
-              <p className="mt-1 text-sm leading-relaxed text-muted">{item.detail}</p>
+              <p className="text-lg font-semibold text-ink">{item.title}</p>
+              <p className="mt-1 text-base leading-relaxed text-body">{item.detail}</p>
             </li>
           ))}
         </ul>

@@ -9,8 +9,8 @@ export const home: Home = {
   hero: {
     lead: "",
     block1: "Les systèmes",
-    block2: "qui font tourner votre entreprise,",
-    tail: "conçus et entretenus avec soin.",
+    block2: "qui font tourner votre entreprise",
+    tail: "",
     intro:
       "Nous concevons, construisons et exploitons des sites web, des portails clients, des logiciels internes et des automatisations pour les entreprises de services et d'exploitation établies. Une seule équipe responsable, du diagnostic à l'exploitation quotidienne, en français, en anglais et en espagnol.",
     facts: [
@@ -67,6 +67,7 @@ export const home: Home = {
     title: "Cinq types de systèmes, chacun avec un rôle précis.",
     lead: "Chacun part d'un problème que vous pouvez nommer et aboutit à quelque chose que vous pouvez mesurer.",
     linkLabel: "Voir comment ça fonctionne",
+    also: "Aussi offerts :",
     cards: [
       {
         title: "Sites web générateurs de revenus",

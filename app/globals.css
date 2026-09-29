@@ -79,8 +79,11 @@
     scroll-padding-top: 5rem;
   }
 
+  /* Body text is a little larger than the browser default, with generous line spacing, so long copy is easy to read. */
   body {
     @apply bg-paper font-sans text-body antialiased;
+    font-size: 1.0625rem;
+    line-height: 1.7;
   }
 
   h1,
@@ -157,15 +160,15 @@
 }
 
 @utility text-heading {
-  font-size: 1.875rem;
-  line-height: 1.15;
+  font-size: 1.75rem;
+  line-height: 1.2;
   letter-spacing: -0.025em;
   font-weight: 600;
   @media (width >= 40rem) {
-    font-size: 2.25rem;
+    font-size: 2rem;
   }
   @media (width >= 64rem) {
-    font-size: 2.5rem;
+    font-size: 2.25rem;
   }
 }
 

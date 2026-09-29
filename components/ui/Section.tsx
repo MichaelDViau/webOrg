@@ -8,9 +8,9 @@ const tones = {
 } as const;
 
 const spacing = {
-  top: "pt-16 sm:pt-24 lg:pt-28",
-  bottom: "pb-16 sm:pb-24 lg:pb-28",
-  compact: "py-12 sm:py-16",
+  top: "pt-12 sm:pt-16 lg:pt-20",
+  bottom: "pb-12 sm:pb-16 lg:pb-20",
+  compact: "py-10 sm:py-12",
 } as const;
 
 interface SectionProps extends HTMLAttributes<HTMLElement> {

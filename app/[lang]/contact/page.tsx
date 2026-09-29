@@ -71,11 +71,11 @@ export default async function ContactPage() {
                 {site.email}
               </a>
             </p>
-            <p className="text-muted">{ui.site.hours}</p>
+            <p className="text-body">{ui.site.hours}</p>
           </address>
 
           <h2 className="mt-12 text-sm font-medium text-ink">{t.servingTitle}</h2>
-          <p className="mt-3 leading-relaxed text-muted">
+          <p className="mt-3 leading-relaxed text-body">
             {format(t.servingBody, { countries: ui.site.countries.join(", "), languages: ui.site.languages })}
           </p>
         </div>

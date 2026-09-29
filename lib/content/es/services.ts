@@ -475,6 +475,343 @@ export const services: Record<ServiceSlug, ServiceText> = {
     ],
   },
 
+  "custom-software": {
+    name: "Software a la medida",
+    card: "Aplicaciones web, aplicaciones móviles y API a la medida, hechas según cómo funciona su organización.",
+    seoTitle: "Software a la medida: aplicaciones web, aplicaciones móviles y API",
+    metaDescription:
+      "Aplicaciones web a la medida, aplicaciones móviles empresariales y API para empresas establecidas y grandes organizaciones. Fases a precio fijo, código que es suyo e informe escrito cada semana.",
+    headline: "Software hecho en torno a cómo funciona su organización.",
+    lead: "Diseñamos y construimos aplicaciones web a la medida, aplicaciones móviles empresariales y las API que las conectan, para organizaciones cuyas necesidades no cubre el software de catálogo.",
+    forWhom: "Para empresas establecidas y grandes organizaciones que necesitan software que ningún producto estándar ofrece.",
+    problemQuotes: [
+      "El software de catálogo no se ajusta a nuestro proceso.",
+      "Hemos superado las herramientas con las que empezamos.",
+      "Nuestros sistemas no se hablan entre sí, y cada conexión es un caso aparte.",
+    ],
+    problemDetail:
+      "El software a la medida vale la pena cuando su proceso es su ventaja, o cuando ningún producto hace el trabajo. No vale la pena cuando bastaría una herramienta estándar. Le decimos en cuál de los dos casos está antes de que se comprometa.",
+    changes: [
+      "El software se ajusta a cómo trabajan de verdad sus equipos, y no al revés.",
+      "Las aplicaciones web y móviles comparten las mismas reglas de negocio mediante una API.",
+      "Otros sistemas pueden conectarse al suyo mediante API documentadas y seguras.",
+      "Usted ve el avance cada semana, y cada versión se prueba.",
+      "El código es suyo, así que cualquier desarrollador competente puede tomar el relevo.",
+    ],
+    included: [
+      {
+        title: "Definición del alcance",
+        detail: "Los usuarios, los flujos de trabajo y una primera versión lo bastante pequeña para construirla bien, acordados por escrito.",
+      },
+      {
+        title: "Aplicaciones web",
+        detail: "Aplicaciones en el navegador, con roles y permisos, paneles y reportes.",
+      },
+      {
+        title: "Aplicaciones móviles",
+        detail: "Aplicaciones empresariales para teléfonos y tabletas, en iOS y Android, o una aplicación web adaptada al móvil cuando eso basta.",
+      },
+      {
+        title: "API e integraciones",
+        detail: "Interfaces documentadas, con control de versiones y seguras, para que otros sistemas puedan usar el suyo.",
+      },
+      {
+        title: "Pruebas y documentación",
+        detail: "Pruebas automatizadas de los flujos que importan y documentación para quienes se encargan del mantenimiento.",
+      },
+      {
+        title: "Entrega",
+        detail: "El código en su repositorio, sus cuentas a su nombre y una sesión de trabajo para su equipo.",
+      },
+    ],
+    phases: [
+      {
+        title: "Definir el alcance",
+        detail: "Quién la usa, qué debe hacer primero y cómo sabremos que funciona.",
+      },
+      {
+        title: "Diseño y primera versión",
+        detail: "Diseños interactivos probados con usuarios reales y luego la versión más pequeña que quita trabajo real.",
+      },
+      {
+        title: "Construir a la vista",
+        detail: "Un enlace de pruebas desde la primera semana y un informe escrito cada semana.",
+      },
+      {
+        title: "Lanzamiento y 90 días de cuidado",
+        detail: "Publicamos y, durante 90 días, vigilamos y corregimos lo que surja.",
+      },
+    ],
+    faqs: [
+      {
+        question: "¿Construyen aplicaciones móviles?",
+        answer:
+          "Sí: aplicaciones empresariales para iOS y Android, o una aplicación web adaptada al móvil cuando cubre la necesidad. Recomendamos la opción más sencilla cuando cumple su función.",
+      },
+      {
+        question: "¿Pueden construir una API para un sistema que ya tenemos?",
+        answer:
+          "Sí. Diseñamos una API documentada frente a él, para que nuevas aplicaciones y otros sistemas puedan usarlo con seguridad.",
+      },
+      {
+        question: "¿De quién es el código?",
+        answer: "Suyo. Vive en un repositorio de su organización y cualquier desarrollador competente puede mantenerlo.",
+      },
+    ],
+  },
+
+  "cloud-modernization": {
+    name: "Modernización en la nube",
+    card: "Lleve sus productos existentes a la nube con un plan, en pasos probados y reversibles.",
+    seoTitle: "Modernización en la nube y migración a Azure y AWS",
+    metaDescription:
+      "Evalúe, rediseñe y migre aplicaciones existentes a Microsoft Azure o Amazon Web Services, en pasos probados y reversibles. Fases a precio fijo y código que es suyo.",
+    headline: "Lleve su software existente a la nube sin detener el negocio.",
+    lead: "Evaluamos, rediseñamos y migramos productos existentes a las principales plataformas en la nube, como Microsoft Azure y Amazon Web Services, en pasos probados y reversibles.",
+    forWhom: "Para organizaciones que operan software antiguo en servidores que preferirían no mantener.",
+    problemQuotes: [
+      "Nuestro software corre en servidores que nadie quiere tocar.",
+      "Solo una persona entiende cómo funciona.",
+      "Una migración nos da miedo. ¿Y si se rompe?",
+    ],
+    problemDetail:
+      "El software existente no es un problema hasta que lo es: un sistema sin soporte, un experto que se va, una corrección de seguridad que no se puede aplicar. Pasar a la nube no siempre es la respuesta. A veces un cambio más pequeño da más por menos. La evaluación lo dice.",
+    changes: [
+      "Usted sabe qué opera, qué depende de qué y cuánto cuesta.",
+      "El cambio se hace en pasos pequeños y probados, cada uno con una vía de regreso.",
+      "Los sistemas son más fáciles de proteger, actualizar y escalar.",
+      "Los costos de la nube son visibles y están controlados.",
+      "Su equipo sabe operar el resultado.",
+    ],
+    included: [
+      {
+        title: "Evaluación",
+        detail: "Un inventario de aplicaciones, datos y dependencias, y de los riesgos de cada una. Empieza en la auditoría.",
+      },
+      {
+        title: "Diseño del destino",
+        detail: "La arquitectura en Azure o AWS, con seguridad, resiliencia y una estimación de costos.",
+      },
+      {
+        title: "Rediseño de la arquitectura",
+        detail: "Desde mover tal cual hasta rehacer partes del sistema, solo donde vale la pena.",
+      },
+      {
+        title: "Migración de datos y aplicaciones",
+        detail: "Ensayada primero en una copia, con un plan de cambio y una vía de regreso.",
+      },
+      {
+        title: "Seguridad y accesos",
+        detail: "Identidad, permisos, copias de seguridad y registros configurados desde el principio.",
+      },
+      {
+        title: "Control de costos y entrega",
+        detail: "Presupuestos y alertas, además de documentación y guías de operación que su equipo puede usar.",
+      },
+    ],
+    phases: [
+      {
+        title: "Evaluar",
+        detail: "Qué opera, de qué depende y qué debe migrar, quedarse o retirarse.",
+      },
+      {
+        title: "Diseñar el destino",
+        detail: "La arquitectura, el modelo de seguridad y los costos, acordados por escrito.",
+      },
+      {
+        title: "Migrar por pasos",
+        detail: "Una carga de trabajo a la vez, cada una ensayada, probada y reversible.",
+      },
+      {
+        title: "Lanzamiento y 90 días de cuidado",
+        detail: "Monitoreamos el nuevo entorno y corregimos lo que surja durante 90 días.",
+      },
+    ],
+    faqs: [
+      {
+        question: "¿Debemos migrarlo todo?",
+        answer:
+          "No necesariamente. La evaluación separa lo que se beneficia de la nube de lo que debe quedarse donde está o retirarse.",
+      },
+      {
+        question: "¿Azure o AWS?",
+        answer:
+          "Recomendamos según lo que ya opera, las habilidades de su equipo y los costos, y le explicamos por qué. Podemos trabajar con cualquiera de las dos.",
+      },
+      {
+        question: "¿Y si la migración falla?",
+        answer:
+          "Cada paso se ensaya en una copia y tiene un plan de regreso. No hacemos el cambio hasta que esté comprobado.",
+      },
+    ],
+  },
+
+  devops: {
+    name: "DevOps y automatización",
+    card: "Compilaciones, pruebas y publicaciones automatizadas: el software se entrega con frecuencia y con seguridad.",
+    seoTitle: "DevOps: pipelines de CI/CD y automatización de la ingeniería de calidad",
+    metaDescription:
+      "Integración continua, pipelines de despliegue y pruebas automatizadas, para que su equipo publique software con frecuencia, con seguridad y con registro de cada cambio.",
+    headline: "Publique cambios con frecuencia y sepa que funcionan.",
+    lead: "Configuramos integración continua, pipelines de despliegue y verificaciones de calidad automatizadas, para que cada cambio se compile, se pruebe y se publique de la misma manera.",
+    forWhom: "Para equipos de ingeniería cuyas publicaciones son lentas, manuales o estresantes.",
+    problemQuotes: [
+      "Cada publicación es un evento manual y estresante.",
+      "Encontramos los errores después que los clientes.",
+      "Solo una persona sabe cómo desplegar.",
+    ],
+    problemDetail:
+      "Las publicaciones manuales dependen de la memoria y de la suerte. Los pipelines automatizados vuelven aburridas las publicaciones, que es lo que usted quiere: los mismos pasos y las mismas verificaciones cada vez, con registro de cada una.",
+    changes: [
+      "Cada cambio se compila y se prueba automáticamente.",
+      "Las publicaciones siguen un solo camino repetible que cualquiera del equipo puede ejecutar.",
+      "Los problemas se detectan antes de que los vean los clientes.",
+      "Usted ve qué cambió, cuándo y quién lo aprobó.",
+      "Una mala versión se puede revertir con rapidez.",
+    ],
+    included: [
+      {
+        title: "Integración continua",
+        detail: "Compilaciones y pruebas automatizadas en cada cambio.",
+      },
+      {
+        title: "Pipelines de despliegue",
+        detail: "Publicaciones repetibles a preproducción y producción, con aprobaciones donde las necesite.",
+      },
+      {
+        title: "Automatización de la ingeniería de calidad",
+        detail: "Pruebas unitarias, de API y de extremo a extremo automatizadas que protegen los flujos más importantes.",
+      },
+      {
+        title: "Infraestructura como código",
+        detail: "Entornos definidos en código, para poder reconstruirlos y revisarlos.",
+      },
+      {
+        title: "Controles de seguridad en el pipeline",
+        detail: "Análisis de dependencias vulnerables y de secretos expuestos antes de que algo se publique.",
+      },
+      {
+        title: "Monitoreo, documentación y capacitación",
+        detail: "Alertas cuando algo falla y guías para que su equipo sea dueño del proceso.",
+      },
+    ],
+    phases: [
+      {
+        title: "Revisar el proceso actual",
+        detail: "Cómo pasa hoy el código de una laptop a producción y dónde se frena o se rompe.",
+      },
+      {
+        title: "Automatizar la compilación y las pruebas",
+        detail: "Cada cambio se compila y se verifica automáticamente.",
+      },
+      {
+        title: "Automatizar el despliegue",
+        detail: "Las publicaciones pasan por un solo pipeline, con aprobaciones y vía de regreso.",
+      },
+      {
+        title: "Lanzamiento y 90 días de cuidado",
+        detail: "Monitoreamos los pipelines y corregimos lo que surja durante 90 días.",
+      },
+    ],
+    faqs: [
+      {
+        question: "¿Tenemos que rehacer nuestro software?",
+        answer:
+          "No. Añadimos pipelines y pruebas alrededor de lo que tiene, empezando por los flujos más importantes.",
+      },
+      {
+        question: "¿Qué herramientas usan?",
+        answer:
+          "Herramientas comunes que su equipo puede conservar, como GitHub Actions o Azure DevOps. Elegimos según dónde vivan ya su código y su nube.",
+      },
+      {
+        question: "¿Cuánta automatización de pruebas es suficiente?",
+        answer:
+          "La suficiente para proteger los flujos que más dolerían si se rompieran. Primero acordamos esa lista y luego la ampliamos.",
+      },
+    ],
+  },
+
+  "strategy-design": {
+    name: "Estrategia y diseño",
+    card: "Diseño UX, estrategia de producto digital y asesoría técnica, antes de construir.",
+    seoTitle: "Estrategia de producto digital, diseño UX y asesoría técnica",
+    metaDescription:
+      "Diseño de la experiencia de usuario, estrategia de producto digital y asesoría técnica: decida qué construir, y cómo, antes de gastar en construirlo.",
+    headline: "Decida qué construir antes de construirlo.",
+    lead: "Ofrecemos diseño de la experiencia de usuario, estrategia de producto digital y asesoría técnica, para que invierta en lo correcto y lo construya una sola vez.",
+    forWhom: "Para equipos que planean un producto nuevo o un gran cambio y quieren primero una asesoría clara e independiente.",
+    problemQuotes: [
+      "No sabemos qué construir primero.",
+      "Nuestros usuarios encuentran confuso el sistema actual.",
+      "Necesitamos una segunda opinión sobre el plan técnico.",
+    ],
+    problemDetail:
+      "El software más caro es el software equivocado. La estrategia y el diseño cuestan poco frente a construir lo que no era, y dan a su equipo, y a cualquier desarrollador que elija, algo concreto sobre lo que construir.",
+    changes: [
+      "Las prioridades son claras y quedan por escrito.",
+      "Las pantallas se prueban con usuarios reales antes de que empiece el desarrollo.",
+      "El enfoque técnico se revisa y sus riesgos se nombran.",
+      "Recibe una hoja de ruta con fases con costos.",
+      "Los desarrolladores, nuestros o suyos, parten de diseños y decisiones claros.",
+    ],
+    included: [
+      {
+        title: "Descubrimiento",
+        detail: "Entrevistas con usuarios y partes interesadas, y una mirada a cómo ocurre de verdad el trabajo.",
+      },
+      {
+        title: "Estrategia de producto digital",
+        detail: "Objetivos, prioridades, una hoja de ruta y las medidas que mostrarán que funcionó.",
+      },
+      {
+        title: "Investigación y diseño UX",
+        detail: "Flujos de usuario, bocetos y prototipos interactivos, probados con usuarios reales.",
+      },
+      {
+        title: "Un sistema de diseño",
+        detail: "Un conjunto coherente de componentes, para que cada pantalla se vea y funcione igual.",
+      },
+      {
+        title: "Asesoría técnica",
+        detail: "Revisión de la arquitectura, decisiones de construir o comprar, elección de proveedores y riesgos, por escrito.",
+      },
+      {
+        title: "Una hoja de ruta con costos",
+        detail: "Fases priorizadas con precios, listas para que las construyamos nosotros o cualquier otro equipo.",
+      },
+    ],
+    phases: [
+      {
+        title: "Descubrir",
+        detail: "Quiénes son los usuarios, qué necesitan y qué se lo impide.",
+      },
+      {
+        title: "Definir",
+        detail: "Los objetivos, las prioridades y el enfoque técnico, acordados por escrito.",
+      },
+      {
+        title: "Diseñar y probar",
+        detail: "Prototipos probados con usuarios reales y ajustados antes de construir nada.",
+      },
+      {
+        title: "Hoja de ruta y entrega",
+        detail: "Una hoja de ruta con costos y archivos de diseño que son suyos, listos para cualquier equipo.",
+      },
+    ],
+    faqs: [
+      {
+        question: "¿Tenemos que construir con ustedes después?",
+        answer: "No. La estrategia, los diseños y la hoja de ruta son suyos para usarlos con cualquier equipo.",
+      },
+      {
+        question: "¿Pueden revisar un plan hecho por otra firma?",
+        answer:
+          "Sí. Una revisión de asesoría técnica examina la arquitectura, los riesgos y la estimación, y le da una opinión por escrito.",
+      },
+    ],
+  },
+
   "managed-plans": {
     name: "Planes de gestión",
     card: "Una persona con nombre y apellido responsable de sus sistemas, cada mes.",
@@ -555,9 +892,9 @@ export const services: Record<ServiceSlug, ServiceText> = {
 export const servicesPage: ServicesPage = {
   metaTitle: "Servicios: sitios web, portales, aplicaciones, automatización e IA",
   metaDescription:
-    "Sitios web que generan ingresos, portales para clientes y propietarios, aplicaciones de operaciones, automatización, IA con revisión humana, integraciones y planes de gestión. Fases a precio fijo, a partir de una auditoría de sistemas digitales.",
+    "Sitios web que generan ingresos, portales, aplicaciones de operaciones, software a la medida, automatización, IA con revisión humana, integraciones, modernización en la nube, DevOps, estrategia y diseño, y planes de gestión. Fases a precio fijo, a partir de una auditoría de sistemas digitales.",
   eyebrow: "Servicios",
-  title: "Siete servicios, organizados en torno a su problema.",
+  title: "Once servicios, organizados en torno a su problema.",
   lead: "Todo proyecto empieza con la auditoría. Muestra cuáles de estos servicios necesita primero y cuánto cuestan.",
   from: "Precio",
   ctaTitle: "¿No sabe cuál necesita?",

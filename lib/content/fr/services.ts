@@ -475,6 +475,343 @@ export const services: Record<ServiceSlug, ServiceText> = {
     ],
   },
 
+  "custom-software": {
+    name: "Logiciels sur mesure",
+    card: "Applications web, applications mobiles et API sur mesure, conçues selon le fonctionnement de votre organisation.",
+    seoTitle: "Logiciels sur mesure : applications web, applications mobiles et API",
+    metaDescription:
+      "Applications web sur mesure, applications mobiles d'entreprise et API pour les entreprises établies et les grandes organisations. Phases à prix fixe, code qui vous appartient et compte rendu écrit chaque semaine.",
+    headline: "Un logiciel conçu autour du fonctionnement de votre organisation.",
+    lead: "Nous concevons et construisons des applications web sur mesure, des applications mobiles d'entreprise et les API qui les relient, pour les organisations dont les besoins dépassent ce qu'offre un logiciel du commerce.",
+    forWhom: "Pour les entreprises établies et les grandes organisations qui ont besoin d'un logiciel qu'aucun produit standard n'offre.",
+    problemQuotes: [
+      "Les logiciels du commerce ne conviennent pas à notre processus.",
+      "Nous avons dépassé les outils avec lesquels nous avons commencé.",
+      "Nos systèmes ne se parlent pas, et chaque connexion est un cas unique.",
+    ],
+    problemDetail:
+      "Un logiciel sur mesure vaut la peine quand votre processus est votre avantage, ou quand aucun produit ne fait le travail. Il n'en vaut pas la peine quand un outil standard suffirait. Nous vous disons dans quel cas vous êtes avant que vous vous engagiez.",
+    changes: [
+      "Le logiciel s'adapte à la façon dont vos équipes travaillent vraiment, et non l'inverse.",
+      "Les applications web et mobiles partagent les mêmes règles d'affaires grâce à une API.",
+      "D'autres systèmes peuvent se connecter au vôtre par des API documentées et sécurisées.",
+      "Vous voyez l'avancement chaque semaine, et chaque version est testée.",
+      "Le code vous appartient : tout développeur compétent peut prendre la relève.",
+    ],
+    included: [
+      {
+        title: "Définition de la portée",
+        detail: "Les utilisateurs, les processus et une première version assez petite pour être bien construite, convenus par écrit.",
+      },
+      {
+        title: "Applications web",
+        detail: "Des applications dans le navigateur, avec rôles et droits d'accès, tableaux de bord et rapports.",
+      },
+      {
+        title: "Applications mobiles",
+        detail: "Des applications d'entreprise pour téléphones et tablettes, sur iOS et Android, ou une application web adaptée au mobile quand cela suffit.",
+      },
+      {
+        title: "API et intégrations",
+        detail: "Des interfaces documentées, versionnées et sécurisées, pour que d'autres systèmes puissent utiliser le vôtre.",
+      },
+      {
+        title: "Tests et documentation",
+        detail: "Des tests automatisés pour les parcours qui comptent, et de la documentation pour ceux qui assurent la maintenance.",
+      },
+      {
+        title: "Transfert",
+        detail: "Le code dans votre dépôt, vos comptes à votre nom, et une séance de travail pour votre équipe.",
+      },
+    ],
+    phases: [
+      {
+        title: "Définir la portée",
+        detail: "Qui l'utilise, ce qu'elle doit faire d'abord, et comment nous saurons qu'elle fonctionne.",
+      },
+      {
+        title: "Conception et première version",
+        detail: "Des maquettes cliquables testées avec de vrais utilisateurs, puis la plus petite version qui retire du vrai travail.",
+      },
+      {
+        title: "Construire à ciel ouvert",
+        detail: "Un lien de préproduction dès la première semaine et un compte rendu écrit chaque semaine.",
+      },
+      {
+        title: "Lancement et 90 jours de suivi",
+        detail: "Nous lançons, surveillons et corrigeons tout ce qui survient pendant 90 jours.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Construisez-vous des applications mobiles?",
+        answer:
+          "Oui : des applications d'entreprise pour iOS et Android, ou une application web adaptée au mobile quand elle répond au besoin. Nous recommandons l'option la plus simple quand elle fait le travail.",
+      },
+      {
+        question: "Pouvez-vous construire une API pour un système que nous avons déjà?",
+        answer:
+          "Oui. Nous concevons une API documentée devant celui-ci, pour que de nouvelles applications et d'autres systèmes puissent l'utiliser en toute sécurité.",
+      },
+      {
+        question: "À qui appartient le code?",
+        answer: "À vous. Il se trouve dans un dépôt de votre organisation, et tout développeur compétent peut en assurer la maintenance.",
+      },
+    ],
+  },
+
+  "cloud-modernization": {
+    name: "Modernisation infonuagique",
+    card: "Faites migrer vos produits existants vers le nuage avec un plan, par étapes testées et réversibles.",
+    seoTitle: "Modernisation infonuagique et migration vers Azure et AWS",
+    metaDescription:
+      "Évaluez, repensez et migrez des applications existantes vers Microsoft Azure ou Amazon Web Services, par étapes testées et réversibles. Phases à prix fixe et code qui vous appartient.",
+    headline: "Faites migrer vos logiciels existants vers le nuage sans arrêter l'entreprise.",
+    lead: "Nous évaluons, repensons et faisons migrer des produits existants vers les grandes plateformes infonuagiques, comme Microsoft Azure et Amazon Web Services, par étapes testées et réversibles.",
+    forWhom: "Pour les organisations qui exploitent de vieux logiciels sur des serveurs qu'elles préféreraient ne plus entretenir.",
+    problemQuotes: [
+      "Notre logiciel tourne sur des serveurs que personne ne veut toucher.",
+      "Une seule personne comprend comment il fonctionne.",
+      "Une migration nous fait peur. Et si ça plantait?",
+    ],
+    problemDetail:
+      "Un logiciel existant n'est pas un problème, jusqu'à ce qu'il en devienne un : un système qui n'est plus pris en charge, un expert qui part, un correctif de sécurité impossible à appliquer. Passer au nuage n'est pas toujours la réponse. Parfois, un changement plus modeste donne plus pour moins cher. L'évaluation le dit.",
+    changes: [
+      "Vous savez ce que vous exploitez, ce qui dépend de quoi et ce que cela coûte.",
+      "Le passage se fait par petites étapes testées, chacune avec un retour en arrière possible.",
+      "Les systèmes sont plus faciles à sécuriser, à mettre à jour et à faire évoluer.",
+      "Les coûts infonuagiques sont visibles et maîtrisés.",
+      "Votre équipe sait exploiter le résultat.",
+    ],
+    included: [
+      {
+        title: "Évaluation",
+        detail: "Un inventaire des applications, des données et des dépendances, et des risques de chacune. Tout commence dans l'audit.",
+      },
+      {
+        title: "Conception de la cible",
+        detail: "L'architecture sur Azure ou AWS, avec sécurité, résilience et estimation des coûts.",
+      },
+      {
+        title: "Refonte de l'architecture",
+        detail: "Du déplacement tel quel à la refonte de certaines parties, seulement là où cela rapporte.",
+      },
+      {
+        title: "Migration des données et des applications",
+        detail: "Répétée d'abord sur une copie, avec un plan de bascule et un retour en arrière.",
+      },
+      {
+        title: "Sécurité et accès",
+        detail: "Identités, droits d'accès, sauvegardes et journalisation en place dès le départ.",
+      },
+      {
+        title: "Contrôle des coûts et transfert",
+        detail: "Budgets et alertes, ainsi que documentation et guides d'exploitation utilisables par votre équipe.",
+      },
+    ],
+    phases: [
+      {
+        title: "Évaluer",
+        detail: "Ce que vous exploitez, ce dont cela dépend et ce qui doit migrer, rester ou être retiré.",
+      },
+      {
+        title: "Concevoir la cible",
+        detail: "L'architecture, le modèle de sécurité et les coûts, convenus par écrit.",
+      },
+      {
+        title: "Migrer par étapes",
+        detail: "Une charge de travail à la fois, chacune répétée, testée et réversible.",
+      },
+      {
+        title: "Lancement et 90 jours de suivi",
+        detail: "Nous surveillons le nouvel environnement et corrigeons tout ce qui survient pendant 90 jours.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Devons-nous tout faire migrer?",
+        answer:
+          "Pas nécessairement. L'évaluation distingue ce qui gagne à être dans le nuage de ce qui doit rester où c'est ou être retiré.",
+      },
+      {
+        question: "Azure ou AWS?",
+        answer:
+          "Nous recommandons selon ce que vous utilisez déjà, les compétences de votre équipe et les coûts, et nous vous expliquons pourquoi. Nous pouvons travailler avec l'une ou l'autre.",
+      },
+      {
+        question: "Et si la migration échoue?",
+        answer:
+          "Chaque étape est répétée sur une copie et dispose d'un plan de retour en arrière. Nous ne basculons pas avant que tout ait été démontré.",
+      },
+    ],
+  },
+
+  devops: {
+    name: "DevOps et automatisation",
+    card: "Des versions, des tests et des mises en production automatisés : le logiciel est livré souvent et en toute sécurité.",
+    seoTitle: "DevOps : pipelines CI/CD et automatisation de l'ingénierie de la qualité",
+    metaDescription:
+      "Intégration continue, pipelines de déploiement et tests automatisés : votre équipe livre des logiciels souvent, en toute sécurité et avec la trace de chaque changement.",
+    headline: "Livrez des changements souvent, et sachez qu'ils fonctionnent.",
+    lead: "Nous mettons en place l'intégration continue, des pipelines de déploiement et des vérifications de qualité automatisées, pour que chaque changement soit construit, testé et livré de la même façon.",
+    forWhom: "Pour les équipes d'ingénierie dont les mises en production sont lentes, manuelles ou stressantes.",
+    problemQuotes: [
+      "Chaque mise en production est un événement manuel et stressant.",
+      "Nous trouvons les bogues après les clients.",
+      "Une seule personne sait comment déployer.",
+    ],
+    problemDetail:
+      "Les mises en production manuelles reposent sur la mémoire et la chance. Des pipelines automatisés rendent les mises en production banales, ce que vous voulez : les mêmes étapes et les mêmes vérifications chaque fois, avec la trace de chacune.",
+    changes: [
+      "Chaque changement est construit et testé automatiquement.",
+      "Les mises en production suivent un seul parcours reproductible que tout membre de l'équipe peut lancer.",
+      "Les problèmes sont détectés avant que les clients les voient.",
+      "Vous voyez ce qui a changé, quand, et qui l'a approuvé.",
+      "Une mauvaise version peut être annulée rapidement.",
+    ],
+    included: [
+      {
+        title: "Intégration continue",
+        detail: "Des constructions et des tests automatisés à chaque changement.",
+      },
+      {
+        title: "Pipelines de déploiement",
+        detail: "Des mises en production reproductibles vers la préproduction et la production, avec des approbations là où vous en voulez.",
+      },
+      {
+        title: "Automatisation de l'ingénierie de la qualité",
+        detail: "Des tests unitaires, d'API et de bout en bout automatisés qui protègent les parcours les plus importants.",
+      },
+      {
+        title: "Infrastructure en tant que code",
+        detail: "Des environnements définis dans le code, pour pouvoir être reconstruits et révisés.",
+      },
+      {
+        title: "Contrôles de sécurité dans le pipeline",
+        detail: "Des analyses des dépendances vulnérables et des secrets exposés avant que quoi que ce soit ne soit livré.",
+      },
+      {
+        title: "Surveillance, documentation et formation",
+        detail: "Des alertes quand quelque chose plante, et des guides pour que votre équipe maîtrise le processus.",
+      },
+    ],
+    phases: [
+      {
+        title: "Examiner le processus actuel",
+        detail: "Comment le code passe aujourd'hui d'un ordinateur portable à la production, et où cela ralentit ou casse.",
+      },
+      {
+        title: "Automatiser la construction et les tests",
+        detail: "Chaque changement est construit et vérifié automatiquement.",
+      },
+      {
+        title: "Automatiser le déploiement",
+        detail: "Les mises en production passent par un seul pipeline, avec approbations et retour en arrière.",
+      },
+      {
+        title: "Lancement et 90 jours de suivi",
+        detail: "Nous surveillons les pipelines et corrigeons tout ce qui survient pendant 90 jours.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Devons-nous refaire notre logiciel?",
+        answer:
+          "Non. Nous ajoutons des pipelines et des tests autour de ce que vous avez, en commençant par les parcours les plus importants.",
+      },
+      {
+        question: "Quels outils utilisez-vous?",
+        answer:
+          "Des outils courants que votre équipe peut conserver, comme GitHub Actions ou Azure DevOps. Nous choisissons selon l'endroit où se trouvent déjà votre code et votre nuage.",
+      },
+      {
+        question: "Quelle quantité d'automatisation des tests est suffisante?",
+        answer:
+          "Assez pour protéger les parcours qui feraient le plus mal s'ils cassaient. Nous convenons d'abord de cette liste, puis nous l'étendons.",
+      },
+    ],
+  },
+
+  "strategy-design": {
+    name: "Stratégie et conception",
+    card: "Conception UX, stratégie de produit numérique et conseils techniques, avant de construire.",
+    seoTitle: "Stratégie de produit numérique, conception UX et conseils techniques",
+    metaDescription:
+      "Conception de l'expérience utilisateur, stratégie de produit numérique et conseils techniques : décidez quoi construire, et comment, avant de dépenser pour le construire.",
+    headline: "Décidez quoi construire avant de le construire.",
+    lead: "Nous offrons de la conception de l'expérience utilisateur, de la stratégie de produit numérique et des conseils techniques, pour que vous investissiez dans les bonnes choses et les construisiez une seule fois.",
+    forWhom: "Pour les équipes qui planifient un nouveau produit ou un grand changement et veulent d'abord des conseils clairs et indépendants.",
+    problemQuotes: [
+      "Nous ne savons pas quoi construire en premier.",
+      "Nos utilisateurs trouvent le système actuel déroutant.",
+      "Nous voulons un deuxième avis sur le plan technique.",
+    ],
+    problemDetail:
+      "Le logiciel le plus coûteux est le mauvais logiciel. La stratégie et la conception coûtent peu comparées à la construction de la mauvaise chose, et elles donnent à votre équipe, et à tout développeur que vous choisirez, quelque chose de concret sur quoi s'appuyer.",
+    changes: [
+      "Les priorités sont claires et consignées par écrit.",
+      "Les écrans sont testés avec de vrais utilisateurs avant le début du développement.",
+      "L'approche technique est révisée et ses risques sont nommés.",
+      "Vous obtenez une feuille de route avec des phases chiffrées.",
+      "Les développeurs, les nôtres ou les vôtres, partent de conceptions et de décisions claires.",
+    ],
+    included: [
+      {
+        title: "Découverte",
+        detail: "Des entrevues avec les utilisateurs et les parties prenantes, et un regard sur la façon dont le travail se fait vraiment.",
+      },
+      {
+        title: "Stratégie de produit numérique",
+        detail: "Objectifs, priorités, feuille de route et indicateurs qui montreront que ça a fonctionné.",
+      },
+      {
+        title: "Recherche et conception UX",
+        detail: "Parcours utilisateurs, esquisses et prototypes cliquables, testés avec de vrais utilisateurs.",
+      },
+      {
+        title: "Un système de conception",
+        detail: "Un ensemble cohérent de composants, pour que chaque écran ait le même aspect et le même fonctionnement.",
+      },
+      {
+        title: "Conseils techniques",
+        detail: "Examen de l'architecture, décisions de construction ou d'achat, choix de fournisseurs et risques, par écrit.",
+      },
+      {
+        title: "Une feuille de route chiffrée",
+        detail: "Des phases priorisées avec des prix, prêtes à être construites par nous ou par toute autre équipe.",
+      },
+    ],
+    phases: [
+      {
+        title: "Découvrir",
+        detail: "Qui sont les utilisateurs, ce dont ils ont besoin et ce qui les en empêche.",
+      },
+      {
+        title: "Définir",
+        detail: "Les objectifs, les priorités et l'approche technique, convenus par écrit.",
+      },
+      {
+        title: "Concevoir et tester",
+        detail: "Des prototypes testés avec de vrais utilisateurs, et ajustés avant que quoi que ce soit ne soit construit.",
+      },
+      {
+        title: "Feuille de route et transfert",
+        detail: "Une feuille de route chiffrée et des fichiers de conception qui vous appartiennent, prêts pour toute équipe.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Sommes-nous obligés de construire avec vous ensuite?",
+        answer: "Non. La stratégie, les conceptions et la feuille de route sont à vous, pour toute équipe de votre choix.",
+      },
+      {
+        question: "Pouvez-vous examiner un plan préparé par une autre firme?",
+        answer:
+          "Oui. Un examen de conseil technique porte sur l'architecture, les risques et l'estimation, et vous remet un avis écrit.",
+      },
+    ],
+  },
+
   "managed-plans": {
     name: "Forfaits de gestion",
     card: "Une personne désignée est responsable de vos systèmes, chaque mois.",
@@ -555,9 +892,9 @@ export const services: Record<ServiceSlug, ServiceText> = {
 export const servicesPage: ServicesPage = {
   metaTitle: "Services : sites web, portails, applications, automatisation et IA",
   metaDescription:
-    "Sites web générateurs de revenus, portails pour clients et propriétaires, applications d'exploitation, automatisation, IA avec révision humaine, intégrations et forfaits de gestion. Phases à prix fixe, à partir d'un audit des systèmes numériques.",
+    "Sites web générateurs de revenus, portails, applications d'exploitation, logiciels sur mesure, automatisation, IA avec révision humaine, intégrations, modernisation infonuagique, DevOps, stratégie et conception, et forfaits de gestion. Phases à prix fixe, à partir d'un audit des systèmes numériques.",
   eyebrow: "Services",
-  title: "Sept services, organisés autour de votre problème.",
+  title: "Onze services, organisés autour de votre problème.",
   lead: "Tout projet commence par l'audit. Il montre lesquels de ces services vous sont d'abord nécessaires, et combien ils coûtent.",
   from: "Prix",
   ctaTitle: "Vous ne savez pas lequel il vous faut?",

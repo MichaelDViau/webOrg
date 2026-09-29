@@ -19,19 +19,19 @@ export function Field({ id, label, optional, optionalLabel, error, hint, classNa
   return (
     <div className={className}>
       <div className="flex items-baseline justify-between gap-4">
-        <label htmlFor={id} className="text-sm font-medium text-ink">
+        <label htmlFor={id} className="text-base font-medium text-ink">
           {label}
         </label>
-        {optional && <span className="text-sm text-muted">{optionalLabel}</span>}
+        {optional && <span className="text-base text-muted">{optionalLabel}</span>}
       </div>
       <div className="mt-2">{children}</div>
       {hint && !error && (
-        <p id={`${id}-hint`} className="mt-2 text-sm text-muted">
+        <p id={`${id}-hint`} className="mt-2 text-base text-muted">
           {hint}
         </p>
       )}
       {error && (
-        <p id={`${id}-error`} className="mt-2 text-sm text-danger">
+        <p id={`${id}-error`} className="mt-2 text-base text-danger">
           {error}
         </p>
       )}
@@ -72,12 +72,12 @@ export function CheckboxField({ id, name, checked, onChange, onBlur, error, chil
           aria-describedby={error ? `${id}-error` : undefined}
           className="mt-1 size-5 shrink-0 rounded border border-line-strong bg-paper accent-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink aria-invalid:border-danger"
         />
-        <label htmlFor={id} className="text-sm leading-relaxed text-body">
+        <label htmlFor={id} className="text-base leading-relaxed text-body">
           {children}
         </label>
       </div>
       {error && (
-        <p id={`${id}-error`} className="mt-2 text-sm text-danger">
+        <p id={`${id}-error`} className="mt-2 text-base text-danger">
           {error}
         </p>
       )}

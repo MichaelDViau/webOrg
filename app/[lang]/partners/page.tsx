@@ -41,20 +41,20 @@ export default async function PartnersPage() {
       </Section>
 
       <Section tone="canvas">
-        <Container className="grid gap-10 lg:grid-cols-12 lg:gap-16">
-          <h2 className="text-heading lg:col-span-4" data-reveal>
+        <Container className="space-y-8 sm:space-y-10">
+          <h2 className="text-heading" data-reveal>
             {t.howTitle}
           </h2>
-          <FeatureList items={t.how} className="lg:col-span-8" />
+          <FeatureList items={t.how} />
         </Container>
       </Section>
 
       <Section>
-        <Container className="grid gap-8 lg:grid-cols-12 lg:gap-16">
-          <h2 className="text-subheading lg:col-span-4" data-reveal>
+        <Container className="space-y-8 sm:space-y-10">
+          <h2 className="text-subheading" data-reveal>
             {t.termsTitle}
           </h2>
-          <div className="lg:col-span-8" data-reveal>
+          <div data-reveal>
             <p className="max-w-2xl text-lg leading-relaxed">{t.termsBody}</p>
             <ButtonLink href="/contact" withArrow className="mt-8">
               {t.cta}

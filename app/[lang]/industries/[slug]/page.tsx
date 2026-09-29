@@ -74,7 +74,7 @@ export default async function IndustryPage({ params }: IndustryPageProps) {
                 <p className="text-xl leading-snug text-ink">
                   <q>{problem.quote}</q>
                 </p>
-                <p className="mt-3 leading-relaxed text-muted">{problem.detail}</p>
+                <p className="mt-3 text-lg leading-relaxed text-body">{problem.detail}</p>
               </li>
             ))}
           </ul>
@@ -82,20 +82,20 @@ export default async function IndustryPage({ params }: IndustryPageProps) {
       </Section>
 
       <Section>
-        <Container className="grid gap-10 lg:grid-cols-12 lg:gap-16">
-          <h2 className="text-heading lg:col-span-4" data-reveal>
+        <Container className="space-y-8 sm:space-y-10">
+          <h2 className="text-heading" data-reveal>
             {t.systemsWeBuild}
           </h2>
-          <FeatureList items={industry.systems} className="lg:col-span-8" />
+          <FeatureList items={industry.systems} />
         </Container>
       </Section>
 
       <Section tone="canvas">
-        <Container className="grid gap-10 lg:grid-cols-12 lg:gap-16">
-          <div className="lg:col-span-4" data-reveal>
+        <Container className="space-y-8 sm:space-y-10">
+          <div data-reveal>
             <h2 className="text-heading">{t.softwareWeConnect}</h2>
           </div>
-          <div className="lg:col-span-8" data-reveal>
+          <div data-reveal>
             <p className="max-w-2xl text-lg leading-relaxed">{industry.softwareIntro}</p>
             <ul className="mt-6 flex flex-wrap gap-2">
               {industry.software.map((name) => (
@@ -122,9 +122,9 @@ export default async function IndustryPage({ params }: IndustryPageProps) {
       <TrustStrip />
 
       <Section>
-        <Container className="grid gap-10 lg:grid-cols-12 lg:gap-16">
-          <h2 className="text-heading lg:col-span-4">{t.questions}</h2>
-          <FaqList faqs={industry.faqs} className="lg:col-span-8" />
+        <Container className="space-y-8 sm:space-y-10">
+          <h2 className="text-heading">{t.questions}</h2>
+          <FaqList faqs={industry.faqs} />
         </Container>
       </Section>
 

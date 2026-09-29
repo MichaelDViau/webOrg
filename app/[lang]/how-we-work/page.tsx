@@ -51,32 +51,32 @@ export default async function HowWeWorkPage() {
       </Section>
 
       <Section tone="night">
-        <Container className="grid gap-10 lg:grid-cols-12 lg:gap-16">
-          <div className="lg:col-span-4" data-reveal>
+        <Container className="space-y-8 sm:space-y-10">
+          <div data-reveal>
             <h2 className="text-heading text-paper">{t.ownershipTitle}</h2>
-            <p className="mt-5 text-lg leading-relaxed text-night-muted">{t.ownershipLead}</p>
+            <p className="mt-5 max-w-2xl text-lg leading-relaxed text-night-muted">{t.ownershipLead}</p>
           </div>
-          <FeatureList items={t.ownership} tone="dark" className="lg:col-span-8" />
+          <FeatureList items={t.ownership} tone="dark" />
         </Container>
       </Section>
 
       <Section>
-        <Container className="grid gap-10 lg:grid-cols-12 lg:gap-16">
-          <div className="lg:col-span-4" data-reveal>
+        <Container className="space-y-8 sm:space-y-10">
+          <div data-reveal>
             <h2 className="text-heading">{t.reviewerTitle}</h2>
             <p className="mt-5 text-lg leading-relaxed">{t.reviewerLead}</p>
             <TextLink href="/standards" className="mt-6">
               {t.standardsLink}
             </TextLink>
           </div>
-          <FaqList faqs={t.reviewerFaqs} className="lg:col-span-8" />
+          <FaqList faqs={t.reviewerFaqs} />
         </Container>
       </Section>
 
       <Section tone="canvas" padding="compact">
-        <Container className="grid gap-8 lg:grid-cols-12 lg:gap-16">
-          <h2 className="text-subheading lg:col-span-4">{t.neededTitle}</h2>
-          <CheckList items={t.needed} className="text-lg lg:col-span-8" />
+        <Container className="space-y-8 sm:space-y-10">
+          <h2 className="text-subheading">{t.neededTitle}</h2>
+          <CheckList items={t.needed} className="text-lg" />
         </Container>
       </Section>
 

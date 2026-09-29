@@ -474,6 +474,343 @@ export const services: Record<ServiceSlug, ServiceText> = {
     ],
   },
 
+  "custom-software": {
+    name: "Custom software",
+    card: "Tailored web applications, mobile apps and APIs, built to fit how your organization works.",
+    seoTitle: "Custom Software: Web Applications, Mobile Apps and APIs",
+    metaDescription:
+      "Tailored web applications, enterprise mobile apps and APIs for established businesses and larger organizations. Fixed-price phases, code you own, and a written update every week.",
+    headline: "Software built around how your organization works.",
+    lead: "We design and build tailored web applications, enterprise mobile apps and the APIs that connect them, for organizations whose needs off-the-shelf software can't meet.",
+    forWhom: "For established businesses and larger organizations that need software no standard product provides.",
+    problemQuotes: [
+      "Off-the-shelf software doesn't fit our process.",
+      "We've outgrown the tools we started with.",
+      "Our systems can't talk to each other, and every connection is a one-off.",
+    ],
+    problemDetail:
+      "Custom software is worth it when your process is your advantage, or when no product does the job. It isn't worth it when a standard tool would. We tell you which case you're in before you commit.",
+    changes: [
+      "Software matches the way your teams actually work, not the other way around.",
+      "Web and mobile apps share one set of business rules through an API.",
+      "Other systems can connect to yours through documented, secure APIs.",
+      "You see progress every week, and every release is tested.",
+      "You own the code, so any capable developer can take over.",
+    ],
+    included: [
+      {
+        title: "Scoping",
+        detail: "Users, workflows and a first release small enough to build well, agreed in writing.",
+      },
+      {
+        title: "Web applications",
+        detail: "Browser-based apps with roles and permissions, dashboards and reports.",
+      },
+      {
+        title: "Mobile apps",
+        detail: "Enterprise apps for phones and tablets, on iOS and Android, or a mobile-ready web app when that's enough.",
+      },
+      {
+        title: "APIs and integrations",
+        detail: "Documented, versioned and secure interfaces, so other systems can use yours.",
+      },
+      {
+        title: "Testing and documentation",
+        detail: "Automated tests for the flows that matter, and documentation for the people who maintain it.",
+      },
+      {
+        title: "Handover",
+        detail: "The code in your repository, your accounts in your name, and a working session for your team.",
+      },
+    ],
+    phases: [
+      {
+        title: "Scope",
+        detail: "Who uses it, what it must do first, and how we'll know it works.",
+      },
+      {
+        title: "Design and first release",
+        detail: "Clickable designs tested with real users, then the smallest release that removes real work.",
+      },
+      {
+        title: "Build in the open",
+        detail: "A staging link from the first week and a written update every week.",
+      },
+      {
+        title: "Launch and 90 days of care",
+        detail: "We launch, monitor and fix anything that comes up for 90 days.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Do you build mobile apps?",
+        answer:
+          "Yes: enterprise apps for iOS and Android, or a mobile-ready web app when that meets the need. We recommend the simpler option when it does the job.",
+      },
+      {
+        question: "Can you build an API for a system we already have?",
+        answer:
+          "Yes. We design a documented API in front of it, so new apps and other systems can use it safely.",
+      },
+      {
+        question: "Who owns the code?",
+        answer: "You do. It lives in a repository in your organization, and any capable developer can maintain it.",
+      },
+    ],
+  },
+
+  "cloud-modernization": {
+    name: "Cloud modernization",
+    card: "Move legacy products to the cloud with a plan, in tested steps you can reverse.",
+    seoTitle: "Cloud Modernization and Migration to Azure and AWS",
+    metaDescription:
+      "Assess, re-architect and migrate legacy applications onto Microsoft Azure or Amazon Web Services, in tested steps that can be reversed. Fixed-price phases and code you own.",
+    headline: "Move legacy software to the cloud without stopping the business.",
+    lead: "We assess, re-architect and migrate legacy products onto major cloud platforms such as Microsoft Azure and Amazon Web Services, in steps that are tested and can be reversed.",
+    forWhom: "For organizations running older software on servers they would rather not maintain.",
+    problemQuotes: [
+      "Our software runs on servers nobody wants to touch.",
+      "Only one person understands how it works.",
+      "A migration scares us. What if it breaks?",
+    ],
+    problemDetail:
+      "Legacy software isn't a problem until it is: an unsupported system, an expert who is leaving, a security fix that can't be applied. Moving to the cloud isn't always the answer. Sometimes a smaller change does more for less. The assessment says which.",
+    changes: [
+      "You know what you run, what depends on what, and what it costs.",
+      "The move happens in small, tested steps, each with a way back.",
+      "Systems are easier to secure, update and scale.",
+      "Cloud costs are visible and controlled.",
+      "Your team knows how to run the result.",
+    ],
+    included: [
+      {
+        title: "Assessment",
+        detail: "An inventory of applications, data and dependencies, and the risks in each. It starts in the audit.",
+      },
+      {
+        title: "Target design",
+        detail: "The architecture on Azure or AWS, with security, resilience and a cost estimate.",
+      },
+      {
+        title: "Re-architecture",
+        detail: "From moving as-is to reworking parts of the system, only where it pays off.",
+      },
+      {
+        title: "Data and application migration",
+        detail: "Rehearsed on a copy first, with a cutover plan and a way back.",
+      },
+      {
+        title: "Security and access",
+        detail: "Identity, permissions, backups and logging set up from the start.",
+      },
+      {
+        title: "Cost controls and handover",
+        detail: "Budgets and alerts, plus documentation and runbooks your team can use.",
+      },
+    ],
+    phases: [
+      {
+        title: "Assess",
+        detail: "What you run, what it depends on, and what should move, stay or retire.",
+      },
+      {
+        title: "Design the target",
+        detail: "The architecture, the security model and the costs, agreed in writing.",
+      },
+      {
+        title: "Migrate in steps",
+        detail: "One workload at a time, each rehearsed, tested and reversible.",
+      },
+      {
+        title: "Launch and 90 days of care",
+        detail: "We monitor the new environment and fix anything that comes up for 90 days.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Should we move everything?",
+        answer:
+          "Not necessarily. The assessment separates what benefits from the cloud from what should stay where it is or be retired.",
+      },
+      {
+        question: "Azure or AWS?",
+        answer:
+          "We recommend based on what you already run, your team's skills and the costs, and we tell you why. We can work on either.",
+      },
+      {
+        question: "What if the migration fails?",
+        answer:
+          "Each step is rehearsed on a copy and has a rollback plan. We don't cut over until it has been proven.",
+      },
+    ],
+  },
+
+  devops: {
+    name: "DevOps and automation",
+    card: "Automated builds, tests and releases, so software ships often and safely.",
+    seoTitle: "DevOps: CI/CD Pipelines and Quality Engineering Automation",
+    metaDescription:
+      "Continuous integration, deployment pipelines and automated testing, so your team releases software often, safely and with a record of every change.",
+    headline: "Ship changes often, and know they work.",
+    lead: "We set up continuous integration, deployment pipelines and automated quality checks, so every change is built, tested and released the same way.",
+    forWhom: "For engineering teams whose releases are slow, manual or stressful.",
+    problemQuotes: [
+      "Every release is a stressful, manual event.",
+      "We find bugs after customers do.",
+      "Only one person knows how to deploy.",
+    ],
+    problemDetail:
+      "Manual releases depend on memory and luck. Automated pipelines make releases boring, which is what you want: the same steps and the same checks every time, with a record of each one.",
+    changes: [
+      "Every change is built and tested automatically.",
+      "Releases follow one repeatable path that anyone on the team can run.",
+      "Problems are caught before customers see them.",
+      "You can see what changed, when, and who approved it.",
+      "A bad release can be rolled back quickly.",
+    ],
+    included: [
+      {
+        title: "Continuous integration",
+        detail: "Automated builds and tests on every change.",
+      },
+      {
+        title: "Deployment pipelines",
+        detail: "Repeatable releases to staging and production, with approvals where you need them.",
+      },
+      {
+        title: "Quality engineering automation",
+        detail: "Automated unit, API and end-to-end tests that guard the flows that matter most.",
+      },
+      {
+        title: "Infrastructure as code",
+        detail: "Environments defined in code, so they can be rebuilt and reviewed.",
+      },
+      {
+        title: "Security checks in the pipeline",
+        detail: "Scans for vulnerable dependencies and exposed secrets before anything ships.",
+      },
+      {
+        title: "Monitoring, documentation and training",
+        detail: "Alerts when something breaks, and guides so your team owns the process.",
+      },
+    ],
+    phases: [
+      {
+        title: "Review the current process",
+        detail: "How code goes from a laptop to production today, and where it slows or breaks.",
+      },
+      {
+        title: "Automate build and tests",
+        detail: "Every change is built and checked automatically.",
+      },
+      {
+        title: "Automate deployment",
+        detail: "Releases run through one pipeline, with approvals and a way back.",
+      },
+      {
+        title: "Launch and 90 days of care",
+        detail: "We monitor the pipelines and fix anything that comes up for 90 days.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Do we have to rebuild our software?",
+        answer:
+          "No. We add pipelines and tests around what you have, starting with the flows that matter most.",
+      },
+      {
+        question: "Which tools do you use?",
+        answer:
+          "Mainstream ones your team can keep, such as GitHub Actions or Azure DevOps. We choose based on where your code and cloud already live.",
+      },
+      {
+        question: "How much test automation is enough?",
+        answer:
+          "Enough to protect the flows that would hurt most if they broke. We agree on that list first, then grow it.",
+      },
+    ],
+  },
+
+  "strategy-design": {
+    name: "Strategy and design",
+    card: "UX design, digital product strategy and technical advice, before you build.",
+    seoTitle: "Digital Product Strategy, UX Design and Technical Advisory",
+    metaDescription:
+      "User experience design, digital product strategy and technical advisory: decide what to build, and how, before you spend on building it.",
+    headline: "Decide what to build before you build it.",
+    lead: "We offer user experience design, digital product strategy and technical advisory, so you invest in the right things and build them once.",
+    forWhom: "For teams planning a new product or a big change who want clear, independent advice first.",
+    problemQuotes: [
+      "We're not sure what to build first.",
+      "Our users find the current system confusing.",
+      "We need a second opinion on the technical plan.",
+    ],
+    problemDetail:
+      "The costliest software is the wrong software. Strategy and design work costs little compared with building the wrong thing, and it gives your team, and any developer you choose, something concrete to build from.",
+    changes: [
+      "Priorities are clear and written down.",
+      "Screens are tested with real users before development starts.",
+      "The technical approach is reviewed and its risks are named.",
+      "You get a roadmap with costed phases.",
+      "Developers, ours or yours, start from clear designs and decisions.",
+    ],
+    included: [
+      {
+        title: "Discovery",
+        detail: "Interviews with users and stakeholders, and a look at how the work really happens.",
+      },
+      {
+        title: "Digital product strategy",
+        detail: "Goals, priorities, a roadmap and the measures that will show it worked.",
+      },
+      {
+        title: "UX research and design",
+        detail: "User flows, wireframes and clickable prototypes, tested with real users.",
+      },
+      {
+        title: "A design system",
+        detail: "A consistent set of components, so every screen looks and works alike.",
+      },
+      {
+        title: "Technical advisory",
+        detail: "Architecture review, build-versus-buy decisions, vendor choices and risks, in writing.",
+      },
+      {
+        title: "A costed roadmap",
+        detail: "Prioritized phases with prices, ready for us or any other team to build.",
+      },
+    ],
+    phases: [
+      {
+        title: "Discover",
+        detail: "Who the users are, what they need and what stands in the way.",
+      },
+      {
+        title: "Define",
+        detail: "The goals, priorities and technical approach, agreed in writing.",
+      },
+      {
+        title: "Design and test",
+        detail: "Prototypes tested with real users, and adjusted before anything is built.",
+      },
+      {
+        title: "Roadmap and handover",
+        detail: "A costed roadmap and design files you own, ready for any team to build from.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Do we have to build with you afterward?",
+        answer: "No. The strategy, designs and roadmap are yours to use with any team.",
+      },
+      {
+        question: "Can you review a plan another firm made?",
+        answer:
+          "Yes. A technical advisory review looks at the architecture, the risks and the estimate, and gives you a written opinion.",
+      },
+    ],
+  },
+
   "managed-plans": {
     name: "Managed plans",
     card: "A named person responsible for your systems, every month.",
@@ -554,9 +891,9 @@ export const services: Record<ServiceSlug, ServiceText> = {
 export const servicesPage = {
   metaTitle: "Services: Websites, Portals, Apps, Automation and AI",
   metaDescription:
-    "Revenue websites, client and owner portals, operations apps, automation, AI with human review, integrations and managed plans. Fixed-price phases, from a Digital Systems Audit.",
+    "Revenue websites, portals, operations apps, custom software, automation, AI with human review, integrations, cloud modernization, DevOps, strategy and design, and managed plans. Fixed-price phases, from a Digital Systems Audit.",
   eyebrow: "Services",
-  title: "Seven services, organized around your problem.",
+  title: "Eleven services, organized around your problem.",
   lead: "Every project starts with the audit. It shows which of these you need first, and what it costs.",
   from: "Price",
   ctaTitle: "Not sure which one you need?",

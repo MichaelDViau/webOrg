@@ -29,7 +29,7 @@ In development, form submissions and confirmation emails are printed to the serv
 | Home          | `/`                                                 | Eight blocks, in the guideline's order                   |
 | Audit         | `/audit`                                            | Convert high-intent visitors (price, credit, booking form) |
 | Snapshot      | `/snapshot`                                         | The low-commitment second action                         |
-| Services      | `/services`, `/services/<slug>` (7)                 | Outcomes, scope, phases, "from" price, related demo      |
+| Services      | `/services`, `/services/<slug>` (11)                | Outcomes, scope, phases, "from" price, related demo      |
 | Industries    | `/industries`, `/industries/<slug>` (3)             | Prove we understand their world                          |
 | Work          | `/work`, `/work/<slug>` (3 concept demos)           | Proof, clearly labeled "Concept demo: not a client project" |
 | How we work   | `/how-we-work`                                      | Reduce the feeling of risk                               |
@@ -61,7 +61,7 @@ All copy lives in typed data files, so most updates don't touch components. Each
 | `ui.ts`            | Navigation, buttons, prices' wording, forms, errors, the confirmation email, the assistant |
 | `home.ts`          | The eight home page blocks                                                    |
 | `audit.ts`         | The audit page and the Snapshot page                                          |
-| `services.ts`      | The seven service pages and the services overview                             |
+| `services.ts`      | The eleven service pages and the services overview                             |
 | `industries.ts`    | The three industry pages and the overview                                     |
 | `work.ts`          | The three concept demos, including the sample data on each screen             |
 | `how-we-work.ts`   | The process, ownership and the answers for IT reviewers                       |

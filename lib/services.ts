@@ -7,16 +7,24 @@ export type ServiceSlug =
   | "automation"
   | "ai-with-judgment"
   | "integrations-and-data"
-  | "managed-plans";
+  | "managed-plans"
+  | "custom-software"
+  | "cloud-modernization"
+  | "devops"
+  | "strategy-design";
 
 /** Services in the order they appear across the site. */
 export const serviceSlugs: ServiceSlug[] = [
   "revenue-websites",
   "client-portals",
   "operations-apps",
+  "custom-software",
   "automation",
   "ai-with-judgment",
   "integrations-and-data",
+  "cloud-modernization",
+  "devops",
+  "strategy-design",
   "managed-plans",
 ];
 
@@ -29,6 +37,10 @@ const serviceBases: Record<ServiceSlug, { demo: DemoSlug | null }> = {
   "ai-with-judgment": { demo: "firm-intake-hub" },
   "integrations-and-data": { demo: "property-portal" },
   "managed-plans": { demo: null },
+  "custom-software": { demo: "property-portal" },
+  "cloud-modernization": { demo: null },
+  devops: { demo: null },
+  "strategy-design": { demo: null },
 };
 
 /**
@@ -79,3 +91,6 @@ export const homeBuildSlugs: ServiceSlug[] = [
   "automation",
   "ai-with-judgment",
 ];
+
+/** Services listed under the five home page cards as "Also available", in order. */
+export const homeAlsoSlugs: ServiceSlug[] = ["custom-software", "cloud-modernization", "devops", "strategy-design"];

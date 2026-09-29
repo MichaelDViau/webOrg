@@ -15,11 +15,11 @@ export function FeatureList({ items, tone = "light", className }: FeatureListPro
       {items.map((item) => (
         <div
           key={item.title}
-          className={cn("border-t py-7 sm:py-8", dark ? "border-night-line" : "border-line")}
+          className={cn("border-t py-6 sm:py-7", dark ? "border-night-line" : "border-line")}
           data-reveal
         >
-          <dt className={cn("text-lg font-medium", dark ? "text-paper" : "text-ink")}>{item.title}</dt>
-          <dd className={cn("mt-2 max-w-md leading-relaxed", dark ? "text-night-muted" : "text-muted")}>
+          <dt className={cn("text-xl font-semibold tracking-tight", dark ? "text-paper" : "text-ink")}>{item.title}</dt>
+          <dd className={cn("mt-2 max-w-xl text-lg leading-relaxed", dark ? "text-night-muted" : "text-body")}>
             {item.detail}
           </dd>
         </div>

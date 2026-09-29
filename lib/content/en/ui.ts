@@ -12,7 +12,7 @@ export const ui = {
     description:
       "{name} designs, builds and runs websites, client portals, internal software and automations for established service and operations businesses.",
     hours: "Monday to Friday, 9am to 6pm Central",
-    shareImageAlt: "{name}: the systems your business runs on, engineered and looked after",
+    shareImageAlt: "{name}: the systems your business runs on",
     audienceType: "Established service and operations businesses",
     countriesLabel: "Countries we serve",
     countries: ["United States", "Canada", "Mexico"],
@@ -68,7 +68,7 @@ export const ui = {
   },
 
   footer: {
-    tagline: "The systems your business runs on, engineered and looked after.",
+    tagline: "The systems your business runs on.",
     services: "Services",
     industries: "Industries",
     company: "Company",

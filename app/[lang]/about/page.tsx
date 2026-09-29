@@ -29,11 +29,11 @@ export default async function AboutPage() {
       <PageHeader eyebrow={t.eyebrow} title={t.title} lead={format(t.lead, { name: site.name })} />
 
       <Section padding="no-top">
-        <Container className="grid gap-10 lg:grid-cols-12 lg:gap-16">
-          <h2 className="text-heading lg:col-span-4" data-reveal>
+        <Container className="space-y-8 sm:space-y-10">
+          <h2 className="text-heading" data-reveal>
             {t.whyTitle}
           </h2>
-          <div className="max-w-2xl space-y-6 text-lg leading-relaxed lg:col-span-8" data-reveal>
+          <div className="max-w-2xl space-y-6 text-lg leading-relaxed" data-reveal>
             {t.why.map((paragraph) => (
               <p key={paragraph}>{paragraph}</p>
             ))}
@@ -42,11 +42,11 @@ export default async function AboutPage() {
       </Section>
 
       <Section tone="canvas">
-        <Container className="grid gap-10 lg:grid-cols-12 lg:gap-16">
-          <h2 className="text-heading lg:col-span-4" data-reveal>
+        <Container className="space-y-8 sm:space-y-10">
+          <h2 className="text-heading" data-reveal>
             {t.founderTitle}
           </h2>
-          <div className="grid gap-8 lg:col-span-8 lg:grid-cols-8 lg:gap-12" data-reveal>
+          <div className={`grid gap-8 lg:gap-12 ${founderPhoto ? "lg:grid-cols-[18rem_1fr]" : ""}`} data-reveal>
             {/* A real photo of the founder, when one is set in lib/site.ts. Never a stock photo. */}
             {founderPhoto && (
               <Image
@@ -55,10 +55,10 @@ export default async function AboutPage() {
                 width={founderPhoto.width}
                 height={founderPhoto.height}
                 sizes="(min-width: 1024px) 280px, 100vw"
-                className="h-auto w-full max-w-xs rounded-lg lg:col-span-3"
+                className="h-auto w-full max-w-xs rounded-lg"
               />
             )}
-            <div className={`max-w-2xl space-y-6 text-lg leading-relaxed ${founderPhoto ? "lg:col-span-5" : "lg:col-span-8"}`}>
+            <div className="max-w-2xl space-y-6 text-lg leading-relaxed">
               {t.founder.map((paragraph) => (
                 <p key={paragraph}>{paragraph}</p>
               ))}
@@ -68,11 +68,11 @@ export default async function AboutPage() {
       </Section>
 
       <Section>
-        <Container className="grid gap-10 lg:grid-cols-12 lg:gap-16">
-          <h2 className="text-heading lg:col-span-4" data-reveal>
+        <Container className="space-y-8 sm:space-y-10">
+          <h2 className="text-heading" data-reveal>
             {t.teamTitle}
           </h2>
-          <div className="max-w-2xl space-y-6 text-lg leading-relaxed lg:col-span-8" data-reveal>
+          <div className="max-w-2xl space-y-6 text-lg leading-relaxed" data-reveal>
             {t.team.map((paragraph) => (
               <p key={paragraph}>{paragraph}</p>
             ))}
@@ -81,11 +81,11 @@ export default async function AboutPage() {
       </Section>
 
       <Section tone="night">
-        <Container className="grid gap-10 lg:grid-cols-12 lg:gap-16">
-          <h2 className="text-heading text-paper lg:col-span-4" data-reveal>
+        <Container className="space-y-8 sm:space-y-10">
+          <h2 className="text-heading text-paper" data-reveal>
             {t.newTitle}
           </h2>
-          <div className="lg:col-span-8" data-reveal>
+          <div data-reveal>
             <p className="max-w-2xl text-xl leading-relaxed text-night-muted sm:text-2xl">
               {format(t.newBody, { year: site.foundedYear })}
             </p>
@@ -102,11 +102,11 @@ export default async function AboutPage() {
       </Section>
 
       <Section>
-        <Container className="grid gap-10 lg:grid-cols-12 lg:gap-16">
-          <h2 className="text-heading lg:col-span-4" data-reveal>
+        <Container className="space-y-8 sm:space-y-10">
+          <h2 className="text-heading" data-reveal>
             {t.beliefsTitle}
           </h2>
-          <FeatureList items={t.beliefs} className="lg:col-span-8" />
+          <FeatureList items={t.beliefs} />
         </Container>
       </Section>
 

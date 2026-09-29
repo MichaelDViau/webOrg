@@ -46,21 +46,21 @@ export default async function StandardPage({ params }: StandardPageProps) {
       <PageHeader eyebrow={ui.nav.standards} title={standard.headline} lead={standard.lead} />
 
       <Section padding="no-top">
-        <Container className="grid gap-10 lg:grid-cols-12 lg:gap-16">
-          <h2 className="text-heading lg:col-span-4" data-reveal>
+        <Container className="space-y-8 sm:space-y-10">
+          <h2 className="text-heading" data-reveal>
             {t.defaults}
           </h2>
-          <FeatureList items={standard.defaults} className="lg:col-span-8" />
+          <FeatureList items={standard.defaults} />
         </Container>
       </Section>
 
       {standard.targets && (
         <Section tone="canvas">
-          <Container className="grid gap-10 lg:grid-cols-12 lg:gap-16">
-            <div className="lg:col-span-4" data-reveal>
+          <Container className="space-y-8 sm:space-y-10">
+            <div data-reveal>
               <h2 className="text-heading">{standard.targets.title}</h2>
             </div>
-            <div className="lg:col-span-8" data-reveal>
+            <div data-reveal>
               <p className="max-w-2xl text-lg leading-relaxed">{standard.targets.intro}</p>
               <dl className="mt-8 divide-y divide-line border-y border-line">
                 {standard.targets.rows.map((row) => (

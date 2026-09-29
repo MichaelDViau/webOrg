@@ -63,11 +63,11 @@ export default async function AuditPage() {
 
       {/* What we review */}
       <Section>
-        <Container className="grid gap-10 lg:grid-cols-12 lg:gap-16">
-          <h2 className="text-heading lg:col-span-4" data-reveal>
+        <Container className="space-y-8 sm:space-y-10">
+          <h2 className="text-heading" data-reveal>
             {t.reviewTitle}
           </h2>
-          <FeatureList items={t.review} className="lg:col-span-8" />
+          <FeatureList items={t.review} />
         </Container>
       </Section>
 
@@ -94,12 +94,12 @@ export default async function AuditPage() {
 
       {/* Timing and how it works */}
       <Section>
-        <Container className="grid gap-12 lg:grid-cols-12 lg:gap-16">
-          <div className="lg:col-span-4" data-reveal>
+        <Container className="space-y-8 sm:space-y-10">
+          <div data-reveal>
             <h2 className="text-heading">{t.timingTitle}</h2>
             <p className="mt-5 text-lg leading-relaxed">{t.timingBody}</p>
           </div>
-          <div className="lg:col-span-8" data-reveal>
+          <div data-reveal>
             <h2 className="text-subheading">{t.stepsTitle}</h2>
             <ol className="mt-8 divide-y divide-line border-y border-line">
               {t.steps.map((step, index) => (
@@ -148,9 +148,9 @@ export default async function AuditPage() {
       </Section>
 
       <Section>
-        <Container className="grid gap-10 lg:grid-cols-12 lg:gap-16">
-          <h2 className="text-heading lg:col-span-4">{t.faqTitle}</h2>
-          <FaqList faqs={faqs} className="lg:col-span-8" />
+        <Container className="space-y-8 sm:space-y-10">
+          <h2 className="text-heading">{t.faqTitle}</h2>
+          <FaqList faqs={faqs} />
         </Container>
       </Section>
 
