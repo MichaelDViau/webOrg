@@ -10,12 +10,12 @@ import { bookingUrl } from "@/lib/site";
 
 export async function generateMetadata(): Promise<Metadata> {
   const { ui } = await getContent();
-  return pageMetadata({ title: ui.book.metaTitle, description: ui.book.metaDescription, path: "/book" });
+  return pageMetadata({ title: ui.bookPage.metaTitle, description: ui.bookPage.metaDescription, path: "/book" });
 }
 
 export default async function BookPage() {
   if (!bookingUrl) notFound();
-  const t = (await getContent()).ui.book;
+  const t = (await getContent()).ui.bookPage;
 
   return (
     <>

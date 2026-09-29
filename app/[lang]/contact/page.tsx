@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
-import { ContactForm } from "@/components/contact/ContactForm";
+import { LeadForm } from "@/components/forms/LeadForm";
+import { ButtonLink } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
+import { format } from "@/lib/i18n/format";
 import { getContent } from "@/lib/i18n/server";
 import { pageMetadata } from "@/lib/metadata";
-import { ButtonLink } from "@/components/ui/Button";
-import { bookingUrl, phoneHref, site } from "@/lib/site";
+import { bookingUrl, site } from "@/lib/site";
 
 export async function generateMetadata(): Promise<Metadata> {
   const { ui } = await getContent();
@@ -15,6 +16,7 @@ export async function generateMetadata(): Promise<Metadata> {
   });
 }
 
+/** Contact: a short form, the reply promise, a booking calendar and the countries we serve. */
 export default async function ContactPage() {
   const { ui, locale } = await getContent();
   const t = ui.contactPage;
@@ -26,19 +28,18 @@ export default async function ContactPage() {
         <div className="lg:col-span-5">
           <p className="text-sm font-medium text-accent-strong">{t.eyebrow}</p>
           <h1 className="mt-4 text-title">{t.title}</h1>
-          <p className="mt-6 max-w-md text-lg leading-relaxed">
-            {t.lead}
-          </p>
+          <p className="mt-6 max-w-md text-lg leading-relaxed">{t.lead}</p>
         </div>
 
         <div className="lg:col-span-7 lg:row-span-2">
           <div className="sm:rounded-lg sm:border sm:border-line sm:p-10">
-            <ContactForm
+            <LeadForm
               locale={locale}
-              labels={ui.contactForm}
-              errorText={ui.contactErrors}
-              projectTypeLabels={ui.projectTypes}
-              budgetLabels={ui.budgetRanges}
+              intent="contact"
+              labels={ui.leadForm}
+              errorText={ui.leadErrors}
+              hours={ui.site.hours}
+              canBook={Boolean(bookingUrl)}
             />
           </div>
         </div>
@@ -70,13 +71,13 @@ export default async function ContactPage() {
                 {site.email}
               </a>
             </p>
-            <p>
-              <a href={phoneHref} className="inline-block py-1 text-ink underline underline-offset-4">
-                {site.phone}
-              </a>
-            </p>
             <p className="text-muted">{ui.site.hours}</p>
           </address>
+
+          <h2 className="mt-12 text-sm font-medium text-ink">{t.servingTitle}</h2>
+          <p className="mt-3 leading-relaxed text-muted">
+            {format(t.servingBody, { countries: ui.site.countries.join(", "), languages: ui.site.languages })}
+          </p>
         </div>
       </Container>
     </section>

@@ -4,17 +4,20 @@ import { notFound } from "next/navigation";
 import { JsonLd } from "@/components/JsonLd";
 import { ClosingCta } from "@/components/home/ClosingCta";
 import { PageHeader } from "@/components/layout/PageHeader";
-import { FaqList } from "@/components/services/FaqList";
-import { ButtonLink } from "@/components/ui/Button";
+import { ArrowIcon } from "@/components/ui/ArrowIcon";
+import { CheckList } from "@/components/ui/CheckList";
 import { Container } from "@/components/ui/Container";
+import { CtaPair } from "@/components/ui/CtaPair";
+import { FaqList } from "@/components/ui/FaqList";
 import { FeatureList } from "@/components/ui/FeatureList";
 import { Section } from "@/components/ui/Section";
-import { TechList } from "@/components/ui/TechList";
-import { ProjectFeature } from "@/components/work/ProjectFeature";
+import { TrustStrip } from "@/components/ui/TrustStrip";
+import { DemoCard } from "@/components/work/DemoCard";
 import { localizePath } from "@/lib/i18n/config";
 import { format } from "@/lib/i18n/format";
 import { getContent } from "@/lib/i18n/server";
 import { pageMetadata } from "@/lib/metadata";
+import { servicePriceText } from "@/lib/pricing";
 import { serviceSlugs } from "@/lib/services";
 import { breadcrumbSchema, faqSchema, serviceSchema } from "@/lib/structured-data";
 
@@ -40,54 +43,62 @@ export async function generateMetadata({ params }: ServicePageProps): Promise<Me
   });
 }
 
+/**
+ * A service page, in the guideline's order: the problem in the client's words, what changes, what's
+ * included, how it works in phases, the "from" price, a related demo and the two buttons.
+ */
 export default async function ServicePage({ params }: ServicePageProps) {
   const { slug } = await params;
   const content = await getContent();
-  const { ui, locale, services, projects } = content;
-  const t = ui.servicePage;
+  const { ui, locale, services, demos } = content;
+  const t = ui.sections;
   const service = services.find((item) => item.slug === slug);
   if (!service) notFound();
 
   const path = localizePath(`/services/${service.slug}`, locale);
-  const related = projects.find((project) => project.services.includes(service.slug));
+  const demo = demos.find((item) => item.slug === service.demo);
   const otherServices = services.filter((other) => other.slug !== service.slug);
-  const offersWebsiteCheck = service.slug === "web-optimization" || service.slug === "seo";
 
   return (
     <>
-      <PageHeader eyebrow={service.name} eyebrowIsHeading title={service.headline} lead={service.intro}>
-        <div className="mt-10 flex flex-col gap-3 sm:flex-row">
-          <ButtonLink href={`/contact?service=${service.slug}`} withArrow>
-            {ui.contactUs}
-          </ButtonLink>
-          {offersWebsiteCheck ? (
-            <ButtonLink href="/website-check" variant="secondary">
-              {t.websiteCheck}
-            </ButtonLink>
-          ) : (
-            <ButtonLink href="/work" variant="secondary">
-              {t.seeWork}
-            </ButtonLink>
-          )}
-        </div>
+      <PageHeader eyebrow={ui.nav.services} title={service.headline} lead={service.lead}>
+        <p className="mt-6 text-sm text-muted">
+          <span className="font-medium text-ink">{t.forWhom}:</span> {service.forWhom}
+        </p>
+        <CtaPair className="mt-8" />
       </PageHeader>
 
-      {/* Plain-language summary and the technology behind it */}
-      <Section tone="canvas" padding="compact">
-        <Container className="grid gap-10 py-4 lg:grid-cols-12 lg:gap-16">
-          <div className="lg:col-span-5">
-            <h2 className="text-sm font-medium text-muted">{t.inPlainTerms}</h2>
-            <p className="mt-3 text-xl leading-relaxed text-ink sm:text-2xl">{service.plain}</p>
-          </div>
-          <div className="lg:col-span-7">
-            <h2 className="text-sm font-medium text-muted">{t.technologyWeUse}</h2>
-            <TechList tools={service.stack} label={format(t.technologiesLabel, { service: service.name })} className="mt-4" />
+      {/* The problem, in the client's words */}
+      <Section tone="canvas">
+        <Container className="grid gap-10 lg:grid-cols-12 lg:gap-16">
+          <h2 className="text-heading lg:col-span-4" data-reveal>
+            {t.problem}
+          </h2>
+          <div className="lg:col-span-8" data-reveal>
+            <ul className="space-y-4">
+              {service.problemQuotes.map((quote) => (
+                <li key={quote} className="border-l-2 border-ink pl-5 text-xl leading-snug text-ink sm:text-2xl">
+                  <q>{quote}</q>
+                </li>
+              ))}
+            </ul>
+            <p className="mt-8 max-w-2xl text-lg leading-relaxed">{service.problemDetail}</p>
           </div>
         </Container>
       </Section>
 
-      {/* Scope */}
+      {/* What changes */}
       <Section>
+        <Container className="grid gap-10 lg:grid-cols-12 lg:gap-16">
+          <h2 className="text-heading lg:col-span-4" data-reveal>
+            {t.changes}
+          </h2>
+          <CheckList items={service.changes} className="text-lg lg:col-span-8" />
+        </Container>
+      </Section>
+
+      {/* What's included */}
+      <Section tone="canvas">
         <Container className="grid gap-10 lg:grid-cols-12 lg:gap-16">
           <h2 className="text-heading lg:col-span-4" data-reveal>
             {t.included}
@@ -96,58 +107,66 @@ export default async function ServicePage({ params }: ServicePageProps) {
         </Container>
       </Section>
 
-      {/* Approach and engagement */}
-      <Section tone="canvas">
-        <Container className="grid gap-12 lg:grid-cols-12 lg:gap-16">
-          <div className="lg:col-span-7" data-reveal>
-            <h2 className="text-heading">{t.approach}</h2>
-            <div className="mt-8 space-y-6 text-lg leading-relaxed">
-              {service.approach.map((paragraph) => (
-                <p key={paragraph}>{paragraph}</p>
-              ))}
+      {/* How it works in phases, and the price */}
+      <Section>
+        <Container>
+          <h2 className="text-heading" data-reveal>
+            {t.phases}
+          </h2>
+          <ol className="mt-12 grid gap-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
+            {service.phases.map((phase, index) => (
+              <li key={phase.title} className="border-t-2 border-ink pt-6" data-reveal>
+                <span className="text-sm text-muted tabular-nums">{format(t.phase, { number: index + 1 })}</span>
+                <h3 className="mt-3 text-xl font-semibold tracking-tight">{phase.title}</h3>
+                <p className="mt-3 leading-relaxed">{phase.detail}</p>
+              </li>
+            ))}
+          </ol>
+
+          <div className="mt-16 grid gap-6 rounded-lg border border-line bg-canvas p-8 sm:p-10 lg:grid-cols-12 lg:items-center" data-reveal>
+            <div className="lg:col-span-5">
+              <h2 className="text-sm font-medium text-muted">{t.price}</h2>
+              <p className="mt-2 text-3xl font-semibold tracking-tight text-ink sm:text-4xl">
+                {servicePriceText(service.slug, locale, ui.price)}
+              </p>
             </div>
+            <p className="max-w-xl leading-relaxed lg:col-span-7">{ui.price.fixedPhases}</p>
           </div>
-          <aside className="lg:col-span-4 lg:col-start-9" data-reveal>
-            <h2 className="text-sm font-medium text-ink">{t.engagement}</h2>
-            <dl className="mt-4 divide-y divide-line border-y border-line">
-              {service.engagement.map((row) => (
-                <div key={row.label} className="flex justify-between gap-6 py-4">
-                  <dt className="shrink-0 text-muted">{row.label}</dt>
-                  <dd className="text-right text-ink">{row.value}</dd>
-                </div>
-              ))}
-            </dl>
-          </aside>
         </Container>
       </Section>
 
-      {related && (
-        <Section>
+      {demo && (
+        <Section tone="canvas" padding="compact">
           <Container>
-            <h2 className="mb-10 text-sm font-medium text-muted sm:mb-12">{t.relatedWork}</h2>
-            <ProjectFeature project={related} />
+            <h2 className="mb-6 text-sm font-medium text-muted">{t.relatedDemo}</h2>
+            <div className="max-w-2xl">
+              <DemoCard demo={demo} />
+            </div>
           </Container>
         </Section>
       )}
 
-      <Section tone={related ? "canvas" : "paper"}>
+      <TrustStrip />
+
+      <Section>
         <Container className="grid gap-10 lg:grid-cols-12 lg:gap-16">
           <h2 className="text-heading lg:col-span-4">{t.questions}</h2>
           <FaqList faqs={service.faqs} className="lg:col-span-8" />
         </Container>
       </Section>
 
-      <Section padding="no-bottom">
+      <Section tone="canvas" padding="compact">
         <Container>
           <h2 className="text-sm font-medium text-muted">{t.otherServices}</h2>
-          <ul className="mt-6 flex flex-wrap gap-x-8 gap-y-2">
+          <ul className="mt-4 flex flex-wrap gap-x-8 gap-y-2">
             {otherServices.map((other) => (
               <li key={other.slug}>
                 <Link
                   href={`/services/${other.slug}`}
-                  className="inline-block py-1 text-lg text-ink hover:underline hover:underline-offset-4"
+                  className="group inline-flex items-center gap-1.5 py-1 text-lg text-ink hover:underline hover:underline-offset-4"
                 >
                   {other.name}
+                  <ArrowIcon className="group-hover:translate-x-0.5" />
                 </Link>
               </li>
             ))}

@@ -1,22 +1,46 @@
 /**
- * Interface text for every page and component, in English.
- * The Spanish and French files must match this shape (see `Ui`).
+ * Interface text shared across pages, in English: navigation, buttons, forms, errors, emails and the
+ * assistant. The Spanish and French files must match this shape (see `Ui`).
  * `{placeholders}` are filled in with `format()` from lib/i18n/format.ts.
+ *
+ * Tone rules (guideline, "Words"): short sentences, the client's vocabulary, outcomes not technology.
+ * Never write "10x", "skyrocket", "game-changer", "digital transformation", "synergy", "cutting-edge",
+ * "AI-powered everything", "fully autonomous", "trusted by hundreds" or a guaranteed speed score.
  */
 export const ui = {
   site: {
     description:
-      "{name} designs and builds websites, web applications, AI solutions and business automation for startups, growing companies and established organizations.",
+      "{name} designs, builds and runs websites, client portals, internal software and automations for established service and operations businesses.",
     hours: "Monday to Friday, 9am to 6pm Central",
-    shareImageAlt: "{name}: websites, web apps, AI solutions, automation and optimization",
-    audienceType: "Startups, small and medium-sized businesses, enterprises and organizations",
-    country: "United States",
+    shareImageAlt: "{name}: the systems your business runs on, engineered and looked after",
+    audienceType: "Established service and operations businesses",
+    countriesLabel: "Countries we serve",
+    countries: ["United States", "Canada", "Mexico"],
+    languagesLabel: "Languages",
+    languages: "English, French and Spanish",
   },
 
   skipToContent: "Skip to content",
-  contactUs: "Contact Us",
   breadcrumbHome: "Home",
+  breadcrumb: "Breadcrumb",
   logoLabel: "{name} home",
+  readMore: "Read more",
+
+  /** The two buttons that end every service and industry page, and appear across the site. */
+  cta: {
+    audit: "Book an audit",
+    auditLong: "Book a Digital Systems Audit",
+    snapshot: "Get a free Snapshot",
+    snapshotLong: "Get a free Snapshot of your site",
+    snapshotAlt: "Or start with a free Snapshot",
+    replyPromise: "A person replies within one business hour.",
+    orEmail: "Or email",
+  },
+
+  closingCta: {
+    title: "Find out where your systems are costing you.",
+    lead: "The audit ends with a prioritized, costed plan. The fee is credited in full if you start a project within {days} days.",
+  },
 
   header: {
     mainNav: "Main",
@@ -30,418 +54,225 @@ export const ui = {
 
   nav: {
     services: "Services",
-    technology: "Technology",
+    industries: "Industries",
+    audit: "Audit",
     work: "Work",
+    howWeWork: "How we work",
     about: "About",
+    standards: "Standards",
+    insights: "Insights",
     contact: "Contact",
+    partners: "Partners",
+    snapshot: "Free Snapshot",
+    websiteCheck: "Instant speed check",
   },
 
   footer: {
-    tagline: "Websites, web applications, AI and automation for businesses of every size.",
+    tagline: "The systems your business runs on, engineered and looked after.",
     services: "Services",
+    industries: "Industries",
     company: "Company",
+    legal: "Legal",
     contact: "Contact",
-    websiteCheck: "Free website check",
     rights: "All rights reserved.",
-    privacy: "Privacy Policy",
+    privacy: "Privacy policy",
+    terms: "Terms of use",
+    cookies: "Cookie notice",
+    mexicoNotice: "Aviso de privacidad (Mexico)",
+    newCompany: "A new company, founded in {year}.",
   },
 
-  closingCta: {
-    title: "Tell us what you're working on.",
-    lead: "Share a few details and we'll reply within one business day to set up a free consultation. No obligation, and if we're not the right fit, we'll say so and point you somewhere better.",
-    orEmail: "Or email",
+  /** Prices come from lib/pricing.ts. `{from}` and `{to}` are formatted for the language. */
+  price: {
+    auditRange: "US${from}–{to}",
+    /** For example "from US$15,000". */
+    from: "from US${amount}",
+    fromPerMonth: "from US${amount} per month",
+    creditNote: "Credited in full to a project signed within {days} days.",
+    fixedPhases: "Each phase has a fixed price, agreed in writing before it starts.",
+    label: "Price",
+    unset: "Price range to be confirmed",
   },
 
-  /** Discipline tabs under the homepage headline. */
-  showcase: {
-    websites: "Websites",
-    webApps: "Web Apps",
-    ai: "AI Solutions",
-    automation: "Automation",
-    optimization: "Optimization",
-    automationAlt:
-      "Harbor Line delivery-to-invoice workflow built from connected steps, with run history and automation rates",
-    automationType: "Automation",
-    automationLink: "Follow the workflow",
+  trust: {
+    title: "Why you can trust the work",
+    items: [
+      { title: "You own it", detail: "Code, accounts and domains belong to you from day one." },
+      { title: "Fixed-price phases", detail: "A written scope and price before each phase starts." },
+      { title: "Built in the open", detail: "A staging link and a written update every week." },
+      { title: "Standards we publish", detail: "Security, performance, accessibility, AI and privacy, in plain language." },
+    ],
+    standardsLink: "Read our standards",
+    processLink: "See how we work",
   },
 
-  projectFeature: {
-    services: "Services: ",
-    technologies: "Technologies: ",
+  demo: {
+    label: "Concept demo: not a client project",
+    sampleData: "Sample data for illustration",
   },
 
-  home: {
-    metaTitle: "{name} | Website, Web App and AI Development",
-    metaDescription:
-      "Website development, custom web applications, AI integration and business automation for startups, small businesses and established organizations.",
-    hero: {
-      // The headline alternates plain text and ink blocks: [lead] [block1] / [block2] [tail]
-      lead: "We build",
-      block1: "the software",
-      block2: "your business",
-      tail: "runs on.",
-      intro:
-        "{name} designs and builds websites, web applications, AI solutions and business automation for startups, growing companies and established organizations.",
-      explore: "Explore Our Services",
-      commitments: "Our commitments",
-      whatWeBuild: "What we build",
-    },
-    whoWeHelp: {
-      eyebrow: "Who we work with",
-      title: "From local businesses to large organizations.",
-      lead: "Whether you need your first professional website or an AI system for thousands of users, you get the same senior team and the same standards.",
-    },
-    whatWeDo: {
-      eyebrow: "What we do",
-      title: "One team for your website, software and AI.",
-      lead: "Most clients come to us for one thing and stay for several. Design, engineering, AI and performance work all sit with the same team, so nothing gets lost between vendors.",
-    },
-    webDevelopment: {
-      eyebrow: "Web Development",
-      title: "Websites that explain clearly, earn trust and load fast.",
-      lead: "We plan the content before the design, design for every screen size on purpose, and build on modern frameworks your team can maintain. The result is a site that earns trust quickly and is easy to keep up to date.",
-      points: [
-        "Content strategy and site structure",
-        "Custom design, built from scratch",
-        "A CMS configured for your editors",
-        "Accessibility and SEO built in from the start",
-      ],
-      link: "Website development services",
-    },
-    webApplications: {
-      eyebrow: "Web Applications",
-      title: "Custom software for work that doesn't fit off-the-shelf tools.",
-      lead: "We design and build applications from the data model up, release a focused first version within weeks, and keep improving it alongside your team.",
-      link: "Web application development",
-      types: [
-        {
-          title: "Customer portals",
-          detail: "Self-service accounts, orders, documents and billing for your customers.",
-        },
-        {
-          title: "Internal tools",
-          detail: "Replacements for the spreadsheets and email threads your operations depend on.",
-        },
-        {
-          title: "Dashboards and reporting",
-          detail: "One reliable view of data that currently lives in several systems.",
-        },
-        {
-          title: "Platforms and SaaS products",
-          detail: "Multi-tenant products with billing, roles and the infrastructure to scale.",
-        },
-      ],
-    },
-    aiAutomation: {
-      eyebrow: "AI & Automation",
-      title: "Automation and AI that save your team real time.",
-      lead: "We start with the task, not the technology. If a process is predictable, we automate it. If it involves judgment across large amounts of text, AI may help. Often the answer is a combination of both.",
-      inPractice: "In practice",
-      ai: {
-        title: "AI Solutions",
-        linkLabel: "AI development services",
-        description:
-          "Language models applied to specific, measurable problems, with answers you can verify and data that stays under your control.",
-        examples: [
-          "An assistant that answers staff questions from policy documents, citing each source",
-          "Extracting line items from supplier invoices into your accounting system",
-          "Drafting first responses to routine support tickets for review",
-        ],
-      },
-      automation: {
-        title: "Automation",
-        linkLabel: "Business automation services",
-        description:
-          "Integrations and workflows that move data between your systems, so people stop copying it by hand.",
-        examples: [
-          "New CRM deals creating projects, folders and invoices automatically",
-          "Weekly operations reports assembled and sent without anyone touching a spreadsheet",
-          "Approval requests routed, reminded and logged across teams",
-        ],
-      },
-    },
-    optimization: {
-      eyebrow: "Web Optimization & Performance",
-      title: "Faster pages, measured with real visitor data.",
-      lead: "We find what's actually slowing your site down, fix it in your codebase, and set up monitoring so it stays fast long after the project ends.",
-      testCta: "Test your website for free",
-      serviceLink: "Website performance optimization",
-      metricHeader: "Metric (mobile, 75th percentile)",
-      before: "Before",
-      after: "After",
-      metrics: [
-        { name: "Largest Contentful Paint", before: "3.8 s", after: "1.6 s" },
-        { name: "Interaction to Next Paint", before: "410 ms", after: "140 ms" },
-        { name: "Cumulative Layout Shift", before: "0.21", after: "0.02" },
-        { name: "JavaScript transferred", before: "1.2 MB", after: "480 KB" },
-      ],
-      caption: "Fieldstone Outdoor product pages, before and after an eight-week performance program.",
-      captionLink: "Read the full breakdown",
-    },
-    seo: {
-      eyebrow: "SEO & Digital Growth",
-      title: "Search visibility starts with how your site is built.",
-      body: "We handle the technical foundation of search, including site structure, indexing, metadata and speed, and give your team clear guidance on content that brings in qualified visitors. No link schemes and no ranking guarantees.",
-      points: [
-        "Technical SEO audits",
-        "Site architecture and internal links",
-        "Structured data and metadata",
-        "Indexing and crawl budget",
-        "Migration and redirect planning",
-        "Search Console reporting",
-      ],
-      link: "Technical SEO services",
-    },
-    techStack: {
-      eyebrow: "Technology",
-      title: "The technology we use, explained in plain English.",
-      lead: "You don't need to know what any of these names mean. We choose established, well-supported tools so your project is fast, secure and easy to maintain, and any good developer can work on it later. For technical teams, here is what we use most.",
-      cta: "Full technology stack",
-    },
-    approach: {
-      eyebrow: "Our approach",
-      title: "A clear process, run by the people doing the work.",
-      lead: "You work directly with the designers and engineers on your project. There are no account managers relaying messages and no handoffs to junior staff after the pitch.",
-      step: "Step {number}",
-    },
-    selectedWork: {
-      eyebrow: "Selected work",
-      title: "Recent projects and what they changed.",
-      lead: "A few examples of the websites, applications and systems we've built, and the results our clients measured afterward.",
-      allWork: "All work",
-    },
-    whyUs: {
-      eyebrow: "Why work with us",
-      title: "We don't build technology simply because we can. We build it because it solves a problem.",
-    },
-    waysToWork: {
-      eyebrow: "Ways to work with us",
-      title: "Most clients start with a free conversation.",
-      lead: "There's no pressure and no long contract to sign before you know us. Choose the level of involvement that fits your project.",
-    },
-    faq: {
-      eyebrow: "FAQ",
-      title: "Frequently asked questions",
-      lead: "The questions business owners ask us most often. Anything else, just ask on a call.",
-    },
-  },
-
-  about: {
-    metaTitle: "About Us",
-    metaDescription:
-      "{name} is a software design and engineering company in {location}. Learn how we approach technology, design, development and performance.",
-    eyebrow: "About",
-    title: "We don't build technology simply because we can. We build it because it solves a problem.",
-    lead: "{name} is a software design and engineering company based in {location}. We work with startups, growing businesses and established organizations on the websites, applications and systems they rely on every day.",
-    howWeWork: "How we work with clients",
-  },
-
-  servicesPage: {
-    metaTitle: "Website, Software and AI Development Services",
-    metaDescription:
-      "Website development, custom web applications, AI solutions, business automation, performance optimization and technical SEO for companies of every size.",
-    eyebrow: "Services",
-    title: "Websites, software and AI, designed and built by one team.",
-    lead: "We work across the full life of a digital product, from the first conversation about what to build to keeping it fast, secure and useful years later.",
-    ctaTitle: "Not sure which service you need?",
-    ctaLead: "Most projects involve more than one. Describe the problem and we'll recommend where to start.",
-  },
-
-  servicePage: {
-    websiteCheck: "Free website check",
-    seeWork: "See our work",
-    inPlainTerms: "In plain terms",
-    technologyWeUse: "Technology we use",
-    technologiesLabel: "{service} technologies",
+  sections: {
+    problem: "The problem",
+    changes: "What changes",
     included: "What's included",
-    approach: "How we approach it",
-    engagement: "Typical engagement",
-    relatedWork: "Related work",
+    phases: "How it works, in phases",
+    phase: "Phase {number}",
+    price: "Price",
+    relatedDemo: "Related demo",
+    forWhom: "Who it's for",
     questions: "Common questions",
     otherServices: "Other services",
+    otherIndustries: "Other industries",
+    relatedServices: "Related services",
+    inTheirWords: "In their words",
+    systemsWeBuild: "The systems we build",
+    softwareWeConnect: "Software we connect to",
+    theDemo: "The demo for this industry",
+    whatNext: "What's next",
   },
 
-  technologyPage: {
-    metaTitle: "Our Technology Stack: Web Development and AI",
-    metaDescription:
-      "The web and AI technology we build with, from HTML, CSS, JavaScript, React and Node.js to OpenAI, Claude, Gemini, AI agents and vector search.",
-    eyebrow: "Technology",
-    title: "The tools behind everything we build.",
-    lead: "Every name below is a proven, widely used technology. You don't need to understand them to work with us. Each group starts with a one-line explanation in plain English, followed by the exact tools for technical teams.",
-    web: {
-      eyebrow: "Web and software",
-      title: "From HTML and CSS to cloud infrastructure.",
-      lead: "Websites, web applications and mobile apps built on modern standards, with the same tools used by the world's leading software teams.",
+  /** The audit / contact / Snapshot form: five groups of fields at most, plus consent. */
+  leadForm: {
+    name: "Name",
+    role: "Role",
+    company: "Company",
+    website: "Website",
+    websitePlaceholder: "yourcompany.com",
+    email: "Email",
+    phone: "Phone",
+    need: "What do you want to fix?",
+    needHint: "A sentence or two is enough. For example: inquiries wait too long, or staff retype the same data.",
+    language: "Preferred language",
+    optional: "Optional",
+    consent: "I agree that {name} may use these details to reply to me.",
+    privacyLink: "Privacy policy",
+    honeypot: "Leave this field empty",
+    submit: {
+      audit: "Book my audit",
+      contact: "Send message",
+      snapshot: "Get my free Snapshot",
     },
-    ai: {
-      eyebrow: "Artificial intelligence",
-      title: "The current generation of AI, applied to real work.",
-      lead: "We work with the leading AI models and the tools around them: agents that take actions, assistants that answer from your documents, and the testing that proves they're accurate. We choose models for accuracy, cost and privacy, not hype.",
+    submitting: "Sending…",
+    sendingStatus: "Sending your request.",
+    successTitle: {
+      audit: "Thank you. Your audit request is in.",
+      contact: "Thank you. Your message is in.",
+      snapshot: "Thank you. Your Snapshot request is in.",
     },
-    unsureTitle: "Not sure which of these you need?",
-    unsureBody:
-      "That's our job. Tell us what you want to achieve and we'll recommend the simplest setup that does it well. Often that means fewer tools, not more.",
+    successBody:
+      "A confirmation is on its way to your inbox. A person will reply personally within one business hour ({hours}). If it's urgent, write to",
+    bookTitle: "Want to pick the time yourself?",
+    bookCall: "Choose a time for the discovery call",
+    languageNames: { en: "English", fr: "Français", es: "Español" },
   },
 
-  workPage: {
-    metaTitle: "Case Studies: Websites, Web Apps and AI Projects",
+  leadErrors: {
+    nameRequired: "Please enter your name.",
+    nameTooLong: "Please keep your name under {max} characters.",
+    roleTooLong: "Please keep your role under {max} characters.",
+    companyTooLong: "Please keep the company name under {max} characters.",
+    websiteInvalid: "Please enter a website address, like yourcompany.com.",
+    websiteRequired: "Please enter the address of your website.",
+    emailRequired: "Please enter your email address.",
+    emailInvalid: "Please enter a valid email address, like name@company.com.",
+    phoneInvalid: "Please enter a valid phone number, or leave this field blank.",
+    needTooShort: "Please tell us a little more (at least {min} characters).",
+    needTooLong: "Please keep this under {max} characters.",
+    languageInvalid: "Please choose a language.",
+    consentRequired: "Please tick the box so we can reply to you.",
+    rateLimited: "You've sent several requests in a short time. Please wait a few minutes, or email us at {email}.",
+    fixFields: "Please correct the highlighted fields.",
+    sendFailed: "We couldn't send your request just now. Please try again, or email us directly at {email}.",
+  },
+
+  /** The automatic confirmation email, sent to the visitor at once in their language. */
+  confirmation: {
+    subject: "We received your request",
+    greeting: "Hello {name},",
+    kinds: {
+      audit: "Thank you for asking about a Digital Systems Audit.",
+      contact: "Thank you for your message.",
+      snapshot: "Thank you for asking for a free Snapshot of your site.",
+    },
+    automatic: "This is an automatic confirmation, so you know your request reached us.",
+    promise: "A person on our team will reply to you personally within one business hour ({hours}).",
+    nextAudit: "After you book, we'll send a short questionnaire so the call can focus on your business.",
+    nextSnapshot: "We'll send you three specific observations about your site, with what to do about each.",
+    signoff: "The {name} team",
+    ignore: "If you didn't make this request, you can ignore this message.",
+  },
+
+  newsletter: {
+    title: "Practical notes on systems for operations businesses",
+    lead: "A short email when we publish a new article. No spam, and you can leave with one click.",
+    email: "Email",
+    language: "Language of the emails",
+    consent: "I agree to receive emails from {name}. I can unsubscribe at any time.",
+    submit: "Subscribe",
+    submitting: "Subscribing…",
+    successTitle: "You're subscribed.",
+    successBody: "Thank you. We'll email you when there's something new to read.",
+    errors: {
+      emailRequired: "Please enter your email address.",
+      emailInvalid: "Please enter a valid email address, like name@company.com.",
+      consentRequired: "Please tick the box to subscribe.",
+      rateLimited: "Too many attempts. Please try again in a few minutes.",
+      failed: "We couldn't subscribe you just now. Please try again in a moment.",
+    },
+  },
+
+  contactPage: {
+    metaTitle: "Contact",
     metaDescription:
-      "Case studies covering website development, custom web applications, AI solutions and performance optimization, with the results each client measured.",
-    eyebrow: "Work",
-    title: "Projects measured by what they changed.",
-    lead: "Each case study covers the problem we were asked to solve, how we approached it and the results the client measured afterward.",
+      "Tell us what you want to fix. A person replies within one business hour. We serve businesses in the United States, Canada and Mexico, in English, French and Spanish.",
+    eyebrow: "Contact",
+    title: "Tell us what you want to fix.",
+    lead: "Five short fields. You get a confirmation right away and a personal reply within one business hour.",
+    nextTitle: "What happens next",
+    nextSteps: [
+      "You get a confirmation email at once, in your language.",
+      "A person replies personally within one business hour.",
+      "We book a discovery call, and send a short questionnaire once it's booked.",
+    ],
+    pickTime: "Prefer to pick a time?",
+    bookCall: "Book a discovery call",
+    reachDirectly: "Prefer to write directly?",
+    servingTitle: "Countries and languages",
+    servingBody: "We serve businesses in {countries}, in {languages}.",
   },
 
-  caseStudy: {
-    metaTitle: "{client} Case Study: {type}",
-    breadcrumb: "Breadcrumb",
-    client: "Client",
-    industry: "Industry",
-    services: "Services",
-    year: "Year",
-    visitLive: "Visit the live project",
-    challenge: "The challenge",
-    whatWeDid: "What we did",
-    outcome: "The outcome",
-    technology: "Technology",
-    nextProject: "Next project",
-  },
-
-  book: {
-    metaTitle: "Book a Free Consultation",
+  bookPage: {
+    metaTitle: "Book a discovery call",
     metaDescription:
-      "Pick a time for a free 30-minute call about your website, web application, AI or automation project. No cost and no obligation.",
+      "Pick a time for a discovery call about your Digital Systems Audit. A person confirms within one business hour.",
     eyebrow: "Book a call",
     title: "Pick a time that works for you.",
-    lead: "A free 30-minute video call to talk through your goals. You'll leave with honest advice and clear next steps, whether or not you hire us.",
-    frameTitle: "Schedule a free consultation",
+    lead: "A discovery call to talk through what you want to fix. It's where the audit starts, and there's no cost for the call.",
+    frameTitle: "Schedule a discovery call",
     trouble: "Having trouble with the calendar?",
     openInTab: "Open it in a new tab",
     or: "or",
     sendMessage: "send us a message",
   },
 
-  contactPage: {
-    metaTitle: "Contact Us",
-    metaDescription:
-      "Tell us about your website, web application, AI or automation project. We reply to every request within one business day.",
-    eyebrow: "Contact",
-    title: "Contact us",
-    lead: "Tell us about the problem you're trying to solve. A rough idea is enough, and we'll help you shape the details. The first consultation is free, with no obligation.",
-    nextTitle: "What happens next",
-    nextSteps: [
-      "We read every request and reply within one business day.",
-      "We schedule a free 30-minute call to understand your goals, constraints and timeline.",
-      "You receive a written proposal with scope, timeline and a fixed estimate for the first phase.",
-    ],
-    pickTime: "Prefer to pick a time?",
-    bookCall: "Book a free 30-minute call",
-    reachDirectly: "Prefer to reach us directly?",
-  },
-
-  contactForm: {
-    successTitle: "Thank you. We've received your request.",
-    successBody:
-      "Someone from our team will read it and reply within one business day, usually sooner. If anything is urgent, email us at",
-    name: "Name",
-    company: "Company",
-    email: "Email",
-    phone: "Phone",
-    projectType: "Project type",
-    projectTypePlaceholder: "Select a project type",
-    budget: "Budget range",
-    budgetPlaceholder: "Select a budget range",
-    message: "Project description",
-    messageHint: "At least {min} characters. Goals, timeline and any existing systems are helpful.",
-    optional: "Optional",
-    honeypot: "Website",
-    privacyNote: "We'll only use these details to respond to your inquiry.",
-    privacyLink: "Privacy policy",
-    submit: "Send request",
-    submitting: "Sending…",
-    sendingStatus: "Sending your request.",
-  },
-
-  contactErrors: {
-    nameRequired: "Please enter your name.",
-    nameTooLong: "Please keep your name under {max} characters.",
-    companyTooLong: "Please keep the company name under {max} characters.",
-    emailRequired: "Please enter your email address.",
-    emailInvalid: "Please enter a valid email address, like name@company.com.",
-    phoneInvalid: "Please enter a valid phone number, or leave this field blank.",
-    projectTypeRequired: "Please choose a project type.",
-    budgetRequired: "Please choose a budget range.",
-    messageTooShort: "Please tell us a little more about your project (at least {min} characters).",
-    messageTooLong: "Please keep your description under {max} characters.",
-    rateLimited: "You've sent several requests in a short time. Please wait a few minutes, or email us at {email}.",
-    fixFields: "Please correct the highlighted fields.",
-    sendFailed: "We couldn't send your message just now. Please try again, or email us directly at {email}.",
-  },
-
-  /** Labels for the contact form's select options. The submitted values stay in English. */
-  projectTypes: {
-    Website: "Website",
-    "Web application": "Web application",
-    "AI solution": "AI solution",
-    Automation: "Automation",
-    "Performance optimization": "Performance optimization",
-    SEO: "SEO",
-    "Something else": "Something else",
-  },
-  budgetRanges: {
-    "Under $25,000": "Under $25,000",
-    "$25,000 – $50,000": "$25,000 – $50,000",
-    "$50,000 – $100,000": "$50,000 – $100,000",
-    "$100,000 – $250,000": "$100,000 – $250,000",
-    "Over $250,000": "Over $250,000",
-    "Not sure yet": "Not sure yet",
-  },
-
-  privacy: {
-    metaTitle: "Privacy Policy",
-    metaDescription: "How {name} collects, uses and protects information submitted through this website.",
-    eyebrow: "Legal",
-    title: "Privacy Policy",
-    updated: "Last updated September 2026.",
-    sections: [
-      {
-        title: "Information we collect",
-        body: "When you submit the contact form, we collect the details you provide: your name, company, email address, phone number, project type, budget range and project description. We don't use advertising trackers or sell personal information.",
-      },
-      {
-        title: "How we use it",
-        body: "We use this information only to respond to your inquiry and, if we work together, to manage our business relationship. We keep inquiries for up to two years unless you ask us to delete them sooner.",
-      },
-      {
-        title: "Website check and AI assistant",
-        body: "When you use the free website check, the address you enter is sent to Google PageSpeed Insights for testing. If you also enter your email, we receive it with your results so we can follow up. Messages you send to the AI assistant are processed by Anthropic to generate answers and are not used to identify you. Please don't share sensitive personal information in the assistant.",
-      },
-      {
-        title: "Service providers",
-        body: "Form submissions are delivered by email through a transactional email provider and hosted with our website infrastructure provider. Consultation bookings are handled by our scheduling provider. Both process data on our behalf and are not permitted to use it for their own purposes.",
-      },
-    ],
-    choicesTitle: "Your choices",
-    choicesBody:
-      "You can ask us to access, correct or delete the information you've sent us at any time by emailing",
-  },
-
   websiteCheckPage: {
-    metaTitle: "Free Website Speed and SEO Check",
+    metaTitle: "Instant website speed check",
     metaDescription:
-      "Test your website for free. Get your speed, SEO, accessibility and best practices scores, Core Web Vitals and the top fixes in under a minute.",
-    eyebrow: "Free website check",
-    title: "How fast and findable is your website?",
-    lead: "Enter your address to see how your site scores for speed, SEO, accessibility and best practices on a mobile phone, and what to fix first. It's free and takes under a minute.",
-    whyTitle: "Why these scores matter",
+      "Run an automated Google Lighthouse test on your site. See speed, accessibility, best-practices and SEO scores on a phone, and what to fix first.",
+    eyebrow: "Instant speed check",
+    title: "See how your site performs on a phone, right now.",
+    lead: "An automated test that takes under a minute. It scores speed, accessibility, best practices and SEO basics. For a person's read on your site, ask for the free Snapshot.",
+    whyTitle: "What the scores mean",
     whyBody:
-      "Google uses page speed and technical quality when ranking websites, and most visitors leave a page that takes more than a few seconds to load on their phone.",
+      "The test simulates a mid-range phone on a mobile connection. It's a lab test: a useful way to find problems, not a promise about what your real visitors experience. Real-user data (Core Web Vitals) is the fairer judge.",
     points: [
       "Performance: how quickly your pages load and respond on a typical phone",
       "Accessibility: whether people using screen readers or keyboards can use your site",
       "Best practices: security and modern web standards",
       "SEO: whether search engines can find, read and understand your pages",
     ],
+    snapshotTitle: "Want a person to look?",
+    snapshotBody: "The free Snapshot gives you three specific observations about your site, written by a person.",
   },
 
   websiteCheck: {
@@ -449,9 +280,9 @@ export const ui = {
     placeholder: "yourcompany.com",
     email: "Email",
     optional: "Optional",
-    submit: "Run free check",
+    submit: "Run the check",
     submitting: "Checking…",
-    emailHint: "Add your email if you'd like us to follow up with a personal review. We'll only use it for that.",
+    emailHint: "Add your email if you'd like a person to follow up on the results. We'll only use it for that.",
     running: "Testing your site on a simulated mobile phone. This usually takes 20 to 40 seconds.",
     resultsFor: "Results for {url}",
     resultsNote: "Mobile test, scored out of 100 by Google Lighthouse.",
@@ -462,10 +293,10 @@ export const ui = {
     loadingSpeed: "Loading speed",
     fixFirst: "What to fix first",
     noIssues:
-      "No major issues found in this quick test. A full review can still uncover content, conversion and search improvements.",
-    emailSent: "Thanks. We'll review your results and reply within one business day.",
-    followUp: "Want these fixed? We'll walk you through the results in a free consultation.",
-    talk: "Talk to us about it",
+      "No major issues found in this quick test. A person's review can still find content, conversion and lead-flow improvements.",
+    emailSent: "Thanks. A person will reply within one business hour.",
+    followUp: "Want help with these? Ask for a free Snapshot, or book a Digital Systems Audit.",
+    talk: "Get a free Snapshot",
     savings: "Could save about {seconds} s",
     metrics: {
       "largest-contentful-paint": "Largest Contentful Paint",
@@ -477,7 +308,7 @@ export const ui = {
     errors: {
       invalidUrl: "Please enter a valid public website address, like example.com.",
       invalidEmail: "Please enter a valid email address, or leave it blank.",
-      rateLimited: "You've run several checks in the last hour. Please try again later, or contact us for a full review.",
+      rateLimited: "You've run several checks in the last hour. Please try again later, or ask for a free Snapshot.",
       failed: "We couldn't analyze that website just now. Check the address and try again in a minute.",
     },
   },
@@ -492,22 +323,22 @@ export const ui = {
 
   assistant: {
     greeting:
-      "Hi! Ask me anything about our websites, web apps, AI and automation work. I can also help you figure out where to start.",
+      "Hi! Ask me about our audit, our services or how we work. I can also help you decide where to start.",
     open: "Ask a question",
     close: "Close",
     title: "Ask us anything",
     disclaimer: "AI assistant. Answers can be imperfect, so please don't share sensitive information.",
     suggested: "Suggested questions",
     suggestions: [
-      "How much does a website cost?",
-      "Can AI help my small business?",
-      "How long does a web app take to build?",
+      "What does the audit include?",
+      "How much does it cost to start?",
+      "Do you work in French?",
     ],
     you: "You: ",
     assistant: "Assistant: ",
     thinking: "Thinking…",
-    limit: "For anything more, the team will be glad to help.",
-    book: "Book a free consultation",
+    limit: "For anything more, a person will be glad to help.",
+    book: "Book an audit",
     inputLabel: "Your question",
     placeholder: "Type your question",
     send: "Send",
@@ -518,7 +349,7 @@ export const ui = {
     wrongOrigin: "Requests must come from this website.",
     rateLimited: "You've sent a lot of messages in a short time. Please try again in a few minutes.",
     invalid: "That message couldn't be sent. Please try a shorter question.",
-    declined: "Sorry, I can't help with that one. For anything else, email {email} or book a free consultation at {contact}.",
+    declined: "Sorry, I can't help with that one. For anything else, email {email} or reach us at {contact}.",
     serverError: "Sorry, something went wrong on our side. Please try again, or email {email}.",
     // Written into the system prompt so the model answers in the page language
     replyLanguage: "plain, friendly American English",

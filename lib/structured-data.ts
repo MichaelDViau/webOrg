@@ -7,7 +7,13 @@ type JsonLdObject = Record<string, unknown>;
 
 const organizationId = `${site.url}/#organization`;
 
-/** The company, described in the page language. */
+const countryNames: Record<(typeof site.countries)[number], string> = {
+  US: "United States",
+  CA: "Canada",
+  MX: "Mexico",
+};
+
+/** The company, described in the page language. Only facts the site states: no reviews, ratings or awards. */
 export function organizationSchema({ ui, services }: Content): JsonLdObject {
   return {
     "@context": "https://schema.org",
@@ -19,7 +25,7 @@ export function organizationSchema({ ui, services }: Content): JsonLdObject {
     logo: `${site.url}/logo.png`,
     image: `${site.url}/opengraph-image.png`,
     email: site.email,
-    telephone: site.phone,
+    foundingDate: String(site.foundedYear),
     description: format(ui.site.description, { name: site.name }),
     address: {
       "@type": "PostalAddress",
@@ -27,7 +33,8 @@ export function organizationSchema({ ui, services }: Content): JsonLdObject {
       addressRegion: site.address.region,
       addressCountry: site.address.country,
     },
-    areaServed: { "@type": "Country", name: ui.site.country },
+    areaServed: site.countries.map((code) => ({ "@type": "Country", name: countryNames[code] })),
+    knowsLanguage: ["en", "fr", "es"],
     knowsAbout: services.map((service) => service.name),
   };
 }
@@ -56,7 +63,7 @@ export function serviceSchema(
     description: service.description,
     url: `${site.url}${service.path}`,
     provider: { "@id": organizationId },
-    areaServed: { "@type": "Country", name: ui.site.country },
+    areaServed: site.countries.map((code) => ({ "@type": "Country", name: countryNames[code] })),
     audience: { "@type": "BusinessAudience", audienceType: ui.site.audienceType },
   };
 }
@@ -86,21 +93,22 @@ export function breadcrumbSchema(items: { name: string; path: string }[]): JsonL
   };
 }
 
-export function caseStudySchema(project: {
+export function articleSchema(article: {
   title: string;
-  summary: string;
+  description: string;
   path: string;
-  image: string;
-  year: string;
+  published: string;
+  locale: Locale;
 }): JsonLdObject {
   return {
     "@context": "https://schema.org",
     "@type": "Article",
-    headline: project.title,
-    description: project.summary,
-    url: `${site.url}${project.path}`,
-    image: `${site.url}${project.image}`,
-    datePublished: project.year,
+    headline: article.title,
+    description: article.description,
+    url: `${site.url}${article.path}`,
+    image: `${site.url}/opengraph-image.png`,
+    datePublished: article.published,
+    inLanguage: article.locale,
     author: { "@id": organizationId },
     publisher: { "@id": organizationId },
   };

@@ -1,20 +1,14 @@
 import type { Metadata } from "next";
 import { JsonLd } from "@/components/JsonLd";
-import { AiAutomation } from "@/components/home/AiAutomation";
-import { Approach } from "@/components/home/Approach";
 import { ClosingCta } from "@/components/home/ClosingCta";
 import { Hero } from "@/components/home/Hero";
-import { HomeFaq } from "@/components/home/HomeFaq";
-import { Optimization } from "@/components/home/Optimization";
-import { Seo } from "@/components/home/Seo";
-import { SelectedWork } from "@/components/home/SelectedWork";
-import { TechStack } from "@/components/home/TechStack";
-import { WaysToWork } from "@/components/home/WaysToWork";
-import { WebApplications } from "@/components/home/WebApplications";
-import { WebDevelopment } from "@/components/home/WebDevelopment";
+import { Honest } from "@/components/home/Honest";
+import { Problem } from "@/components/home/Problem";
+import { WhatWeBuild } from "@/components/home/WhatWeBuild";
 import { WhatWeDo } from "@/components/home/WhatWeDo";
 import { WhoWeHelp } from "@/components/home/WhoWeHelp";
 import { WhyUs } from "@/components/home/WhyUs";
+import { audit } from "@/lib/pricing";
 import { format } from "@/lib/i18n/format";
 import { getContent } from "@/lib/i18n/server";
 import { pageMetadata } from "@/lib/metadata";
@@ -22,35 +16,32 @@ import { site } from "@/lib/site";
 import { websiteSchema } from "@/lib/structured-data";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const { ui } = await getContent();
+  const { home } = await getContent();
   return pageMetadata({
-    title: format(ui.home.metaTitle, { name: site.name }),
+    title: format(home.metaTitle, { name: site.name }),
     absoluteTitle: true,
-    description: ui.home.metaDescription,
+    description: home.metaDescription,
     path: "/",
   });
 }
 
+/** The home page: eight blocks, in the order the guideline sets. */
 export default async function HomePage() {
-  const { locale } = await getContent();
+  const { locale, home } = await getContent();
 
   return (
     <>
       <Hero />
-      <WhoWeHelp />
+      <Problem />
       <WhatWeDo />
-      <WebDevelopment />
-      <WebApplications />
-      <AiAutomation />
-      <Optimization />
-      <Seo />
-      <TechStack />
-      <Approach />
-      <SelectedWork />
+      <WhatWeBuild />
+      <WhoWeHelp />
       <WhyUs />
-      <WaysToWork />
-      <HomeFaq />
-      <ClosingCta />
+      <Honest />
+      <ClosingCta
+        title={home.finalCta.title}
+        lead={format(home.finalCta.lead, { days: audit.creditDays })}
+      />
       <JsonLd data={websiteSchema(locale)} />
     </>
   );

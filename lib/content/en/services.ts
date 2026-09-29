@@ -1,449 +1,568 @@
 import type { ServiceSlug, ServiceText } from "@/lib/services";
 
+/** Every service page follows the same structure so buyers can compare them. */
 export const services: Record<ServiceSlug, ServiceText> = {
-  "website-development": {
-    name: "Website Development",
-    summary: "Fast, accessible websites built around how your customers make decisions.",
-    seoTitle: "Professional Website Development Services",
+  "revenue-websites": {
+    name: "Revenue websites",
+    card: "Websites built to turn visitors into qualified inquiries, answered fast.",
+    seoTitle: "Revenue Websites for Service Businesses",
     metaDescription:
-      "Custom website design and development for startups, small businesses and larger organizations. Fast, accessible sites with a CMS your team can manage.",
-    headline: "A good website makes the decision easier for the person reading it.",
-    intro:
-      "We design and build company and marketing websites that explain what you do, earn trust and turn visitors into conversations. Each site is built from scratch around your content and goals, then handed over with a content management system your team can use without calling us.",
-    plain:
-      "A fast, good-looking website that works on every phone and computer, shows up in Google, and that you can update yourself without calling a developer.",
-    stack: [
-      "HTML5",
-      "CSS3",
-      "JavaScript",
-      "TypeScript",
-      "React",
-      "Next.js",
-      "Astro",
-      "Tailwind CSS",
-      "WordPress",
-      "Sanity",
-      "Vercel",
-      "Cloudflare",
+      "Company websites built around one job: getting the right visitors to ask for help, and answering fast. Fast, accessible, in English, French and Spanish.",
+    headline: "A website that brings in inquiries, not just visitors.",
+    lead: "We design and build company websites around one job: getting the right people to ask for help, and making sure someone answers quickly.",
+    forWhom: "For service and operations businesses whose website is their first salesperson.",
+    problemQuotes: [
+      "People visit, but few reach out.",
+      "Our website looks fine, but I can't tell what it earns us.",
+      "Inquiries land in an inbox and wait.",
+    ],
+    problemDetail:
+      "Most websites explain what a company is. A revenue website explains what will change for the visitor, shows what it costs to start, and connects every form to a fast reply.",
+    changes: [
+      "Visitors see what you do, for whom, and what to do next within ten seconds.",
+      "Every inquiry gets an instant confirmation and reaches the right person.",
+      "You see inquiries by page and by language, so you know what works.",
+      "Pages load fast on phones and meet accessibility standards.",
     ],
     included: [
       {
         title: "Content and structure",
-        detail: "Sitemap, page hierarchy and messaging, settled before visual design begins.",
+        detail: "Pages organized around your buyer's questions, not around your org chart.",
       },
       {
-        title: "Interface design",
-        detail: "A visual system built for your brand and designed for every screen size.",
+        title: "Design and build",
+        detail: "A calm, fast, accessible site your team can edit in every language you need.",
       },
       {
-        title: "Development",
-        detail: "Next.js or Astro front ends with clean, documented components and no page-builder lock-in.",
+        title: "Lead flow",
+        detail: "Forms connected to your CRM, an instant confirmation, and routing to the right person.",
       },
       {
-        title: "Content management",
-        detail: "Sanity, Contentful or headless WordPress, set up with the fields your editors need.",
+        title: "Measurement",
+        detail: "Analytics and Search Console set up, with a monthly view of inquiries and reply times.",
       },
       {
-        title: "Accessibility",
-        detail: "WCAG 2.2 AA as the baseline, tested with keyboards and screen readers as well as automated tools.",
-      },
-      {
-        title: "Launch and handover",
-        detail: "Redirects, analytics, monitoring and training, so nothing is lost when you go live.",
+        title: "Launch checks",
+        detail: "Redirects, phone testing, keyboard and contrast checks, and forms tested in every language.",
       },
     ],
-    approach: [
-      "Most websites underperform because the content is unclear, not because the design is wrong. We start by working out what your customers need to know and in what order, then design the pages around it.",
-      "We build on modern, static-first frameworks, so pages load quickly and stay secure with very little maintenance. You own the code, the hosting account and the CMS.",
-    ],
-    engagement: [
-      { label: "Typical timeline", value: "8 to 14 weeks" },
-      { label: "Team", value: "Strategist, designer and two engineers" },
-      { label: "After launch", value: "Optional monthly support" },
+    phases: [
+      {
+        title: "Plan",
+        detail: "Sitemap, messages and the inquiry flow, agreed in writing.",
+      },
+      {
+        title: "Design",
+        detail: "Layouts and a visual system you approve on real content.",
+      },
+      {
+        title: "Build in the open",
+        detail: "A staging link from the first week and a written update every week.",
+      },
+      {
+        title: "Launch and 90 days of care",
+        detail: "We go live, monitor and fix anything that comes up for 90 days.",
+      },
     ],
     faqs: [
       {
-        question: "Can you work with our existing brand guidelines?",
+        question: "Can our team edit the site?",
         answer:
-          "Yes. Most of our website projects extend an existing brand. If your guidelines don't cover digital use, we fill in the gaps and document the decisions.",
+          "Yes. We set up content editing so your team can change pages in every language without calling a developer.",
       },
       {
-        question: "Will we be able to update the site ourselves?",
-        answer:
-          "Yes. Content lives in a CMS configured for your team, and handover includes a training session and a written guide.",
+        question: "Do you rebuild or improve what we already have?",
+        answer: "Either. The audit tells you which one costs less for what you need.",
       },
       {
-        question: "Do you migrate content from our current site?",
+        question: "Will the site rank on Google?",
         answer:
-          "We do. We review your existing pages, decide what to keep, rewrite or retire, and set up redirects so you keep your search rankings.",
+          "We build the technical foundation: structure, speed, metadata and structured data. We don't promise rankings, and we don't sell links.",
       },
     ],
   },
-  "web-applications": {
-    name: "Web Applications",
-    summary: "Custom dashboards, portals and internal tools built around how your business runs.",
-    seoTitle: "Custom Web Application Development",
+
+  "client-portals": {
+    name: "Client and owner portals",
+    card: "One secure place for status, documents and invoices, so clients stop calling.",
+    seoTitle: "Client and Owner Portals",
     metaDescription:
-      "Custom web application and software development: customer portals, dashboards, internal tools and SaaS products, designed and built by one experienced team.",
-    headline: "Software that fits your operations, not the other way around.",
-    intro:
-      "When off-the-shelf software forces your team into workarounds and spreadsheets, a custom application is often the better long-term investment. We build customer portals, internal tools, dashboards and SaaS products for startups and established companies alike, from the data model through to the interface, and we support them after launch.",
-    plain:
-      "Custom software that runs in the browser, like a customer portal, booking system or internal dashboard, built around the way your business already works.",
-    stack: [
-      "TypeScript",
-      "React",
-      "Next.js",
-      "Node.js",
-      "Python",
-      "PostgreSQL",
-      "Redis",
-      "Prisma",
-      "GraphQL",
-      "Docker",
-      "AWS",
-      "GitHub Actions",
+      "Secure portals where clients and owners see their status, documents and invoices without calling your office. Connected to the software you already use.",
+    headline: "Clients see their own status. Your team stops answering the same calls.",
+    lead: "We build secure portals where clients, tenants or owners find their status, documents and invoices themselves.",
+    forWhom: "For businesses whose clients keep calling or emailing to ask where things stand.",
+    problemQuotes: [
+      "Clients call to ask where things stand.",
+      "We send the same documents by email again and again.",
+      "Owners want reports, and we assemble them by hand.",
+    ],
+    problemDetail:
+      "Every status call is a sign that information exists somewhere your client can't see. A portal puts the right information in front of the right person, and nobody else.",
+    changes: [
+      "Clients find status, documents and invoices on their own.",
+      "Your team answers fewer status calls and emails.",
+      "Every request has a history: who asked, who answered, when.",
+      "Each person sees only their own information.",
     ],
     included: [
       {
-        title: "Discovery and scoping",
-        detail: "Workflow mapping with the people who will use the software, and a clearly scoped first release.",
+        title: "Secure sign-in and permissions",
+        detail: "Each client, owner or tenant sees only their own records.",
       },
       {
-        title: "Product design",
-        detail: "Clickable prototypes tested with real users before development starts.",
+        title: "Status and documents",
+        detail: "Dashboards, files and statements, updated from your existing software.",
       },
       {
-        title: "Full-stack engineering",
-        detail: "TypeScript, React, Node.js and PostgreSQL, with automated tests from the first sprint.",
+        title: "Requests and messages",
+        detail: "One place to ask, with a clear record of who answered and when.",
       },
       {
-        title: "Integrations",
-        detail: "Connections to your CRM, ERP, payment provider or internal APIs.",
+        title: "Connection to your software",
+        detail: "Billing, management or accounting software, through its API, exports or database.",
       },
       {
-        title: "Authentication and roles",
-        detail: "Single sign-on, detailed permissions and audit logs where your business requires them.",
-      },
-      {
-        title: "Infrastructure",
-        detail: "Deployed to your own cloud account with automated deployments, backups, monitoring and alerts.",
+        title: "Admin view for your team",
+        detail: "Everything in one queue, with status and history.",
       },
     ],
-    approach: [
-      "We ship a focused first version early, usually within eight to twelve weeks, and expand it based on how people actually use it. It is the most reliable way we know to avoid building features nobody needs.",
-      "You see working software every two weeks, not status reports. The code is yours and is written so your own team, or another vendor, can maintain it.",
-    ],
-    engagement: [
-      { label: "First release", value: "8 to 12 weeks" },
-      { label: "Team", value: "Product lead, designer and 2 to 4 engineers" },
+    phases: [
       {
-        label: "After launch",
-        value: "Ongoing development or managed support",
+        title: "Map what clients ask",
+        detail: "We list the questions that fill your inbox and phone, and pick the ones to answer first.",
+      },
+      {
+        title: "First release",
+        detail: "The few screens that answer most questions, tested with real users.",
+      },
+      {
+        title: "Grow with real use",
+        detail: "We add what people ask for, in fixed-price phases.",
+      },
+      {
+        title: "Launch and 90 days of care",
+        detail: "We launch, monitor and fix anything that comes up for 90 days.",
       },
     ],
     faqs: [
       {
-        question: "Do you take over existing applications?",
+        question: "How do you keep client data safe?",
         answer:
-          "Often. We start with a review of the code and infrastructure, fix anything urgent, and then agree on a plan for the rest.",
+          "Each user sees only their own records, sign-in uses multi-factor authentication where it fits, and everything follows our published security standard.",
       },
       {
-        question: "Who owns the code?",
-        answer: "You do, from the first commit. Repositories and cloud accounts are set up under your organization.",
+        question: "Can it connect to the software we already use?",
+        answer:
+          "Often yes, through its API, exports or database access. We check what's possible during the audit, before you commit to anything.",
       },
       {
-        question: "How do you handle changes in scope?",
-        answer:
-          "We plan in two-week cycles, so priorities can change as you learn. Larger changes are estimated and agreed before any work begins.",
+        question: "Do clients need to install anything?",
+        answer: "No. It works in the browser, on a phone or a computer.",
       },
     ],
   },
-  "ai-solutions": {
-    name: "AI Solutions",
-    summary: "AI assistants and tools that save your team time, built on your own data.",
-    seoTitle: "AI Development and Integration Services",
+
+  "operations-apps": {
+    name: "Operations apps and dashboards",
+    card: "Your process in one tool instead of five spreadsheets.",
+    seoTitle: "Operations Apps and Dashboards",
     metaDescription:
-      "AI development and integration for businesses: knowledge assistants, document processing and AI product features, with measured accuracy and privacy controls.",
-    headline: "AI is most useful when it is pointed at a specific, measurable problem.",
-    intro:
-      "We help businesses put large language models to work where they make a measurable difference: answering questions from internal documents, drafting routine responses, extracting data and adding AI features to existing products. We are just as direct about where AI is not the right tool.",
-    plain:
-      "Tools that read, write and answer questions for you, like an assistant that knows your company documents or software that pulls data out of invoices automatically.",
-    stack: [
-      "OpenAI",
-      "Anthropic Claude",
-      "Google Gemini",
-      "Llama",
-      "Python",
-      "LangChain",
-      "pgvector",
-      "Azure AI",
-      "Node.js",
-      "Evaluation pipelines",
+      "Internal tools and dashboards that replace spreadsheets and email threads with software shaped like your process, so your team sees what's late and what's next.",
+    headline: "Your process in one tool, not in five spreadsheets.",
+    lead: "We build internal apps and dashboards shaped like the way your team actually works, so everyone sees the same status.",
+    forWhom: "For teams running their operations on spreadsheets, shared inboxes and memory.",
+    problemQuotes: [
+      "The real process lives in a spreadsheet only one person understands.",
+      "We can't see what's late until someone tells us.",
+      "Reports take a day to assemble.",
+    ],
+    problemDetail:
+      "Spreadsheets are a fine start. They stop working when several people depend on them, and when the answer to \"what's late?\" takes a meeting.",
+    changes: [
+      "One place to see the work in progress and what's late.",
+      "The same information is entered once.",
+      "Managers get reports without assembling them.",
+      "New staff learn one tool, not a chain of files.",
     ],
     included: [
       {
-        title: "Opportunity assessment",
-        detail: "A short review of where AI would save time or reduce errors, ranked by value and risk.",
+        title: "Workflow mapping",
+        detail: "We follow the work as it really happens, then agree on how it should.",
       },
       {
-        title: "Knowledge assistants",
-        detail: "Search and question answering over your documents, with sources cited in every answer.",
+        title: "The internal app",
+        detail: "Screens and roles built for your team's daily tasks.",
       },
       {
-        title: "Document processing",
-        detail: "Structured data extracted from invoices, contracts, forms and email at volume.",
+        title: "Dashboards",
+        detail: "What's in progress, what's late and what's next, without a meeting.",
       },
       {
-        title: "Product features",
-        detail: "Summaries, recommendations and drafting tools built into your existing application.",
+        title: "Data import",
+        detail: "Your current spreadsheets moved in, cleaned and checked.",
       },
       {
-        title: "Evaluation",
-        detail: "Test sets built from your real cases, so accuracy is measured rather than assumed.",
-      },
-      {
-        title: "Privacy and controls",
-        detail: "Data handling, access controls and model choices that match your compliance requirements.",
+        title: "Training and handover",
+        detail: "Short guides and a working session for your team.",
       },
     ],
-    approach: [
-      "Every AI project starts with questions we can measure. How long does the task take today? How often is it wrong? What would good enough look like? The answers give us a baseline to test against before anything reaches production.",
-      "We work with the major model providers as well as open-weight models, and we choose based on accuracy, cost and where your data is allowed to go, not on what is newest.",
-    ],
-    engagement: [
-      { label: "Assessment", value: "2 to 3 weeks" },
-      { label: "Pilot", value: "4 to 8 weeks" },
-      { label: "After launch", value: "Monitoring, evaluation and tuning" },
+    phases: [
+      {
+        title: "Map the workflow",
+        detail: "Who does what, in what order, and where it gets stuck.",
+      },
+      {
+        title: "Build the smallest useful version",
+        detail: "The first version removes real work. Nothing more.",
+      },
+      {
+        title: "Improve with use",
+        detail: "We adjust with your team's feedback, in fixed-price phases.",
+      },
+      {
+        title: "Launch and 90 days of care",
+        detail: "We launch, monitor and fix anything that comes up for 90 days.",
+      },
     ],
     faqs: [
       {
-        question: "Is our data used to train AI models?",
+        question: "Isn't off-the-shelf software cheaper?",
         answer:
-          "No. We use enterprise API agreements that exclude your data from training, or self-hosted models when your requirements call for it.",
+          "Sometimes. If a standard product fits your process, we'll say so in the audit and skip the build.",
       },
       {
-        question: "What if the AI gets something wrong?",
-        answer:
-          "We design for it. Answers cite their sources, low-confidence results go to a person, and accuracy is tracked continuously after launch.",
+        question: "Who owns the data and the code?",
+        answer: "You do. Both live in accounts in your company's name.",
       },
       {
-        question: "Do we need a lot of data to get started?",
-        answer: "Usually not. Most useful applications work with the documents and records you already have.",
+        question: "Can we start small?",
+        answer: "Yes. The first phase is the smallest version that removes real work.",
       },
     ],
   },
+
   automation: {
     name: "Automation",
-    summary: "Your software systems share information automatically, so your team stops doing repetitive work.",
-    seoTitle: "Business Process Automation and Integration",
+    card: "Routine work that runs on its own, with a log you can read.",
+    seoTitle: "Business Process Automation",
     metaDescription:
-      "Business process automation and system integration that removes manual data entry, speeds up approvals and connects your CRM, accounting and operations tools.",
-    headline: "Your team shouldn't have to be the integration between your systems.",
-    intro:
-      "Copying data between tools, chasing approvals and assembling the same report every Monday adds up to hours every week. We map those processes, automate the predictable parts, and make the exceptions visible to the people who need to handle them.",
-    plain:
-      "Your software systems pass information to each other automatically, so your team stops copying data, chasing approvals and building the same reports by hand.",
-    stack: [
-      "n8n",
-      "Make",
-      "Zapier",
-      "Node.js",
-      "Python",
-      "REST APIs",
-      "Webhooks",
-      "Salesforce",
-      "HubSpot",
-      "NetSuite",
-      "QuickBooks",
-      "Microsoft 365",
+      "Automations that move data between your tools, send reminders and route approvals, with a log of every step so mistakes are easy to trace.",
+    headline: "Routine work that runs on its own, with a record of what it did.",
+    lead: "We automate the predictable steps between your tools, so your people spend their time on the work that needs judgment.",
+    forWhom: "For teams that retype data, chase approvals or send the same reminders by hand.",
+    problemQuotes: [
+      "We retype the same details into three systems.",
+      "Reminders depend on someone remembering.",
+      "Approvals get stuck in inboxes.",
+    ],
+    problemDetail:
+      "If a step is predictable, a machine should do it. If it needs judgment, a person should. Good automation keeps that line clear and leaves a record.",
+    changes: [
+      "Data moves between your tools without retyping.",
+      "Reminders and approvals happen on time.",
+      "Every automated step is logged, so mistakes are easy to trace.",
+      "Your team keeps the judgment calls.",
     ],
     included: [
       {
-        title: "Process mapping",
-        detail: "How work moves today, where it stalls and what that costs.",
+        title: "Process review",
+        detail: "We pick the steps worth automating, and leave the rest alone.",
       },
       {
-        title: "System integrations",
-        detail: "Reliable connections between your CRM, accounting, operations and communication tools.",
+        title: "Workflows",
+        detail: "Intake, reminders, approvals and reports that run without anyone starting them.",
       },
       {
-        title: "Workflow automation",
-        detail: "Approvals, notifications, handoffs and scheduled jobs that run without supervision.",
+        title: "Error handling and alerts",
+        detail: "When something fails, a named person is told, and nothing is lost quietly.",
       },
       {
-        title: "Reporting",
-        detail: "Scheduled reports and live dashboards built from your systems of record.",
-      },
-      {
-        title: "Error handling",
-        detail: "Retries, alerts and clear logs, so problems are caught before they reach customers.",
+        title: "Logs you can read",
+        detail: "A plain record of what ran, when, and with what result.",
       },
       {
         title: "Documentation",
-        detail: "Plain-language runbooks your operations team can follow on its own.",
+        detail: "What each automation does and how to change it.",
       },
     ],
-    approach: [
-      "We automate the stable, well-understood parts of a process first and leave judgment calls with people. That keeps early projects small, lowers risk and shows results within weeks.",
-      "Where a no-code platform is the right fit, we use it. Where volume, reliability or security demand more, we build custom services and monitor them like any other production system.",
-    ],
-    engagement: [
-      { label: "Typical project", value: "3 to 8 weeks" },
-      { label: "Team", value: "Solutions lead and 1 to 2 engineers" },
-      { label: "After launch", value: "Monitoring and change requests" },
+    phases: [
+      {
+        title: "Choose the first workflow",
+        detail: "The one that costs the most time for the least risk.",
+      },
+      {
+        title: "Build and test",
+        detail: "We run it beside the manual process before we switch over.",
+      },
+      {
+        title: "Switch over",
+        detail: "The automation takes over, with alerts on.",
+      },
+      {
+        title: "Launch and 90 days of care",
+        detail: "We monitor and fix anything that comes up for 90 days.",
+      },
     ],
     faqs: [
       {
-        question: "Which tools do you integrate with?",
+        question: "What if an automation makes a mistake?",
         answer:
-          "Most business software with an API, including Salesforce, HubSpot, NetSuite, QuickBooks, Shopify, Slack, Microsoft 365 and Google Workspace.",
+          "Every run is logged and failures alert a named person. Steps with real consequences ask a person to approve first.",
       },
       {
-        question: "What happens when an automation fails?",
+        question: "Which tools can you connect?",
         answer:
-          "Failures are retried automatically where that is safe. Anything that needs a person triggers an alert with enough context to resolve it.",
+          "Most business software that offers an API, an export, or email in and out. We check what's possible during the audit.",
       },
     ],
   },
-  "web-optimization": {
-    name: "Web Optimization",
-    summary: "Faster websites that keep visitors on the page and rank better in Google.",
-    seoTitle: "Website Speed and Performance Optimization",
+
+  "ai-with-judgment": {
+    name: "AI with judgment",
+    card: "AI drafts. Your team approves.",
+    seoTitle: "AI With Human Review for Operations",
     metaDescription:
-      "Website performance optimization based on real visitor data: faster load times, better Core Web Vitals and Lighthouse scores, and monitoring that keeps them there.",
-    headline: "Speed is the first thing your customers notice.",
-    intro:
-      "Slow pages cost you conversions and search visibility. We use data from real visitors to find exactly what is slowing your site down, fix the causes in your codebase, and set up monitoring so performance doesn't quietly slip again.",
-    plain:
-      "We make your website load faster, especially on phones. Faster pages keep visitors from leaving and help you rank higher in Google.",
-    stack: [
-      "Lighthouse",
-      "Core Web Vitals",
-      "Chrome DevTools",
-      "WebPageTest",
-      "Next.js",
-      "Image optimization (AVIF, WebP)",
-      "Cloudflare",
-      "CDN caching",
-      "Sentry",
+      "AI that drafts, sorts and summarizes while your team reviews before anything reaches a client. Tested on your own examples, with your data kept in your accounts.",
+    headline: "AI drafts. Your team approves.",
+    lead: "We apply AI to specific, measurable tasks: reading documents, drafting replies, sorting requests. A person reviews the result before it reaches a client.",
+    forWhom: "For teams that spend hours reading, sorting or drafting, and want to stay in control.",
+    problemQuotes: [
+      "Staff spend hours reading documents to find one answer.",
+      "Replies to routine emails take too long.",
+      "We're curious about AI, but worried about mistakes.",
+    ],
+    problemDetail:
+      "AI is useful when the task is clear, the result can be checked and a person makes the final call. It's the wrong tool when a simple rule would do, and we'll tell you when that's the case.",
+    changes: [
+      "Drafts and summaries in minutes, each one reviewed by a person.",
+      "Answers point to the documents they came from.",
+      "You know how accurate it is, because we test it on your own examples.",
+      "Your data stays in accounts you own.",
     ],
     included: [
       {
-        title: "Performance audit",
-        detail: "Field and lab analysis of Core Web Vitals across your key page templates and devices.",
+        title: "Use-case selection",
+        detail: "We check that AI is the right tool at all, and pick one task to start.",
       },
       {
-        title: "Loading performance",
-        detail: "Render-blocking resources, server response times and other fixes that improve LCP.",
+        title: "A test set from your examples",
+        detail: "Real questions and documents, with answers your team has verified.",
       },
       {
-        title: "Responsiveness",
-        detail: "Less JavaScript and fewer long tasks, for a better Interaction to Next Paint.",
+        title: "A prototype with human review",
+        detail: "Every result waits for a person's approval before it goes anywhere.",
       },
       {
-        title: "Images and media",
-        detail: "Modern formats, responsive sizing and lazy loading, configured correctly.",
-      },
-      {
-        title: "Caching and delivery",
-        detail: "CDN configuration, cache headers and edge rendering where they help.",
+        title: "Access and privacy controls",
+        detail: "Who can see what, and where your data is processed, in line with our AI policy.",
       },
       {
         title: "Monitoring",
-        detail: "Real-user monitoring and performance budgets enforced before every deployment.",
+        detail: "We keep measuring accuracy after launch and tell you if it drifts.",
       },
     ],
-    approach: [
-      "We measure first. Lighthouse scores are useful, but the Core Web Vitals that affect search rankings come from your real visitors, so that is the data we prioritize.",
-      "Fixes are delivered as normal code changes to your repository, reviewed with your team and verified in production data once they ship.",
-    ],
-    engagement: [
-      { label: "Audit", value: "1 to 2 weeks" },
-      { label: "Implementation", value: "2 to 6 weeks" },
-      { label: "After launch", value: "Quarterly performance reviews" },
+    phases: [
+      {
+        title: "Choose one task",
+        detail: "Narrow, measurable and low risk.",
+      },
+      {
+        title: "Test on your examples",
+        detail: "We measure accuracy before anyone relies on it.",
+      },
+      {
+        title: "Pilot with human review",
+        detail: "A small group uses it, and reviews every result.",
+      },
+      {
+        title: "Launch and 90 days of care",
+        detail: "We launch, monitor accuracy and fix issues for 90 days.",
+      },
     ],
     faqs: [
       {
-        question: "Can you optimize a site you didn't build?",
+        question: "Will AI send anything to clients without review?",
         answer:
-          "Yes. Most of our optimization work is on existing sites built with Next.js, WordPress, Shopify, Magento or custom stacks.",
+          "Not by default. Our AI policy requires a person to review anything that reaches a client, unless you decide otherwise in writing for a specific, low-risk task.",
       },
       {
-        question: "Do you guarantee a Lighthouse score?",
+        question: "Which AI models do you use?",
         answer:
-          "We don't guarantee scores. We agree on specific targets after the audit and report our progress against them.",
+          "We choose per task, for accuracy, cost and privacy, and we tell you which provider handles what.",
+      },
+      {
+        question: "Is our data used to train AI models?",
+        answer:
+          "Our policy is not to send your data to a provider that uses it for training without your written consent. The AI policy page has the details.",
       },
     ],
   },
-  seo: {
-    name: "SEO",
-    summary: "Help Google find, understand and rank your website, so customers can find you.",
-    seoTitle: "Technical SEO Services",
+
+  "integrations-and-data": {
+    name: "Integrations and data",
+    card: "Your tools sharing the same facts.",
+    seoTitle: "Software Integrations and Data Cleanup",
     metaDescription:
-      "Technical SEO for business websites: site structure, indexing, metadata, structured data and page speed, implemented by engineers rather than listed in a report.",
-    headline: "Good SEO starts with a site that is easy to crawl and easy to understand.",
-    intro:
-      "We focus on the technical foundation of search: how your site is structured, how quickly it loads, how its pages are indexed and how clearly your content is described to search engines. It is the part of SEO most closely tied to how a site is built, and the part most often neglected.",
-    plain:
-      "We fix the technical things that stop Google from finding and understanding your website, so the right customers can find you.",
-    stack: [
-      "Google Search Console",
-      "Google Analytics 4",
-      "Schema.org",
-      "XML sitemaps",
-      "Screaming Frog",
-      "Core Web Vitals",
-      "Next.js",
-      "WordPress",
+      "Connect your CRM, accounting, management and operations software so they share the same facts. Plan, test and monitor every integration and migration.",
+    headline: "Your tools, sharing the same facts.",
+    lead: "We connect the software you already use, so each fact lives in one place and every system stays up to date.",
+    forWhom: "For businesses whose numbers differ depending on which system you ask.",
+    problemQuotes: [
+      "The number in the CRM doesn't match the number in accounting.",
+      "Nobody trusts the report.",
+      "Moving to a new system scares us.",
+    ],
+    problemDetail:
+      "When the same information lives in several places, someone retypes it and someone forgets. Integrations decide which system is the source for each fact, and keep the others in step.",
+    changes: [
+      "One source of truth for each kind of information.",
+      "Systems update each other automatically.",
+      "Reports agree, because they read the same data.",
+      "Migrations are planned, tested and reversible.",
     ],
     included: [
       {
-        title: "Technical audit",
-        detail: "Crawlability, indexing, canonical URLs, redirects and duplicate content.",
+        title: "System and data inventory",
+        detail: "What you use, what data lives where, and what depends on what. It starts in the audit.",
       },
       {
-        title: "Site architecture",
-        detail: "URL structure, internal links and navigation that reflect how people search.",
+        title: "Integrations",
+        detail: "Connections through APIs, webhooks or scheduled sync, with monitoring.",
       },
       {
-        title: "Metadata and structured data",
-        detail: "Titles, descriptions and schema markup generated consistently from your content.",
+        title: "Data cleanup and migration",
+        detail: "Duplicates found, records fixed, and moves rehearsed before the real one.",
       },
       {
-        title: "Performance",
-        detail: "Core Web Vitals improvements that help both rankings and the user experience.",
+        title: "Reporting layer",
+        detail: "One set of numbers your team can trust.",
       },
       {
-        title: "Migrations",
-        detail: "Redirect planning and monitoring that protect rankings through redesigns and platform changes.",
-      },
-      {
-        title: "Reporting",
-        detail: "Search Console and analytics reporting focused on qualified traffic.",
+        title: "Monitoring and alerts",
+        detail: "If a connection breaks, a named person knows the same day.",
       },
     ],
-    approach: [
-      "We don't sell link packages or promise first-page rankings. We fix what prevents search engines from finding, understanding and trusting your site, and we help your team publish content that answers real questions.",
-      "Because we are engineers, our recommendations come with the implementation, not a spreadsheet of issues for someone else to fix.",
-    ],
-    engagement: [
-      { label: "Audit", value: "2 weeks" },
-      { label: "Implementation", value: "3 to 6 weeks" },
-      { label: "After launch", value: "Monthly reporting and guidance" },
+    phases: [
+      {
+        title: "Inventory",
+        detail: "A map of your systems and the data that moves between them.",
+      },
+      {
+        title: "Connect the most painful pair",
+        detail: "The two systems where retyping costs the most.",
+      },
+      {
+        title: "Extend",
+        detail: "Add connections one at a time, in fixed-price phases.",
+      },
+      {
+        title: "Launch and 90 days of care",
+        detail: "We monitor every connection and fix issues for 90 days.",
+      },
     ],
     faqs: [
       {
-        question: "How long before we see results?",
+        question: "What if our software has no API?",
         answer:
-          "Technical fixes often show up within a few weeks of being crawled. Broader ranking improvements typically take three to six months.",
+          "There are often other routes: exports, email parsing or database access. We check the options in the audit and tell you plainly what's not worth doing.",
       },
       {
-        question: "Do you write content?",
+        question: "Can you migrate us to new software?",
         answer:
-          "We provide the content strategy and briefs, and work alongside your writers or content partners on production.",
+          "Yes. We plan the move, rehearse it on a copy, check the results with your team and keep a way back until you're sure.",
+      },
+    ],
+  },
+
+  "managed-plans": {
+    name: "Managed plans",
+    card: "A named person responsible for your systems, every month.",
+    seoTitle: "Managed Care Plans for Websites and Systems",
+    metaDescription:
+      "Monthly care for your website and systems: monitoring, updates, backups and small improvements, with a named person responsible and a monthly report.",
+    headline: "A named person is responsible for your systems, every month.",
+    lead: "We monitor, update and improve what we've built, or what you already have, with a monthly report on what happened.",
+    forWhom: "For businesses whose systems work today and need someone to keep them that way.",
+    problemQuotes: [
+      "Our website was built years ago and nobody looks after it.",
+      "When something breaks, we don't know who to call.",
+      "Updates get skipped, and that worries me.",
+    ],
+    problemDetail:
+      "Systems don't stay still. Software needs updates, certificates expire and small problems grow. A managed plan means someone is watching, and accountable.",
+    changes: [
+      "Uptime and errors are monitored.",
+      "Updates and security fixes are applied quickly.",
+      "Backups are checked.",
+      "A named person responds when something breaks.",
+      "You get a monthly report and a few improvements each month.",
+    ],
+    included: [
+      {
+        title: "Monitoring",
+        detail: "Uptime and errors watched, with alerts to a person.",
+      },
+      {
+        title: "Updates and fixes",
+        detail: "Software updates and security fixes applied quickly.",
+      },
+      {
+        title: "Backups",
+        detail: "Data and configuration backed up, and checked.",
+      },
+      {
+        title: "Monthly report",
+        detail: "Inquiries, speed, issues and what we improved, in plain language.",
+      },
+      {
+        title: "Small improvements",
+        detail: "Changes agreed each month, based on the report.",
+      },
+    ],
+    phases: [
+      {
+        title: "Onboard",
+        detail: "Access, an inventory and accounts in your company's name.",
+      },
+      {
+        title: "Stabilize",
+        detail: "Fix what's outdated or fragile first.",
+      },
+      {
+        title: "Monthly care",
+        detail: "Monitoring, updates, and a written report every month.",
+      },
+      {
+        title: "Review",
+        detail: "Regular check-ins on what to improve next.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Can you look after a system you didn't build?",
+        answer:
+          "Often yes. We start with a review to see what we'd be taking on, and tell you honestly if something needs fixing first.",
+      },
+      {
+        question: "Who do I call when something breaks?",
+        answer: "A named person, whose details you receive when you start.",
       },
     ],
   },
 };
+
+export const servicesPage = {
+  metaTitle: "Services: Websites, Portals, Apps, Automation and AI",
+  metaDescription:
+    "Revenue websites, client and owner portals, operations apps, automation, AI with human review, integrations and managed plans. Fixed-price phases, from a Digital Systems Audit.",
+  eyebrow: "Services",
+  title: "Seven services, organized around your problem.",
+  lead: "Every project starts with the audit. It shows which of these you need first, and what it costs.",
+  from: "Price",
+  ctaTitle: "Not sure which one you need?",
+  ctaLead: "That's what the audit is for. It ends with a prioritized, costed plan.",
+  problemOf: "Sound familiar?",
+  detailLabel: "See the service",
+};
+
+export type ServicesPage = typeof servicesPage;

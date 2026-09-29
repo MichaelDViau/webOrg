@@ -1,8 +1,7 @@
 import { cn } from "@/lib/cn";
-import type { ContentItem } from "@/lib/company";
 
 interface FeatureListProps {
-  items: ContentItem[];
+  items: { title: string; detail: string }[];
   tone?: "light" | "dark";
   className?: string;
 }

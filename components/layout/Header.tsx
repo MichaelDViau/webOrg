@@ -7,8 +7,9 @@ import { ButtonLink } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { cn } from "@/lib/cn";
 import { splitLocale } from "@/lib/i18n/config";
+import { auditHref, snapshotHref } from "@/lib/site";
 import { Logo } from "./Logo";
-import { LanguageMenu } from "./LanguageMenu";
+import { LanguageSwitch } from "./LanguageSwitch";
 import { ThemeToggle } from "./ThemeToggle";
 
 function isActive(pathname: string, href: string) {
@@ -25,7 +26,10 @@ interface HeaderProps {
     closeMenu: string;
     darkTheme: string;
     language: string;
-    contactUs: string;
+    /** The main button: "Book an audit". */
+    audit: string;
+    /** The second button, in the mobile menu: "Get a free Snapshot". */
+    snapshot: string;
     logo: string;
   };
 }
@@ -67,11 +71,11 @@ export function Header({ nav, labels }: HeaderProps) {
         scrolled && !open ? "bg-paper/80 backdrop-blur-md" : "bg-paper",
       )}
     >
-      <Container className="flex h-16 items-center justify-between gap-6 lg:h-18">
+      <Container className="flex h-16 items-center justify-between gap-3 sm:gap-6 lg:h-18">
         <Logo label={labels.logo} />
 
         <nav aria-label={labels.mainNav} className="hidden lg:block">
-          <ul className="flex items-center gap-8">
+          <ul className="flex items-center gap-6 xl:gap-8">
             {nav.map((item) => (
               <li key={item.href}>
                 <Link
@@ -89,14 +93,14 @@ export function Header({ nav, labels }: HeaderProps) {
           </ul>
         </nav>
 
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-1 sm:gap-2">
           <div className="hidden sm:block">
-            <ButtonLink href="/contact" size="sm">
-              {labels.contactUs}
+            <ButtonLink href={auditHref} size="sm">
+              {labels.audit}
             </ButtonLink>
           </div>
           <ThemeToggle label={labels.darkTheme} />
-          <LanguageMenu label={labels.language} />
+          <LanguageSwitch label={labels.language} />
           <button
             type="button"
             className="-mr-2 inline-flex size-10 items-center justify-center text-ink lg:hidden"
@@ -128,7 +132,7 @@ export function Header({ nav, labels }: HeaderProps) {
                 <Link
                   href="/"
                   onClick={() => setOpen(false)}
-                  className="block py-4 text-2xl font-medium tracking-tight text-ink"
+                  className="block py-3.5 text-2xl font-medium tracking-tight text-ink"
                 >
                   {labels.home}
                 </Link>
@@ -139,7 +143,7 @@ export function Header({ nav, labels }: HeaderProps) {
                     href={item.href}
                     aria-current={isActive(pathname, item.href) ? "page" : undefined}
                     onClick={() => setOpen(false)}
-                    className="block py-4 text-2xl font-medium tracking-tight text-ink"
+                    className="block py-3.5 text-2xl font-medium tracking-tight text-ink"
                   >
                     {item.label}
                   </Link>
@@ -147,9 +151,14 @@ export function Header({ nav, labels }: HeaderProps) {
               ))}
             </ul>
           </nav>
-          <ButtonLink href="/contact" withArrow className="mt-8" onClick={() => setOpen(false)}>
-            {labels.contactUs}
-          </ButtonLink>
+          <div className="mt-8 flex flex-col gap-3">
+            <ButtonLink href={auditHref} withArrow onClick={() => setOpen(false)}>
+              {labels.audit}
+            </ButtonLink>
+            <ButtonLink href={snapshotHref} variant="secondary" onClick={() => setOpen(false)}>
+              {labels.snapshot}
+            </ButtonLink>
+          </div>
         </Container>
       </div>
     </header>

@@ -1,9 +1,5 @@
 import type { ContentSource } from "@/lib/i18n/content";
-import { company } from "./company";
-import { photoAlts } from "./photos";
-import { projects } from "./projects";
-import { services } from "./services";
-import { technology } from "./technology";
-import { ui } from "./ui";
+import { en } from "../en";
 
-export const fr: ContentSource = { ui, company, services, projects, technology, photoAlts };
+// TEMPORARY: replaced file by file with the French (Quebec) translation.
+export const fr: ContentSource = { ...en, ui: { ...en.ui, assistant: { ...en.ui.assistant } } };

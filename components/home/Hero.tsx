@@ -1,11 +1,10 @@
 import type { ReactNode } from "react";
-import { ButtonLink } from "@/components/ui/Button";
+import { SystemMap } from "@/components/illustrations/SystemMap";
 import { Container } from "@/components/ui/Container";
+import { CtaPair } from "@/components/ui/CtaPair";
 import { format } from "@/lib/i18n/format";
 import { getContent } from "@/lib/i18n/server";
-import { buildShowcase } from "@/lib/showcase";
-import { site } from "@/lib/site";
-import { HeroShowcase } from "./HeroShowcase";
+import { audit, auditPriceText } from "@/lib/pricing";
 
 /** Inline so the ink block breaks into one rectangle per line, sized to the font's ascent and descent. */
 function Knockout({ children }: { children: ReactNode }) {
@@ -16,9 +15,16 @@ function Knockout({ children }: { children: ReactNode }) {
   );
 }
 
+/**
+ * Block 1: the first screen. In ten seconds a visitor learns what we do, for whom, why to trust us,
+ * what it costs to start and what to do next.
+ */
 export async function Hero() {
-  const { ui, company, projects } = await getContent();
-  const t = ui.home.hero;
+  const { ui, home, locale } = await getContent();
+  const t = home.hero;
+  const facts = t.facts.map((fact) =>
+    format(fact, { price: auditPriceText(locale, ui.price), days: audit.creditDays }),
+  );
 
   return (
     <section className="overflow-hidden pt-16 sm:pt-24 lg:pt-28">
@@ -29,36 +35,33 @@ export async function Hero() {
            * Two lines from sm up; on phones each phrase gets its own line so the blocks never wrap mid-phrase.
            */}
           <h1 className="text-display">
-            {t.lead} <br className="sm:hidden" />
+            {t.lead && (
+              <>
+                {t.lead} <br className="sm:hidden" />
+              </>
+            )}
             <Knockout>{t.block1}</Knockout>
             <br />
             <Knockout>{t.block2}</Knockout> <br className="sm:hidden" />
             {t.tail}
           </h1>
-          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-pretty sm:text-xl">
-            {format(t.intro, { name: site.name })}
-          </p>
-          <div className="mt-10 flex flex-col gap-3 sm:flex-row">
-            <ButtonLink href="/contact" withArrow>
-              {ui.contactUs}
-            </ButtonLink>
-            <ButtonLink href="/services" variant="secondary">
-              {t.explore}
-            </ButtonLink>
-          </div>
+          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-pretty sm:text-xl">{t.intro}</p>
+          <CtaPair long className="mt-10" />
           <ul
-            aria-label={t.commitments}
-            className="mt-8 grid grid-cols-2 gap-x-6 gap-y-2 text-sm text-muted sm:flex sm:flex-wrap sm:gap-x-0"
+            aria-label={t.factsLabel}
+            className="mt-8 grid gap-x-8 gap-y-3 text-sm leading-relaxed text-muted sm:grid-cols-3"
           >
-            {company.promises.map((promise) => (
-              <li key={promise} className="sm:border-l sm:border-line sm:px-4 sm:first:border-l-0 sm:first:pl-0">
-                {promise}
+            {facts.map((fact) => (
+              <li key={fact} className="border-t border-line pt-3">
+                {fact}
               </li>
             ))}
           </ul>
         </div>
 
-        <HeroShowcase items={buildShowcase(projects, ui.showcase)} label={t.whatWeBuild} />
+        <div className="mt-12 sm:mt-16">
+          <SystemMap map={t.map} />
+        </div>
       </Container>
     </section>
   );

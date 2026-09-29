@@ -6,13 +6,14 @@ import type { ReactNode } from "react";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
 import { JsonLd } from "@/components/JsonLd";
+import { Analytics } from "@/components/Analytics";
 import { AssistantWidget } from "@/components/assistant/AssistantWidget";
 import { isLocale, localizePath, locales, ogLocales } from "@/lib/i18n/config";
 import { getContentFor } from "@/lib/i18n/content";
 import { format } from "@/lib/i18n/format";
 import { organizationSchema } from "@/lib/structured-data";
 import { themeScript } from "@/lib/theme";
-import { bookingHref, contactNavItem, mainNav, site } from "@/lib/site";
+import { auditHref, footerNav, mainNav, site } from "@/lib/site";
 import "../globals.css";
 
 export function generateStaticParams() {
@@ -22,17 +23,21 @@ export function generateStaticParams() {
 export async function generateMetadata(): Promise<Metadata> {
   const locale = await lang();
   if (!isLocale(locale)) return {};
-  const { ui } = getContentFor(locale);
+  const { ui, home } = getContentFor(locale);
 
   return {
     metadataBase: new URL(site.url),
     title: {
-      default: format(ui.home.metaTitle, { name: site.name }),
+      default: format(home.metaTitle, { name: site.name }),
       template: `%s | ${site.name}`,
     },
     description: format(ui.site.description, { name: site.name }),
     applicationName: site.name,
     category: "technology",
+    // Google Search Console verification, from day one. Set NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION to enable.
+    verification: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
+      ? { google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION }
+      : undefined,
     openGraph: {
       type: "website",
       siteName: site.name,
@@ -57,10 +62,11 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
 
   const assistantLinks = [
     ...mainNav.map((item) => item.href),
-    contactNavItem.href,
+    ...footerNav.company.map((item) => item.href),
     ...content.services.map((service) => `/services/${service.slug}`),
-    "/website-check",
-    bookingHref,
+    ...content.industries.map((industry) => `/industries/${industry.slug}`),
+    ...content.standards.map((standard) => `/standards/${standard.slug}`),
+    ...content.demos.map((demo) => `/work/${demo.slug}`),
   ].map((path) => localizePath(path, locale));
 
   return (
@@ -78,14 +84,20 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
         </a>
         <Header
           nav={mainNav.map((item) => ({ href: item.href, label: ui.nav[item.key] }))}
-          labels={{ ...ui.header, contactUs: ui.contactUs, logo: format(ui.logoLabel, { name: site.name }) }}
+          labels={{
+            ...ui.header,
+            audit: ui.cta.audit,
+            snapshot: ui.cta.snapshot,
+            logo: format(ui.logoLabel, { name: site.name }),
+          }}
         />
         <main id="main">{children}</main>
         <Footer />
         {assistantEnabled && (
-          <AssistantWidget linkablePaths={assistantLinks} bookingHref={bookingHref} labels={ui.assistant} />
+          <AssistantWidget linkablePaths={assistantLinks} bookingHref={auditHref} labels={ui.assistant} />
         )}
         <JsonLd data={organizationSchema(content)} />
+        <Analytics />
       </body>
     </html>
   );

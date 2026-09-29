@@ -2,7 +2,7 @@
 
 import { useActionState, useEffect, useRef } from "react";
 import { runWebsiteCheck, type WebsiteCheckState } from "@/lib/actions/website-check";
-import { inputClass } from "@/components/contact/Field";
+import { inputClass } from "@/components/forms/Field";
 import { ButtonLink, SubmitButton } from "@/components/ui/Button";
 import { cn } from "@/lib/cn";
 import type { Ui } from "@/lib/content/en/ui";
@@ -140,7 +140,7 @@ export function WebsiteCheckForm({ locale, labels: t }: { locale: Locale; labels
               <p className="leading-relaxed">
                 {state.emailSent ? t.emailSent : t.followUp}
               </p>
-              <ButtonLink href="/contact?service=web-optimization" withArrow className="shrink-0">
+              <ButtonLink href="/snapshot" withArrow className="shrink-0">
                 {t.talk}
               </ButtonLink>
             </div>

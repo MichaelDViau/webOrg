@@ -2,13 +2,19 @@ import type { NextConfig } from "next";
 
 const isDev = process.env.NODE_ENV !== "production";
 
+/** Optional privacy-friendly analytics (Plausible). Its script origin is allowed only when it's turned on. */
+const analyticsOrigin = process.env.NEXT_PUBLIC_PLAUSIBLE_DOMAIN
+  ? new URL(process.env.NEXT_PUBLIC_PLAUSIBLE_SRC || "https://plausible.io/js/script.js").origin
+  : null;
+const analyticsSource = analyticsOrigin ? ` ${analyticsOrigin}` : "";
+
 const contentSecurityPolicy = [
   "default-src 'self'",
-  `script-src 'self' 'unsafe-inline'${isDev ? " 'unsafe-eval'" : ""}`,
+  `script-src 'self' 'unsafe-inline'${isDev ? " 'unsafe-eval'" : ""}${analyticsSource}`,
   "style-src 'self' 'unsafe-inline'",
   "img-src 'self' data: blob:",
   "font-src 'self'",
-  `connect-src 'self'${isDev ? " ws:" : ""}`,
+  `connect-src 'self'${isDev ? " ws:" : ""}${analyticsSource}`,
   "object-src 'none'",
   "base-uri 'self'",
   "form-action 'self'",
@@ -24,7 +30,9 @@ const securityHeaders = [
   { key: "X-Content-Type-Options", value: "nosniff" },
   { key: "X-Frame-Options", value: "DENY" },
   { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
-  { key: "Permissions-Policy", value: "camera=(), microphone=(), geolocation=()" },
+  { key: "Permissions-Policy", value: "camera=(), microphone=(), geolocation=(), payment=(), usb=(), interest-cohort=()" },
+  { key: "Cross-Origin-Opener-Policy", value: "same-origin" },
+  { key: "Cross-Origin-Resource-Policy", value: "same-site" },
 ];
 
 const nextConfig: NextConfig = {
@@ -46,10 +54,29 @@ const nextConfig: NextConfig = {
     };
   },
   // Each page has a single English address, so /en/... redirects to the unprefixed URL.
+  // Pages from the previous version of the site now point to their replacements, so old links and
+  // search results keep working. The old sample case studies no longer exist, and the technology
+  // catalog became the standards pages.
   async redirects() {
+    const moved: [string, string][] = [
+      ["/technology", "/standards"],
+      ["/services/website-development", "/services/revenue-websites"],
+      ["/services/web-applications", "/services/client-portals"],
+      ["/services/ai-solutions", "/services/ai-with-judgment"],
+      ["/services/web-optimization", "/standards/performance"],
+      ["/services/seo", "/services/revenue-websites"],
+      ["/work/harbor-line-customer-portal", "/work"],
+      ["/work/meridian-health-website", "/work"],
+      ["/work/cobalt-legal-document-assistant", "/work"],
+      ["/work/fieldstone-commerce-performance", "/work"],
+    ];
     return [
       { source: "/en", destination: "/", permanent: true },
       { source: "/en/:path*", destination: "/:path*", permanent: true },
+      ...moved.flatMap(([from, to]) => [
+        { source: from, destination: to, permanent: true },
+        { source: `/:lang(es|fr)${from}`, destination: `/:lang${to}`, permanent: true },
+      ]),
     ];
   },
   async headers() {

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { JsonLd } from "@/components/JsonLd";
 import { PageHeader } from "@/components/layout/PageHeader";
 import { WebsiteCheckForm } from "@/components/tools/WebsiteCheckForm";
+import { ButtonLink } from "@/components/ui/Button";
 import { CheckList } from "@/components/ui/CheckList";
 import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
@@ -53,6 +54,18 @@ export default async function WebsiteCheckPage() {
             className="lg:col-span-7"
             items={t.points}
           />
+        </Container>
+      </Section>
+
+      <Section tone="canvas" padding="compact">
+        <Container className="flex flex-col justify-between gap-6 sm:flex-row sm:items-center">
+          <div>
+            <h2 className="text-subheading">{t.snapshotTitle}</h2>
+            <p className="mt-2 max-w-xl leading-relaxed">{t.snapshotBody}</p>
+          </div>
+          <ButtonLink href="/snapshot" withArrow className="shrink-0">
+            {ui.cta.snapshotLong}
+          </ButtonLink>
         </Container>
       </Section>
 

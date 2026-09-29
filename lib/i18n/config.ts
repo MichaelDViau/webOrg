@@ -1,4 +1,4 @@
-export const locales = ["en", "es", "fr"] as const;
+export const locales = ["en", "fr", "es"] as const;
 export type Locale = (typeof locales)[number];
 
 /** English is served without a prefix (/services); the others use /es/… and /fr/…. */
