@@ -134,15 +134,14 @@
  * and subheading (headings inside sections).
  */
 @utility text-display {
-  font-size: 2.5rem;
+  /* Phones: each phrase of the headline gets its own line, so the size follows the width to keep every phrase whole. */
+  font-size: min(2.5rem, 9.2vw);
   line-height: 1.05;
   letter-spacing: -0.035em;
   font-weight: 600;
+  /* From tablet up the size follows the width, capped at desktop size, so the two-line headline never wraps. */
   @media (width >= 40rem) {
-    font-size: 3.25rem;
-  }
-  @media (width >= 64rem) {
-    font-size: 3.75rem;
+    font-size: min(3.75rem, calc(6.6vw - 0.3rem));
   }
 }
 

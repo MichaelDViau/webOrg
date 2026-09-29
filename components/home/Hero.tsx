@@ -29,27 +29,19 @@ export async function Hero() {
   return (
     <section className="overflow-hidden pt-12 sm:pt-16 lg:pt-20">
       <Container>
-        <div className="max-w-4xl">
+        <div className="max-w-5xl">
           {/*
-           * Knocked-out headline: phrases sit on tight ink blocks that follow each line of text.
-           * Two lines from sm up; on phones each phrase gets its own line so the blocks never wrap mid-phrase.
+           * Knocked-out headline in a "Z": a plain lead-in and a black block on the first line, a black block
+           * and plain text on the second. Two lines from sm up, in every language; on phones each phrase gets
+           * its own line so the blocks never wrap mid-phrase. The size follows the width (see text-display)
+           * so the longer French and Spanish lines stay on two lines too.
            */}
           <h1 className="text-display">
-            {t.lead && (
-              <>
-                {t.lead} <br className="sm:hidden" />
-              </>
-            )}
+            {t.lead} <br className="sm:hidden" />
             <Knockout>{t.block1}</Knockout>
             <br />
-            <Knockout>{t.block2}</Knockout>
-            {t.tail && (
-              <>
-                {" "}
-                <br className="sm:hidden" />
-                {t.tail}
-              </>
-            )}
+            <Knockout>{t.block2}</Knockout> <br className="sm:hidden" />
+            {t.tail}
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-pretty sm:text-xl">{t.intro}</p>
           <CtaPair long className="mt-10" />

@@ -7,10 +7,10 @@ export const home: Home = {
     "Diseñamos, construimos y operamos sitios web, portales de clientes, software interno y automatizaciones para empresas de servicios y operaciones. Empiece con una auditoría de sistemas digitales.",
 
   hero: {
-    lead: "",
-    block1: "Los sistemas",
-    block2: "que hacen funcionar su empresa",
-    tail: "",
+    lead: "Construimos",
+    block1: "los sistemas",
+    block2: "que hacen funcionar",
+    tail: "su empresa.",
     intro:
       "Diseñamos, construimos y operamos sitios web, portales de clientes, software interno y automatizaciones para empresas de servicios y operaciones ya establecidas. Un solo equipo responsable, del diagnóstico a la operación diaria, en español, inglés y francés.",
     facts: [

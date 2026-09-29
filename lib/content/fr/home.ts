@@ -7,10 +7,10 @@ export const home: Home = {
     "Nous concevons, construisons et exploitons des sites web, des portails clients, des logiciels internes et des automatisations pour les entreprises de services et d'exploitation. Commencez par un audit des systèmes numériques.",
 
   hero: {
-    lead: "",
-    block1: "Les systèmes",
-    block2: "qui font tourner votre entreprise",
-    tail: "",
+    lead: "Nous construisons",
+    block1: "les systèmes",
+    block2: "qui font tourner",
+    tail: "votre entreprise.",
     intro:
       "Nous concevons, construisons et exploitons des sites web, des portails clients, des logiciels internes et des automatisations pour les entreprises de services et d'exploitation établies. Une seule équipe responsable, du diagnostic à l'exploitation quotidienne, en français, en anglais et en espagnol.",
     facts: [

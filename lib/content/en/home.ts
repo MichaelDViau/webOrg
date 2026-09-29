@@ -11,8 +11,8 @@ export const home = {
 
   hero: {
     // The headline alternates plain text and ink blocks: [lead] [block1] / [block2] [tail]
-    lead: "",
-    block1: "The systems",
+    lead: "We build",
+    block1: "the systems",
     block2: "your business",
     tail: "runs on.",
     intro:
