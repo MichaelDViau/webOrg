@@ -85,7 +85,7 @@ export function WebsiteCheckForm({ locale, labels: t }: { locale: Locale; labels
         )}
 
         {!pending && result && (
-          <section aria-labelledby="check-results" className="rounded border border-line">
+          <section aria-labelledby="check-results" className="rounded-lg border border-line">
             <div className="border-b border-line px-6 py-6 sm:px-8">
               <h2
                 id="check-results"
@@ -107,7 +107,7 @@ export function WebsiteCheckForm({ locale, labels: t }: { locale: Locale; labels
 
             <div className="grid gap-10 px-6 py-8 sm:px-8 lg:grid-cols-2">
               <div>
-                <h3 className="text-lg font-semibold text-ink">{t.loadingSpeed}</h3>
+                <h3 className="text-sm font-medium text-ink">{t.loadingSpeed}</h3>
                 <dl className="mt-3 divide-y divide-line border-y border-line">
                   {result.metrics.map((metric) => (
                     <div key={metric.label} className="flex justify-between gap-6 py-3">
@@ -118,7 +118,7 @@ export function WebsiteCheckForm({ locale, labels: t }: { locale: Locale; labels
                 </dl>
               </div>
               <div>
-                <h3 className="text-lg font-semibold text-ink">{t.fixFirst}</h3>
+                <h3 className="text-sm font-medium text-ink">{t.fixFirst}</h3>
                 {result.findings.length > 0 ? (
                   <ol className="mt-3 divide-y divide-line border-y border-line">
                     {result.findings.map((finding) => (
@@ -140,7 +140,7 @@ export function WebsiteCheckForm({ locale, labels: t }: { locale: Locale; labels
               <p className="leading-relaxed">
                 {state.emailSent ? t.emailSent : t.followUp}
               </p>
-              <ButtonLink href="/snapshot" className="shrink-0">
+              <ButtonLink href="/snapshot" withArrow className="shrink-0">
                 {t.talk}
               </ButtonLink>
             </div>

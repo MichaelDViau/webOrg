@@ -18,7 +18,7 @@ export default async function WorkPage() {
 
   return (
     <>
-      <PageHeader title={t.title} lead={t.lead} />
+      <PageHeader eyebrow={t.eyebrow} title={t.title} lead={t.lead} />
 
       <Section padding="no-top">
         <Container>
@@ -30,7 +30,7 @@ export default async function WorkPage() {
             ))}
           </ul>
 
-          <aside className="mt-12 max-w-2xl rounded border border-line bg-canvas p-5" data-reveal>
+          <aside className="mt-16 max-w-2xl border-l-2 border-accent pl-6" data-reveal>
             <h2 className="text-lg font-medium text-ink">{t.honestTitle}</h2>
             <p className="mt-2 leading-relaxed">{t.honestBody}</p>
           </aside>

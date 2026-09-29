@@ -1,6 +1,7 @@
 import Link from "@/components/i18n/Link";
 import type { ComponentProps } from "react";
 import { cn } from "@/lib/cn";
+import { ArrowIcon } from "./ArrowIcon";
 
 const variants = {
   primary: "bg-ink text-paper hover:bg-ink/85",
@@ -18,7 +19,7 @@ const sizes = {
 /** Shared classes so links and form buttons look identical. */
 export function buttonClass(variant: keyof typeof variants = "primary", size: keyof typeof sizes = "md"): string {
   return cn(
-    "inline-flex items-center justify-center gap-2 rounded text-base font-medium transition-colors duration-200 disabled:cursor-not-allowed disabled:opacity-60",
+    "group inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium transition-colors duration-200 disabled:cursor-not-allowed disabled:opacity-60",
     variants[variant],
     sizes[size],
   );
@@ -27,12 +28,21 @@ export function buttonClass(variant: keyof typeof variants = "primary", size: ke
 interface ButtonLinkProps extends ComponentProps<typeof Link> {
   variant?: keyof typeof variants;
   size?: keyof typeof sizes;
+  withArrow?: boolean;
 }
 
-export function ButtonLink({ variant = "primary", size = "md", className, children, ...props }: ButtonLinkProps) {
+export function ButtonLink({
+  variant = "primary",
+  size = "md",
+  withArrow,
+  className,
+  children,
+  ...props
+}: ButtonLinkProps) {
   return (
     <Link className={cn(buttonClass(variant, size), className)} {...props}>
       {children}
+      {withArrow && <ArrowIcon className="group-hover:translate-x-0.5" />}
     </Link>
   );
 }
@@ -41,14 +51,18 @@ interface TextLinkProps extends ComponentProps<typeof Link> {
   tone?: "dark" | "light";
 }
 
-/** A plain underlined text link. */
 export function TextLink({ tone = "dark", className, children, ...props }: TextLinkProps) {
   return (
     <Link
-      className={cn("underline underline-offset-4 hover:no-underline", tone === "dark" ? "text-ink" : "text-paper", className)}
+      className={cn(
+        "group inline-flex items-center gap-1.5 font-medium underline-offset-4 hover:underline",
+        tone === "dark" ? "text-ink" : "text-paper",
+        className,
+      )}
       {...props}
     >
       {children}
+      <ArrowIcon className="group-hover:translate-x-0.5" />
     </Link>
   );
 }

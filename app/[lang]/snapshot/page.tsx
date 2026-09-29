@@ -23,7 +23,7 @@ export default async function SnapshotPage() {
 
   return (
     <>
-      <PageHeader title={t.title} lead={t.lead} />
+      <PageHeader eyebrow={t.eyebrow} eyebrowIsHeading title={t.title} lead={t.lead} />
 
       <Section padding="no-top">
         <Container className="grid gap-12 lg:grid-cols-12 lg:gap-16">
@@ -35,7 +35,7 @@ export default async function SnapshotPage() {
             <ol className="mt-6 divide-y divide-line border-y border-line">
               {t.how.map((step, index) => (
                 <li key={step} className="flex gap-4 py-4 leading-relaxed">
-                  <span className="text-body tabular-nums">{index + 1}.</span>
+                  <span className="text-sm text-muted tabular-nums">{index + 1}</span>
                   <span>{step}</span>
                 </li>
               ))}
@@ -43,7 +43,7 @@ export default async function SnapshotPage() {
           </div>
 
           <div className="lg:col-span-7">
-            <div className="rounded border border-line p-6 sm:p-8">
+            <div className="rounded-lg border border-line p-6 sm:p-10">
               <h2 className="text-2xl font-semibold tracking-tight">{t.formTitle}</h2>
               <p className="mt-2 mb-8 text-lg text-body">{t.formLead}</p>
               <LeadForm
@@ -64,14 +64,14 @@ export default async function SnapshotPage() {
           <div>
             <h2 className="text-subheading">{t.instantTitle}</h2>
             <p className="mt-2 leading-relaxed">{t.instantBody}</p>
-            <ButtonLink href="/website-check" variant="secondary" className="mt-5">
+            <ButtonLink href="/website-check" variant="secondary" withArrow className="mt-5">
               {t.instantLink}
             </ButtonLink>
           </div>
           <div>
             <h2 className="text-subheading">{t.auditTitle}</h2>
             <p className="mt-2 leading-relaxed">{t.auditBody}</p>
-            <ButtonLink href="/audit" className="mt-5">
+            <ButtonLink href="/audit" withArrow className="mt-5">
               {ui.cta.auditLong}
             </ButtonLink>
           </div>

@@ -12,12 +12,15 @@ export async function WhyUs() {
   return (
     <Section tone="night">
       <Container>
-        <h2 className="text-heading text-paper" data-reveal>
+        <p className="text-sm font-medium text-accent-light" data-reveal>
           {t.eyebrow}
+        </p>
+        <h2 className="mt-6 max-w-5xl text-heading text-paper" data-reveal>
+          {t.title}
         </h2>
 
-        <FeatureList items={t.items} tone="dark" className="mt-8" />
-        <TextLink href="/standards" tone="light" className="mt-8 inline-block text-lg">
+        <FeatureList items={t.items} tone="dark" className="mt-16 lg:mt-20" />
+        <TextLink href="/standards" tone="light" className="mt-10">
           {t.standardsLink}
         </TextLink>
       </Container>

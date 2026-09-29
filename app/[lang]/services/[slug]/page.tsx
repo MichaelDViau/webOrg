@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { JsonLd } from "@/components/JsonLd";
 import { ClosingCta } from "@/components/home/ClosingCta";
 import { PageHeader } from "@/components/layout/PageHeader";
+import { ArrowIcon } from "@/components/ui/ArrowIcon";
 import { CheckList } from "@/components/ui/CheckList";
 import { Container } from "@/components/ui/Container";
 import { CtaPair } from "@/components/ui/CtaPair";
@@ -60,8 +61,8 @@ export default async function ServicePage({ params }: ServicePageProps) {
 
   return (
     <>
-      <PageHeader title={service.headline} lead={service.lead}>
-        <p className="mt-6 text-base text-body">
+      <PageHeader eyebrow={ui.nav.services} title={service.headline} lead={service.lead}>
+        <p className="mt-6 text-sm text-muted">
           <span className="font-medium text-ink">{t.forWhom}:</span> {service.forWhom}
         </p>
         <CtaPair className="mt-8" />
@@ -74,14 +75,14 @@ export default async function ServicePage({ params }: ServicePageProps) {
             {t.problem}
           </h2>
           <div data-reveal>
-            <ul className="space-y-3 text-xl leading-snug text-ink sm:text-2xl">
+            <ul className="space-y-4">
               {service.problemQuotes.map((quote) => (
-                <li key={quote}>
+                <li key={quote} className="border-l-2 border-ink pl-5 text-xl leading-snug text-ink sm:text-2xl">
                   <q>{quote}</q>
                 </li>
               ))}
             </ul>
-            <p className="mt-6 max-w-2xl text-lg leading-relaxed">{service.problemDetail}</p>
+            <p className="mt-8 max-w-2xl text-lg leading-relaxed">{service.problemDetail}</p>
           </div>
         </Container>
       </Section>
@@ -112,20 +113,24 @@ export default async function ServicePage({ params }: ServicePageProps) {
           <h2 className="text-heading" data-reveal>
             {t.phases}
           </h2>
-          <ol className="mt-8 grid gap-x-8 gap-y-8 sm:grid-cols-2 lg:grid-cols-4">
+          <ol className="mt-12 grid gap-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
             {service.phases.map((phase, index) => (
-              <li key={phase.title} data-reveal>
-                <p className="text-base text-body">{format(t.phase, { number: index + 1 })}</p>
-                <h3 className="mt-1 text-xl font-semibold tracking-tight">{phase.title}</h3>
-                <p className="mt-2 text-lg leading-relaxed">{phase.detail}</p>
+              <li key={phase.title} className="border-t-2 border-ink pt-6" data-reveal>
+                <span className="text-sm text-muted tabular-nums">{format(t.phase, { number: index + 1 })}</span>
+                <h3 className="mt-3 text-xl font-semibold tracking-tight">{phase.title}</h3>
+                <p className="mt-3 leading-relaxed">{phase.detail}</p>
               </li>
             ))}
           </ol>
 
-          <div className="mt-12 border-y border-line py-6" data-reveal>
-            <h2 className="text-xl font-semibold text-ink">{t.price}</h2>
-            <p className="mt-1 text-3xl font-semibold tracking-tight text-ink">{servicePriceText(service.slug, locale, ui.price)}</p>
-            <p className="mt-2 max-w-xl text-lg leading-relaxed">{ui.price.fixedPhases}</p>
+          <div className="mt-16 grid gap-6 rounded-lg border border-line bg-canvas p-8 sm:p-10 lg:grid-cols-12 lg:items-center" data-reveal>
+            <div className="lg:col-span-5">
+              <h2 className="text-sm font-medium text-muted">{t.price}</h2>
+              <p className="mt-2 text-3xl font-semibold tracking-tight text-ink sm:text-4xl">
+                {servicePriceText(service.slug, locale, ui.price)}
+              </p>
+            </div>
+            <p className="max-w-xl leading-relaxed lg:col-span-7">{ui.price.fixedPhases}</p>
           </div>
         </Container>
       </Section>
@@ -133,7 +138,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
       {demo && (
         <Section tone="canvas" padding="compact">
           <Container>
-            <h2 className="mb-4 text-xl font-semibold text-ink">{t.relatedDemo}</h2>
+            <h2 className="mb-6 text-sm font-medium text-muted">{t.relatedDemo}</h2>
             <div className="max-w-2xl">
               <DemoCard demo={demo} />
             </div>
@@ -152,15 +157,16 @@ export default async function ServicePage({ params }: ServicePageProps) {
 
       <Section tone="canvas" padding="compact">
         <Container>
-          <h2 className="text-xl font-semibold text-ink">{t.otherServices}</h2>
+          <h2 className="text-sm font-medium text-muted">{t.otherServices}</h2>
           <ul className="mt-4 flex flex-wrap gap-x-8 gap-y-2">
             {otherServices.map((other) => (
               <li key={other.slug}>
                 <Link
                   href={`/services/${other.slug}`}
-                  className="inline-block py-1 text-lg text-ink underline underline-offset-4 hover:no-underline"
+                  className="group inline-flex items-center gap-1.5 py-1 text-lg text-ink hover:underline hover:underline-offset-4"
                 >
                   {other.name}
+                  <ArrowIcon className="group-hover:translate-x-0.5" />
                 </Link>
               </li>
             ))}

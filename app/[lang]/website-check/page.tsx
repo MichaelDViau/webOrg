@@ -30,6 +30,8 @@ export default async function WebsiteCheckPage() {
   return (
     <>
       <PageHeader
+        eyebrow={t.eyebrow}
+        eyebrowIsHeading
         title={t.title}
         lead={t.lead}
       />
@@ -61,7 +63,7 @@ export default async function WebsiteCheckPage() {
             <h2 className="text-subheading">{t.snapshotTitle}</h2>
             <p className="mt-2 max-w-xl leading-relaxed">{t.snapshotBody}</p>
           </div>
-          <ButtonLink href="/snapshot" className="shrink-0">
+          <ButtonLink href="/snapshot" withArrow className="shrink-0">
             {ui.cta.snapshotLong}
           </ButtonLink>
         </Container>

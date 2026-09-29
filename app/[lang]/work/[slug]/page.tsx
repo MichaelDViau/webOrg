@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { JsonLd } from "@/components/JsonLd";
 import { ClosingCta } from "@/components/home/ClosingCta";
 import { PageHeader } from "@/components/layout/PageHeader";
+import { ArrowIcon } from "@/components/ui/ArrowIcon";
 import { CheckList } from "@/components/ui/CheckList";
 import { Container } from "@/components/ui/Container";
 import { FeatureList } from "@/components/ui/FeatureList";
@@ -51,7 +52,7 @@ export default async function DemoPage({ params }: DemoPageProps) {
 
   return (
     <>
-      <PageHeader title={demo.headline} lead={demo.lead}>
+      <PageHeader eyebrow={ui.nav.work} title={demo.headline} lead={demo.lead}>
         <DemoBadge className="mt-8" />
       </PageHeader>
 
@@ -95,7 +96,7 @@ export default async function DemoPage({ params }: DemoPageProps) {
             <CheckList items={demo.measure} className="mt-8 text-lg" />
           </div>
           <aside className="lg:col-span-4 lg:col-start-9" data-reveal>
-            <h2 className="text-lg font-semibold text-ink">{t.technology}</h2>
+            <h2 className="text-sm font-medium text-ink">{t.technology}</h2>
             <ul className="mt-4 divide-y divide-line border-y border-line">
               {demo.stack.map((item) => (
                 <li key={item} className="py-3">
@@ -103,22 +104,23 @@ export default async function DemoPage({ params }: DemoPageProps) {
                 </li>
               ))}
             </ul>
-            <h2 className="mt-8 text-lg font-semibold text-ink">{t.services}</h2>
+            <h2 className="mt-8 text-sm font-medium text-ink">{t.services}</h2>
             <ul className="mt-3 space-y-1">
               {demoServices.map((service) => (
                 <li key={service.slug}>
                   <Link
                     href={`/services/${service.slug}`}
-                    className="inline-block py-1 text-ink underline underline-offset-4 hover:no-underline"
+                    className="group inline-flex items-center gap-1.5 py-1 text-ink hover:underline hover:underline-offset-4"
                   >
                     {service.name}
+                    <ArrowIcon className="group-hover:translate-x-0.5" />
                   </Link>
                 </li>
               ))}
             </ul>
             {industry && (
               <>
-                <h2 className="mt-8 text-lg font-semibold text-ink">{t.built}</h2>
+                <h2 className="mt-8 text-sm font-medium text-ink">{t.built}</h2>
                 <p className="mt-3">
                   <Link href={`/industries/${industry.slug}`} className="text-ink underline underline-offset-4">
                     {industry.name}
@@ -132,7 +134,7 @@ export default async function DemoPage({ params }: DemoPageProps) {
 
       <Section tone="canvas" padding="compact">
         <Container>
-          <aside className="max-w-2xl rounded border border-line bg-paper p-5">
+          <aside className="max-w-2xl border-l-2 border-accent pl-6">
             <h2 className="text-lg font-medium text-ink">{t.aboutThisDemo}</h2>
             <p className="mt-2 leading-relaxed">{demo.honestNote}</p>
           </aside>
@@ -141,7 +143,7 @@ export default async function DemoPage({ params }: DemoPageProps) {
 
       <Section>
         <Container>
-          <h2 className="mb-4 text-xl font-semibold text-ink">{t.otherDemos}</h2>
+          <h2 className="mb-6 text-sm font-medium text-muted">{t.otherDemos}</h2>
           <ul className="grid gap-6 sm:grid-cols-2">
             {otherDemos.map((other) => (
               <li key={other.slug}>

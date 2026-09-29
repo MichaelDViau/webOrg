@@ -24,6 +24,7 @@ export async function LegalDocument({ document }: { document: LegalKey }) {
   return (
     <>
       <PageHeader
+        eyebrow={legal.eyebrow}
         title={doc.title}
         lead={`${format(legal.updatedLabel, { date: doc.updated })} ${fill(doc.intro)}`}
       />
@@ -60,7 +61,7 @@ export async function LegalDocument({ document }: { document: LegalKey }) {
           </div>
 
           <nav aria-label={legal.otherDocuments} className="mt-14 max-w-2xl border-t border-line pt-8">
-            <h2 className="text-lg font-semibold text-ink">{legal.otherDocuments}</h2>
+            <h2 className="text-sm font-medium text-ink">{legal.otherDocuments}</h2>
             <ul className="mt-3 flex flex-wrap gap-x-6 gap-y-1">
               {(Object.keys(documentPaths) as LegalKey[])
                 .filter((key) => key !== document)

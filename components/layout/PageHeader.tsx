@@ -2,18 +2,29 @@ import type { ReactNode } from "react";
 import { Container } from "@/components/ui/Container";
 
 interface PageHeaderProps {
+  eyebrow: string;
   title: ReactNode;
   lead?: ReactNode;
+  /**
+   * Makes the eyebrow the page's h1 and renders the display title as a paragraph.
+   * Useful when the eyebrow names the page topic and the title is a statement.
+   */
+  eyebrowIsHeading?: boolean;
   children?: ReactNode;
 }
 
-/** The top of a page: the page's h1, one short paragraph, and optionally buttons. */
-export function PageHeader({ title, lead, children }: PageHeaderProps) {
+export function PageHeader({ eyebrow, title, lead, eyebrowIsHeading = false, children }: PageHeaderProps) {
+  const Eyebrow = eyebrowIsHeading ? "h1" : "p";
+  const Title = eyebrowIsHeading ? "p" : "h1";
+
   return (
     <section className="border-b border-line pt-12 pb-10 sm:pt-16 sm:pb-14 lg:pt-20">
       <Container>
-        <h1 className="max-w-4xl text-title text-balance text-ink">{title}</h1>
-        {lead && <p className="mt-5 max-w-2xl text-lg leading-relaxed text-pretty sm:text-xl">{lead}</p>}
+        <Eyebrow className="text-sm font-medium text-accent-strong">{eyebrow}</Eyebrow>
+        <Title className="mt-4 max-w-4xl text-title text-balance text-ink">
+          {title}
+        </Title>
+        {lead && <p className="mt-6 max-w-2xl text-lg leading-relaxed text-pretty sm:text-xl">{lead}</p>}
         {children}
       </Container>
     </section>

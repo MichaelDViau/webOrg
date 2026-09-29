@@ -25,7 +25,7 @@ export default async function HowWeWorkPage() {
 
   return (
     <>
-      <PageHeader title={t.title} lead={t.lead} />
+      <PageHeader eyebrow={t.eyebrow} title={t.title} lead={t.lead} />
 
       <Section padding="no-top">
         <Container>
@@ -33,7 +33,7 @@ export default async function HowWeWorkPage() {
           <ol className="divide-y divide-line border-b border-line">
             {t.steps.map((step, index) => (
               <li key={step.title} className="grid gap-4 py-10 lg:grid-cols-12 lg:gap-16 lg:py-12" data-reveal>
-                <span className="text-base font-semibold text-body lg:col-span-2 lg:pt-1.5">
+                <span className="text-sm text-muted tabular-nums lg:col-span-2 lg:pt-2">
                   {format(t.step, { number: index + 1 })}
                 </span>
                 <div className="lg:col-span-5">
@@ -41,7 +41,7 @@ export default async function HowWeWorkPage() {
                   <p className="mt-3 text-lg leading-relaxed">{step.detail}</p>
                 </div>
                 <div className="lg:col-span-5">
-                  <p className="text-base font-semibold text-ink">{t.youGet}</p>
+                  <p className="text-sm font-medium text-muted">{t.youGet}</p>
                   <p className="mt-2 text-lg leading-relaxed text-ink">{step.youGet}</p>
                 </div>
               </li>
