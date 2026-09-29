@@ -5,7 +5,7 @@ import { Section } from "@/components/ui/Section";
 import { format } from "@/lib/i18n/format";
 import { getContent } from "@/lib/i18n/server";
 import type { LegalKey } from "@/lib/legal";
-import { legalAddress, site } from "@/lib/site";
+import { legalAddress, site, workEnabled } from "@/lib/site";
 
 const documentPaths: Record<LegalKey, string> = {
   privacy: "/privacy",
@@ -31,7 +31,7 @@ export async function LegalDocument({ document }: { document: LegalKey }) {
       <Section>
         <Container>
           <div className="max-w-2xl space-y-10 text-lg leading-relaxed">
-            {doc.sections.map((section) => (
+            {doc.sections.filter((section) => workEnabled || !section.requiresWork).map((section) => (
               <section key={section.title}>
                 <h2 className="text-2xl font-semibold tracking-tight">{section.title}</h2>
                 {section.body.map((paragraph) => (

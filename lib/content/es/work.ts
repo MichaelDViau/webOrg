@@ -225,11 +225,11 @@ export const workPage: WorkPage = {
   metaDescription:
     "Demos conceptuales funcionales de un portal inmobiliario, un centro de recepción de documentos y un sitio web que genera ingresos con flujo de consultas. Usan datos de ejemplo y no son proyectos de clientes.",
   eyebrow: "Trabajos",
-  title: "Demos por ahora. Casos de estudio cuando existan casos reales.",
-  lead: "Somos una empresa nueva, así que no tenemos una lista de clientes que mostrar. Tenemos tres demos conceptuales de sistemas para los sectores que atendemos. Cada una usa datos de ejemplo, para que siempre sepa qué está viendo.",
+  title: "Demos funcionales de los sistemas que construimos.",
+  lead: "Tres demos conceptuales de sistemas para los sectores que atendemos. Cada una usa datos de ejemplo, para que siempre sepa qué está viendo.",
   honestTitle: "Qué está viendo",
   honestBody:
-    "Las demos conceptuales usan datos de ejemplo y no son proyectos de clientes. Cuando un cliente apruebe un caso de estudio, por escrito y con resultados medidos, se publicará aquí.",
+    "Las demos conceptuales usan datos de ejemplo y no son proyectos de clientes.",
   seeDemo: "Ver la demo",
 };
 

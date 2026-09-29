@@ -4,7 +4,6 @@ export const site = {
   url: (process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.example.com").replace(/\/$/, ""),
   /** Replace with the company's real address before launch (`npm run launch-check` flags example.com). */
   email: "hello@example.com",
-  foundedYear: 2026,
   address: {
     locality: "Austin",
     region: "TX",
@@ -38,6 +37,13 @@ export const auditHref = "/audit";
 /** The second button everywhere: the free Snapshot of the visitor's site. */
 export const snapshotHref = "/snapshot";
 
+/**
+ * The Work section (concept demos). Off until there are real demos or case studies to show. While it is
+ * off, /work and /work/<demo> return 404 and nothing links to them: no menu item, sitemap entry, demo card
+ * or copy. The pages, components and content stay in the repo; set this to true to bring them all back.
+ */
+export const workEnabled = false;
+
 export interface NavItem {
   /** Key into the `nav` labels of the current language. */
   key: "services" | "industries" | "audit" | "work" | "howWeWork" | "about";
@@ -49,7 +55,7 @@ export const mainNav: NavItem[] = [
   { key: "services", href: "/services" },
   { key: "industries", href: "/industries" },
   { key: "audit", href: "/audit" },
-  { key: "work", href: "/work" },
+  ...(workEnabled ? [{ key: "work" as const, href: "/work" }] : []),
   { key: "howWeWork", href: "/how-we-work" },
   { key: "about", href: "/about" },
 ];

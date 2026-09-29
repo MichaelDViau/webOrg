@@ -7,6 +7,7 @@ import { FeatureList } from "@/components/ui/FeatureList";
 import { Section } from "@/components/ui/Section";
 import { getContent } from "@/lib/i18n/server";
 import { pageMetadata } from "@/lib/metadata";
+import { workEnabled } from "@/lib/site";
 
 export async function generateMetadata(): Promise<Metadata> {
   const { partners } = await getContent();
@@ -17,6 +18,9 @@ export async function generateMetadata(): Promise<Metadata> {
 export default async function PartnersPage() {
   const { partners: t } = await getContent();
 
+  // The demos item points at the Work section, which is off while `workEnabled` is false.
+  const check = t.check.filter((item) => workEnabled || item.href !== "/work");
+
   return (
     <>
       <PageHeader eyebrow={t.eyebrow} title={t.title} lead={t.lead} />
@@ -26,8 +30,8 @@ export default async function PartnersPage() {
           <h2 className="text-heading" data-reveal>
             {t.checkTitle}
           </h2>
-          <ul className="mt-12 grid gap-x-8 gap-y-10 lg:grid-cols-3">
-            {t.check.map((item) => (
+          <ul className={`mt-12 grid gap-x-8 gap-y-10 ${check.length > 2 ? "lg:grid-cols-3" : "lg:grid-cols-2"}`}>
+            {check.map((item) => (
               <li key={item.title} className="flex flex-col border-t-2 border-ink pt-6" data-reveal>
                 <h3 className="text-xl font-semibold tracking-tight">{item.title}</h3>
                 <p className="mt-3 leading-relaxed">{item.detail}</p>

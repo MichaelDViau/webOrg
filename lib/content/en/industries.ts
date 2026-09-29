@@ -209,7 +209,7 @@ export const industriesPage = {
     "Systems built for property and real-estate operators, accounting and professional firms, and B2B distribution and trade businesses.",
   eyebrow: "Industries",
   title: "We know their daily problems, and the software they run on.",
-  lead: "Three industries, chosen because their problems repeat, and because we can show you a demo for each.",
+  lead: "Three industries, chosen because their problems repeat and because we know the software they run on.",
   problemsLabel: "Typical problems",
   linkLabel: "See the industry page",
   ctaTitle: "Your business isn't on this list?",

@@ -20,9 +20,6 @@ export async function Footer() {
           <div className="col-span-2 lg:col-span-3">
             <Logo label={format(ui.logoLabel, { name: site.name })} />
             <p className="mt-5 max-w-xs text-base leading-relaxed text-body">{t.tagline}</p>
-            <p className="mt-3 max-w-xs text-base leading-relaxed text-body">
-              {format(t.newCompany, { year: site.foundedYear })}
-            </p>
           </div>
 
           <nav aria-label={t.services} className="lg:col-span-3">

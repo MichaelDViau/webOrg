@@ -1,4 +1,5 @@
 import type { NextConfig } from "next";
+import { workEnabled } from "./lib/site";
 
 const isDev = process.env.NODE_ENV !== "production";
 
@@ -58,6 +59,8 @@ const nextConfig: NextConfig = {
   // search results keep working. The old sample case studies no longer exist, and the technology
   // catalog became the standards pages.
   async redirects() {
+    // Old case-study addresses land on /work when that section is on, and on the home page while it is off.
+    const workHome = workEnabled ? "/work" : "/";
     const moved: [string, string][] = [
       ["/technology", "/standards"],
       ["/services/website-development", "/services/revenue-websites"],
@@ -65,10 +68,10 @@ const nextConfig: NextConfig = {
       ["/services/ai-solutions", "/services/ai-with-judgment"],
       ["/services/web-optimization", "/standards/performance"],
       ["/services/seo", "/services/revenue-websites"],
-      ["/work/harbor-line-customer-portal", "/work"],
-      ["/work/meridian-health-website", "/work"],
-      ["/work/cobalt-legal-document-assistant", "/work"],
-      ["/work/fieldstone-commerce-performance", "/work"],
+      ["/work/harbor-line-customer-portal", workHome],
+      ["/work/meridian-health-website", workHome],
+      ["/work/cobalt-legal-document-assistant", workHome],
+      ["/work/fieldstone-commerce-performance", workHome],
     ];
     return [
       { source: "/en", destination: "/", permanent: true },

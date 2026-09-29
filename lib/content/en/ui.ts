@@ -79,7 +79,6 @@ export const ui = {
     terms: "Terms of use",
     cookies: "Cookie notice",
     mexicoNotice: "Aviso de privacidad (Mexico)",
-    newCompany: "A new company, founded in {year}.",
   },
 
   /** Prices come from lib/pricing.ts. `{from}` and `{to}` are formatted for the language. */

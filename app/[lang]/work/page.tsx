@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { notFound } from "next/navigation";
 import { ClosingCta } from "@/components/home/ClosingCta";
 import { PageHeader } from "@/components/layout/PageHeader";
 import { Container } from "@/components/ui/Container";
@@ -6,14 +7,17 @@ import { Section } from "@/components/ui/Section";
 import { DemoCard } from "@/components/work/DemoCard";
 import { getContent } from "@/lib/i18n/server";
 import { pageMetadata } from "@/lib/metadata";
+import { workEnabled } from "@/lib/site";
 
 export async function generateMetadata(): Promise<Metadata> {
+  if (!workEnabled) return {};
   const { workPage } = await getContent();
   return pageMetadata({ title: workPage.metaTitle, description: workPage.metaDescription, path: "/work" });
 }
 
-/** Demos now; case studies when real ones exist. Every demo says its data is sample data. */
+/** Off while `workEnabled` is false (lib/site.ts). Every demo says its data is sample data. */
 export default async function WorkPage() {
+  if (!workEnabled) notFound();
   const { workPage: t, demos } = await getContent();
 
   return (

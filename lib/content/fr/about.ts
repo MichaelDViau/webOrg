@@ -2,16 +2,16 @@ import type { About, Partners } from "../en/about";
 
 /**
  * À propos : la crédibilité humaine. Pourquoi l'entreprise existe, le fondateur, comment l'équipe
- * travaille entre les pays et un énoncé honnête : « nous sommes nouveaux ». N'inventez jamais de
+ * travaille entre les pays et un bloc « lisez comment nous travaillons ». N'inventez jamais de
  * biographie, de client, de chiffre ni de prix. Pas de photo de banque d'images avec des personnes.
  */
 export const about: About = {
   metaTitle: "À propos",
   metaDescription:
-    "{name} est une nouvelle entreprise, fondée en {year}, qui conçoit, construit et exploite les systèmes sur lesquels reposent les entreprises établies. Une seule équipe responsable, en français, en anglais et en espagnol.",
+    "{name} conçoit, construit et exploite les systèmes sur lesquels reposent les entreprises établies. Une seule équipe responsable, en français, en anglais et en espagnol.",
   eyebrow: "À propos",
   title: "Une seule équipe responsable des systèmes qui font tourner votre entreprise.",
-  lead: "{name} conçoit, construit et exploite des sites web, des portails clients, des logiciels internes et des automatisations. Nous sommes une nouvelle entreprise, et nous le disons.",
+  lead: "{name} conçoit, construit et exploite des sites web, des portails clients, des logiciels internes et des automatisations.",
 
   whyTitle: "Pourquoi nous existons",
   why: [
@@ -32,10 +32,10 @@ export const about: About = {
     "Pour que rien ne dépende de qui était à quel appel, les décisions et l'avancement sont consignés par écrit : un compte rendu écrit chaque semaine et un lien de préproduction que vous pouvez ouvrir en tout temps.",
   ],
 
-  newTitle: "Nous sommes nouveaux",
-  newBody:
-    "Nous sommes une nouvelle entreprise, fondée en {year}. Cela signifie que nous n'avons pas de longue liste de clients à vous montrer. À la place, nous vous montrons des démos fonctionnelles de systèmes conçus pour les secteurs que nous servons, nous publions les normes que nous suivons, et nous vous laissons vérifier les deux.",
-  newLinks: { demos: "Voir les démos", standards: "Lire les normes" },
+  proofTitle: "Lisez comment nous travaillons avant de nous engager",
+  proofBody:
+    "Nous publions, en langage clair, les normes que nous suivons et le processus de chaque projet. L'audit vous montre des preuves avant que vous payiez pour une réalisation.",
+  proofLinks: { standards: "Lire les normes", process: "Voir notre façon de travailler" },
 
   beliefsTitle: "Ce en quoi nous croyons",
   beliefs: [

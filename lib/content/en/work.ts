@@ -3,7 +3,7 @@ import type { DemoSlug, DemoText } from "@/lib/demos";
 /**
  * Concept demos, not client projects. Every screen uses obviously fictional sample data and and says so.
  * Never add a real client name, logo, quote or result here.
- * Case studies come later, when a real client approves one in writing.
+ * Add a case study only when a real client approves it in writing, with measured results.
  */
 export const demos: Record<DemoSlug, DemoText> = {
   "property-portal": {
@@ -225,11 +225,11 @@ export const workPage = {
   metaDescription:
     "Working concept demos of a property portal, a document intake hub and a revenue website with lead flow. They use sample data and are not client projects.",
   eyebrow: "Work",
-  title: "Demos now. Case studies when real ones exist.",
-  lead: "We're a new company, so we don't have a client list to show. We have three concept demos of systems for the industries we serve. Each uses sample data, so you always know what you're looking at.",
+  title: "Working demos of the systems we build.",
+  lead: "Three concept demos of systems for the industries we serve. Each uses sample data, so you always know what you're looking at.",
   honestTitle: "What you're looking at",
   honestBody:
-    "Concept demos use sample data and aren't client projects. When a client approves a case study, in writing and with measured results, it goes here.",
+    "Concept demos use sample data and aren't client projects.",
   seeDemo: "See the demo",
 };
 

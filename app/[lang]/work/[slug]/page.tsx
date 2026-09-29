@@ -15,6 +15,7 @@ import { demoSlugs } from "@/lib/demos";
 import { localizePath } from "@/lib/i18n/config";
 import { getContent } from "@/lib/i18n/server";
 import { pageMetadata } from "@/lib/metadata";
+import { workEnabled } from "@/lib/site";
 import { breadcrumbSchema } from "@/lib/structured-data";
 
 interface DemoPageProps {
@@ -24,10 +25,11 @@ interface DemoPageProps {
 export const dynamicParams = false;
 
 export function generateStaticParams() {
-  return demoSlugs.map((slug) => ({ slug }));
+  return workEnabled ? demoSlugs.map((slug) => ({ slug })) : [];
 }
 
 export async function generateMetadata({ params }: DemoPageProps): Promise<Metadata> {
+  if (!workEnabled) return {};
   const { slug } = await params;
   const demo = (await getContent()).demos.find((item) => item.slug === slug);
   if (!demo) return {};
@@ -39,6 +41,7 @@ export async function generateMetadata({ params }: DemoPageProps): Promise<Metad
  * a client. Every screen says its data is sample data.
  */
 export default async function DemoPage({ params }: DemoPageProps) {
+  if (!workEnabled) notFound();
   const { slug } = await params;
   const { ui, locale, demoPage: t, workPage, demos, industries, services } = await getContent();
   const demo = demos.find((item) => item.slug === slug);

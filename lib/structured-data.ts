@@ -25,7 +25,6 @@ export function organizationSchema({ ui, services }: Content): JsonLdObject {
     logo: `${site.url}/logo.png`,
     image: `${site.url}/og/en.png`,
     email: site.email,
-    foundingDate: String(site.foundedYear),
     description: format(ui.site.description, { name: site.name }),
     address: {
       "@type": "PostalAddress",

@@ -211,7 +211,7 @@ export const industriesPage: IndustriesPage = {
     "Des systèmes conçus pour les gestionnaires immobiliers et exploitants d'immeubles, les cabinets comptables et firmes de services professionnels, et les entreprises de distribution et de commerce B2B.",
   eyebrow: "Secteurs",
   title: "Nous connaissons leurs problèmes quotidiens et les logiciels qu'ils utilisent.",
-  lead: "Trois secteurs, choisis parce que leurs problèmes se répètent et parce que nous pouvons vous montrer une démo pour chacun.",
+  lead: "Trois secteurs, choisis parce que leurs problèmes se répètent et parce que nous connaissons les logiciels qu'ils utilisent.",
   problemsLabel: "Problèmes typiques",
   linkLabel: "Voir la page du secteur",
   ctaTitle: "Votre entreprise ne figure pas sur cette liste?",

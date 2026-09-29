@@ -211,7 +211,7 @@ export const industriesPage: IndustriesPage = {
     "Sistemas hechos para administradores de propiedades y operadores inmobiliarios, despachos contables y firmas de servicios profesionales, y empresas de distribución y comercio B2B.",
   eyebrow: "Sectores",
   title: "Conocemos sus problemas diarios y el software que usan.",
-  lead: "Tres sectores, elegidos porque sus problemas se repiten y porque podemos mostrarle una demo de cada uno.",
+  lead: "Tres sectores, elegidos porque sus problemas se repiten y porque conocemos el software que usan.",
   problemsLabel: "Problemas típicos",
   linkLabel: "Ver la página del sector",
   ctaTitle: "¿Su negocio no está en esta lista?",

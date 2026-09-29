@@ -4,7 +4,7 @@ import { localizePath, locales } from "@/lib/i18n/config";
 import { industrySlugs } from "@/lib/industries";
 import { articleSlugs } from "@/lib/insights";
 import { serviceSlugs } from "@/lib/services";
-import { bookingUrl, site } from "@/lib/site";
+import { bookingUrl, site, workEnabled } from "@/lib/site";
 import { standardSlugs } from "@/lib/standards";
 
 /** Every page in every language, each entry listing its translations for search engines. */
@@ -15,7 +15,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/snapshot",
     "/services",
     "/industries",
-    "/work",
+    ...(workEnabled ? ["/work"] : []),
     "/how-we-work",
     "/standards",
     "/about",
@@ -30,7 +30,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/aviso-de-privacidad",
     ...serviceSlugs.map((slug) => `/services/${slug}`),
     ...industrySlugs.map((slug) => `/industries/${slug}`),
-    ...demoSlugs.map((slug) => `/work/${slug}`),
+    ...(workEnabled ? demoSlugs.map((slug) => `/work/${slug}`) : []),
     ...standardSlugs.map((slug) => `/standards/${slug}`),
     ...articleSlugs.map((slug) => `/insights/${slug}`),
   ];

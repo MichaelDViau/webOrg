@@ -128,8 +128,8 @@ export const home: Home = {
   },
 
   honest: {
-    eyebrow: "En toute transparence",
-    body: "Nous sommes une nouvelle entreprise, fondée en {year}. Plutôt qu'une longue liste de clients, voici des démos fonctionnelles de systèmes conçus pour les secteurs que nous servons, et les normes que suit chaque projet.",
+    eyebrow: "Voyez-le par vous-même",
+    body: "Voici des démos fonctionnelles de systèmes conçus pour les secteurs que nous servons, et les normes que suit chaque projet. Regardez les deux avant de nous parler.",
     cta: "Voir les démos",
   },
 

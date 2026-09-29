@@ -1,6 +1,6 @@
 /**
  * The home page, in the eight blocks the guideline sets, in order: hero, the problem, what we do,
- * what we build, who we help, why work with us, honest about who we are, final call to action.
+ * what we build, who we help, why work with us, see it for yourself, final call to action.
  * In ten seconds it must answer: what do you do, for whom, why trust you, what does it cost to start,
  * what do I do next.
  */
@@ -130,9 +130,8 @@ export const home = {
   },
 
   honest: {
-    eyebrow: "Honest about who we are",
-    /** {year} is the year the company was founded. */
-    body: "We're a new company, founded in {year}. Instead of a long client list, here are working demos of systems built for the industries we serve, and the standards every project follows.",
+    eyebrow: "See it for yourself",
+    body: "Here are working demos of systems built for the industries we serve, and the standards every project follows. Look at both before you talk to us.",
     cta: "See the demos",
   },
 

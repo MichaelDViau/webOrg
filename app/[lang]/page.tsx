@@ -12,7 +12,7 @@ import { audit } from "@/lib/pricing";
 import { format } from "@/lib/i18n/format";
 import { getContent } from "@/lib/i18n/server";
 import { pageMetadata } from "@/lib/metadata";
-import { site } from "@/lib/site";
+import { site, workEnabled } from "@/lib/site";
 import { websiteSchema } from "@/lib/structured-data";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -37,8 +37,9 @@ export default async function HomePage() {
       <WhatWeBuild />
       <WhoWeHelp />
       <WhyUs />
-      <Honest />
+      {workEnabled && <Honest />}
       <ClosingCta
+        tone={workEnabled ? "night" : "light"}
         title={home.finalCta.title}
         lead={format(home.finalCta.lead, { days: audit.creditDays })}
       />

@@ -31,10 +31,10 @@ In development, form submissions and confirmation emails are printed to the serv
 | Snapshot      | `/snapshot`                                         | The low-commitment second action                         |
 | Services      | `/services`, `/services/<slug>` (11)                | Outcomes, scope, phases, "from" price, related demo      |
 | Industries    | `/industries`, `/industries/<slug>` (3)             | Prove we understand their world                          |
-| Work          | `/work`, `/work/<slug>` (3 concept demos)           | Proof: concept demos on sample data                  |
+| Work          | `/work`, `/work/<slug>`: off for now (see below)    | 3 concept demos on sample data, hidden until real ones exist |
 | How we work   | `/how-we-work`                                      | Reduce the feeling of risk                               |
 | Standards     | `/standards`, `/standards/<slug>` (5)               | Security, performance, accessibility, AI policy, privacy |
-| About         | `/about`, `/partners`                               | Human credibility, an honest "we're new"                 |
+| About         | `/about`, `/partners`                               | Human credibility and a "check our work" block          |
 | Insights      | `/insights`, `/insights/<slug>`                     | Articles and the newsletter form                         |
 | Contact       | `/contact`, `/book`                                 | Short form, booking calendar, reply promise              |
 | Legal         | `/privacy`, `/terms`, `/cookies`, `/aviso-de-privacidad` | Privacy policy, terms, cookie notice, Mexican privacy notice |
@@ -145,5 +145,5 @@ Run `npm run launch-check` with your production environment variables. It lists 
 ## Later
 
 - The guideline suggests a headless CMS (for example Payload or Sanity) so pages can be edited in three languages without a developer. Content is typed data files for now, which keeps the site fast and dependency-free.
-- Replace concept demos with case studies only when a real client approves one in writing, with measured results. Partner logos only with written permission.
+- The Work section (concept demos) is switched off: `workEnabled` is `false` in `lib/site.ts`. While it is off, `/work` and the demo pages return 404, and the menu, sitemap, demo cards, home block and legal paragraph about demos are all hidden. Set it to `true` to bring them back. Replace concept demos with case studies only when a real client approves one in writing, with measured results. Partner logos only with written permission.
 - Two articles a month; rewrite pages that don't convert. Measure every month: audit and Snapshot requests (by page and language), the visit-to-inquiry rate on service and industry pages, time to first personal reply, Core Web Vitals in real-user data, and newsletter sign-ups.

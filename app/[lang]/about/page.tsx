@@ -15,12 +15,12 @@ export async function generateMetadata(): Promise<Metadata> {
   const { about } = await getContent();
   return pageMetadata({
     title: about.metaTitle,
-    description: format(about.metaDescription, { name: site.name, year: site.foundedYear }),
+    description: format(about.metaDescription, { name: site.name }),
     path: "/about",
   });
 }
 
-/** About: human credibility, and an honest "we're new" statement. No stock photos, no invented history. */
+/** About: human credibility and a "check our work" block. No stock photos, no invented history. */
 export default async function AboutPage() {
   const { about: t } = await getContent();
 
@@ -83,18 +83,18 @@ export default async function AboutPage() {
       <Section tone="night">
         <Container className="space-y-8 sm:space-y-10">
           <h2 className="text-heading text-paper" data-reveal>
-            {t.newTitle}
+            {t.proofTitle}
           </h2>
           <div data-reveal>
             <p className="max-w-2xl text-xl leading-relaxed text-night-muted sm:text-2xl">
-              {format(t.newBody, { year: site.foundedYear })}
+              {t.proofBody}
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <ButtonLink href="/work" variant="inverse" withArrow>
-                {t.newLinks.demos}
+              <ButtonLink href="/standards" variant="inverse" withArrow>
+                {t.proofLinks.standards}
               </ButtonLink>
-              <ButtonLink href="/standards" variant="outlineInverse">
-                {t.newLinks.standards}
+              <ButtonLink href="/how-we-work" variant="outlineInverse">
+                {t.proofLinks.process}
               </ButtonLink>
             </div>
           </div>

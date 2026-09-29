@@ -2,16 +2,16 @@ import type { About, Partners } from "../en/about";
 
 /**
  * Nosotros: credibilidad humana. Por qué existe la empresa, quién la fundó, cómo trabaja el equipo entre
- * países y una declaración honesta de que somos nuevos. No invente nunca una biografía, un cliente, una
+ * países y un bloque «lea cómo trabajamos». No invente nunca una biografía, un cliente, una
  * cifra ni un premio. Nada de fotos de archivo con personas.
  */
 export const about: About = {
   metaTitle: "Nosotros",
   metaDescription:
-    "{name} es una empresa nueva, fundada en {year}, que diseña, construye y opera los sistemas en los que se apoyan las empresas establecidas. Un solo equipo responsable, en español, inglés y francés.",
+    "{name} diseña, construye y opera los sistemas en los que se apoyan las empresas establecidas. Un solo equipo responsable, en español, inglés y francés.",
   eyebrow: "Nosotros",
   title: "Un solo equipo responsable de los sistemas que hacen funcionar su empresa.",
-  lead: "{name} diseña, construye y opera sitios web, portales de clientes, software interno y automatizaciones. Somos una empresa nueva, y lo decimos.",
+  lead: "{name} diseña, construye y opera sitios web, portales de clientes, software interno y automatizaciones.",
 
   whyTitle: "Por qué existimos",
   why: [
@@ -32,10 +32,10 @@ export const about: About = {
     "Para que nada dependa de quién estuvo en qué llamada, las decisiones y los avances quedan por escrito: un informe escrito cada semana y un enlace de pruebas que puede abrir cuando quiera.",
   ],
 
-  newTitle: "Somos nuevos",
-  newBody:
-    "Somos una empresa nueva, fundada en {year}. Eso significa que no tenemos una larga lista de clientes que mostrarle. En su lugar, le mostramos demos funcionales de sistemas hechos para los sectores que atendemos, publicamos los estándares que seguimos y le dejamos comprobar ambas cosas.",
-  newLinks: { demos: "Ver las demos", standards: "Leer los estándares" },
+  proofTitle: "Lea cómo trabajamos antes de contratarnos",
+  proofBody:
+    "Publicamos, en lenguaje claro, los estándares que seguimos y el proceso de cada proyecto. La auditoría le muestra pruebas antes de que pague por una construcción.",
+  proofLinks: { standards: "Leer los estándares", process: "Ver cómo trabajamos" },
 
   beliefsTitle: "En qué creemos",
   beliefs: [

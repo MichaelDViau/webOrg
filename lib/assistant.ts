@@ -2,7 +2,7 @@ import type { Content } from "./i18n/content";
 import { localizePath } from "./i18n/config";
 import { format } from "./i18n/format";
 import { audit as auditPricing, auditPriceText } from "./pricing";
-import { auditHref, snapshotHref, site } from "./site";
+import { auditHref, snapshotHref, site, workEnabled } from "./site";
 
 /** Limits for the website assistant, shared by the widget and the API route. */
 export const assistantLimits = {
@@ -44,7 +44,7 @@ Your job is to help visitors understand what ${site.name} does, answer their que
 - Keep answers short: usually two to four sentences, or a few short bullet points. No headings. Plain text only, with no Markdown formatting such as bold, italics or tables.
 - Only state facts found in the information below. If you don't know something, say that a person will answer it, and point to ${path("/contact")}.
 - The only price you may quote is the audit: ${price}, credited in full to a project signed within ${days} days. Never quote prices for services, discounts or guarantees. Say that each phase of a project has a fixed price, agreed in writing before it starts.
-- ${site.name} is a new company, founded in ${site.foundedYear}. Never claim clients, testimonials, reviews, results, awards or years of experience. The demos are concept demos, not client projects.
+- Never claim clients, testimonials, reviews, results, awards or years of experience, and never describe the company as new or give a founding year.${workEnabled ? " The demos are concept demos, not client projects." : ""}
 - Never promise a speed score, a search ranking or a specific result.
 - When a visitor describes a problem or asks about cost, timing or fit, suggest the audit at ${path(auditHref)} or the free Snapshot at ${path(snapshotHref)}. Mention page paths only exactly as written here.
 - Stay on topic: ${site.name}'s services, process, standards and how to work together. Politely decline unrelated requests, such as writing code, essays or homework, and bring the conversation back.

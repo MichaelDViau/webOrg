@@ -225,11 +225,11 @@ export const workPage: WorkPage = {
   metaDescription:
     "Des démos conceptuelles fonctionnelles d'un portail immobilier, d'un centre de collecte de documents et d'un site générateur de revenus avec parcours des demandes. Elles utilisent des données fictives et ne sont pas des projets clients.",
   eyebrow: "Réalisations",
-  title: "Des démos pour l'instant. Des études de cas quand il y en aura de vraies.",
-  lead: "Nous sommes une nouvelle entreprise : nous n'avons donc pas de liste de clients à vous montrer. Nous avons trois démos conceptuelles de systèmes pour les secteurs que nous servons. Chacune utilise des données fictives, pour que vous sachiez toujours ce que vous regardez.",
+  title: "Des démos fonctionnelles des systèmes que nous construisons.",
+  lead: "Trois démos conceptuelles de systèmes pour les secteurs que nous servons. Chacune utilise des données fictives, pour que vous sachiez toujours ce que vous regardez.",
   honestTitle: "Ce que vous regardez",
   honestBody:
-    "Les démos conceptuelles utilisent des données fictives et ne sont pas des projets clients. Quand un client approuvera une étude de cas, par écrit et avec des résultats mesurés, elle sera publiée ici.",
+    "Les démos conceptuelles utilisent des données fictives et ne sont pas des projets clients.",
   seeDemo: "Voir la démo",
 };
 

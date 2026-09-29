@@ -4,7 +4,7 @@ import { Section } from "@/components/ui/Section";
 import { TextLink } from "@/components/ui/Button";
 import { getContent } from "@/lib/i18n/server";
 
-/** Block 6: why work with us. Five reasons that don't depend on a client list. */
+/** Block 6: why work with us. Five reasons, each one something a visitor can check. */
 export async function WhyUs() {
   const { home } = await getContent();
   const t = home.whyUs;

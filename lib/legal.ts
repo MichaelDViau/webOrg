@@ -2,6 +2,8 @@ export interface LegalSection {
   title: string;
   body: string[];
   list?: string[];
+  /** Shown only while the Work section is on (`workEnabled` in lib/site.ts). */
+  requiresWork?: boolean;
 }
 
 export interface LegalDocument {

@@ -75,6 +75,8 @@ const banned = [
   /\b10x\b/i, /skyrocket/i, /game[- ]changer/i, /digital transformation/i, /\bsynergy\b/i, /cutting[- ]edge/i,
   /AI[- ]powered/i, /trusted by (hundreds|thousands)/i, /AI agency/i, /transformation num[ée]rique/i, /synergie/i, /à la fine pointe/i, /transformación digital/i, /sinergia/i,
   /de vanguardia/i, /testimonial/i,
+  // The site never calls the company new or gives a founding year.
+  /new company/i, /founded in/i, /nouvelle entreprise/i, /fondée en/i, /empresa nueva/i, /fundada en/i,
 ];
 // These two are fine inside "what we don't promise" lists on the standards pages, and nowhere else.
 const onlyInPromises = [/fully autonomous/i, /guaranteed (100|speed|score|ranking)/i];

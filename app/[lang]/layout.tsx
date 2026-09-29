@@ -13,7 +13,7 @@ import { getContentFor } from "@/lib/i18n/content";
 import { format } from "@/lib/i18n/format";
 import { organizationSchema } from "@/lib/structured-data";
 import { themeScript } from "@/lib/theme";
-import { auditHref, footerNav, mainNav, site } from "@/lib/site";
+import { auditHref, footerNav, mainNav, site, workEnabled } from "@/lib/site";
 import "../globals.css";
 
 export function generateStaticParams() {
@@ -66,7 +66,7 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
     ...content.services.map((service) => `/services/${service.slug}`),
     ...content.industries.map((industry) => `/industries/${industry.slug}`),
     ...content.standards.map((standard) => `/standards/${standard.slug}`),
-    ...content.demos.map((demo) => `/work/${demo.slug}`),
+    ...(workEnabled ? content.demos.map((demo) => `/work/${demo.slug}`) : []),
   ].map((path) => localizePath(path, locale));
 
   return (

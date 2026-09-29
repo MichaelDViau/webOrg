@@ -1,15 +1,15 @@
 /**
  * About: human credibility. Why the company exists, the founder, how the team works across countries,
- * and an honest "we're new" statement. Never invent a biography, a client, a number or an award.
+ * and a "read how we work" block. Never invent a biography, a client, a number or an award.
  * Add a real photo through `founderPhoto` in lib/site.ts. No stock people.
  */
 export const about = {
   metaTitle: "About",
   metaDescription:
-    "{name} is a new company, founded in {year}, that designs, builds and runs the systems established businesses run on. One accountable team, in English, French and Spanish.",
+    "{name} designs, builds and runs the systems established businesses run on. One accountable team, in English, French and Spanish.",
   eyebrow: "About",
   title: "One accountable team for the systems your business runs on.",
-  lead: "{name} designs, builds and runs websites, client portals, internal software and automations. We're a new company, and we say so.",
+  lead: "{name} designs, builds and runs websites, client portals, internal software and automations.",
 
   whyTitle: "Why we exist",
   why: [
@@ -30,10 +30,10 @@ export const about = {
     "So nothing depends on who was on which call, decisions and progress are written down: a written update every week, and a staging link you can open any time.",
   ],
 
-  newTitle: "We're new",
-  newBody:
-    "We're a new company, founded in {year}. That means we have no long client list to show you. Instead, we show you working demos of systems built for the industries we serve, we publish the standards we follow, and we let you check both.",
-  newLinks: { demos: "See the demos", standards: "Read the standards" },
+  proofTitle: "Read how we work before you hire us",
+  proofBody:
+    "We publish the standards we follow and the process every project uses, in plain language. The audit shows you the evidence before you pay for a build.",
+  proofLinks: { standards: "Read the standards", process: "See how we work" },
 
   beliefsTitle: "What we believe",
   beliefs: [

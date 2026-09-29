@@ -16,6 +16,7 @@ import { localizePath } from "@/lib/i18n/config";
 import { getContent } from "@/lib/i18n/server";
 import { industrySlugs } from "@/lib/industries";
 import { pageMetadata } from "@/lib/metadata";
+import { workEnabled } from "@/lib/site";
 import { breadcrumbSchema, faqSchema, serviceSchema } from "@/lib/structured-data";
 
 interface IndustryPageProps {
@@ -54,6 +55,10 @@ export default async function IndustryPage({ params }: IndustryPageProps) {
 
   const path = localizePath(`/industries/${industry.slug}`, locale);
   const demo = demos.find((item) => item.slug === industry.demo);
+  const showDemo = workEnabled && Boolean(demo);
+  // Background tones alternate down the page. The demo section (light) sits between the software list and
+  // the trust strip (gray); without it, the first three sections swap tones so no two grays touch.
+  const tones = showDemo ? (["canvas", "paper", "canvas"] as const) : (["paper", "canvas", "paper"] as const);
   const relatedServices = industry.services.flatMap((service) => services.find((item) => item.slug === service) ?? []);
   const otherIndustries = industries.filter((other) => other.slug !== industry.slug);
 
@@ -63,7 +68,7 @@ export default async function IndustryPage({ params }: IndustryPageProps) {
         <CtaPair className="mt-10" />
       </PageHeader>
 
-      <Section tone="canvas">
+      <Section tone={tones[0]}>
         <Container>
           <h2 className="text-heading" data-reveal>
             {t.inTheirWords}
@@ -81,7 +86,7 @@ export default async function IndustryPage({ params }: IndustryPageProps) {
         </Container>
       </Section>
 
-      <Section>
+      <Section tone={tones[1]}>
         <Container className="space-y-8 sm:space-y-10">
           <h2 className="text-heading" data-reveal>
             {t.systemsWeBuild}
@@ -90,7 +95,7 @@ export default async function IndustryPage({ params }: IndustryPageProps) {
         </Container>
       </Section>
 
-      <Section tone="canvas">
+      <Section tone={tones[2]}>
         <Container className="space-y-8 sm:space-y-10">
           <div data-reveal>
             <h2 className="text-heading">{t.softwareWeConnect}</h2>
@@ -108,7 +113,7 @@ export default async function IndustryPage({ params }: IndustryPageProps) {
         </Container>
       </Section>
 
-      {demo && (
+      {showDemo && demo && (
         <Section>
           <Container>
             <h2 className="mb-6 text-sm font-medium text-muted">{t.theDemo}</h2>

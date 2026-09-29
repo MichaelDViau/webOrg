@@ -19,6 +19,7 @@ import { getContent } from "@/lib/i18n/server";
 import { pageMetadata } from "@/lib/metadata";
 import { servicePriceText } from "@/lib/pricing";
 import { serviceSlugs } from "@/lib/services";
+import { workEnabled } from "@/lib/site";
 import { breadcrumbSchema, faqSchema, serviceSchema } from "@/lib/structured-data";
 
 interface ServicePageProps {
@@ -135,7 +136,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
         </Container>
       </Section>
 
-      {demo && (
+      {workEnabled && demo && (
         <Section tone="canvas" padding="compact">
           <Container>
             <h2 className="mb-6 text-sm font-medium text-muted">{t.relatedDemo}</h2>

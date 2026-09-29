@@ -1,11 +1,9 @@
 import { ButtonLink } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
-import { format } from "@/lib/i18n/format";
 import { getContent } from "@/lib/i18n/server";
-import { site } from "@/lib/site";
 
-/** Block 7: honest about who we are. A new company, with demos and standards instead of a client list. */
+/** Block 7: see it for yourself. Working demos and published standards, so a visitor can check the work. */
 export async function Honest() {
   const { home } = await getContent();
   const t = home.honest;
@@ -20,7 +18,7 @@ export async function Honest() {
             </h2>
           </div>
           <div className="lg:col-span-8">
-            <p className="text-2xl leading-snug text-ink sm:text-3xl">{format(t.body, { year: site.foundedYear })}</p>
+            <p className="text-2xl leading-snug text-ink sm:text-3xl">{t.body}</p>
             <ButtonLink href="/work" variant="secondary" withArrow className="mt-8">
               {t.cta}
             </ButtonLink>

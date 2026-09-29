@@ -75,7 +75,6 @@ export const ui: Ui = {
     terms: "Términos de uso",
     cookies: "Aviso de cookies",
     mexicoNotice: "Aviso de privacidad (México)",
-    newCompany: "Una empresa nueva, fundada en {year}.",
   },
 
   price: {
