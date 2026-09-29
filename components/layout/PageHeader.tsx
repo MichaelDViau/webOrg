@@ -18,7 +18,7 @@ export function PageHeader({ eyebrow, title, lead, eyebrowIsHeading = false, chi
   const Title = eyebrowIsHeading ? "p" : "h1";
 
   return (
-    <section className="border-b border-line pt-12 pb-10 sm:pt-16 sm:pb-14 lg:pt-20">
+    <section className="border-b border-line py-12 sm:py-16 lg:py-20">
       <Container>
         <Eyebrow className="text-sm font-medium text-accent-strong">{eyebrow}</Eyebrow>
         <Title className="mt-4 max-w-4xl text-title text-balance text-ink">

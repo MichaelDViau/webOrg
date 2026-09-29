@@ -31,7 +31,7 @@ In development, form submissions and confirmation emails are printed to the serv
 | Snapshot      | `/snapshot`                                         | The low-commitment second action                         |
 | Services      | `/services`, `/services/<slug>` (11)                | Outcomes, scope, phases, "from" price, related demo      |
 | Industries    | `/industries`, `/industries/<slug>` (3)             | Prove we understand their world                          |
-| Work          | `/work`, `/work/<slug>` (3 concept demos)           | Proof, clearly labeled "Concept demo: not a client project" |
+| Work          | `/work`, `/work/<slug>` (3 concept demos)           | Proof: concept demos on sample data                  |
 | How we work   | `/how-we-work`                                      | Reduce the feeling of risk                               |
 | Standards     | `/standards`, `/standards/<slug>` (5)               | Security, performance, accessibility, AI policy, privacy |
 | About         | `/about`, `/partners`                               | Human credibility, an honest "we're new"                 |

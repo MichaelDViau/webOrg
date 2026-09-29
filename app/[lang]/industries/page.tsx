@@ -24,7 +24,7 @@ export default async function IndustriesPage() {
     <>
       <PageHeader eyebrow={t.eyebrow} title={t.title} lead={t.lead} />
 
-      <Section padding="no-top">
+      <Section>
         <Container>
           <ul className="grid gap-x-8 gap-y-12 lg:grid-cols-3">
             {industries.map((industry) => (
@@ -41,7 +41,7 @@ export default async function IndustriesPage() {
                 </ul>
                 <Link
                   href={`/industries/${industry.slug}`}
-                  className="group mt-8 inline-flex items-center gap-1.5 self-start font-medium text-ink hover:underline hover:underline-offset-4"
+                  className="group mt-auto inline-flex items-center gap-1.5 self-start pt-8 font-medium text-ink hover:underline hover:underline-offset-4"
                 >
                   {t.linkLabel}
                   <span className="sr-only">: {industry.name}</span>

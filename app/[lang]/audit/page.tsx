@@ -92,24 +92,24 @@ export default async function AuditPage() {
         </Container>
       </Section>
 
-      {/* Timing and how it works */}
+      {/* How it works, then timing */}
       <Section>
         <Container className="space-y-8 sm:space-y-10">
+          <h2 className="text-heading" data-reveal>
+            {t.stepsTitle}
+          </h2>
+          <ol className="divide-y divide-line border-y border-line" data-reveal>
+            {t.steps.map((step, index) => (
+              <li key={step.title} className="grid gap-1 py-5 sm:grid-cols-12 sm:gap-6">
+                <span className="text-sm text-muted tabular-nums sm:col-span-1 sm:pt-1">{index + 1}</span>
+                <span className="font-medium text-ink sm:col-span-5">{step.title}</span>
+                <span className="leading-relaxed sm:col-span-6">{step.detail}</span>
+              </li>
+            ))}
+          </ol>
           <div data-reveal>
-            <h2 className="text-heading">{t.timingTitle}</h2>
-            <p className="mt-5 text-lg leading-relaxed">{t.timingBody}</p>
-          </div>
-          <div data-reveal>
-            <h2 className="text-subheading">{t.stepsTitle}</h2>
-            <ol className="mt-8 divide-y divide-line border-y border-line">
-              {t.steps.map((step, index) => (
-                <li key={step.title} className="grid gap-1 py-5 sm:grid-cols-12 sm:gap-6">
-                  <span className="text-sm text-muted tabular-nums sm:col-span-1 sm:pt-1">{index + 1}</span>
-                  <span className="font-medium text-ink sm:col-span-5">{step.title}</span>
-                  <span className="leading-relaxed sm:col-span-6">{step.detail}</span>
-                </li>
-              ))}
-            </ol>
+            <h3 className="text-subheading">{t.timingTitle}</h3>
+            <p className="mt-3 max-w-2xl text-lg leading-relaxed">{t.timingBody}</p>
           </div>
         </Container>
       </Section>

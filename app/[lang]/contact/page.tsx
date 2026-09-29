@@ -45,10 +45,10 @@ export default async function ContactPage() {
         </div>
 
         <div className="lg:col-span-5">
-          <h2 className="text-sm font-medium text-ink">{t.nextTitle}</h2>
+          <h2 className="text-base font-semibold text-ink">{t.nextTitle}</h2>
           <ol className="mt-4 divide-y divide-line border-y border-line">
             {t.nextSteps.map((step, index) => (
-              <li key={step} className="flex gap-4 py-4 leading-relaxed">
+              <li key={step} className="flex items-baseline gap-4 py-4 leading-relaxed">
                 <span className="text-sm text-muted tabular-nums">{index + 1}</span>
                 <span>{step}</span>
               </li>
@@ -57,14 +57,14 @@ export default async function ContactPage() {
 
           {bookingUrl && (
             <>
-              <h2 className="mt-12 text-sm font-medium text-ink">{t.pickTime}</h2>
+              <h2 className="mt-12 text-base font-semibold text-ink">{t.pickTime}</h2>
               <ButtonLink href="/book" variant="secondary" withArrow className="mt-4">
                 {t.bookCall}
               </ButtonLink>
             </>
           )}
 
-          <h2 className="mt-12 text-sm font-medium text-ink">{t.reachDirectly}</h2>
+          <h2 className="mt-12 text-base font-semibold text-ink">{t.reachDirectly}</h2>
           <address className="mt-4 space-y-2 not-italic">
             <p>
               <a href={`mailto:${site.email}`} className="inline-block py-1 text-ink underline underline-offset-4">
@@ -74,7 +74,7 @@ export default async function ContactPage() {
             <p className="text-body">{ui.site.hours}</p>
           </address>
 
-          <h2 className="mt-12 text-sm font-medium text-ink">{t.servingTitle}</h2>
+          <h2 className="mt-12 text-base font-semibold text-ink">{t.servingTitle}</h2>
           <p className="mt-3 leading-relaxed text-body">
             {format(t.servingBody, { countries: ui.site.countries.join(", "), languages: ui.site.languages })}
           </p>

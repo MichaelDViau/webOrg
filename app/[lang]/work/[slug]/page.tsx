@@ -9,7 +9,6 @@ import { CheckList } from "@/components/ui/CheckList";
 import { Container } from "@/components/ui/Container";
 import { FeatureList } from "@/components/ui/FeatureList";
 import { Section } from "@/components/ui/Section";
-import { DemoBadge } from "@/components/work/DemoBadge";
 import { DemoCard } from "@/components/work/DemoCard";
 import { DemoScreen } from "@/components/work/DemoScreen";
 import { demoSlugs } from "@/lib/demos";
@@ -37,7 +36,7 @@ export async function generateMetadata({ params }: DemoPageProps): Promise<Metad
 
 /**
  * A concept demo: the problem, what it does, the screens, the technology, and what we would measure for
- * a client. The "Concept demo: not a client project" label is on the page and on every screen.
+ * a client. Every screen says its data is sample data.
  */
 export default async function DemoPage({ params }: DemoPageProps) {
   const { slug } = await params;
@@ -52,9 +51,7 @@ export default async function DemoPage({ params }: DemoPageProps) {
 
   return (
     <>
-      <PageHeader eyebrow={ui.nav.work} title={demo.headline} lead={demo.lead}>
-        <DemoBadge className="mt-8" />
-      </PageHeader>
+      <PageHeader eyebrow={ui.nav.work} title={demo.headline} lead={demo.lead} />
 
       <Section tone="canvas">
         <Container className="space-y-8 sm:space-y-10">
@@ -96,7 +93,7 @@ export default async function DemoPage({ params }: DemoPageProps) {
             <CheckList items={demo.measure} className="mt-8 text-lg" />
           </div>
           <aside className="lg:col-span-4 lg:col-start-9" data-reveal>
-            <h2 className="text-sm font-medium text-ink">{t.technology}</h2>
+            <h2 className="text-base font-semibold text-ink">{t.technology}</h2>
             <ul className="mt-4 divide-y divide-line border-y border-line">
               {demo.stack.map((item) => (
                 <li key={item} className="py-3">
@@ -104,7 +101,7 @@ export default async function DemoPage({ params }: DemoPageProps) {
                 </li>
               ))}
             </ul>
-            <h2 className="mt-8 text-sm font-medium text-ink">{t.services}</h2>
+            <h2 className="mt-8 text-base font-semibold text-ink">{t.services}</h2>
             <ul className="mt-3 space-y-1">
               {demoServices.map((service) => (
                 <li key={service.slug}>
@@ -120,7 +117,7 @@ export default async function DemoPage({ params }: DemoPageProps) {
             </ul>
             {industry && (
               <>
-                <h2 className="mt-8 text-sm font-medium text-ink">{t.built}</h2>
+                <h2 className="mt-8 text-base font-semibold text-ink">{t.built}</h2>
                 <p className="mt-3">
                   <Link href={`/industries/${industry.slug}`} className="text-ink underline underline-offset-4">
                     {industry.name}

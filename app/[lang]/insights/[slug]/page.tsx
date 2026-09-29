@@ -49,7 +49,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
   return (
     <>
       <article>
-        <header className="pt-16 sm:pt-24 lg:pt-28">
+        <header className="pt-12 sm:pt-16 lg:pt-20">
           <Container>
             <nav aria-label={ui.breadcrumb}>
               <ol className="flex flex-wrap items-center gap-2 text-sm text-muted">
@@ -105,7 +105,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
               <div className="space-y-8 lg:sticky lg:top-28">
                 {service && (
                   <div>
-                    <h2 className="text-sm font-medium text-ink">{t.relatedService}</h2>
+                    <h2 className="text-base font-semibold text-ink">{t.relatedService}</h2>
                     <Link
                       href={`/services/${service.slug}`}
                       className="group mt-2 inline-flex items-center gap-1.5 text-ink hover:underline hover:underline-offset-4"
@@ -117,7 +117,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
                 )}
                 {industry && (
                   <div>
-                    <h2 className="text-sm font-medium text-ink">{t.relatedIndustry}</h2>
+                    <h2 className="text-base font-semibold text-ink">{t.relatedIndustry}</h2>
                     <Link
                       href={`/industries/${industry.slug}`}
                       className="group mt-2 inline-flex items-center gap-1.5 text-ink hover:underline hover:underline-offset-4"

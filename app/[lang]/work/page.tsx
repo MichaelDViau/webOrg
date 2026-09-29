@@ -12,7 +12,7 @@ export async function generateMetadata(): Promise<Metadata> {
   return pageMetadata({ title: workPage.metaTitle, description: workPage.metaDescription, path: "/work" });
 }
 
-/** Demos now; case studies when real ones exist. Every demo is labeled so nobody mistakes it for client work. */
+/** Demos now; case studies when real ones exist. Every demo says its data is sample data. */
 export default async function WorkPage() {
   const { workPage: t, demos } = await getContent();
 
@@ -20,7 +20,7 @@ export default async function WorkPage() {
     <>
       <PageHeader eyebrow={t.eyebrow} title={t.title} lead={t.lead} />
 
-      <Section padding="no-top">
+      <Section>
         <Container>
           <ul className="grid gap-6 lg:grid-cols-3">
             {demos.map((demo) => (

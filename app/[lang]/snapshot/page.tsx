@@ -25,7 +25,7 @@ export default async function SnapshotPage() {
     <>
       <PageHeader eyebrow={t.eyebrow} eyebrowIsHeading title={t.title} lead={t.lead} />
 
-      <Section padding="no-top">
+      <Section>
         <Container className="grid gap-12 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-5">
             <h2 className="text-subheading">{t.whatTitle}</h2>
@@ -34,7 +34,7 @@ export default async function SnapshotPage() {
             <h2 className="mt-12 text-subheading">{t.howTitle}</h2>
             <ol className="mt-6 divide-y divide-line border-y border-line">
               {t.how.map((step, index) => (
-                <li key={step} className="flex gap-4 py-4 leading-relaxed">
+                <li key={step} className="flex items-baseline gap-4 py-4 leading-relaxed">
                   <span className="text-sm text-muted tabular-nums">{index + 1}</span>
                   <span>{step}</span>
                 </li>

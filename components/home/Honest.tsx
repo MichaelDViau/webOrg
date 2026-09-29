@@ -13,7 +13,7 @@ export async function Honest() {
   return (
     <Section aria-labelledby="honest">
       <Container>
-        <div className="grid gap-10 rounded-lg border border-line bg-canvas p-8 sm:p-12 lg:grid-cols-12 lg:gap-16" data-reveal>
+        <div className="grid gap-10 rounded-lg border border-line bg-canvas p-8 sm:p-12 lg:grid-cols-12 lg:items-baseline lg:gap-16" data-reveal>
           <div className="lg:col-span-4">
             <h2 id="honest" className="text-sm font-medium text-accent-strong">
               {t.eyebrow}

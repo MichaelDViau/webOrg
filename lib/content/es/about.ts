@@ -82,7 +82,7 @@ export const partners: Partners = {
     },
     {
       title: "Las demos",
-      detail: "Demos conceptuales funcionales para los sectores que atendemos, claramente etiquetadas.",
+      detail: "Demos conceptuales funcionales para los sectores que atendemos, con datos de ejemplo.",
       href: "/work",
       link: "Ver las demos",
     },

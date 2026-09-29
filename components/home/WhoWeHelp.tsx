@@ -28,7 +28,7 @@ export async function WhoWeHelp() {
               </ul>
               <Link
                 href={`/industries/${industry.slug}`}
-                className="group mt-6 inline-flex items-center gap-1.5 self-start font-medium text-ink hover:underline hover:underline-offset-4"
+                className="group mt-auto inline-flex items-center gap-1.5 self-start pt-6 font-medium text-ink hover:underline hover:underline-offset-4"
               >
                 {t.linkLabel}
                 <span className="sr-only">: {industry.name}</span>

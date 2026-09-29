@@ -71,11 +71,13 @@ export function Header({ nav, labels }: HeaderProps) {
         scrolled && !open ? "bg-paper/80 backdrop-blur-md" : "bg-paper",
       )}
     >
-      <Container className="flex h-16 items-center justify-between gap-3 sm:gap-6 lg:h-18">
-        <Logo label={labels.logo} />
+      <Container className="flex h-16 items-center justify-between gap-3 sm:gap-6 lg:h-18 xl:grid xl:grid-cols-[1fr_auto_1fr]">
+        <div className="flex justify-start">
+          <Logo label={labels.logo} />
+        </div>
 
-        <nav aria-label={labels.mainNav} className="hidden lg:block">
-          <ul className="flex items-center gap-6 xl:gap-8">
+        <nav aria-label={labels.mainNav} className="hidden xl:block">
+          <ul className="flex items-center gap-6 whitespace-nowrap xl:gap-8">
             {nav.map((item) => (
               <li key={item.href}>
                 <Link
@@ -93,7 +95,7 @@ export function Header({ nav, labels }: HeaderProps) {
           </ul>
         </nav>
 
-        <div className="flex items-center gap-1 sm:gap-2">
+        <div className="flex items-center gap-1 whitespace-nowrap sm:gap-2 xl:justify-self-end">
           <div className="hidden sm:block">
             <ButtonLink href={auditHref} size="sm">
               {labels.audit}
@@ -103,7 +105,7 @@ export function Header({ nav, labels }: HeaderProps) {
           <LanguageSwitch label={labels.language} />
           <button
             type="button"
-            className="-mr-2 inline-flex size-10 items-center justify-center text-ink lg:hidden"
+            className="-mr-2 inline-flex size-10 items-center justify-center text-ink xl:hidden"
             aria-expanded={open}
             aria-controls={menuId}
             aria-label={open ? labels.closeMenu : labels.openMenu}
@@ -123,7 +125,7 @@ export function Header({ nav, labels }: HeaderProps) {
       <div
         id={menuId}
         hidden={!open}
-        className="fixed inset-x-0 top-16 bottom-0 overflow-y-auto border-t border-line bg-paper lg:hidden"
+        className="fixed inset-x-0 top-16 bottom-0 overflow-y-auto border-t border-line bg-paper xl:hidden"
       >
         <Container className="flex flex-col py-6">
           <nav aria-label={labels.mobileNav}>

@@ -45,7 +45,7 @@ export default async function StandardPage({ params }: StandardPageProps) {
     <>
       <PageHeader eyebrow={ui.nav.standards} title={standard.headline} lead={standard.lead} />
 
-      <Section padding="no-top">
+      <Section>
         <Container className="space-y-8 sm:space-y-10">
           <h2 className="text-heading" data-reveal>
             {t.defaults}

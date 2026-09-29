@@ -101,7 +101,6 @@ export const ui: Ui = {
   },
 
   demo: {
-    label: "Démo conceptuelle : ce n'est pas un projet client",
     sampleData: "Données fictives à titre d'illustration",
   },
 

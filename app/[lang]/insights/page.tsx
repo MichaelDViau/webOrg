@@ -21,7 +21,7 @@ export default async function InsightsPage() {
     <>
       <PageHeader eyebrow={t.eyebrow} title={t.title} lead={t.lead} />
 
-      <Section padding="no-top">
+      <Section>
         <Container>
           <ul>
             {articles.map((article) => (

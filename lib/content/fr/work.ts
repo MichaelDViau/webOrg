@@ -3,8 +3,7 @@ import type { DemoPage, WorkPage } from "../en/work";
 
 /**
  * Des démos conceptuelles, pas des projets clients. Chaque écran utilise des données manifestement
- * fictives et porte l'étiquette « Démo conceptuelle : ce n'est pas un projet client ». N'ajoutez jamais
- * de vrai nom de client, de logo, de témoignage ni de résultat.
+ * fictives et le dit. N'ajoutez jamais de vrai nom de client, de logo, de témoignage ni de résultat.
  */
 export const demos: Record<DemoSlug, DemoText> = {
   "property-portal": {
@@ -224,10 +223,10 @@ export const demos: Record<DemoSlug, DemoText> = {
 export const workPage: WorkPage = {
   metaTitle: "Réalisations : démos conceptuelles des systèmes que nous construisons",
   metaDescription:
-    "Des démos conceptuelles fonctionnelles d'un portail immobilier, d'un centre de collecte de documents et d'un site générateur de revenus avec parcours des demandes. Clairement étiquetées : ce ne sont pas des projets clients.",
+    "Des démos conceptuelles fonctionnelles d'un portail immobilier, d'un centre de collecte de documents et d'un site générateur de revenus avec parcours des demandes. Elles utilisent des données fictives et ne sont pas des projets clients.",
   eyebrow: "Réalisations",
   title: "Des démos pour l'instant. Des études de cas quand il y en aura de vraies.",
-  lead: "Nous sommes une nouvelle entreprise : nous n'avons donc pas de liste de clients à vous montrer. Nous avons trois démos conceptuelles de systèmes pour les secteurs que nous servons. Chacune est étiquetée, pour que vous sachiez toujours ce que vous regardez.",
+  lead: "Nous sommes une nouvelle entreprise : nous n'avons donc pas de liste de clients à vous montrer. Nous avons trois démos conceptuelles de systèmes pour les secteurs que nous servons. Chacune utilise des données fictives, pour que vous sachiez toujours ce que vous regardez.",
   honestTitle: "Ce que vous regardez",
   honestBody:
     "Les démos conceptuelles utilisent des données fictives et ne sont pas des projets clients. Quand un client approuvera une étude de cas, par écrit et avec des résultats mesurés, elle sera publiée ici.",

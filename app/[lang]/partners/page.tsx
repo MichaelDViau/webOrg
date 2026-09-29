@@ -21,7 +21,7 @@ export default async function PartnersPage() {
     <>
       <PageHeader eyebrow={t.eyebrow} title={t.title} lead={t.lead} />
 
-      <Section padding="no-top">
+      <Section>
         <Container>
           <h2 className="text-heading" data-reveal>
             {t.checkTitle}

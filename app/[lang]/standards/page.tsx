@@ -21,7 +21,7 @@ export default async function StandardsPage() {
     <>
       <PageHeader eyebrow={t.eyebrow} title={t.title} lead={t.lead} />
 
-      <Section padding="no-top">
+      <Section>
         <Container>
           <ul>
             {standards.map((standard, index) => (

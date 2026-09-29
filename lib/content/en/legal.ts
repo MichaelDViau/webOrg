@@ -123,7 +123,7 @@ export const legal: LegalContent = {
       {
         title: "Concept demos",
         body: [
-          "The demos on this site are labeled \"Concept demo: not a client project.\" They use sample data and illustrate what we could build. They aren't client work and don't show measured results.",
+          "The demos on this site are concept demos. They use sample data and illustrate what we could build. They aren't client work and don't show measured results.",
         ],
       },
       {

@@ -27,7 +27,7 @@ export async function Hero() {
   );
 
   return (
-    <section className="overflow-hidden pt-12 sm:pt-16 lg:pt-20">
+    <section className="overflow-hidden py-12 sm:py-16 lg:py-20">
       <Container>
         <div className="max-w-5xl">
           {/*
@@ -45,17 +45,18 @@ export async function Hero() {
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-pretty sm:text-xl">{t.intro}</p>
           <CtaPair long className="mt-10" />
-          <ul
-            aria-label={t.factsLabel}
-            className="mt-8 grid gap-x-8 gap-y-3 text-base leading-relaxed text-body sm:grid-cols-3"
-          >
-            {facts.map((fact) => (
-              <li key={fact} className="border-t border-line pt-3">
-                {fact}
-              </li>
-            ))}
-          </ul>
         </div>
+
+        <ul
+          aria-label={t.factsLabel}
+          className="mt-10 grid gap-x-8 gap-y-4 text-base leading-relaxed text-body sm:grid-cols-3"
+        >
+          {facts.map((fact) => (
+            <li key={fact} className="border-t border-line pt-4">
+              {fact}
+            </li>
+          ))}
+        </ul>
 
         <div className="mt-10 sm:mt-14">
           <SystemMap map={t.map} />

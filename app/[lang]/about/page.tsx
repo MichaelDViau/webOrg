@@ -28,7 +28,7 @@ export default async function AboutPage() {
     <>
       <PageHeader eyebrow={t.eyebrow} title={t.title} lead={format(t.lead, { name: site.name })} />
 
-      <Section padding="no-top">
+      <Section>
         <Container className="space-y-8 sm:space-y-10">
           <h2 className="text-heading" data-reveal>
             {t.whyTitle}

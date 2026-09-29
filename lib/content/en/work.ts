@@ -1,8 +1,8 @@
 import type { DemoSlug, DemoText } from "@/lib/demos";
 
 /**
- * Concept demos, not client projects. Every screen uses obviously fictional sample data and carries the
- * "Concept demo: not a client project" label. Never add a real client name, logo, quote or result here.
+ * Concept demos, not client projects. Every screen uses obviously fictional sample data and and says so.
+ * Never add a real client name, logo, quote or result here.
  * Case studies come later, when a real client approves one in writing.
  */
 export const demos: Record<DemoSlug, DemoText> = {
@@ -223,10 +223,10 @@ export const demos: Record<DemoSlug, DemoText> = {
 export const workPage = {
   metaTitle: "Work: Concept Demos of Systems We Build",
   metaDescription:
-    "Working concept demos of a property portal, a document intake hub and a revenue website with lead flow. Clearly labeled: not client projects.",
+    "Working concept demos of a property portal, a document intake hub and a revenue website with lead flow. They use sample data and are not client projects.",
   eyebrow: "Work",
   title: "Demos now. Case studies when real ones exist.",
-  lead: "We're a new company, so we don't have a client list to show. We have three concept demos of systems for the industries we serve. Each is labeled, so you always know what you're looking at.",
+  lead: "We're a new company, so we don't have a client list to show. We have three concept demos of systems for the industries we serve. Each uses sample data, so you always know what you're looking at.",
   honestTitle: "What you're looking at",
   honestBody:
     "Concept demos use sample data and aren't client projects. When a client approves a case study, in writing and with measured results, it goes here.",

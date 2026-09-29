@@ -12,14 +12,14 @@ const variants = {
 } as const;
 
 const sizes = {
-  sm: "h-10 px-4",
-  md: "h-12 px-6",
+  sm: "min-h-10 px-4 py-2",
+  md: "min-h-12 px-6 py-2.5",
 } as const;
 
 /** Shared classes so links and form buttons look identical. */
 export function buttonClass(variant: keyof typeof variants = "primary", size: keyof typeof sizes = "md"): string {
   return cn(
-    "group inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium transition-colors duration-200 disabled:cursor-not-allowed disabled:opacity-60",
+    "group inline-flex items-center justify-center gap-2 rounded-md text-center text-sm font-medium transition-colors duration-200 disabled:cursor-not-allowed disabled:opacity-60",
     variants[variant],
     sizes[size],
   );

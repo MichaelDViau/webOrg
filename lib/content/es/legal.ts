@@ -123,7 +123,7 @@ export const legal: LegalContent = {
       {
         title: "Demos conceptuales",
         body: [
-          "Las demos de este sitio están etiquetadas como \"Demo conceptual: no es un proyecto de un cliente\". Usan datos de ejemplo e ilustran lo que podríamos construir. No son trabajos de clientes y no muestran resultados medidos.",
+          "Las demos de este sitio son demos conceptuales. Usan datos de ejemplo e ilustran lo que podríamos construir. No son trabajos de clientes y no muestran resultados medidos.",
         ],
       },
       {

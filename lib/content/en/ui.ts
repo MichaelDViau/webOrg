@@ -107,7 +107,6 @@ export const ui = {
   },
 
   demo: {
-    label: "Concept demo: not a client project",
     sampleData: "Sample data for illustration",
   },
 

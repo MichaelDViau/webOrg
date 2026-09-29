@@ -1,5 +1,4 @@
 import type { ReactNode } from "react";
-import { DemoBadge } from "./DemoBadge";
 import { cn } from "@/lib/cn";
 import type { DemoScreen as DemoScreenData, Tone } from "@/lib/demos";
 import { getContent } from "@/lib/i18n/server";
@@ -34,17 +33,14 @@ function Frame({ app, sampleData, children }: { app: string; sampleData: string;
 
 /**
  * One screen of a concept demo, drawn from sample data. It is a picture of an interface, so nothing in
- * it is interactive. The "Concept demo" label sits with every screen.
+ * it is interactive.
  */
 export async function DemoScreen({ screen }: { screen: DemoScreenData }) {
   const { ui } = await getContent();
 
   return (
     <figure className="min-w-0" data-reveal>
-      <div className="mb-3 flex flex-wrap items-center justify-between gap-x-4 gap-y-2">
-        <h3 className="text-lg font-medium text-ink">{screen.title}</h3>
-        <DemoBadge />
-      </div>
+      <h3 className="mb-3 text-lg font-medium text-ink">{screen.title}</h3>
 
       <Frame app={screen.app} sampleData={ui.demo.sampleData}>
         {screen.kind === "list" && (

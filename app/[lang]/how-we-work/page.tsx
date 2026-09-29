@@ -27,7 +27,7 @@ export default async function HowWeWorkPage() {
     <>
       <PageHeader eyebrow={t.eyebrow} title={t.title} lead={t.lead} />
 
-      <Section padding="no-top">
+      <Section>
         <Container>
           <h2 className="sr-only">{t.stepsTitle}</h2>
           <ol className="divide-y divide-line border-b border-line">

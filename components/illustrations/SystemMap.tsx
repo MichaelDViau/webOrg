@@ -21,8 +21,8 @@ function Column({ title, items, tone }: { title: string; items: string[]; tone: 
             key={item}
             className={
               tone === "core"
-                ? "flex h-14 items-center rounded-md border border-accent bg-canvas px-4 font-medium text-ink"
-                : "flex h-14 items-center rounded-md border border-line bg-paper px-4 text-ink"
+                ? "flex h-16 items-center rounded-md border border-accent bg-canvas px-4 font-medium leading-snug text-ink"
+                : "flex h-16 items-center rounded-md border border-line bg-paper px-4 leading-snug text-ink"
             }
           >
             {item}
@@ -48,7 +48,7 @@ export function SystemMap({ map }: { map: MapText }) {
           <div className="h-8" />
           <div className="space-y-3">
             {map.sources.items.map((item) => (
-              <div key={item} className="flex h-14 items-center justify-center">
+              <div key={item} className="flex h-16 items-center justify-center">
                 <Arrow />
               </div>
             ))}
@@ -64,7 +64,7 @@ export function SystemMap({ map }: { map: MapText }) {
           <div className="h-8" />
           <div className="space-y-3">
             {map.core.items.map((item) => (
-              <div key={item} className="flex h-14 items-center justify-center">
+              <div key={item} className="flex h-16 items-center justify-center">
                 <Arrow />
               </div>
             ))}

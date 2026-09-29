@@ -124,7 +124,7 @@ export const legal: LegalContent = {
       {
         title: "Démos conceptuelles",
         body: [
-          "Les démos de ce site sont étiquetées « Démo conceptuelle : ce n'est pas un projet client ». Elles utilisent des données fictives et illustrent ce que nous pourrions construire. Ce ne sont pas des travaux de clients et elles ne montrent pas de résultats mesurés.",
+          "Les démos de ce site sont des démos conceptuelles. Elles utilisent des données fictives et illustrent ce que nous pourrions construire. Ce ne sont pas des travaux de clients et elles ne montrent pas de résultats mesurés.",
         ],
       },
       {
