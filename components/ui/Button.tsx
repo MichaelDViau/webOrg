@@ -13,7 +13,7 @@ const variants = {
 
 const sizes = {
   sm: "min-h-10 px-4 py-2",
-  md: "min-h-12 px-6 py-2.5",
+  md: "min-h-11 px-5 py-2.5",
 } as const;
 
 /** Shared classes so links and form buttons look identical. */

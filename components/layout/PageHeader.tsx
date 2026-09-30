@@ -24,7 +24,7 @@ export function PageHeader({ eyebrow, title, lead, eyebrowIsHeading = false, chi
         <Title className="mt-4 max-w-4xl text-title text-balance text-ink">
           {title}
         </Title>
-        {lead && <p className="mt-6 max-w-2xl text-lg leading-relaxed text-pretty sm:text-xl">{lead}</p>}
+        {lead && <p className="mt-6 max-w-2xl text-lead text-pretty">{lead}</p>}
         {children}
       </Container>
     </section>

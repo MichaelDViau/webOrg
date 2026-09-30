@@ -95,7 +95,7 @@ export function Header({ nav, labels }: HeaderProps) {
       )}
     >
       {/* The bar spans the full width, wider than the page content below it, so the logo and the buttons sit near the edges. */}
-      <div className="flex h-16 w-full items-center justify-between gap-3 px-5 sm:gap-6 sm:px-8 lg:h-18 lg:px-10 xl:grid xl:grid-cols-[1fr_auto_1fr] xl:px-12 2xl:px-16">
+      <div className="flex h-16 w-full items-center justify-between gap-3 px-5 sm:gap-6 sm:px-8 lg:px-10 xl:grid xl:grid-cols-[1fr_auto_1fr] xl:px-12 2xl:px-16">
         <div className="flex justify-start">
           <Logo label={labels.logo} />
         </div>

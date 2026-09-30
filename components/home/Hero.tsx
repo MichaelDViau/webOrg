@@ -39,7 +39,7 @@ export async function Hero() {
 
         <div className="mt-10 grid gap-10 sm:mt-12 lg:grid-cols-12 lg:items-center lg:gap-12">
           <div className="lg:col-span-5 xl:col-span-6">
-            <p className="max-w-xl text-lg leading-relaxed text-pretty sm:text-xl">{t.intro}</p>
+            <p className="max-w-xl text-lead text-pretty">{t.intro}</p>
             {/* Stacked while the column is narrow, side by side once it can hold the longer French and Spanish labels. */}
             <CtaPair className="mt-8 lg:flex-col lg:items-start xl:flex-row" />
             <ul aria-label={t.factsLabel} className="mt-8 divide-y divide-line border-y border-line text-base text-body">

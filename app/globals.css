@@ -36,6 +36,7 @@
 @layer base {
   html {
     -webkit-text-size-adjust: 100%;
+    /* Clears the 4rem sticky header plus a little air when jumping to an anchor. */
     scroll-padding-top: 5rem;
   }
 
@@ -43,7 +44,7 @@
   body {
     @apply bg-paper font-sans text-body antialiased;
     font-size: 1.0625rem;
-    line-height: 1.7;
+    line-height: 1.65;
   }
 
   h1,
@@ -94,55 +95,95 @@
 }
 
 /*
- * Heading scale. Defined once so every page uses the same four sizes:
- * display (homepage hero), title (page titles), heading (section headings)
- * and subheading (headings inside sections).
+ * Type scale. Defined once so every page uses the same roles:
+ *
+ *   display     homepage hero               56px on desktop
+ *   title       page titles (h1)            44px
+ *   heading     section headings (h2)       32px
+ *   subheading  headings inside sections    24px
+ *   card title  text-xl / text-lg semibold  20px / 18px (set where used)
+ *   lead        intro paragraph             20px, 18px on phones
+ *   body        default text                17px
+ *   card text   text-base                   16px, for descriptions inside cards and lists
+ *   small       text-sm                     14px: eyebrows, captions, navigation
+ *
+ * Each step is about a quarter larger than the one below it, so the hierarchy reads at a glance
+ * without any one level shouting. Headings get tighter line height and tracking as they grow.
  */
 @utility text-display {
   /* Phones: each phrase of the headline gets its own line, so the size follows the width to keep every phrase whole. */
-  font-size: min(2.5rem, 9.2vw);
-  line-height: 1.16;
-  letter-spacing: -0.035em;
+  font-size: min(2.375rem, 9vw);
+  line-height: 1.14;
+  letter-spacing: -0.032em;
   font-weight: 600;
   /* From tablet up the size follows the width, capped at desktop size, so the two-line headline never wraps. */
   @media (width >= 40rem) {
-    font-size: min(3.75rem, calc(6.6vw - 0.3rem));
+    font-size: min(3.5rem, calc(6.2vw - 0.3rem));
   }
 }
 
 @utility text-title {
-  font-size: 2.25rem;
-  line-height: 1.1;
-  letter-spacing: -0.03em;
+  font-size: 2rem;
+  line-height: 1.12;
+  letter-spacing: -0.028em;
   font-weight: 600;
   @media (width >= 40rem) {
-    font-size: 2.75rem;
+    font-size: 2.375rem;
   }
   @media (width >= 64rem) {
-    font-size: 3rem;
+    font-size: 2.75rem;
   }
 }
 
 @utility text-heading {
-  font-size: 1.75rem;
+  font-size: 1.625rem;
   line-height: 1.2;
-  letter-spacing: -0.025em;
+  letter-spacing: -0.022em;
   font-weight: 600;
   @media (width >= 40rem) {
-    font-size: 2rem;
+    font-size: 1.875rem;
   }
   @media (width >= 64rem) {
-    font-size: 2.25rem;
+    font-size: 2rem;
   }
 }
 
 @utility text-subheading {
-  font-size: 1.5rem;
+  font-size: 1.375rem;
   line-height: 1.25;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.018em;
   font-weight: 600;
   @media (width >= 40rem) {
-    font-size: 1.75rem;
+    font-size: 1.5rem;
+  }
+}
+
+/* The intro paragraph under a page title. Section intros use text-lg, one step down. */
+@utility text-lead {
+  font-size: 1.125rem;
+  line-height: 1.6;
+  @media (width >= 40rem) {
+    font-size: 1.25rem;
+  }
+}
+
+/*
+ * Cards that share row heights with their neighbours. A card with `subgrid-rows-4` takes over four rows of
+ * the grid it sits in and lays its own children out on them, so the title, text and link of every card in
+ * a row line up even when one title wraps (which happens often in French and Spanish). The parent grid
+ * must have no row gap, or a gap would open between the rows inside each card.
+ *
+ * Browsers without subgrid (before Chrome 117) ignore the whole @supports block and get an ordinary
+ * column, so the cards are simply not aligned there. Children use `mt-auto` to stay at the bottom in both.
+ */
+@utility subgrid-rows-* {
+  display: flex;
+  flex-direction: column;
+  @supports (grid-template-rows: subgrid) {
+    display: grid;
+    grid-row: span --value(integer) / span --value(integer);
+    grid-template-rows: subgrid;
+    row-gap: 0;
   }
 }
 
