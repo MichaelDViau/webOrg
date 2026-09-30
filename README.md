@@ -40,7 +40,7 @@ In development, form submissions and confirmation emails are printed to the serv
 | Legal         | `/privacy`, `/terms`, `/cookies`, `/aviso-de-privacidad` | Privacy policy, terms, cookie notice, Mexican privacy notice |
 | Tool          | `/website-check`                                    | Instant automated speed check (Google Lighthouse)        |
 
-The top menu is Services · Industries · How we work · About, a **Discuss your project** button, and an EN / FR / ES switch at the top right. Below 1280px wide the menu collapses behind a button. Standards, Insights, Partners, the Audit, Contact and Legal are in the footer.
+The top menu is Services · Industries · How we work · About, a **Discuss your project** button, and a language dropdown at the top right (English by default; it lists Español and Français in their own language, text only, no flags). Below 1280px wide the menu collapses behind a button. Standards, Insights, Partners, the Audit, Contact and Legal are in the footer.
 
 The nine capability categories are custom software; web and application development; AI solutions and automation; database solutions; cloud solutions and infrastructure; software architecture; application modernization; digital transformation; and consulting and technical problem-solving. Every capability the company offers is listed under one of them, in all three languages.
 
