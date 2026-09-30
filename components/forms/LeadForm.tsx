@@ -15,6 +15,8 @@ import {
   leadFields,
   limits,
   normalizeLeadValues,
+  projectTypes,
+  scopes,
   validateLead,
   validateLeadField,
   type LeadErrors,
@@ -50,7 +52,7 @@ interface LeadFormProps {
 }
 
 /**
- * The audit, contact and Snapshot form. Five short groups of fields at most, a consent checkbox with a
+ * The project inquiry, audit and Snapshot form. A handful of short fields, a consent checkbox with a
  * link to the privacy policy, and spam protection without puzzles (a hidden field and a minimum fill time).
  */
 export function LeadForm({ locale, intent, labels: t, errorText, hours, canBook }: LeadFormProps) {
@@ -65,6 +67,8 @@ export function LeadForm({ locale, intent, labels: t, errorText, hours, canBook 
   const alertRef = useRef<HTMLDivElement>(null);
   const shown = fieldsByIntent[intent];
   const full = intent !== "snapshot";
+  // The project inquiry asks for a business email, a project type and an optional scope, not role or phone.
+  const project = intent === "contact";
 
   if (state !== handledState) {
     setHandledState(state);
@@ -175,7 +179,7 @@ export function LeadForm({ locale, intent, labels: t, errorText, hours, canBook 
             onChange={(event) => update("name", event.target.value)}
           />
         </Field>
-        {full && (
+        {full && !project && (
           <Field id={id("role")} label={t.role} optional optionalLabel={t.optional} error={errors.role}>
             <input
               {...control("role")}
@@ -220,7 +224,7 @@ export function LeadForm({ locale, intent, labels: t, errorText, hours, canBook 
             />
           </Field>
         )}
-        <Field id={id("email")} label={t.email} error={errors.email}>
+        <Field id={id("email")} label={project ? t.emailBusiness : t.email} error={errors.email}>
           <input
             {...control("email")}
             type="email"
@@ -232,7 +236,24 @@ export function LeadForm({ locale, intent, labels: t, errorText, hours, canBook 
             onChange={(event) => update("email", event.target.value)}
           />
         </Field>
-        {full && (
+        {project && (
+          <Field id={id("projectType")} label={t.projectType} error={errors.projectType}>
+            <select
+              {...control("projectType")}
+              required
+              className={`${inputClass} select-chevron pr-10`}
+              onChange={(event) => update("projectType", event.target.value)}
+            >
+              <option value="">{t.projectTypePlaceholder}</option>
+              {projectTypes.map((type) => (
+                <option key={type} value={type}>
+                  {t.projectTypes[type]}
+                </option>
+              ))}
+            </select>
+          </Field>
+        )}
+        {full && !project && (
           <Field id={id("phone")} label={t.phone} optional optionalLabel={t.optional} error={errors.phone}>
             <input
               {...control("phone")}
@@ -247,9 +268,14 @@ export function LeadForm({ locale, intent, labels: t, errorText, hours, canBook 
       </div>
 
       {full && (
-        <Field id={id("need")} label={t.need} error={errors.need} hint={t.needHint}>
+        <Field
+          id={id("need")}
+          label={project ? t.needProject : t.need}
+          error={errors.need}
+          hint={project ? t.needProjectHint : t.needHint}
+        >
           <textarea
-            {...control("need", t.needHint)}
+            {...control("need", project ? t.needProjectHint : t.needHint)}
             rows={4}
             required
             maxLength={limits.needMax}
@@ -259,20 +285,42 @@ export function LeadForm({ locale, intent, labels: t, errorText, hours, canBook 
         </Field>
       )}
 
-      <Field id={id("language")} label={t.language} error={errors.language} className="sm:max-w-xs">
-        <select
-          {...control("language")}
-          required
-          className={`${inputClass} select-chevron pr-10`}
-          onChange={(event) => update("language", event.target.value)}
-        >
-          {locales.map((option) => (
-            <option key={option} value={option}>
-              {t.languageNames[option]}
-            </option>
-          ))}
-        </select>
-      </Field>
+      {project && (
+        <Field id={id("scope")} label={t.scope} optional optionalLabel={t.optional} error={errors.scope} className="sm:max-w-sm">
+          <select
+            {...control("scope")}
+            className={`${inputClass} select-chevron pr-10`}
+            onChange={(event) => update("scope", event.target.value)}
+          >
+            <option value="">{t.scopePlaceholder}</option>
+            {scopes.map((scope) => (
+              <option key={scope} value={scope}>
+                {t.scopes[scope]}
+              </option>
+            ))}
+          </select>
+        </Field>
+      )}
+
+      {project ? (
+        // The reply comes in the language of the page, so the project form doesn't ask.
+        <input type="hidden" name="language" value={values.language} />
+      ) : (
+        <Field id={id("language")} label={t.language} error={errors.language} className="sm:max-w-xs">
+          <select
+            {...control("language")}
+            required
+            className={`${inputClass} select-chevron pr-10`}
+            onChange={(event) => update("language", event.target.value)}
+          >
+            {locales.map((option) => (
+              <option key={option} value={option}>
+                {t.languageNames[option]}
+              </option>
+            ))}
+          </select>
+        </Field>
+      )}
 
       <CheckboxField
         id={id("consent")}

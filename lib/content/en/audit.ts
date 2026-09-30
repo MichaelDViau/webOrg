@@ -103,6 +103,14 @@ export const audit = {
         "It stays confidential and is used only for your audit. Our privacy and security standards describe how we handle it.",
     },
   ],
+
+  /** Labels for the system map illustration on the audit page. */
+  map: {
+    title: "A system map: how your tools connect",
+    sources: { title: "Inquiries arrive", items: ["Website form", "Email", "Phone"] },
+    core: { title: "One connected system", items: ["CRM", "Client portal", "Operations app"], foot: "One source of truth for each fact" },
+    results: { title: "Everyone sees the same facts", items: ["Your team", "Your clients", "Your accounting"] },
+  },
 };
 
 export type Audit = typeof audit;

@@ -7,10 +7,10 @@ import type { Ui } from "../en/ui";
 export const ui: Ui = {
   site: {
     description:
-      "{name} conçoit, construit et exploite des sites web, des portails clients, des logiciels internes et des automatisations pour les entreprises de services et d'exploitation établies.",
+      "{name} est une entreprise de développement de logiciels sur mesure et de solutions technologiques. Nous concevons, construisons et modernisons la technologie qui aide les entreprises à fonctionner, à résoudre des problèmes et à croître.",
     hours: "Du lundi au vendredi, de 9 h à 18 h, heure du Centre",
-    shareImageAlt: "{name} : les systèmes qui font tourner votre entreprise",
-    audienceType: "Entreprises de services et d'exploitation établies",
+    shareImageAlt: "{name} : logiciels sur mesure et solutions technologiques",
+    audienceType: "Entreprises de toutes tailles qui ont besoin de logiciels sur mesure et de solutions technologiques",
     countriesLabel: "Pays desservis",
     countries: ["États-Unis", "Canada", "Mexique"],
     languagesLabel: "Langues",
@@ -24,6 +24,9 @@ export const ui: Ui = {
   readMore: "En savoir plus",
 
   cta: {
+    discuss: "Discuter de votre projet",
+    explore: "Découvrir nos capacités",
+    startConversation: "Lancer la conversation",
     audit: "Réserver un audit",
     auditLong: "Réserver un audit des systèmes numériques",
     snapshot: "Obtenir un aperçu gratuit",
@@ -34,8 +37,8 @@ export const ui: Ui = {
   },
 
   closingCta: {
-    title: "Découvrez où vos systèmes vous coûtent cher.",
-    lead: "L'audit se termine par un plan chiffré et priorisé. Les frais sont crédités en totalité si vous lancez un projet dans les {days} jours.",
+    title: "Concevons ensemble votre prochaine solution.",
+    lead: "Que vous ayez besoin d'une application sur mesure, d'un système logiciel complet, d'une infrastructure infonuagique, d'une intégration de l'IA ou d'aide pour régler un problème technique existant, discutons de ce dont votre entreprise a besoin.",
   },
 
   header: {
@@ -51,7 +54,7 @@ export const ui: Ui = {
   nav: {
     services: "Services",
     industries: "Secteurs",
-    audit: "Audit",
+    audit: "Audit des systèmes numériques",
     work: "Réalisations",
     howWeWork: "Notre façon de travailler",
     about: "À propos",
@@ -64,7 +67,7 @@ export const ui: Ui = {
   },
 
   footer: {
-    tagline: "Les systèmes qui font tourner votre entreprise.",
+    tagline: "Logiciels sur mesure et solutions technologiques.",
     services: "Services",
     industries: "Secteurs",
     company: "Entreprise",
@@ -79,24 +82,7 @@ export const ui: Ui = {
 
   price: {
     auditRange: "de {from} à {to} $ US",
-    from: "à partir de {amount} $ US",
-    fromPerMonth: "à partir de {amount} $ US par mois",
     creditNote: "Crédité en totalité à un projet signé dans les {days} jours.",
-    fixedPhases: "Chaque phase a un prix fixe, convenu par écrit avant son début.",
-    label: "Prix",
-    unset: "Fourchette de prix à confirmer",
-  },
-
-  trust: {
-    title: "Pourquoi vous pouvez faire confiance au travail",
-    items: [
-      { title: "Tout vous appartient", detail: "Le code, les comptes et les domaines sont à vous dès le premier jour." },
-      { title: "Des phases à prix fixe", detail: "Une portée et un prix écrits avant le début de chaque phase." },
-      { title: "Un travail à ciel ouvert", detail: "Un lien de préproduction et un compte rendu écrit chaque semaine." },
-      { title: "Des normes publiées", detail: "Sécurité, performance, accessibilité, IA et vie privée, en langage clair." },
-    ],
-    standardsLink: "Lire nos normes",
-    processLink: "Voir notre façon de travailler",
   },
 
   demo: {
@@ -133,7 +119,32 @@ export const ui: Ui = {
     phone: "Téléphone",
     need: "Qu'aimeriez-vous corriger?",
     needHint:
-      "Une ou deux phrases suffisent. Par exemple : les demandes attendent trop longtemps, ou le personnel ressaisit les mêmes données.",
+      "Une ou deux phrases suffisent. Par exemple : les demandes attendent trop longtemps, ou le personnel ressaisit les mêmes données.",
+    emailBusiness: "Courriel professionnel",
+    projectType: "Type de projet",
+    projectTypePlaceholder: "Choisissez un type de projet",
+    projectTypes: {
+      "custom-software": "Logiciel sur mesure",
+      "web-applications": "Site web ou application web",
+      "ai-solutions": "IA ou automatisation",
+      "database-solutions": "Base de données",
+      "cloud-solutions": "Infonuagique ou infrastructure",
+      "software-architecture": "Architecture ou intégration",
+      "application-modernization": "Modernisation d'un système existant",
+      "digital-transformation": "Transformation numérique",
+      "technology-consulting": "Conseil ou problème technique",
+      "not-sure": "Pas encore certain",
+    },
+    needProject: "Décrivez le défi",
+    needProjectHint: "Quelques phrases suffisent : ce que vous cherchez à faire, ce qui ne fonctionne pas et quels systèmes sont concernés.",
+    scope: "Portée estimée du projet",
+    scopePlaceholder: "Pas encore certain",
+    scopes: {
+      exploring: "J'explore simplement les options",
+      focused: "Un correctif ou une fonction précise",
+      project: "Une application ou un système",
+      program: "Un effort plus vaste, sur plusieurs systèmes",
+    },
     language: "Langue préférée",
     optional: "Facultatif",
     consent: "J'accepte que {name} utilise ces renseignements pour me répondre.",
@@ -141,14 +152,14 @@ export const ui: Ui = {
     honeypot: "Laissez ce champ vide",
     submit: {
       audit: "Réserver mon audit",
-      contact: "Envoyer le message",
+      contact: "Lancer la conversation",
       snapshot: "Obtenir mon aperçu gratuit",
     },
     submitting: "Envoi en cours…",
     sendingStatus: "Envoi de votre demande en cours.",
     successTitle: {
       audit: "Merci. Nous avons bien reçu votre demande d'audit.",
-      contact: "Merci. Nous avons bien reçu votre message.",
+      contact: "Merci. Nous avons bien reçu votre demande de projet.",
       snapshot: "Merci. Nous avons bien reçu votre demande d'aperçu.",
     },
     successBody:
@@ -167,6 +178,7 @@ export const ui: Ui = {
     websiteRequired: "Veuillez entrer l'adresse de votre site web.",
     emailRequired: "Veuillez entrer votre adresse courriel.",
     emailInvalid: "Veuillez entrer une adresse courriel valide, comme nom@entreprise.com.",
+    projectTypeRequired: "Veuillez choisir un type de projet.",
     phoneInvalid: "Veuillez entrer un numéro de téléphone valide, ou laissez ce champ vide.",
     needTooShort: "Dites-nous-en un peu plus (au moins {min} caractères).",
     needTooLong: "Veuillez limiter ce texte à {max} caractères.",
@@ -183,7 +195,7 @@ export const ui: Ui = {
     greeting: "Bonjour {name},",
     kinds: {
       audit: "Merci de votre intérêt pour un audit des systèmes numériques.",
-      contact: "Merci de votre message.",
+      contact: "Merci de nous avoir parlé de votre projet.",
       snapshot: "Merci d'avoir demandé un aperçu gratuit de votre site.",
     },
     automatic: "Ceci est une confirmation automatique, pour vous assurer que votre demande nous est parvenue.",
@@ -195,7 +207,7 @@ export const ui: Ui = {
   },
 
   newsletter: {
-    title: "Des notes pratiques sur les systèmes des entreprises d'exploitation",
+    title: "Des notes pratiques sur le logiciel, les données et l'infonuagique pour les équipes d'affaires",
     lead: "Un court courriel à chaque nouvel article. Pas de pourriel, et vous pouvez vous désabonner d'un clic.",
     email: "Courriel",
     language: "Langue des courriels",
@@ -214,32 +226,32 @@ export const ui: Ui = {
   },
 
   contactPage: {
-    metaTitle: "Contact",
+    metaTitle: "Contact : discutons de votre projet",
     metaDescription:
-      "Dites-nous ce que vous aimeriez corriger. Une personne vous répond en moins d'une heure ouvrable. Nous servons des entreprises aux États-Unis, au Canada et au Mexique, en français, en anglais et en espagnol.",
+      "Parlez-nous de votre projet ou de votre défi technique : logiciel sur mesure, applications web, IA, bases de données, infonuagique ou modernisation. Une personne vous répond en moins d'une heure ouvrable.",
     eyebrow: "Contact",
-    title: "Dites-nous ce que vous aimeriez corriger.",
-    lead: "Cinq courts champs. Vous recevez une confirmation tout de suite et une réponse personnelle en moins d'une heure ouvrable.",
+    title: "Concevons ensemble votre prochaine solution.",
+    lead: "Que vous ayez besoin d'une application sur mesure, d'un système logiciel complet, d'une infrastructure infonuagique, d'une intégration de l'IA ou d'aide pour régler un problème technique existant, discutons de ce dont votre entreprise a besoin.",
     nextTitle: "La suite",
     nextSteps: [
       "Vous recevez tout de suite un courriel de confirmation, dans votre langue.",
       "Une personne vous répond personnellement en moins d'une heure ouvrable.",
-      "Nous fixons un appel de découverte et vous envoyons un court questionnaire une fois le rendez-vous confirmé.",
+      "Nous fixons un appel pour comprendre le problème avant de recommander quoi que ce soit.",
     ],
     pickTime: "Vous préférez choisir l'heure?",
     bookCall: "Réserver un appel de découverte",
     reachDirectly: "Vous préférez nous écrire directement?",
     servingTitle: "Pays et langues",
-    servingBody: "Nous servons des entreprises dans les pays suivants : {countries}. Langues de service : {languages}.",
+    servingBody: "Nous servons des entreprises dans les pays suivants : {countries}. Langues de service : {languages}.",
   },
 
   bookPage: {
     metaTitle: "Réserver un appel de découverte",
     metaDescription:
-      "Choisissez l'heure d'un appel de découverte au sujet de votre audit des systèmes numériques. Une personne confirme en moins d'une heure ouvrable.",
+      "Choisissez l'heure d'un appel de découverte au sujet de votre projet ou de votre défi technique. Une personne confirme en moins d'une heure ouvrable.",
     eyebrow: "Réserver un appel",
     title: "Choisissez l'heure qui vous convient.",
-    lead: "Un appel de découverte pour discuter de ce que vous aimeriez corriger. C'est là que l'audit commence, et l'appel est gratuit.",
+    lead: "Un appel de découverte pour discuter de votre projet ou de votre problème. C'est là que nous commençons, et l'appel est gratuit.",
     frameTitle: "Planifier un appel de découverte",
     trouble: "Un problème avec le calendrier?",
     openInTab: "Ouvrez-le dans un nouvel onglet",
@@ -256,12 +268,12 @@ export const ui: Ui = {
     lead: "Un test automatisé qui prend moins d'une minute. Il note la vitesse, l'accessibilité, les bonnes pratiques et les bases du référencement. Pour le regard d'une personne sur votre site, demandez l'aperçu gratuit.",
     whyTitle: "Ce que signifient les notes",
     whyBody:
-      "Le test simule un téléphone de milieu de gamme sur une connexion mobile. C'est un test en laboratoire : un bon moyen de repérer des problèmes, pas une promesse sur ce que vivent vos vrais visiteurs. Les données d'utilisateurs réels (Core Web Vitals) sont un juge plus équitable.",
+      "Le test simule un téléphone de milieu de gamme sur une connexion mobile. C'est un test en laboratoire : un bon moyen de repérer des problèmes, pas une promesse sur ce que vivent vos vrais visiteurs. Les données d'utilisateurs réels (Core Web Vitals) sont un juge plus équitable.",
     points: [
-      "Performance : la rapidité avec laquelle vos pages se chargent et réagissent sur un téléphone typique",
-      "Accessibilité : la capacité des personnes qui utilisent un lecteur d'écran ou un clavier à se servir de votre site",
-      "Bonnes pratiques : sécurité et normes web modernes",
-      "SEO : la capacité des moteurs de recherche à trouver, lire et comprendre vos pages",
+      "Performance : la rapidité avec laquelle vos pages se chargent et réagissent sur un téléphone typique",
+      "Accessibilité : la capacité des personnes qui utilisent un lecteur d'écran ou un clavier à se servir de votre site",
+      "Bonnes pratiques : sécurité et normes web modernes",
+      "SEO : la capacité des moteurs de recherche à trouver, lire et comprendre vos pages",
     ],
     snapshotTitle: "Vous voulez qu'une personne y jette un coup d'œil?",
     snapshotBody: "L'aperçu gratuit vous donne trois observations précises sur votre site, rédigées par une personne.",
@@ -307,6 +319,79 @@ export const ui: Ui = {
     },
   },
 
+  /** Courts libellés dessinés dans les illustrations. Ce sont des images : chaque libellé est un mot simple. */
+  visuals: {
+    illustration: "Illustration",
+    alt: {
+      hero: "Illustration d'un tableau de bord d'application d'affaires, des couches d'architecture logicielle qui le soutiennent et de l'environnement infonuagique où il roule",
+      "custom-software": "Illustration d'une application d'affaires sur mesure avec un formulaire de demande et une file de travail",
+      "web-applications": "Illustration d'un site web dans un navigateur de bureau et sur un téléphone mobile",
+      "ai-solutions":
+        "Illustration d'un flux de travail d'IA : une demande entrante, un modèle d'IA qui rédige une réponse, une personne qui la révise et les systèmes d'affaires reliés",
+      "database-solutions": "Illustration d'une base de données conçue avec trois tables reliées",
+      "cloud-solutions":
+        "Illustration d'une infrastructure infonuagique : des utilisateurs, un répartiteur de charge, des serveurs d'application, une base de données et du stockage dans une région infonuagique",
+      "software-architecture": "Illustration d'une architecture logicielle en couches : clients, couche d'API, services et magasins de données",
+      "application-modernization": "Illustration d'un système hérité remplacé par une plateforme moderne en trois étapes",
+      "digital-transformation": "Illustration d'un processus manuel qui devient un flux de travail numérique intégré",
+      "technology-consulting": "Illustration d'un rapport d'évaluation technique avec des constats priorisés et un plan",
+      integration:
+        "Illustration d'applications web, mobiles et de partenaires reliées par une seule couche d'API à une base de données, à des systèmes d'affaires et à des services d'IA",
+    },
+    integration: {
+      hub: "Couche d'API",
+      top: ["Application web", "Application mobile", "Partenaires"],
+      bottom: ["Base de données", "Systèmes d'affaires", "Services d'IA"],
+    },
+    app: {
+      name: "Exploitation",
+      tabs: ["Aperçu", "Demandes", "Rapports"],
+      kpis: ["Ouvertes", "En révision", "Terminées"],
+      activity: "Activité récente",
+      rows: ["Demande reçue", "Assignée à l'équipe", "Approuvée et fermée"],
+      status: ["Nouvelle", "En cours", "Terminée"],
+    },
+    layers: { interface: "Interface", api: "API", services: "Services", data: "Données" },
+    cloud: {
+      region: "Région infonuagique",
+      users: "Utilisateurs",
+      balancer: "Répartiteur de charge",
+      app: "Application",
+      database: "Base de données",
+      storage: "Stockage",
+      monitoring: "Surveillance",
+    },
+    ai: {
+      input: "Demande entrante",
+      model: "Modèle d'IA",
+      review: "Révision humaine",
+      systems: "Vos systèmes",
+      draft: "Réponse suggérée",
+      approved: "Approuvée",
+      tasks: ["Rédiger", "Classer", "Acheminer"],
+    },
+    web: { site: "Votre site web", mobile: "Mobile" },
+    custom: { title: "Nouvelle demande", fields: ["Client", "Type", "Notes"], submit: "Soumettre", queue: "File d'attente" },
+    modern: {
+      legacy: "Système hérité",
+      modern: "Plateforme moderne",
+      stage: "Étape {number}",
+      modules: ["Facturation", "Rapports", "Clients"],
+    },
+    transform: {
+      today: "Aujourd'hui",
+      after: "Flux de travail numérique",
+      manual: ["Formulaire papier", "Courriel", "Chiffrier"],
+      steps: ["Demande", "Approbation", "Mise à jour", "Rapport"],
+    },
+    assess: {
+      title: "Évaluation technique",
+      findings: ["Requêtes lentes sur la base de données", "Cadre logiciel non supporté", "Aucune sauvegarde automatique"],
+      severity: ["Élevée", "Moyenne", "Faible"],
+      plan: "Plan priorisé",
+    },
+  },
+
   notFound: {
     metaTitle: "Page introuvable",
     title: "Cette page n'existe pas.",
@@ -317,7 +402,7 @@ export const ui: Ui = {
 
   assistant: {
     greeting:
-      "Bonjour! Posez-moi vos questions sur notre audit, nos services ou notre façon de travailler. Je peux aussi vous aider à savoir par où commencer.",
+      "Bonjour! Posez-moi vos questions sur nos services, notre façon de travailler ou le genre de projet que vous avez en tête. Je peux aussi vous orienter vers la bonne capacité.",
     open: "Poser une question",
     close: "Fermer",
     title: "Posez-nous vos questions",
@@ -325,15 +410,15 @@ export const ui: Ui = {
       "Assistant IA. Les réponses peuvent comporter des erreurs, alors ne communiquez pas de renseignements sensibles.",
     suggested: "Questions suggérées",
     suggestions: [
-      "Que comprend l'audit?",
-      "Combien faut-il prévoir pour commencer?",
-      "Travaillez-vous en français?",
+      "Quels types de logiciels concevez-vous?",
+      "Travaillez-vous avec l'IA et l'infonuagique?",
+      "Comment un projet démarre-t-il?",
     ],
-    you: "Vous : ",
-    assistant: "Assistant : ",
+    you: "Vous : ",
+    assistant: "Assistant : ",
     thinking: "Réflexion…",
     limit: "Pour la suite, une personne se fera un plaisir de vous aider.",
-    book: "Réserver un audit",
+    book: "Discuter de votre projet",
     inputLabel: "Votre question",
     placeholder: "Tapez votre question",
     send: "Envoyer",

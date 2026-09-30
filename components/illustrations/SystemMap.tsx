@@ -1,6 +1,6 @@
-import type { Home } from "@/lib/content/en/home";
+import type { Audit } from "@/lib/content/en/audit";
 
-type MapText = Home["hero"]["map"];
+type MapText = Audit["map"] & { caption: string };
 
 /** A thin arrow between two columns, shown only where the columns sit side by side. */
 function Arrow() {

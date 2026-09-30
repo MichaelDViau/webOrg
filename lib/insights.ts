@@ -16,18 +16,18 @@ export const articleSlugs: ArticleSlug[] = [
 const articleBases: Record<ArticleSlug, { published: string; industry: IndustrySlug | null; service: ServiceSlug }> = {
   "client-portal-for-property-managers": {
     published: "2026-09-29",
-    industry: "property",
-    service: "client-portals",
+    industry: "real-estate",
+    service: "web-applications",
   },
   "document-intake-for-accounting-firms": {
     published: "2026-09-29",
-    industry: "accounting",
-    service: "operations-apps",
+    industry: "professional-services",
+    service: "custom-software",
   },
   "measure-your-inquiry-response-time": {
     published: "2026-09-29",
     industry: null,
-    service: "revenue-websites",
+    service: "web-applications",
   },
 };
 

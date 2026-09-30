@@ -146,12 +146,12 @@ export const articles: Record<ArticleSlug, ArticleText> = {
 };
 
 export const insightsPage = {
-  metaTitle: "Insights: Practical Notes on Systems for Operations Businesses",
+  metaTitle: "Insights: Practical Notes on Software, Data, and Cloud",
   metaDescription:
-    "Practical articles for property, accounting and distribution businesses on client portals, document intake, lead flow and the systems your business runs on.",
+    "Practical articles on custom software, client portals, document intake, lead flow, and the systems businesses depend on.",
   eyebrow: "Insights",
-  title: "Practical notes on the systems your business runs on.",
-  lead: "Short articles for owners and operators, by industry. No hype, and no numbers we can't back up.",
+  title: "Practical notes on software, data, and cloud.",
+  lead: "Short articles for business owners and technology managers. No hype, and no numbers we can't back up.",
   readArticle: "Read the article",
   minutes: "{minutes} min read",
   publishedOn: "Published {date}",
@@ -164,7 +164,7 @@ export const articlePage = {
   relatedService: "Related service",
   relatedIndustry: "Related industry",
   ctaTitle: "Want this looked at in your business?",
-  ctaLead: "The audit shows where your systems cost you time, inquiries and money.",
+  ctaLead: "Tell us about your situation. We'll tell you what we would do, and what it involves.",
 };
 
 export type InsightsPage = typeof insightsPage;

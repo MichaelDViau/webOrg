@@ -7,10 +7,10 @@ import type { Ui } from "../en/ui";
 export const ui: Ui = {
   site: {
     description:
-      "{name} diseña, construye y opera sitios web, portales de clientes, software interno y automatizaciones para empresas de servicios y operaciones ya establecidas.",
+      "{name} es una empresa de desarrollo de software a medida y soluciones tecnológicas. Diseñamos, construimos y modernizamos la tecnología que ayuda a las empresas a operar, resolver problemas y crecer.",
     hours: "De lunes a viernes, de 9:00 a 18:00, hora del centro",
-    shareImageAlt: "{name}: los sistemas que hacen funcionar su empresa",
-    audienceType: "Empresas de servicios y operaciones establecidas",
+    shareImageAlt: "{name}: software a medida y soluciones tecnológicas",
+    audienceType: "Empresas de todos los tamaños que necesitan software a medida y soluciones tecnológicas",
     countriesLabel: "Países donde trabajamos",
     countries: ["Estados Unidos", "Canadá", "México"],
     languagesLabel: "Idiomas",
@@ -24,6 +24,9 @@ export const ui: Ui = {
   readMore: "Leer más",
 
   cta: {
+    discuss: "Hablar de su proyecto",
+    explore: "Explorar nuestras capacidades",
+    startConversation: "Iniciar una conversación",
     audit: "Reservar una auditoría",
     auditLong: "Reservar una auditoría de sistemas digitales",
     snapshot: "Pedir una revisión gratuita",
@@ -34,8 +37,8 @@ export const ui: Ui = {
   },
 
   closingCta: {
-    title: "Descubra dónde le están costando dinero sus sistemas.",
-    lead: "La auditoría termina con un plan priorizado y con costos. La tarifa se acredita por completo si inicia un proyecto dentro de {days} días.",
+    title: "Construyamos juntos su próxima solución.",
+    lead: "Ya sea que necesite una aplicación a medida, un sistema de software completo, infraestructura en la nube, integración de IA o ayuda para resolver un problema técnico existente, conversemos sobre lo que su negocio necesita.",
   },
 
   header: {
@@ -51,7 +54,7 @@ export const ui: Ui = {
   nav: {
     services: "Servicios",
     industries: "Sectores",
-    audit: "Auditoría",
+    audit: "Auditoría de sistemas digitales",
     work: "Trabajos",
     howWeWork: "Cómo trabajamos",
     about: "Nosotros",
@@ -64,7 +67,7 @@ export const ui: Ui = {
   },
 
   footer: {
-    tagline: "Los sistemas que hacen funcionar su empresa.",
+    tagline: "Software a medida y soluciones tecnológicas.",
     services: "Servicios",
     industries: "Sectores",
     company: "Empresa",
@@ -79,24 +82,7 @@ export const ui: Ui = {
 
   price: {
     auditRange: "US${from} a US${to}",
-    from: "desde US${amount}",
-    fromPerMonth: "desde US${amount} al mes",
     creditNote: "Se acredita por completo a un proyecto firmado dentro de {days} días.",
-    fixedPhases: "Cada fase tiene un precio fijo, acordado por escrito antes de empezar.",
-    label: "Precio",
-    unset: "Rango de precios por confirmar",
-  },
-
-  trust: {
-    title: "Por qué puede confiar en el trabajo",
-    items: [
-      { title: "Todo es suyo", detail: "El código, las cuentas y los dominios le pertenecen desde el primer día." },
-      { title: "Fases a precio fijo", detail: "Un alcance y un precio por escrito antes de que empiece cada fase." },
-      { title: "Trabajo a la vista", detail: "Un enlace de pruebas y un informe escrito cada semana." },
-      { title: "Estándares publicados", detail: "Seguridad, rendimiento, accesibilidad, IA y privacidad, en lenguaje claro." },
-    ],
-    standardsLink: "Leer nuestros estándares",
-    processLink: "Ver cómo trabajamos",
   },
 
   demo: {
@@ -134,6 +120,31 @@ export const ui: Ui = {
     need: "¿Qué quiere mejorar?",
     needHint:
       "Basta con una o dos frases. Por ejemplo: las consultas tardan demasiado en contestarse, o el personal vuelve a capturar los mismos datos.",
+    emailBusiness: "Correo de trabajo",
+    projectType: "Tipo de proyecto",
+    projectTypePlaceholder: "Elija un tipo de proyecto",
+    projectTypes: {
+      "custom-software": "Software a medida",
+      "web-applications": "Sitio web o aplicación web",
+      "ai-solutions": "IA o automatización",
+      "database-solutions": "Base de datos",
+      "cloud-solutions": "Nube o infraestructura",
+      "software-architecture": "Arquitectura o integración",
+      "application-modernization": "Modernizar un sistema existente",
+      "digital-transformation": "Transformación digital",
+      "technology-consulting": "Consultoría o un problema técnico",
+      "not-sure": "Todavía no lo sé",
+    },
+    needProject: "Describa el desafío",
+    needProjectHint: "Bastan unas frases: qué intenta lograr, qué no funciona y qué sistemas intervienen.",
+    scope: "Alcance estimado del proyecto",
+    scopePlaceholder: "Todavía no lo sé",
+    scopes: {
+      exploring: "Solo estoy explorando opciones",
+      focused: "Una corrección o función específica",
+      project: "Una aplicación o un sistema",
+      program: "Un esfuerzo mayor, con varios sistemas",
+    },
     language: "Idioma preferido",
     optional: "Opcional",
     consent: "Acepto que {name} use estos datos para responderme.",
@@ -141,14 +152,14 @@ export const ui: Ui = {
     honeypot: "Deje este campo vacío",
     submit: {
       audit: "Reservar mi auditoría",
-      contact: "Enviar mensaje",
+      contact: "Iniciar una conversación",
       snapshot: "Pedir mi revisión gratuita",
     },
     submitting: "Enviando…",
     sendingStatus: "Enviando su solicitud.",
     successTitle: {
       audit: "Gracias. Recibimos su solicitud de auditoría.",
-      contact: "Gracias. Recibimos su mensaje.",
+      contact: "Gracias. Recibimos su consulta de proyecto.",
       snapshot: "Gracias. Recibimos su solicitud de revisión.",
     },
     successBody:
@@ -167,6 +178,7 @@ export const ui: Ui = {
     websiteRequired: "Introduzca la dirección de su sitio web.",
     emailRequired: "Introduzca su correo electrónico.",
     emailInvalid: "Introduzca un correo electrónico válido, como nombre@empresa.com.",
+    projectTypeRequired: "Elija un tipo de proyecto.",
     phoneInvalid: "Introduzca un número de teléfono válido o deje este campo en blanco.",
     needTooShort: "Cuéntenos un poco más (al menos {min} caracteres).",
     needTooLong: "Use un texto de menos de {max} caracteres.",
@@ -183,7 +195,7 @@ export const ui: Ui = {
     greeting: "Hola, {name}:",
     kinds: {
       audit: "Gracias por su interés en una auditoría de sistemas digitales.",
-      contact: "Gracias por su mensaje.",
+      contact: "Gracias por contarnos sobre su proyecto.",
       snapshot: "Gracias por pedir una revisión gratuita de su sitio.",
     },
     automatic: "Esta es una confirmación automática, para que sepa que su solicitud nos llegó.",
@@ -195,7 +207,7 @@ export const ui: Ui = {
   },
 
   newsletter: {
-    title: "Notas prácticas sobre los sistemas de las empresas de operaciones",
+    title: "Notas prácticas sobre software, datos y nube para equipos de negocio",
     lead: "Un correo breve cada vez que publiquemos un artículo nuevo. Sin spam, y puede darse de baja con un clic.",
     email: "Correo electrónico",
     language: "Idioma de los correos",
@@ -214,17 +226,17 @@ export const ui: Ui = {
   },
 
   contactPage: {
-    metaTitle: "Contacto",
+    metaTitle: "Contacto: hablemos de su proyecto",
     metaDescription:
-      "Cuéntenos qué quiere mejorar. Una persona le responde en una hora hábil. Trabajamos con empresas de Estados Unidos, Canadá y México, en español, inglés y francés.",
+      "Cuéntenos sobre su proyecto o desafío técnico: software a medida, aplicaciones web, IA, bases de datos, nube o modernización. Una persona le responde en una hora hábil.",
     eyebrow: "Contacto",
-    title: "Cuéntenos qué quiere mejorar.",
-    lead: "Cinco campos breves. Recibe una confirmación de inmediato y una respuesta personal en una hora hábil.",
+    title: "Construyamos juntos su próxima solución.",
+    lead: "Ya sea que necesite una aplicación a medida, un sistema de software completo, infraestructura en la nube, integración de IA o ayuda para resolver un problema técnico existente, conversemos sobre lo que su negocio necesita.",
     nextTitle: "Qué sigue",
     nextSteps: [
       "Recibe de inmediato un correo de confirmación, en su idioma.",
       "Una persona le responde personalmente en una hora hábil.",
-      "Agendamos una llamada de descubrimiento y le enviamos un cuestionario breve cuando quede reservada.",
+      "Agendamos una llamada para entender el problema antes de recomendar nada.",
     ],
     pickTime: "¿Prefiere elegir un horario?",
     bookCall: "Reservar una llamada de descubrimiento",
@@ -236,10 +248,10 @@ export const ui: Ui = {
   bookPage: {
     metaTitle: "Reservar una llamada de descubrimiento",
     metaDescription:
-      "Elija un horario para una llamada de descubrimiento sobre su auditoría de sistemas digitales. Una persona confirma en una hora hábil.",
+      "Elija un horario para una llamada de descubrimiento sobre su proyecto o desafío técnico. Una persona confirma en una hora hábil.",
     eyebrow: "Reservar una llamada",
     title: "Elija el horario que mejor le convenga.",
-    lead: "Una llamada de descubrimiento para hablar de lo que quiere mejorar. Aquí empieza la auditoría, y la llamada no tiene costo.",
+    lead: "Una llamada de descubrimiento para hablar de su proyecto o problema. Aquí empezamos, y la llamada no tiene costo.",
     frameTitle: "Agendar una llamada de descubrimiento",
     trouble: "¿Tiene problemas con el calendario?",
     openInTab: "Ábralo en una pestaña nueva",
@@ -306,6 +318,79 @@ export const ui: Ui = {
     },
   },
 
+  /** Etiquetas breves dibujadas en las ilustraciones. Son imágenes: cada etiqueta es una palabra sencilla. */
+  visuals: {
+    illustration: "Ilustración",
+    alt: {
+      hero: "Ilustración de un panel de una aplicación de negocio, las capas de arquitectura de software que lo respaldan y el entorno en la nube donde se ejecuta",
+      "custom-software": "Ilustración de una aplicación de negocio a medida con un formulario de solicitud y una cola de trabajo",
+      "web-applications": "Ilustración de un sitio web en un navegador de escritorio y en un teléfono móvil",
+      "ai-solutions":
+        "Ilustración de un flujo de trabajo con IA: una solicitud entrante, un modelo de IA que redacta una respuesta, una persona que la revisa y los sistemas de negocio conectados",
+      "database-solutions": "Ilustración del diseño de una base de datos con tres tablas relacionadas",
+      "cloud-solutions":
+        "Ilustración de infraestructura en la nube: usuarios, un balanceador de carga, servidores de aplicación, una base de datos y almacenamiento dentro de una región de la nube",
+      "software-architecture": "Ilustración de una arquitectura de software en capas: clientes, una capa de API, servicios y almacenes de datos",
+      "application-modernization": "Ilustración de un sistema heredado reemplazado por una plataforma moderna en tres etapas",
+      "digital-transformation": "Ilustración de un proceso manual que se convierte en un flujo de trabajo digital integrado",
+      "technology-consulting": "Ilustración de un informe de evaluación técnica con hallazgos priorizados y un plan",
+      integration:
+        "Ilustración de aplicaciones web, móviles y de socios conectadas mediante una sola capa de API con una base de datos, sistemas de negocio y servicios de IA",
+    },
+    integration: {
+      hub: "Capa de API",
+      top: ["App web", "App móvil", "Socios"],
+      bottom: ["Base de datos", "Sistemas de negocio", "Servicios de IA"],
+    },
+    app: {
+      name: "Operaciones",
+      tabs: ["Resumen", "Solicitudes", "Reportes"],
+      kpis: ["Abiertas", "En revisión", "Completadas"],
+      activity: "Actividad reciente",
+      rows: ["Solicitud recibida", "Asignada al equipo", "Aprobada y cerrada"],
+      status: ["Nueva", "Activa", "Lista"],
+    },
+    layers: { interface: "Interfaz", api: "API", services: "Servicios", data: "Datos" },
+    cloud: {
+      region: "Región de la nube",
+      users: "Usuarios",
+      balancer: "Balanceador de carga",
+      app: "Aplicación",
+      database: "Base de datos",
+      storage: "Almacenamiento",
+      monitoring: "Monitoreo",
+    },
+    ai: {
+      input: "Solicitud entrante",
+      model: "Modelo de IA",
+      review: "Revisión humana",
+      systems: "Sus sistemas",
+      draft: "Respuesta sugerida",
+      approved: "Aprobada",
+      tasks: ["Redactar", "Clasificar", "Encaminar"],
+    },
+    web: { site: "Su sitio web", mobile: "Móvil" },
+    custom: { title: "Nueva solicitud", fields: ["Cliente", "Tipo", "Notas"], submit: "Enviar", queue: "Cola de trabajo" },
+    modern: {
+      legacy: "Sistema heredado",
+      modern: "Plataforma moderna",
+      stage: "Etapa {number}",
+      modules: ["Facturación", "Reportes", "Clientes"],
+    },
+    transform: {
+      today: "Hoy",
+      after: "Flujo de trabajo digital",
+      manual: ["Formulario en papel", "Correo", "Hoja de cálculo"],
+      steps: ["Solicitud", "Aprobación", "Actualización", "Reporte"],
+    },
+    assess: {
+      title: "Evaluación técnica",
+      findings: ["Consultas lentas en la base de datos", "Framework sin soporte", "Sin respaldos automáticos"],
+      severity: ["Alta", "Media", "Baja"],
+      plan: "Plan priorizado",
+    },
+  },
+
   notFound: {
     metaTitle: "Página no encontrada",
     title: "Esta página no existe.",
@@ -316,22 +401,22 @@ export const ui: Ui = {
 
   assistant: {
     greeting:
-      "¡Hola! Pregúnteme sobre nuestra auditoría, nuestros servicios o cómo trabajamos. También puedo ayudarle a decidir por dónde empezar.",
+      "¡Hola! Pregúnteme sobre nuestros servicios, cómo trabajamos o el tipo de proyecto que tiene en mente. También puedo orientarle hacia la capacidad adecuada.",
     open: "Haga una pregunta",
     close: "Cerrar",
     title: "Pregúntenos lo que quiera",
     disclaimer: "Asistente de IA. Las respuestas pueden contener errores, así que no comparta información sensible.",
     suggested: "Preguntas sugeridas",
     suggestions: [
-      "¿Qué incluye la auditoría?",
-      "¿Cuánto cuesta empezar?",
-      "¿Trabajan en español?",
+      "¿Qué tipos de software desarrollan?",
+      "¿Trabajan con IA y nube?",
+      "¿Cómo empieza un proyecto?",
     ],
     you: "Usted: ",
     assistant: "Asistente: ",
     thinking: "Pensando…",
     limit: "Para cualquier otra cosa, una persona le ayudará con gusto.",
-    book: "Reservar una auditoría",
+    book: "Hablar de su proyecto",
     inputLabel: "Su pregunta",
     placeholder: "Escriba su pregunta",
     send: "Enviar",

@@ -11,7 +11,7 @@ import { standardPage, standards, standardsPage } from "./standards";
 import { ui } from "./ui";
 import { demoPage, demos, workPage } from "./work";
 
-/** Français du Québec : « vous », « courriel », rédigé pour des lecteurs nord-américains. */
+/** Français du Québec : « vous », « courriel », rédigé pour des lecteurs nord-américains. */
 export const fr: ContentSource = {
   ui,
   home,

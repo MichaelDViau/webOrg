@@ -1,6 +1,6 @@
 # Michael website
 
-The company website, built as the guideline describes: it has one job, to get serious business owners to **book a Digital Systems Audit** (or ask for a **free Snapshot** of their site). It is not a portfolio. It works in English, French (Quebec) and Spanish.
+The company website. The company is a **custom software development and technology solutions company**: it designs, builds, integrates, and modernizes the technology businesses run on. The site says so at once, shows nine capability categories, and has one job: to start a conversation about a project (the Digital Systems Audit and the free Snapshot remain as ways to begin). It works in English, French (Quebec) and Spanish.
 
 Built with Next.js (App Router), TypeScript and Tailwind CSS v4. Pages are statically generated. Client-side JavaScript is limited to the header menu, the forms, the instant speed check and the AI assistant (which loads only once the browser is idle).
 
@@ -26,11 +26,11 @@ In development, form submissions and confirmation emails are printed to the serv
 
 | Section       | Address                                             | Its job                                                  |
 | ------------- | --------------------------------------------------- | -------------------------------------------------------- |
-| Home          | `/`                                                 | Eight blocks, in the guideline's order                   |
-| Audit         | `/audit`                                            | Convert high-intent visitors (price, credit, booking form) |
-| Snapshot      | `/snapshot`                                         | The low-commitment second action                         |
-| Services      | `/services`, `/services/<slug>` (11)                | Outcomes, scope, phases, "from" price, related demo      |
-| Industries    | `/industries`, `/industries/<slug>` (3)             | Prove we understand their world                          |
+| Home          | `/`                                                 | Eight sections: hero, what we do, capabilities, approach, solutions, why us, industries, project inquiry |
+| Services      | `/services`, `/services/<slug>` (9)                 | The nine capability categories: capabilities, challenges, approach, illustration, FAQ |
+| Industries    | `/industries`                                       | Ten industries, with the solutions each often needs (not a client list) |
+| Audit         | `/audit`                                            | The Digital Systems Audit: a fixed-scope technical assessment |
+| Snapshot      | `/snapshot`                                         | A free, low-commitment look at a visitor's website       |
 | Work          | `/work`, `/work/<slug>`: off for now (see below)    | 3 concept demos on sample data, hidden until real ones exist |
 | How we work   | `/how-we-work`                                      | Reduce the feeling of risk                               |
 | Standards     | `/standards`, `/standards/<slug>` (5)               | Security, performance, accessibility, AI policy, privacy |
@@ -40,7 +40,9 @@ In development, form submissions and confirmation emails are printed to the serv
 | Legal         | `/privacy`, `/terms`, `/cookies`, `/aviso-de-privacidad` | Privacy policy, terms, cookie notice, Mexican privacy notice |
 | Tool          | `/website-check`                                    | Instant automated speed check (Google Lighthouse)        |
 
-The top menu is Services · Industries · Audit · Work · How we work · About, a **Book an audit** button, and an EN / FR / ES switch at the top right. Standards, Insights, Partners, Contact and Legal are in the footer.
+The top menu is Services · Industries · How we work · About, a **Discuss your project** button, and an EN / FR / ES switch at the top right. Below 1280px wide the menu collapses behind a button. Standards, Insights, Partners, the Audit, Contact and Legal are in the footer.
+
+The nine capability categories are custom software; web and application development; AI solutions and automation; database solutions; cloud solutions and infrastructure; software architecture; application modernization; digital transformation; and consulting and technical problem-solving. Every capability the company offers is listed under one of them, in all three languages.
 
 ## Languages
 
@@ -59,12 +61,12 @@ All copy lives in typed data files, so most updates don't touch components. Each
 | File               | What it holds                                                                 |
 | ------------------ | ----------------------------------------------------------------------------- |
 | `ui.ts`            | Navigation, buttons, prices' wording, forms, errors, the confirmation email, the assistant |
-| `home.ts`          | The eight home page blocks                                                    |
+| `home.ts`          | The eight home page sections                                                  |
 | `audit.ts`         | The audit page and the Snapshot page                                          |
-| `services.ts`      | The eleven service pages and the services overview                             |
-| `industries.ts`    | The three industry pages and the overview                                     |
+| `services.ts`      | The nine capability categories (every capability is listed here) and the overview |
+| `industries.ts`    | The ten industries and the industries page                                    |
 | `work.ts`          | The three concept demos, including the sample data on each screen             |
-| `how-we-work.ts`   | The process, ownership and the answers for IT reviewers                       |
+| `how-we-work.ts`   | The five-step approach, working principles, ownership and answers for technical reviewers |
 | `standards.ts`     | The five standards and the overview                                           |
 | `about.ts`         | About and Partners                                                            |
 | `insights.ts`      | The articles and the Insights index                                           |
@@ -76,20 +78,20 @@ To add an article, add its slug and date in `lib/insights.ts` and its text in ea
 
 ### Prices
 
-Every price comes from `lib/pricing.ts`. The audit is US$1,500–7,500, credited in full to a project signed within 60 days. Service "from" prices are set to `0` and show as **0000** until you fill them in; change a number there and every page and language updates. `npm run launch-check` fails while any is still `0`.
+Every price comes from `lib/pricing.ts`. Only the Digital Systems Audit has a published range (US$1,500–7,500, credited in full to a project signed within 60 days). Projects have no listed prices: they are scoped and quoted in writing after a conversation.
 
 ### Tone
 
-The guideline's rules for words are enforced by `npm run launch-check`, which fails on phrases such as "10x", "skyrocket", "game-changer", "digital transformation", "synergy", "cutting-edge", "AI-powered", "trusted by hundreds" and a guaranteed speed score. Never invent clients, logos, testimonials, numbers, awards or years of experience. Concept demos use obviously fictional sample data.
+The guideline's rules for words are enforced by `npm run launch-check`, which fails on phrases such as "10x", "skyrocket", "game-changer", "revolutionize", "unlock your potential", "empowering innovation", "next-generation", "cutting-edge", "proof before promises", "trusted by hundreds", and any "new company" or "founded in" wording. Never invent clients, logos, testimonials, numbers, awards, certifications or years of experience. The illustrations use generic sample interfaces and are labeled as illustrations.
 
 ## The lead flow
 
 Every form follows the same path: **instant confirmation in the visitor's language → entry in HubSpot, routed to the right person → a person replies within one business hour → discovery call.**
 
-- The audit and contact forms have five groups of fields at most (name and role, company and website, email and phone, what to fix, preferred language) plus a consent checkbox that links to the privacy policy. The Snapshot form is shorter. The newsletter form sits at the bottom of articles.
+- The **project inquiry** form (on the home page and `/contact`) asks for name, company, business email, project type, a description of the challenge and an optional scope, plus a consent checkbox that links to the privacy policy. The reply comes in the language of the page. The audit form has five groups of fields at most; the Snapshot form is shorter. The newsletter form sits at the bottom of articles.
 - Spam protection without puzzles: a hidden field, a minimum fill time and a rate limit per IP.
 - `lib/actions/lead.ts` validates on the server, notifies the team by email (with the source page, language and a "reply due" line), sends the visitor an automatic confirmation in their preferred language (at most twice per address per hour), and submits to HubSpot. The request counts as received if either the team email or HubSpot has it.
-- `lib/crm.ts` uses the HubSpot Forms API. Create one form per action in HubSpot (audit, Snapshot, contact, newsletter), give them the fields `email`, `firstname`, `lastname`, `jobtitle`, `company`, `website`, `phone`, `message` and `hs_language`, and route each with a HubSpot workflow. Without HubSpot configured, email alone is used.
+- `lib/crm.ts` uses the HubSpot Forms API. Create one form per action in HubSpot (audit, Snapshot, contact, newsletter), give them the fields `email`, `firstname`, `lastname`, `jobtitle`, `company`, `website`, `phone`, `message` and `hs_language`, and route each with a HubSpot workflow. The project type and scope are sent at the top of the `message` field. Without HubSpot configured, email alone is used.
 
 ## Environment variables
 
@@ -145,5 +147,5 @@ Run `npm run launch-check` with your production environment variables. It lists 
 ## Later
 
 - The guideline suggests a headless CMS (for example Payload or Sanity) so pages can be edited in three languages without a developer. Content is typed data files for now, which keeps the site fast and dependency-free.
-- The Work section (concept demos) is switched off: `workEnabled` is `false` in `lib/site.ts`. While it is off, `/work` and the demo pages return 404, and the menu, sitemap, demo cards, home block and legal paragraph about demos are all hidden. Set it to `true` to bring them back. Replace concept demos with case studies only when a real client approves one in writing, with measured results. Partner logos only with written permission.
+- The Work section (concept demos) is switched off: `workEnabled` is `false` in `lib/site.ts`. While it is off, `/work` and the demo pages return 404, and the menu item, sitemap entries, the Partners "demos" item, the assistant's links and the terms paragraph about demos are all hidden. Set it to `true` to bring them back. Replace concept demos with case studies only when a real client approves one in writing, with measured results. Partner logos only with written permission.
 - Two articles a month; rewrite pages that don't convert. Measure every month: audit and Snapshot requests (by page and language), the visit-to-inquiry rate on service and industry pages, time to first personal reply, Core Web Vitals in real-user data, and newsletter sign-ups.

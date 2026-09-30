@@ -1,7 +1,6 @@
 import type { MetadataRoute } from "next";
 import { demoSlugs } from "@/lib/demos";
 import { localizePath, locales } from "@/lib/i18n/config";
-import { industrySlugs } from "@/lib/industries";
 import { articleSlugs } from "@/lib/insights";
 import { serviceSlugs } from "@/lib/services";
 import { bookingUrl, site, workEnabled } from "@/lib/site";
@@ -29,7 +28,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/cookies",
     "/aviso-de-privacidad",
     ...serviceSlugs.map((slug) => `/services/${slug}`),
-    ...industrySlugs.map((slug) => `/industries/${slug}`),
     ...(workEnabled ? demoSlugs.map((slug) => `/work/${slug}`) : []),
     ...standardSlugs.map((slug) => `/standards/${slug}`),
     ...articleSlugs.map((slug) => `/insights/${slug}`),

@@ -8,15 +8,15 @@ import type { About, Partners } from "../en/about";
 export const about: About = {
   metaTitle: "Nosotros",
   metaDescription:
-    "{name} diseña, construye y opera los sistemas en los que se apoyan las empresas establecidas. Un solo equipo responsable, en español, inglés y francés.",
+    "{name} es una empresa de desarrollo de software a medida y soluciones tecnológicas. Diseñamos, construimos, integramos y modernizamos la tecnología de la que dependen las empresas.",
   eyebrow: "Nosotros",
-  title: "Un solo equipo responsable de los sistemas que hacen funcionar su empresa.",
-  lead: "{name} diseña, construye y opera sitios web, portales de clientes, software interno y automatizaciones.",
+  title: "Un equipo de ingeniería de software para sus desafíos tecnológicos.",
+  lead: "{name} diseña, construye, integra y moderniza el software, los datos, la nube y los sistemas de IA de los que dependen las empresas. Resolvemos los problemas técnicos con ingeniería.",
 
   whyTitle: "Por qué existimos",
   why: [
-    "Muchas empresas establecidas funcionan con herramientas que no se hablan entre sí. Un proveedor construye el sitio web, otro vende el software y nadie se ocupa de lo que queda en medio.",
-    "Existimos para ser el equipo responsable de todo: diagnosticar dónde se pierden tiempo y consultas, construir sistemas conectados y operarlos después.",
+    "Las empresas dependen de la tecnología, y los problemas tecnológicos rara vez caben en una sola especialidad. Un solo proyecto puede requerir software a medida, un rediseño de base de datos, una migración a la nube y una integración. Las empresas no deberían tener que coordinar a cuatro proveedores para lograrlo.",
+    "Existimos para ser el socio de ingeniería de todo eso: entender el problema, diseñar la solución correcta, construirla y mantenerla funcionando a medida que el negocio cambia.",
   ],
 
   founderTitle: "Con quién trabajará",
@@ -76,7 +76,7 @@ export const partners: Partners = {
     },
     {
       title: "Cómo trabajamos",
-      detail: "Un proceso con fases a precio fijo, informes escritos semanales y controles de calidad.",
+      detail: "Un proceso flexible con alcance acordado por escrito, informes escritos semanales y controles de calidad antes del lanzamiento.",
       href: "/how-we-work",
       link: "Ver cómo trabajamos",
     },
@@ -91,7 +91,7 @@ export const partners: Partners = {
   howTitle: "Cómo funciona una recomendación",
   how: [
     { title: "Usted nos presenta", detail: "Basta un correo breve. Respondemos personalmente en una hora hábil." },
-    { title: "Empezamos con la auditoría", detail: "Le muestra a su cliente qué vale la pena corregir, con pruebas, antes de que nadie se comprometa con una construcción." },
+    { title: "Empezamos con una evaluación", detail: "Le muestra a su cliente qué vale la pena corregir, con pruebas, antes de que nadie se comprometa con una construcción." },
     { title: "Usted sigue al tanto", detail: "Si su cliente está de acuerdo, compartimos con usted los hallazgos y el plan." },
     { title: "Su cliente es dueño de todo", detail: "El código, las cuentas y los dominios pertenecen a su cliente, para que usted pueda seguir asesorándolo." },
   ],

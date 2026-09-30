@@ -1,22 +1,22 @@
 import type { About, Partners } from "../en/about";
 
 /**
- * À propos : la crédibilité humaine. Pourquoi l'entreprise existe, le fondateur, comment l'équipe
+ * À propos : la crédibilité humaine. Pourquoi l'entreprise existe, le fondateur, comment l'équipe
  * travaille entre les pays et un bloc « lisez comment nous travaillons ». N'inventez jamais de
  * biographie, de client, de chiffre ni de prix. Pas de photo de banque d'images avec des personnes.
  */
 export const about: About = {
   metaTitle: "À propos",
   metaDescription:
-    "{name} conçoit, construit et exploite les systèmes sur lesquels reposent les entreprises établies. Une seule équipe responsable, en français, en anglais et en espagnol.",
+    "{name} est une entreprise de développement de logiciels sur mesure et de solutions technologiques. Nous concevons, construisons, intégrons et modernisons la technologie dont les entreprises dépendent.",
   eyebrow: "À propos",
-  title: "Une seule équipe responsable des systèmes qui font tourner votre entreprise.",
-  lead: "{name} conçoit, construit et exploite des sites web, des portails clients, des logiciels internes et des automatisations.",
+  title: "Une équipe d'ingénierie logicielle pour vos défis technologiques.",
+  lead: "{name} conçoit, construit, intègre et modernise les logiciels, les données, l'infonuagique et les systèmes d'IA dont les entreprises dépendent. Nous résolvons les problèmes techniques par l'ingénierie.",
 
   whyTitle: "Pourquoi nous existons",
   why: [
-    "De nombreuses entreprises établies fonctionnent avec des outils qui ne se parlent pas. Un fournisseur construit le site web, un autre vend le logiciel, et personne ne s'occupe des liens entre les deux.",
-    "Nous existons pour être l'équipe responsable de l'ensemble : diagnostiquer où le temps et les demandes s'échappent, construire des systèmes connectés, puis les exploiter.",
+    "Les entreprises dépendent de la technologie, et les problèmes technologiques entrent rarement dans une seule spécialité. Un seul projet peut exiger un logiciel sur mesure, une refonte de base de données, une migration vers le nuage et une intégration. Les entreprises ne devraient pas avoir à coordonner quatre fournisseurs pour y arriver.",
+    "Nous existons pour être le partenaire d'ingénierie de l'ensemble : comprendre le problème, concevoir la bonne solution, la construire et la garder fonctionnelle à mesure que l'entreprise change.",
   ],
 
   founderTitle: "Avec qui vous travaillerez",
@@ -29,7 +29,7 @@ export const about: About = {
   teamTitle: "Comment l'équipe travaille entre les pays",
   team: [
     "Nous servons des entreprises aux États-Unis, au Canada et au Mexique, et nous travaillons entre fuseaux horaires. Les appels sont fixés dans le vôtre.",
-    "Pour que rien ne dépende de qui était à quel appel, les décisions et l'avancement sont consignés par écrit : un compte rendu écrit chaque semaine et un lien de préproduction que vous pouvez ouvrir en tout temps.",
+    "Pour que rien ne dépende de qui était à quel appel, les décisions et l'avancement sont consignés par écrit : un compte rendu écrit chaque semaine et un lien de préproduction que vous pouvez ouvrir en tout temps.",
   ],
 
   proofTitle: "Lisez comment nous travaillons avant de nous engager",
@@ -61,7 +61,7 @@ export const about: About = {
 export const partners: Partners = {
   metaTitle: "Partenaires",
   metaDescription:
-    "Pour les firmes TI, les comptables et les directeurs techniques à temps partiel : comment fonctionne une recommandation de client, ce que nous faisons d'abord et les normes que vous pouvez vérifier avant de recommander.",
+    "Pour les firmes TI, les comptables et les directeurs techniques à temps partiel : comment fonctionne une recommandation de client, ce que nous faisons d'abord et les normes que vous pouvez vérifier avant de recommander.",
   eyebrow: "Partenaires",
   title: "Pouvez-vous nous recommander vos clients en toute confiance?",
   lead: "Pour les firmes TI, les comptables et les directeurs techniques à temps partiel dont les clients ont besoin de systèmes construits et entretenus. Voici comment nous traiterions une recommandation, et ce que vous pouvez vérifier d'abord.",
@@ -76,7 +76,7 @@ export const partners: Partners = {
     },
     {
       title: "Notre façon de travailler",
-      detail: "Un processus avec des phases à prix fixe, des comptes rendus écrits hebdomadaires et des contrôles de qualité.",
+      detail: "Un processus flexible avec une portée convenue par écrit, des comptes rendus écrits hebdomadaires et des contrôles de qualité avant le lancement.",
       href: "/how-we-work",
       link: "Voir notre façon de travailler",
     },
@@ -91,7 +91,7 @@ export const partners: Partners = {
   howTitle: "Comment fonctionne une recommandation",
   how: [
     { title: "Vous nous présentez", detail: "Un court courriel suffit. Nous répondons personnellement en moins d'une heure ouvrable." },
-    { title: "Nous commençons par l'audit", detail: "Il montre à votre client ce qui vaut la peine d'être corrigé, preuves à l'appui, avant que quiconque s'engage dans une réalisation." },
+    { title: "Nous commençons par une évaluation", detail: "Il montre à votre client ce qui vaut la peine d'être corrigé, preuves à l'appui, avant que quiconque s'engage dans une réalisation." },
     { title: "Vous restez dans la boucle", detail: "Si votre client est d'accord, nous partageons les constats et le plan avec vous." },
     { title: "Votre client est propriétaire de tout", detail: "Le code, les comptes et les domaines appartiennent à votre client, pour que vous puissiez continuer à le conseiller." },
   ],

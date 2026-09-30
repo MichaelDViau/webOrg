@@ -1,18 +1,17 @@
 import type { Metadata } from "next";
 import { JsonLd } from "@/components/JsonLd";
-import { ClosingCta } from "@/components/home/ClosingCta";
+import { Approach } from "@/components/home/Approach";
+import { Capabilities } from "@/components/home/Capabilities";
+import { ContactSection } from "@/components/home/ContactSection";
 import { Hero } from "@/components/home/Hero";
-import { Honest } from "@/components/home/Honest";
-import { Problem } from "@/components/home/Problem";
-import { WhatWeBuild } from "@/components/home/WhatWeBuild";
+import { IndustriesGrid } from "@/components/home/IndustriesGrid";
+import { Solutions } from "@/components/home/Solutions";
 import { WhatWeDo } from "@/components/home/WhatWeDo";
-import { WhoWeHelp } from "@/components/home/WhoWeHelp";
 import { WhyUs } from "@/components/home/WhyUs";
-import { audit } from "@/lib/pricing";
 import { format } from "@/lib/i18n/format";
 import { getContent } from "@/lib/i18n/server";
 import { pageMetadata } from "@/lib/metadata";
-import { site, workEnabled } from "@/lib/site";
+import { site } from "@/lib/site";
 import { websiteSchema } from "@/lib/structured-data";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -25,24 +24,20 @@ export async function generateMetadata(): Promise<Metadata> {
   });
 }
 
-/** The home page: eight blocks, in the order the guideline sets. */
+/** The home page: eight sections, from what kind of company this is to how to start a conversation. */
 export default async function HomePage() {
-  const { locale, home } = await getContent();
+  const { locale } = await getContent();
 
   return (
     <>
       <Hero />
-      <Problem />
       <WhatWeDo />
-      <WhatWeBuild />
-      <WhoWeHelp />
+      <Capabilities />
+      <Approach />
+      <Solutions />
       <WhyUs />
-      {workEnabled && <Honest />}
-      <ClosingCta
-        tone={workEnabled ? "night" : "light"}
-        title={home.finalCta.title}
-        lead={format(home.finalCta.lead, { days: audit.creditDays })}
-      />
+      <IndustriesGrid />
+      <ContactSection />
       <JsonLd data={websiteSchema(locale)} />
     </>
   );

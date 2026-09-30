@@ -1,78 +1,70 @@
-import type { DemoSlug } from "./demos";
-
+/**
+ * The nine capability categories, in the order they appear across the site. Every capability the company
+ * offers sits under one of them. Icons and diagrams are drawn in components/visuals, keyed by slug.
+ */
 export type ServiceSlug =
-  | "revenue-websites"
-  | "client-portals"
-  | "operations-apps"
-  | "automation"
-  | "ai-with-judgment"
-  | "integrations-and-data"
-  | "managed-plans"
   | "custom-software"
-  | "cloud-modernization"
-  | "devops"
-  | "strategy-design";
+  | "web-applications"
+  | "ai-solutions"
+  | "database-solutions"
+  | "cloud-solutions"
+  | "software-architecture"
+  | "application-modernization"
+  | "digital-transformation"
+  | "technology-consulting";
 
-/** Services in the order they appear across the site. */
 export const serviceSlugs: ServiceSlug[] = [
-  "revenue-websites",
-  "client-portals",
-  "operations-apps",
   "custom-software",
-  "automation",
-  "ai-with-judgment",
-  "integrations-and-data",
-  "cloud-modernization",
-  "devops",
-  "strategy-design",
-  "managed-plans",
+  "web-applications",
+  "ai-solutions",
+  "database-solutions",
+  "cloud-solutions",
+  "software-architecture",
+  "application-modernization",
+  "digital-transformation",
+  "technology-consulting",
 ];
 
 /** Service details that are the same in every language. */
-const serviceBases: Record<ServiceSlug, { demo: DemoSlug | null }> = {
-  "revenue-websites": { demo: "revenue-website" },
-  "client-portals": { demo: "property-portal" },
-  "operations-apps": { demo: "firm-intake-hub" },
-  automation: { demo: "revenue-website" },
-  "ai-with-judgment": { demo: "firm-intake-hub" },
-  "integrations-and-data": { demo: "property-portal" },
-  "managed-plans": { demo: null },
-  "custom-software": { demo: "property-portal" },
-  "cloud-modernization": { demo: null },
-  devops: { demo: null },
-  "strategy-design": { demo: null },
+const serviceBases: Record<ServiceSlug, { related: ServiceSlug[] }> = {
+  "custom-software": { related: ["web-applications", "software-architecture", "database-solutions"] },
+  "web-applications": { related: ["custom-software", "database-solutions", "cloud-solutions"] },
+  "ai-solutions": { related: ["custom-software", "database-solutions", "digital-transformation"] },
+  "database-solutions": { related: ["software-architecture", "cloud-solutions", "application-modernization"] },
+  "cloud-solutions": { related: ["software-architecture", "application-modernization", "database-solutions"] },
+  "software-architecture": { related: ["custom-software", "cloud-solutions", "technology-consulting"] },
+  "application-modernization": { related: ["software-architecture", "cloud-solutions", "digital-transformation"] },
+  "digital-transformation": { related: ["custom-software", "ai-solutions", "technology-consulting"] },
+  "technology-consulting": { related: ["software-architecture", "application-modernization", "digital-transformation"] },
 };
 
-/**
- * One service page. The structure follows the guideline: the problem in the client's words, what
- * changes, what's included, how it works in phases, a "from" price, a related demo and two buttons.
- */
+/** One capability category: what it covers, the challenges it answers and how we approach it. */
 export interface ServiceText {
   name: string;
-  /** One line used on cards and in lists. */
+  /** One or two sentences for cards. */
   card: string;
   /** Page title for search results, without the site name. */
   seoTitle: string;
   /** Meta description for search results, roughly 150 characters. */
   metaDescription: string;
-  /** H1: the outcome, not the technology. */
+  /** H1 of the category page. */
   headline: string;
-  /** What it is, in one or two sentences. */
+  /** What the category is, in one or two sentences. */
   lead: string;
-  /** Who it is for, in one sentence. */
-  forWhom: string;
-  /** The problem in the client's own words. */
-  problemQuotes: string[];
-  problemDetail: string;
-  changes: string[];
-  included: { title: string; detail: string }[];
-  phases: { title: string; detail: string }[];
+  /** A short paragraph on how the category connects to a business outcome. */
+  overview: string;
+  /** Every capability in the category, as short labels. */
+  capabilities: string[];
+  /** Situations a visitor may recognize, in plain language. */
+  challenges: string[];
+  /** How we approach work in this category: three short points. */
+  approach: { title: string; detail: string }[];
   faqs: { question: string; answer: string }[];
 }
 
 export interface Service extends ServiceText {
   slug: ServiceSlug;
-  demo: DemoSlug | null;
+  related: ServiceSlug[];
 }
 
 export function buildServices(text: Record<ServiceSlug, ServiceText>): Service[] {
@@ -82,15 +74,3 @@ export function buildServices(text: Record<ServiceSlug, ServiceText>): Service[]
 export function isServiceSlug(value: string | null | undefined): value is ServiceSlug {
   return value != null && (serviceSlugs as string[]).includes(value);
 }
-
-/** The five services shown as cards on the home page, in order. Managed plans and integrations join their neighbors. */
-export const homeBuildSlugs: ServiceSlug[] = [
-  "revenue-websites",
-  "client-portals",
-  "operations-apps",
-  "automation",
-  "ai-with-judgment",
-];
-
-/** Services listed under the five home page cards as "Also available", in order. */
-export const homeAlsoSlugs: ServiceSlug[] = ["custom-software", "cloud-modernization", "devops", "strategy-design"];

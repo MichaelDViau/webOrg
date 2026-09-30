@@ -122,7 +122,7 @@ export default async function DemoPage({ params }: DemoPageProps) {
               <>
                 <h2 className="mt-8 text-base font-semibold text-ink">{t.built}</h2>
                 <p className="mt-3">
-                  <Link href={`/industries/${industry.slug}`} className="text-ink underline underline-offset-4">
+                  <Link href={`/industries#${industry.slug}`} className="text-ink underline underline-offset-4">
                     {industry.name}
                   </Link>
                 </p>

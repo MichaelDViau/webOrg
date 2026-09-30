@@ -41,7 +41,7 @@ export async function Footer() {
               <ul className="mt-3 space-y-1">
                 {industries.map((industry) => (
                   <li key={industry.slug}>
-                    <Link href={`/industries/${industry.slug}`} className={linkClass}>
+                    <Link href={`/industries#${industry.slug}`} className={linkClass}>
                       {industry.short}
                     </Link>
                   </li>

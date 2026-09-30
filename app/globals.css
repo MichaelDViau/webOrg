@@ -72,6 +72,25 @@
   --color-ink: #172125;
 }
 
+/*
+ * A light surface inside a dark area, such as the software windows in the illustrations. It keeps the
+ * light theme's colors in both themes, so the interface it draws always reads the same way.
+ */
+[data-theme="dark"] .surface-light {
+  --color-paper: #ffffff;
+  --color-canvas: #f4f6f7;
+  --color-ink: #172125;
+  --color-body: #3a4549;
+  --color-muted: #5f6b70;
+  --color-line: #e2e7ea;
+  --color-line-strong: #c9d2d6;
+  --color-accent: #607d8b;
+  --color-accent-strong: #4f6975;
+  --color-success: #1f7a55;
+  --color-warn: #b54708;
+  --color-danger: #b42318;
+}
+
 /* Base element styles. */
 @layer base {
   html {
@@ -136,7 +155,7 @@
 @utility text-display {
   /* Phones: each phrase of the headline gets its own line, so the size follows the width to keep every phrase whole. */
   font-size: min(2.5rem, 9.2vw);
-  line-height: 1.05;
+  line-height: 1.16;
   letter-spacing: -0.035em;
   font-weight: 600;
   /* From tablet up the size follows the width, capped at desktop size, so the two-line headline never wraps. */

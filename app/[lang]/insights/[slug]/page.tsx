@@ -119,7 +119,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
                   <div>
                     <h2 className="text-base font-semibold text-ink">{t.relatedIndustry}</h2>
                     <Link
-                      href={`/industries/${industry.slug}`}
+                      href={`/industries#${industry.slug}`}
                       className="group mt-2 inline-flex items-center gap-1.5 text-ink hover:underline hover:underline-offset-4"
                     >
                       {industry.name}

@@ -7,7 +7,7 @@ import { ButtonLink } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { cn } from "@/lib/cn";
 import { splitLocale } from "@/lib/i18n/config";
-import { auditHref, snapshotHref } from "@/lib/site";
+import { capabilitiesHref, contactHref } from "@/lib/site";
 import { Logo } from "./Logo";
 import { LanguageSwitch } from "./LanguageSwitch";
 import { ThemeToggle } from "./ThemeToggle";
@@ -26,10 +26,10 @@ interface HeaderProps {
     closeMenu: string;
     darkTheme: string;
     language: string;
-    /** The main button: "Book an audit". */
-    audit: string;
-    /** The second button, in the mobile menu: "Get a free Snapshot". */
-    snapshot: string;
+    /** The main button: "Discuss your project". */
+    primary: string;
+    /** The second button, in the mobile menu: "Explore our capabilities". */
+    secondary: string;
     logo: string;
   };
 }
@@ -97,8 +97,8 @@ export function Header({ nav, labels }: HeaderProps) {
 
         <div className="flex items-center gap-1 whitespace-nowrap sm:gap-2 xl:justify-self-end">
           <div className="hidden sm:block">
-            <ButtonLink href={auditHref} size="sm">
-              {labels.audit}
+            <ButtonLink href={contactHref} size="sm">
+              {labels.primary}
             </ButtonLink>
           </div>
           <ThemeToggle label={labels.darkTheme} />
@@ -154,11 +154,11 @@ export function Header({ nav, labels }: HeaderProps) {
             </ul>
           </nav>
           <div className="mt-8 flex flex-col gap-3">
-            <ButtonLink href={auditHref} withArrow onClick={() => setOpen(false)}>
-              {labels.audit}
+            <ButtonLink href={contactHref} withArrow onClick={() => setOpen(false)}>
+              {labels.primary}
             </ButtonLink>
-            <ButtonLink href={snapshotHref} variant="secondary" onClick={() => setOpen(false)}>
-              {labels.snapshot}
+            <ButtonLink href={capabilitiesHref} variant="secondary" onClick={() => setOpen(false)}>
+              {labels.secondary}
             </ButtonLink>
           </div>
         </Container>

@@ -1,110 +1,148 @@
 import type { HowWeWork } from "../en/how-we-work";
 
 /**
- * Notre façon de travailler : réduire le sentiment de risque. Audit, portée, phases à prix fixe,
- * réalisation à ciel ouvert (lien de préproduction, compte rendu écrit chaque semaine), contrôles de
- * qualité, lancement et 90 jours de suivi, puis un plan.
+ * Notre façon de travailler : cinq étapes flexibles (comprendre, planifier, concevoir, mettre en œuvre,
+ * faire évoluer), les principes qui les entourent, qui possède quoi, et des réponses pour un examinateur
+ * technique attentif. La démarche s'adapte à chaque projet : jamais une méthode rigide unique.
  */
 export const howWeWork: HowWeWork = {
-  metaTitle: "Notre façon de travailler",
+  metaTitle: "Notre façon de travailler : du défi à la solution",
   metaDescription:
-    "Audit, portée, phases à prix fixe, réalisation à ciel ouvert avec un compte rendu écrit chaque semaine, contrôles de qualité et 90 jours de suivi après le lancement. Le code, les comptes et les domaines vous appartiennent.",
+    "Notre démarche pour les projets technologiques : comprendre, planifier, concevoir, mettre en œuvre et faire évoluer. Un processus flexible adapté à chaque projet, avec un compte rendu écrit chaque semaine et la pleine propriété du code.",
   eyebrow: "Notre façon de travailler",
-  title: "Un processus clair, sans surprises.",
-  lead: "Chaque projet suit le même parcours. À chaque étape, vous savez ce qui vient ensuite, ce que ça coûte et qui en est responsable.",
+  title: "Du défi à la solution.",
+  lead: "Chaque projet technologique est différent, alors notre démarche s'adapte au travail. La plupart des projets suivent cinq étapes. Voici ce qui se passe à chacune, et ce que vous obtenez.",
 
-  stepsTitle: "Le parcours, du premier appel à l'exploitation quotidienne",
+  stepsTitle: "Cinq étapes, adaptées à chaque projet",
   step: "Étape {number}",
   youGet: "Vous obtenez",
   steps: [
     {
-      title: "Audit",
-      detail: "Nous examinons la façon dont votre site web, votre boîte courriel, vos outils et votre équipe fonctionnent ensemble, et nous trouvons où le temps et les demandes s'échappent.",
-      youGet: "Une carte des systèmes, des constats appuyés de preuves et un plan chiffré.",
+      title: "Comprendre",
+      detail: "Nous apprenons à connaître l'entreprise, ses défis et ses objectifs, ainsi que la technologie déjà en place.",
+      points: [
+        "Des conversations avec les personnes qui utilisent et exploitent les systèmes",
+        "Un examen des logiciels, des données et de l'infrastructure existants",
+        "Un énoncé clair du problème et de ce que signifie le succès",
+      ],
+      youGet: "Une compréhension commune et écrite du problème et des objectifs.",
     },
     {
-      title: "Portée",
-      detail: "Nous transformons le plan en une portée écrite : ce qui est inclus, ce qui ne l'est pas et comment nous saurons que ça a fonctionné.",
-      youGet: "Une portée que vous approuvez avant que quoi que ce soit ne soit construit.",
+      title: "Planifier",
+      detail: "Nous déterminons la bonne approche technique, l'architecture et le plan pour la réaliser.",
+      points: [
+        "Des options comparées, avec les compromis expliqués simplement",
+        "Une recommandation d'architecture et de technologie",
+        "Un plan par phases avec la portée, l'échéancier et les coûts",
+      ],
+      youGet: "Une recommandation et un plan écrits que vous pouvez approuver, ou apporter ailleurs.",
     },
     {
-      title: "Phases à prix fixe",
-      detail: "Chaque phase a ses propres livrables et son propre prix. Vous en approuvez une à la fois.",
-      youGet: "Un prix fixe pour la prochaine phase, par écrit.",
+      title: "Concevoir",
+      detail: "Nous concevons et développons les logiciels, les applications, l'infrastructure ou les intégrations que le plan prévoit.",
+      points: [
+        "Conception et développement par incréments fonctionnels",
+        "Un environnement de préproduction que vous pouvez ouvrir en tout temps",
+        "Un court compte rendu écrit chaque semaine",
+      ],
+      youGet: "Un logiciel qui fonctionne tôt, et de la visibilité sur l'avancement du début à la fin.",
     },
     {
-      title: "Construire à ciel ouvert",
-      detail: "Vous voyez le travail au fur et à mesure. Il n'y a rien à attendre à la fin.",
-      youGet: "Un lien de préproduction dès la première semaine et un compte rendu écrit chaque semaine.",
+      title: "Mettre en œuvre",
+      detail: "Nous déployons, intégrons et testons la solution pour qu'elle fonctionne dans votre environnement réel.",
+      points: [
+        "Intégration avec vos systèmes et vos données existants",
+        "Des tests avant le lancement, y compris la sécurité et le rendement",
+        "Un lancement planifié, avec un retour en arrière possible si quelque chose tourne mal",
+      ],
+      youGet: "Une solution en service, testée et intégrée à votre entreprise.",
     },
     {
-      title: "Contrôles de qualité",
-      detail: "Avant le lancement, le travail passe chaque fois les mêmes vérifications.",
-      youGet: "Une liste de vérification : accessibilité, vitesse sur téléphone, sécurité, et formulaires testés de bout en bout dans chaque langue.",
-    },
-    {
-      title: "Lancement et 90 jours de suivi",
-      detail: "Nous mettons en ligne, puis nous surveillons. Pendant 90 jours, nous surveillons et corrigeons tout ce qui survient.",
-      youGet: "Un lancement sur lequel vous pouvez compter, et une personne désignée à appeler.",
-    },
-    {
-      title: "Plan",
-      detail: "Ensuite, vous choisissez la suite : un forfait de gestion, la prochaine phase, ou le transfert à votre propre équipe.",
-      youGet: "Une recommandation claire, et la liberté de dire non.",
+      title: "Faire évoluer",
+      detail: "Nous améliorons, optimisons, maintenons et adaptons la technologie à mesure que vos besoins changent.",
+      points: [
+        "Surveillance et correctifs après le lancement",
+        "Mises à jour et améliorations à mesure que l'entreprise grandit",
+        "De la documentation et une transition en douceur, si vous voulez que votre équipe prenne le relais",
+      ],
+      youGet: "Une technologie qui suit l'entreprise, et la liberté de choisir qui la maintient.",
     },
   ],
 
-  ownershipTitle: "À qui appartient quoi",
-  ownershipLead: "À vous. Voici comment nous en faisons une réalité concrète, et pas seulement une clause de contrat.",
+  flexibleTitle: "Un processus flexible, pas une méthode rigide",
+  flexibleBody:
+    "Nous ne faisons pas passer chaque projet par la même séquence. Un problème de rendement peut n'exiger que Comprendre et Concevoir. Une migration de plateforme demande les cinq étapes. Nous convenons des étapes qui conviennent avant de commencer.",
+  principlesTitle: "Notre façon de travailler avec vous",
+  principles: [
+    {
+      title: "Une personne désignée est responsable",
+      detail: "Vous savez qui répond de votre projet, et comment la joindre.",
+    },
+    {
+      title: "Un compte rendu écrit chaque semaine",
+      detail: "Un court compte rendu écrit, pour que vous sachiez toujours où en sont les choses.",
+    },
+    {
+      title: "Un travail à ciel ouvert",
+      detail: "Un environnement de préproduction que vous pouvez ouvrir en tout temps, dès le début du projet.",
+    },
+    {
+      title: "La portée convenue par écrit",
+      detail: "La portée et le prix sont convenus par écrit avant chaque phase, et vous les approuvez d'abord.",
+    },
+  ],
+
+  ownershipTitle: "Qui possède quoi",
+  ownershipLead: "Vous. Voici comment nous en faisons une réalité, et pas seulement une clause de contrat.",
   ownership: [
     {
       title: "Le code",
-      detail: "Le code vit dans un dépôt de votre organisation, pas de la nôtre.",
+      detail: "Le code se trouve dans un dépôt de votre organisation, pas de la nôtre.",
     },
     {
       title: "Les comptes",
-      detail: "Les comptes d'hébergement, de gestion de contenu, d'analytique et de courriel sont ouverts au nom de votre entreprise, protégés par l'authentification multifacteur.",
+      detail: "Les comptes d'hébergement, d'analyse et de courriel sont ouverts au nom de votre entreprise et protégés par une authentification multifacteur.",
     },
     {
       title: "Les domaines",
-      detail: "Votre domaine est enregistré à votre nom. Nous ne le détenons jamais pour vous.",
+      detail: "Votre nom de domaine est enregistré à votre nom. Nous ne le détenons jamais pour vous.",
     },
     {
       title: "Les accès",
-      detail: "Nous travaillons avec des accès nominatifs à vos comptes. Vous pouvez les retirer en tout temps.",
+      detail: "Nous travaillons par des accès nominatifs à vos comptes. Vous pouvez les retirer à tout moment.",
     },
   ],
 
-  reviewerTitle: "Pour votre responsable TI ou votre conseiller",
-  reviewerLead: "Les questions que pose un examinateur rigoureux, avec des réponses claires.",
+  reviewerTitle: "Pour votre équipe technique",
+  reviewerLead: "Les questions que pose un examinateur attentif, avec des réponses claires.",
   reviewerFaqs: [
     {
       question: "Que se passe-t-il si vous disparaissez?",
       answer:
-        "Rien ne s'arrête. Le code, les comptes et les domaines sont déjà à vous, et la documentation est dans votre dépôt. Tout développeur compétent peut prendre la relève.",
+        "Rien ne s'arrête. Le code, les comptes et les domaines sont déjà à vous, et la documentation se trouve dans votre dépôt. Tout développeur compétent peut prendre le relais.",
     },
     {
-      question: "Est-ce sécuritaire?",
+      question: "Est-ce sécurisé?",
       answer:
-        "Nous suivons une norme de sécurité publiée : HTTPS partout, en-têtes de sécurité, aucun secret dans le code, disponibilité surveillée, sauvegardes et mises à jour rapides.",
+        "Nous suivons une norme de sécurité publiée : HTTPS partout, en-têtes de sécurité, aucun secret dans le code, disponibilité surveillée, sauvegardes et mises à jour rapides.",
     },
     {
-      question: "Quelle technologie utilisez-vous?",
+      question: "Quelles technologies utilisez-vous?",
       answer:
-        "Des outils courants et bien documentés, comme TypeScript, React et Next.js, PostgreSQL et un hébergement géré, choisis selon le projet pour que toute personne qualifiée puisse les maintenir.",
+        "Des outils courants et bien documentés, choisis projet par projet, comme TypeScript, React, PostgreSQL et les grandes plateformes infonuagiques, pour que toute personne qualifiée puisse les maintenir.",
     },
     {
       question: "Qui a accès à nos données?",
       answer:
-        "Seulement les personnes qui en ont besoin, par des comptes nominatifs, avec authentification multifacteur. Vous pouvez examiner et retirer les accès quand vous le voulez.",
+        "Seulement les personnes qui en ont besoin, par des comptes nominatifs et une authentification multifacteur. Vous pouvez examiner et retirer les accès quand vous le voulez.",
     },
   ],
-  standardsLink: "Lire toutes nos normes",
+  standardsLink: "Lire toutes nos normes d'ingénierie",
 
   neededTitle: "Ce dont nous avons besoin de vous",
   needed: [
     "Une personne en mesure de prendre des décisions.",
-    "L'accès aux systèmes que nous examinons, à des conditions que vous contrôlez.",
-    "Un court coup d'œil chaque semaine au compte rendu écrit.",
+    "L'accès aux systèmes que nous examinons, selon des modalités que vous contrôlez.",
+    "Un court coup d'œil hebdomadaire au compte rendu écrit.",
   ],
 };

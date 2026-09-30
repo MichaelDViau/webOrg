@@ -1,7 +1,7 @@
 import type { LegalContent } from "@/lib/legal";
 
 /**
- * Pages juridiques : politique de confidentialité, conditions d'utilisation, avis sur les témoins et avis
+ * Pages juridiques : politique de confidentialité, conditions d'utilisation, avis sur les témoins et avis
  * de confidentialité pour le Mexique (aviso de privacidad). Ce sont des ébauches rédigées pour refléter
  * le fonctionnement de ce site. Faites-les rédiger ou réviser par votre avocat avant le lancement
  * (partie 18 du manuel), en particulier pour la Loi 25 du Québec. `{name}`, `{email}`, `{hours}` et
@@ -9,7 +9,7 @@ import type { LegalContent } from "@/lib/legal";
  */
 export const legal: LegalContent = {
   eyebrow: "Renseignements juridiques",
-  updatedLabel: "Dernière mise à jour : {date}.",
+  updatedLabel: "Dernière mise à jour : {date}.",
   reviewNote: "Ébauche en attente de révision juridique.",
   contactTitle: "Contact",
   contactBody: "Pour toute question au sujet de cette page, ou pour exercer vos droits, écrivez à",
@@ -33,11 +33,11 @@ export const legal: LegalContent = {
         title: "Ce que nous recueillons",
         body: ["Nous ne recueillons que ce que vous choisissez de nous envoyer, plus une petite quantité de données techniques."],
         list: [
-          "Formulaires d'audit, d'aperçu et de contact : votre nom, votre fonction, votre entreprise, votre site web, votre courriel, votre numéro de téléphone, votre langue préférée et ce que vous aimeriez corriger.",
-          "Infolettre : votre adresse courriel et votre langue préférée.",
-          "Test de vitesse instantané : l'adresse de site web que vous entrez, et votre courriel si vous choisissez de l'ajouter.",
-          "Assistant IA : les messages que vous écrivez. Veuillez ne pas y communiquer de renseignements sensibles.",
-          "Données techniques : votre adresse IP et des détails de base de la requête, utilisés pour la sécurité, la protection contre le pourriel et la limitation du débit.",
+          "Formulaires d'audit, d'aperçu et de contact : votre nom, votre fonction, votre entreprise, votre site web, votre courriel, votre numéro de téléphone, votre langue préférée et ce que vous aimeriez corriger.",
+          "Infolettre : votre adresse courriel et votre langue préférée.",
+          "Test de vitesse instantané : l'adresse de site web que vous entrez, et votre courriel si vous choisissez de l'ajouter.",
+          "Assistant IA : les messages que vous écrivez. Veuillez ne pas y communiquer de renseignements sensibles.",
+          "Données techniques : votre adresse IP et des détails de base de la requête, utilisés pour la sécurité, la protection contre le pourriel et la limitation du débit.",
         ],
       },
       {
@@ -55,7 +55,7 @@ export const legal: LegalContent = {
       {
         title: "Qui les reçoit",
         body: [
-          "Des fournisseurs de services qui traitent les renseignements pour notre compte et n'ont pas le droit de les utiliser à leurs propres fins. Selon la façon dont vous utilisez le site, il s'agit notamment de :",
+          "Des fournisseurs de services qui traitent les renseignements pour notre compte et n'ont pas le droit de les utiliser à leurs propres fins. Selon la façon dont vous utilisez le site, il s'agit notamment de :",
         ],
         list: [
           "Notre fournisseur d'hébergement.",
@@ -175,13 +175,13 @@ export const legal: LegalContent = {
     title: "Avis sur les témoins",
     updated: "septembre 2026",
     intro:
-      "Nous restons simples. Ce site web ne dépose aucun témoin publicitaire ni de suivi : il n'affiche donc aucune bannière de témoins. Cette page explique ce que le site stocke, et ce qui se passerait si cela changeait.",
+      "Nous restons simples. Ce site web ne dépose aucun témoin publicitaire ni de suivi : il n'affiche donc aucune bannière de témoins. Cette page explique ce que le site stocke, et ce qui se passerait si cela changeait.",
     sections: [
       {
         title: "Ce que le site stocke",
-        body: ["Le site conserve un élément dans le stockage de votre navigateur, et seulement si vous utilisez la fonction :"],
+        body: ["Le site conserve un élément dans le stockage de votre navigateur, et seulement si vous utilisez la fonction :"],
         list: [
-          "Thème : si vous passez au thème sombre, votre choix est enregistré dans votre navigateur pour être retenu la prochaine fois. Il ne quitte jamais votre appareil.",
+          "Thème : si vous passez au thème sombre, votre choix est enregistré dans votre navigateur pour être retenu la prochaine fois. Il ne quitte jamais votre appareil.",
         ],
       },
       {
@@ -219,11 +219,11 @@ export const legal: LegalContent = {
     sections: [
       {
         title: "Qui est responsable",
-        body: ["{name} est le responsable du traitement des données (responsable). Adresse : {address}. Courriel : {email}."],
+        body: ["{name} est le responsable du traitement des données (responsable). Adresse : {address}. Courriel : {email}."],
       },
       {
         title: "Données personnelles que nous recueillons",
-        body: ["Les données que vous saisissez dans nos formulaires : nom, fonction, entreprise, site web, courriel, numéro de téléphone, langue préférée et description de ce que vous aimeriez corriger. Nous ne recueillons pas de données personnelles sensibles."],
+        body: ["Les données que vous saisissez dans nos formulaires : nom, fonction, entreprise, site web, courriel, numéro de téléphone, langue préférée et description de ce que vous aimeriez corriger. Nous ne recueillons pas de données personnelles sensibles."],
       },
       {
         title: "Finalités nécessaires",
@@ -236,7 +236,7 @@ export const legal: LegalContent = {
       {
         title: "Transferts",
         body: [
-          "Nous communiquons des données à des fournisseurs de services qui les traitent pour nous : hébergement, envoi de courriels, CRM et planification. Ces transferts sont nécessaires pour offrir le service que vous avez demandé. Nous ne transférons pas vos données à d'autres fins sans votre consentement.",
+          "Nous communiquons des données à des fournisseurs de services qui les traitent pour nous : hébergement, envoi de courriels, CRM et planification. Ces transferts sont nécessaires pour offrir le service que vous avez demandé. Nous ne transférons pas vos données à d'autres fins sans votre consentement.",
         ],
       },
       {

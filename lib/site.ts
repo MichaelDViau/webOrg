@@ -1,3 +1,5 @@
+import type { ServiceSlug } from "./services";
+
 export const site = {
   name: "Michael",
   legalName: "Michael",
@@ -32,10 +34,29 @@ export const founderPhoto: { src: string; width: number; height: number } | null
 /** Public scheduling link (Cal.com, Calendly or similar) for discovery calls. Enables the /book page. */
 export const bookingUrl = process.env.NEXT_PUBLIC_BOOKING_URL || null;
 
-/** The main button everywhere: booking a Digital Systems Audit. */
+/** The main button everywhere: start a conversation about a project. */
+export const contactHref = "/contact";
+/** The second button: the capabilities overview. */
+export const capabilitiesHref = "/services";
+/** The Digital Systems Audit (a fixed-scope technical assessment) and the free website Snapshot. */
 export const auditHref = "/audit";
-/** The second button everywhere: the free Snapshot of the visitor's site. */
 export const snapshotHref = "/snapshot";
+
+/**
+ * The problems on the home page's "technology solutions" section, each pointing at the capability that
+ * answers it. The order matches `home.solutions.items` in every language.
+ */
+export const solutionServices: ServiceSlug[] = [
+  "custom-software",
+  "application-modernization",
+  "cloud-solutions",
+  "database-solutions",
+  "ai-solutions",
+  "software-architecture",
+  "technology-consulting",
+  "digital-transformation",
+  "web-applications",
+];
 
 /**
  * The Work section (concept demos). Off until there are real demos or case studies to show. While it is
@@ -54,14 +75,13 @@ export interface NavItem {
 export const mainNav: NavItem[] = [
   { key: "services", href: "/services" },
   { key: "industries", href: "/industries" },
-  { key: "audit", href: "/audit" },
   ...(workEnabled ? [{ key: "work" as const, href: "/work" }] : []),
   { key: "howWeWork", href: "/how-we-work" },
   { key: "about", href: "/about" },
 ];
 
 export interface FooterItem {
-  key: "standards" | "insights" | "contact" | "partners" | "snapshot" | "websiteCheck" | "privacy" | "terms" | "cookies" | "mexicoNotice";
+  key: "standards" | "insights" | "contact" | "partners" | "audit" | "snapshot" | "websiteCheck" | "privacy" | "terms" | "cookies" | "mexicoNotice";
   href: string;
 }
 
@@ -71,6 +91,7 @@ export const footerNav: { company: FooterItem[]; legal: FooterItem[] } = {
     { key: "standards", href: "/standards" },
     { key: "insights", href: "/insights" },
     { key: "partners", href: "/partners" },
+    { key: "audit", href: "/audit" },
     { key: "contact", href: "/contact" },
     { key: "snapshot", href: "/snapshot" },
     { key: "websiteCheck", href: "/website-check" },

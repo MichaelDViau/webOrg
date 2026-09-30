@@ -9,11 +9,11 @@ export const demos: Record<DemoSlug, DemoText> = {
   "property-portal": {
     name: "Portail pour propriétaires et locataires",
     card: "Propriétaires et locataires consultent l'état, les relevés et les demandes sans appeler le bureau.",
-    seoTitle: "Démo conceptuelle : portail pour propriétaires et locataires",
+    seoTitle: "Démo conceptuelle : portail pour propriétaires et locataires",
     metaDescription:
       "Une démo conceptuelle d'un portail où les propriétaires et les locataires consultent relevés, documents et état des demandes d'entretien sans appeler le bureau.",
     headline: "Un portail où propriétaires et locataires voient l'état des choses sans appeler.",
-    lead: "Une démo conceptuelle pour les gestionnaires immobiliers et les exploitants d'immeubles : un seul endroit pour les relevés, les documents et les demandes d'entretien.",
+    lead: "Une démo conceptuelle pour les gestionnaires immobiliers et les exploitants d'immeubles : un seul endroit pour les relevés, les documents et les demandes d'entretien.",
     problem:
       "Un bureau de gestion immobilière répond aux mêmes questions toute la journée. Où en est ma demande d'entretien? Mon relevé est-il prêt? Où est mon bail? Chaque réponse existe quelque part. La personne qui pose la question ne peut pas la voir.",
     does: [
@@ -38,7 +38,7 @@ export const demos: Record<DemoSlug, DemoText> = {
       {
         kind: "list",
         title: "Tableau de bord du propriétaire",
-        caption: "Ce que voit un propriétaire à sa connexion : son relevé, ses demandes ouvertes et ses documents.",
+        caption: "Ce que voit un propriétaire à sa connexion : son relevé, ses demandes ouvertes et ses documents.",
         app: "Portail propriétaire",
         tabs: ["Aperçu", "Relevés", "Demandes", "Documents"],
         kpis: [
@@ -79,11 +79,11 @@ export const demos: Record<DemoSlug, DemoText> = {
   "firm-intake-hub": {
     name: "Centre de collecte des documents clients",
     card: "Les documents arrivent complets et à temps, avec des rappels envoyés pour vous.",
-    seoTitle: "Démo conceptuelle : centre de collecte des documents clients",
+    seoTitle: "Démo conceptuelle : centre de collecte des documents clients",
     metaDescription:
-      "Une démo conceptuelle d'un centre de collecte de documents pour cabinets comptables et firmes de services professionnels : listes de vérification, téléversement sécurisé, rappels automatiques et IA qui rédige pendant que votre équipe approuve.",
+      "Une démo conceptuelle d'un centre de collecte de documents pour cabinets comptables et firmes de services professionnels : listes de vérification, téléversement sécurisé, rappels automatiques et IA qui rédige pendant que votre équipe approuve.",
     headline: "Un centre où les documents des clients arrivent complets, sans relances.",
-    lead: "Une démo conceptuelle pour les cabinets comptables et les firmes de services professionnels : une liste de vérification par client, un téléversement sécurisé et des rappels qui s'envoient tout seuls.",
+    lead: "Une démo conceptuelle pour les cabinets comptables et les firmes de services professionnels : une liste de vérification par client, un téléversement sécurisé et des rappels qui s'envoient tout seuls.",
     problem:
       "À chaque période de pointe, le personnel relance les clients pour les mêmes documents manquants, par courriel et par texto. Les fichiers arrivent à différents endroits sous différents noms. Personne ne voit d'un coup d'œil qui est prêt.",
     does: [
@@ -135,8 +135,8 @@ export const demos: Record<DemoSlug, DemoText> = {
         ],
         listTitle: "Étiquettes suggérées",
         rows: [
-          { primary: "scan_0412.pdf", secondary: "Suggestion : relevé bancaire, mars", badge: "En attente d'approbation", tone: "info" },
-          { primary: "IMG_2231.jpg", secondary: "Suggestion : reçu, fournitures de bureau", badge: "En attente d'approbation", tone: "info" },
+          { primary: "scan_0412.pdf", secondary: "Suggestion : relevé bancaire, mars", badge: "En attente d'approbation", tone: "info" },
+          { primary: "IMG_2231.jpg", secondary: "Suggestion : reçu, fournitures de bureau", badge: "En attente d'approbation", tone: "info" },
           { primary: "notes.docx", secondary: "Incertain, une personne doit l'étiqueter", badge: "Intervention humaine", tone: "warn" },
         ],
       },
@@ -154,11 +154,11 @@ export const demos: Record<DemoSlug, DemoText> = {
   "revenue-website": {
     name: "Site web générateur de revenus avec parcours des demandes",
     card: "Chaque demande reçoit une confirmation instantanée et une réponse personnelle en moins d'une heure ouvrable.",
-    seoTitle: "Démo conceptuelle : site web générateur de revenus avec parcours des demandes",
+    seoTitle: "Démo conceptuelle : site web générateur de revenus avec parcours des demandes",
     metaDescription:
       "Une démo conceptuelle d'un site web dont les formulaires confirment instantanément, acheminent la demande vers la bonne personne dans le CRM et mènent à une réponse personnelle en moins d'une heure ouvrable.",
     headline: "Un site web dont les demandes n'attendent jamais.",
-    lead: "Une démo conceptuelle du parcours des demandes derrière un site générateur de revenus : un court formulaire, une confirmation instantanée, un acheminement vers la bonne personne et une réponse personnelle.",
+    lead: "Une démo conceptuelle du parcours des demandes derrière un site générateur de revenus : un court formulaire, une confirmation instantanée, un acheminement vers la bonne personne et une réponse personnelle.",
     problem:
       "Les demandes arrivent et attendent. Personne n'est certain de qui en est responsable, les réponses prennent des jours, et le site ne peut pas montrer quelles pages génèrent vraiment des demandes.",
     does: [
@@ -216,12 +216,12 @@ export const demos: Record<DemoSlug, DemoText> = {
       "Proportion des demandes qui mènent à un appel réservé.",
     ],
     honestNote:
-      "Ceci est une démo conceptuelle avec des données fictives. Le même parcours fonctionne sur ce site : vous pouvez l'essayer vous-même. Envoyez une demande et regardez ce qui arrive dans votre boîte de réception.",
+      "Ceci est une démo conceptuelle avec des données fictives. Le même parcours fonctionne sur ce site : vous pouvez l'essayer vous-même. Envoyez une demande et regardez ce qui arrive dans votre boîte de réception.",
   },
 };
 
 export const workPage: WorkPage = {
-  metaTitle: "Réalisations : démos conceptuelles des systèmes que nous construisons",
+  metaTitle: "Réalisations : démos conceptuelles des systèmes que nous construisons",
   metaDescription:
     "Des démos conceptuelles fonctionnelles d'un portail immobilier, d'un centre de collecte de documents et d'un site générateur de revenus avec parcours des demandes. Elles utilisent des données fictives et ne sont pas des projets clients.",
   eyebrow: "Réalisations",

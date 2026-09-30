@@ -3,17 +3,17 @@
  * assistant. The Spanish and French files must match this shape (see `Ui`).
  * `{placeholders}` are filled in with `format()` from lib/i18n/format.ts.
  *
- * Tone rules (guideline, "Words"): short sentences, the client's vocabulary, outcomes not technology.
- * Never write "10x", "skyrocket", "game-changer", "digital transformation", "synergy", "cutting-edge",
- * "AI-powered everything", "fully autonomous", "trusted by hundreds" or a guaranteed speed score.
+ * Tone rules: professional American English, plain and specific, confident without hype. Never write
+ * "10x", "skyrocket", "game-changer", "revolutionize", "unlock your potential", "empowering innovation",
+ * "cutting-edge", "fully autonomous", "trusted by hundreds", or promise a speed score or a result.
  */
 export const ui = {
   site: {
     description:
-      "{name} designs, builds and runs websites, client portals, internal software and automations for established service and operations businesses.",
+      "{name} is a custom software development and technology solutions company. We design, build, and modernize the technology that helps businesses operate, solve problems, and grow.",
     hours: "Monday to Friday, 9am to 6pm Central",
-    shareImageAlt: "{name}: the systems your business runs on",
-    audienceType: "Established service and operations businesses",
+    shareImageAlt: "{name}: custom software and technology solutions",
+    audienceType: "Businesses of all sizes that need custom software and technology solutions",
     countriesLabel: "Countries we serve",
     countries: ["United States", "Canada", "Mexico"],
     languagesLabel: "Languages",
@@ -26,8 +26,11 @@ export const ui = {
   logoLabel: "{name} home",
   readMore: "Read more",
 
-  /** The two buttons that end every service and industry page, and appear across the site. */
+  /** The buttons that appear across the site: discuss a project first, explore capabilities second. */
   cta: {
+    discuss: "Discuss your project",
+    explore: "Explore our capabilities",
+    startConversation: "Start a conversation",
     audit: "Book an audit",
     auditLong: "Book a Digital Systems Audit",
     snapshot: "Get a free Snapshot",
@@ -38,8 +41,8 @@ export const ui = {
   },
 
   closingCta: {
-    title: "Find out where your systems are costing you.",
-    lead: "The audit ends with a prioritized, costed plan. The fee is credited in full if you start a project within {days} days.",
+    title: "Let's engineer your next solution.",
+    lead: "Whether you need a custom application, a complete software system, cloud infrastructure, AI integration, or help solving an existing technical problem, let's discuss what your business needs.",
   },
 
   header: {
@@ -55,7 +58,7 @@ export const ui = {
   nav: {
     services: "Services",
     industries: "Industries",
-    audit: "Audit",
+    audit: "Digital Systems Audit",
     work: "Work",
     howWeWork: "How we work",
     about: "About",
@@ -68,7 +71,7 @@ export const ui = {
   },
 
   footer: {
-    tagline: "The systems your business runs on.",
+    tagline: "Custom software and technology solutions.",
     services: "Services",
     industries: "Industries",
     company: "Company",
@@ -84,25 +87,7 @@ export const ui = {
   /** Prices come from lib/pricing.ts. `{from}` and `{to}` are formatted for the language. */
   price: {
     auditRange: "US${from}–{to}",
-    /** For example "from US$15,000". */
-    from: "from US${amount}",
-    fromPerMonth: "from US${amount} per month",
     creditNote: "Credited in full to a project signed within {days} days.",
-    fixedPhases: "Each phase has a fixed price, agreed in writing before it starts.",
-    label: "Price",
-    unset: "Price range to be confirmed",
-  },
-
-  trust: {
-    title: "Why you can trust the work",
-    items: [
-      { title: "You own it", detail: "Code, accounts and domains belong to you from day one." },
-      { title: "Fixed-price phases", detail: "A written scope and price before each phase starts." },
-      { title: "Built in the open", detail: "A staging link and a written update every week." },
-      { title: "Standards we publish", detail: "Security, performance, accessibility, AI and privacy, in plain language." },
-    ],
-    standardsLink: "Read our standards",
-    processLink: "See how we work",
   },
 
   demo: {
@@ -140,6 +125,31 @@ export const ui = {
     phone: "Phone",
     need: "What do you want to fix?",
     needHint: "A sentence or two is enough. For example: inquiries wait too long, or staff retype the same data.",
+    emailBusiness: "Business email",
+    projectType: "Project type",
+    projectTypePlaceholder: "Choose a project type",
+    projectTypes: {
+      "custom-software": "Custom software",
+      "web-applications": "Website or web application",
+      "ai-solutions": "AI or automation",
+      "database-solutions": "Database",
+      "cloud-solutions": "Cloud or infrastructure",
+      "software-architecture": "Architecture or integration",
+      "application-modernization": "Modernizing an existing system",
+      "digital-transformation": "Digital transformation",
+      "technology-consulting": "Consulting or a technical problem",
+      "not-sure": "Not sure yet",
+    },
+    needProject: "Describe the challenge",
+    needProjectHint: "A few sentences are enough: what you're trying to do, what isn't working, and which systems are involved.",
+    scope: "Estimated project scope",
+    scopePlaceholder: "Not sure yet",
+    scopes: {
+      exploring: "Just exploring options",
+      focused: "A specific fix or feature",
+      project: "One application or system",
+      program: "A larger, multi-system effort",
+    },
     language: "Preferred language",
     optional: "Optional",
     consent: "I agree that {name} may use these details to reply to me.",
@@ -147,14 +157,14 @@ export const ui = {
     honeypot: "Leave this field empty",
     submit: {
       audit: "Book my audit",
-      contact: "Send message",
+      contact: "Start a conversation",
       snapshot: "Get my free Snapshot",
     },
     submitting: "Sending…",
     sendingStatus: "Sending your request.",
     successTitle: {
       audit: "Thank you. Your audit request is in.",
-      contact: "Thank you. Your message is in.",
+      contact: "Thank you. We received your project inquiry.",
       snapshot: "Thank you. Your Snapshot request is in.",
     },
     successBody:
@@ -173,6 +183,7 @@ export const ui = {
     websiteRequired: "Please enter the address of your website.",
     emailRequired: "Please enter your email address.",
     emailInvalid: "Please enter a valid email address, like name@company.com.",
+    projectTypeRequired: "Please choose a project type.",
     phoneInvalid: "Please enter a valid phone number, or leave this field blank.",
     needTooShort: "Please tell us a little more (at least {min} characters).",
     needTooLong: "Please keep this under {max} characters.",
@@ -189,7 +200,7 @@ export const ui = {
     greeting: "Hello {name},",
     kinds: {
       audit: "Thank you for asking about a Digital Systems Audit.",
-      contact: "Thank you for your message.",
+      contact: "Thank you for telling us about your project.",
       snapshot: "Thank you for asking for a free Snapshot of your site.",
     },
     automatic: "This is an automatic confirmation, so you know your request reached us.",
@@ -201,7 +212,7 @@ export const ui = {
   },
 
   newsletter: {
-    title: "Practical notes on systems for operations businesses",
+    title: "Practical notes on software, data, and cloud for business teams",
     lead: "A short email when we publish a new article. No spam, and you can leave with one click.",
     email: "Email",
     language: "Language of the emails",
@@ -220,17 +231,17 @@ export const ui = {
   },
 
   contactPage: {
-    metaTitle: "Contact",
+    metaTitle: "Contact: Discuss Your Project",
     metaDescription:
-      "Tell us what you want to fix. A person replies within one business hour. We serve businesses in the United States, Canada and Mexico, in English, French and Spanish.",
+      "Tell us about your project or technical challenge: custom software, web applications, AI, databases, cloud, or modernization. A person replies within one business hour.",
     eyebrow: "Contact",
-    title: "Tell us what you want to fix.",
-    lead: "Five short fields. You get a confirmation right away and a personal reply within one business hour.",
+    title: "Let's engineer your next solution.",
+    lead: "Whether you need a custom application, a complete software system, cloud infrastructure, AI integration, or help solving an existing technical problem, let's discuss what your business needs.",
     nextTitle: "What happens next",
     nextSteps: [
       "You get a confirmation email at once, in your language.",
       "A person replies personally within one business hour.",
-      "We book a discovery call, and send a short questionnaire once it's booked.",
+      "We schedule a call to understand the problem before recommending anything.",
     ],
     pickTime: "Prefer to pick a time?",
     bookCall: "Book a discovery call",
@@ -242,10 +253,10 @@ export const ui = {
   bookPage: {
     metaTitle: "Book a discovery call",
     metaDescription:
-      "Pick a time for a discovery call about your Digital Systems Audit. A person confirms within one business hour.",
+      "Pick a time for a discovery call about your project or technical challenge. A person confirms within one business hour.",
     eyebrow: "Book a call",
     title: "Pick a time that works for you.",
-    lead: "A discovery call to talk through what you want to fix. It's where the audit starts, and there's no cost for the call.",
+    lead: "A discovery call to talk through your project or problem. It's where we start, and there's no cost for the call.",
     frameTitle: "Schedule a discovery call",
     trouble: "Having trouble with the calendar?",
     openInTab: "Open it in a new tab",
@@ -311,6 +322,79 @@ export const ui = {
     },
   },
 
+  /** Short labels drawn inside the illustrations. They are pictures, so every label is a plain word. */
+  visuals: {
+    illustration: "Illustration",
+    alt: {
+      hero: "Illustration of a business application dashboard, the software architecture layers behind it, and the cloud environment it runs in",
+      "custom-software": "Illustration of a custom business application with a request form and a work queue",
+      "web-applications": "Illustration of a website in a desktop browser and on a mobile phone",
+      "ai-solutions":
+        "Illustration of an AI workflow: an incoming request, an AI model that drafts a reply, a person who reviews it, and the connected business systems",
+      "database-solutions": "Illustration of a database design with three connected tables",
+      "cloud-solutions":
+        "Illustration of cloud infrastructure: users, a load balancer, application servers, a database, and storage inside a cloud region",
+      "software-architecture": "Illustration of a layered software architecture: clients, an API layer, services, and data stores",
+      "application-modernization": "Illustration of a legacy system being replaced by a modern platform in three stages",
+      "digital-transformation": "Illustration of a manual process becoming an integrated digital workflow",
+      "technology-consulting": "Illustration of a technical assessment report with prioritized findings and a plan",
+      integration:
+        "Illustration of web, mobile, and partner applications connected through one API layer to a database, business systems, and AI services",
+    },
+    integration: {
+      hub: "API layer",
+      top: ["Web app", "Mobile app", "Partners"],
+      bottom: ["Database", "Business systems", "AI services"],
+    },
+    app: {
+      name: "Operations",
+      tabs: ["Overview", "Requests", "Reports"],
+      kpis: ["Open", "In review", "Completed"],
+      activity: "Recent activity",
+      rows: ["Request received", "Assigned to team", "Approved and closed"],
+      status: ["New", "Active", "Done"],
+    },
+    layers: { interface: "Interface", api: "API", services: "Services", data: "Data" },
+    cloud: {
+      region: "Cloud region",
+      users: "Users",
+      balancer: "Load balancer",
+      app: "Application",
+      database: "Database",
+      storage: "Storage",
+      monitoring: "Monitoring",
+    },
+    ai: {
+      input: "Incoming request",
+      model: "AI model",
+      review: "Human review",
+      systems: "Your systems",
+      draft: "Draft reply",
+      approved: "Approved",
+      tasks: ["Draft", "Classify", "Route"],
+    },
+    web: { site: "Your website", mobile: "Mobile" },
+    custom: { title: "New request", fields: ["Customer", "Type", "Notes"], submit: "Submit", queue: "Queue" },
+    modern: {
+      legacy: "Legacy system",
+      modern: "Modern platform",
+      stage: "Stage {number}",
+      modules: ["Billing", "Reports", "Customers"],
+    },
+    transform: {
+      today: "Today",
+      after: "Digital workflow",
+      manual: ["Paper form", "Email", "Spreadsheet"],
+      steps: ["Request", "Approval", "Update", "Report"],
+    },
+    assess: {
+      title: "Technical assessment",
+      findings: ["Slow database queries", "Unsupported framework", "No automated backups"],
+      severity: ["High", "Medium", "Low"],
+      plan: "Prioritized plan",
+    },
+  },
+
   notFound: {
     metaTitle: "Page not found",
     title: "This page doesn't exist.",
@@ -321,22 +405,22 @@ export const ui = {
 
   assistant: {
     greeting:
-      "Hi! Ask me about our audit, our services or how we work. I can also help you decide where to start.",
+      "Hi! Ask me about our services, how we work, or the kind of project you have in mind. I can also point you to the right capability.",
     open: "Ask a question",
     close: "Close",
     title: "Ask us anything",
     disclaimer: "AI assistant. Answers can be imperfect, so please don't share sensitive information.",
     suggested: "Suggested questions",
     suggestions: [
-      "What does the audit include?",
-      "How much does it cost to start?",
-      "Do you work in French?",
+      "What kinds of software do you build?",
+      "Do you work with AI and cloud?",
+      "How does a project start?",
     ],
     you: "You: ",
     assistant: "Assistant: ",
     thinking: "Thinking…",
     limit: "For anything more, a person will be glad to help.",
-    book: "Book an audit",
+    book: "Discuss your project",
     inputLabel: "Your question",
     placeholder: "Type your question",
     send: "Send",

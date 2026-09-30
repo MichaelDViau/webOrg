@@ -26,7 +26,7 @@ export async function generateMetadata(): Promise<Metadata> {
  * you receive, timing, price, the credit and the booking form.
  */
 export default async function AuditPage() {
-  const { ui, locale, audit: t, home } = await getContent();
+  const { ui, locale, audit: t } = await getContent();
   const price = auditPriceText(locale, ui.price);
   const days = auditPricing.creditDays;
   const faqs = t.faqs.map((faq) => ({ ...faq, answer: format(faq.answer, { price, days }) }));
@@ -87,7 +87,7 @@ export default async function AuditPage() {
             ))}
           </ul>
           <div className="mt-14">
-            <SystemMap map={{ ...home.hero.map, caption: t.mapCaption }} />
+            <SystemMap map={{ ...t.map, caption: t.mapCaption }} />
           </div>
         </Container>
       </Section>

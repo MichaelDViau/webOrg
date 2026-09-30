@@ -3,7 +3,7 @@ import type { ArticlePage, InsightsPage } from "../en/insights";
 
 /**
  * Des articles pratiques par secteur. Aucune statistique, aucun client ni résultat, sauf s'ils sont réels
- * et approuvés : ce sont des articles pratiques, pas des études de cas.
+ * et approuvés : ce sont des articles pratiques, pas des études de cas.
  */
 export const articles: Record<ArticleSlug, ArticleText> = {
   "client-portal-for-property-managers": {
@@ -26,10 +26,10 @@ export const articles: Record<ArticleSlug, ArticleText> = {
       {
         type: "ul",
         items: [
-          "Les demandes d'entretien : un seul endroit pour signaler un problème avec des photos, et un seul endroit pour voir qui s'en occupe.",
-          "Les relevés des propriétaires : le dernier relevé et un court historique, sans PDF envoyé par courriel.",
-          "Les documents : baux, avis et reçus que chaque personne a le droit de consulter.",
-          "L'état : une étiquette claire sur chaque demande, comme nouvelle, attribuée, planifiée ou terminée.",
+          "Les demandes d'entretien : un seul endroit pour signaler un problème avec des photos, et un seul endroit pour voir qui s'en occupe.",
+          "Les relevés des propriétaires : le dernier relevé et un court historique, sans PDF envoyé par courriel.",
+          "Les documents : baux, avis et reçus que chaque personne a le droit de consulter.",
+          "L'état : une étiquette claire sur chaque demande, comme nouvelle, attribuée, planifiée ou terminée.",
           "Une connexion qui ne montre à chaque personne que ses propres dossiers.",
         ],
       },
@@ -45,20 +45,20 @@ export const articles: Record<ArticleSlug, ArticleText> = {
       { type: "h2", text: "Le relier à ce que vous utilisez déjà" },
       {
         type: "p",
-        text: "Un portail qui exige une deuxième copie de vos données sera toujours en retard. Vérifiez d'abord ce que permet votre logiciel de gestion immobilière : une API, des exportations, ou rien du tout. Cette réponse façonne tout le projet, et c'est pourquoi nous l'examinons pendant l'audit.",
+        text: "Un portail qui exige une deuxième copie de vos données sera toujours en retard. Vérifiez d'abord ce que permet votre logiciel de gestion immobilière : une API, des exportations, ou rien du tout. Cette réponse façonne tout le projet, et c'est pourquoi nous l'examinons pendant l'audit.",
       },
       { type: "h2", text: "Décider comment vous saurez que ça a fonctionné" },
       {
         type: "p",
-        text: "Choisissez quelques chiffres avant de construire. Par exemple : les appels et courriels de suivi par semaine, le délai entre une nouvelle demande et l'attribution d'un fournisseur, et les heures consacrées aux relevés de fin de mois. Mesurez-les avant le portail, puis de nouveau après.",
+        text: "Choisissez quelques chiffres avant de construire. Par exemple : les appels et courriels de suivi par semaine, le délai entre une nouvelle demande et l'attribution d'un fournisseur, et les heures consacrées aux relevés de fin de mois. Mesurez-les avant le portail, puis de nouveau après.",
       },
     ],
   },
 
   "document-intake-for-accounting-firms": {
-    title: "Collecte de documents pour cabinets comptables : cessez de courir après les PDF par courriel",
+    title: "Collecte de documents pour cabinets comptables : cessez de courir après les PDF par courriel",
     description:
-      "Comment les cabinets comptables et les firmes de services professionnels peuvent recueillir les documents de leurs clients sans relances : une liste de vérification par client, un seul endroit pour téléverser et des rappels qui s'envoient tout seuls.",
+      "Comment les cabinets comptables et les firmes de services professionnels peuvent recueillir les documents de leurs clients sans relances : une liste de vérification par client, un seul endroit pour téléverser et des rappels qui s'envoient tout seuls.",
     topic: "Comptabilité",
     readMinutes: 5,
     body: [
@@ -113,7 +113,7 @@ export const articles: Record<ArticleSlug, ArticleText> = {
       { type: "h2", text: "Repérer tous les endroits où arrivent les demandes" },
       {
         type: "p",
-        text: "Dressez-en la liste : le formulaire de contact, l'adresse courriel générale, le téléphone, les messages directs, les recommandations et tout outil de clavardage. La plupart des entreprises découvrent qu'elles ont plus de canaux qu'elles ne le pensaient, et que personne ne vérifie certains d'entre eux tous les jours.",
+        text: "Dressez-en la liste : le formulaire de contact, l'adresse courriel générale, le téléphone, les messages directs, les recommandations et tout outil de clavardage. La plupart des entreprises découvrent qu'elles ont plus de canaux qu'elles ne le pensaient, et que personne ne vérifie certains d'entre eux tous les jours.",
       },
       { type: "h2", text: "Consigner deux heures pour chaque demande" },
       {
@@ -130,7 +130,7 @@ export const articles: Record<ArticleSlug, ArticleText> = {
       { type: "h2", text: "Regarder les plus lentes, pas seulement la moyenne" },
       {
         type: "p",
-        text: "Une moyenne cache les demandes qui ont attendu des jours. Triez par les plus longs écarts et demandez-vous ce qui s'est passé pour chacune. C'est généralement l'une de trois choses : personne n'en était responsable, elle est arrivée par un canal que personne ne vérifie ou elle exigeait une information que personne n'avait.",
+        text: "Une moyenne cache les demandes qui ont attendu des jours. Triez par les plus longs écarts et demandez-vous ce qui s'est passé pour chacune. C'est généralement l'une de trois choses : personne n'en était responsable, elle est arrivée par un canal que personne ne vérifie ou elle exigeait une information que personne n'avait.",
       },
       { type: "h2", text: "Prendre un engagement que vous pouvez tenir" },
       {
@@ -140,19 +140,19 @@ export const articles: Record<ArticleSlug, ArticleText> = {
       { type: "h2", text: "Puis améliorer, et mesurer de nouveau" },
       {
         type: "p",
-        text: "Acheminez tous les canaux au même endroit, désignez qui est responsable des nouvelles demandes et retirez les étapes entre l'arrivée et la réponse. Mesurez de nouveau après quelques semaines. C'est exactement ce que nous faisons dans l'audit : nous mesurons votre délai de réponse avant et après.",
+        text: "Acheminez tous les canaux au même endroit, désignez qui est responsable des nouvelles demandes et retirez les étapes entre l'arrivée et la réponse. Mesurez de nouveau après quelques semaines. C'est exactement ce que nous faisons dans l'audit : nous mesurons votre délai de réponse avant et après.",
       },
     ],
   },
 };
 
 export const insightsPage: InsightsPage = {
-  metaTitle: "Perspectives : notes pratiques sur les systèmes des entreprises d'exploitation",
+  metaTitle: "Perspectives : notes pratiques sur le logiciel, les données et l'infonuagique",
   metaDescription:
-    "Des articles pratiques pour les entreprises immobilières, comptables et de distribution sur les portails clients, la collecte de documents, le parcours des demandes et les systèmes qui font tourner votre entreprise.",
+    "Des articles pratiques sur les logiciels sur mesure, les portails clients, la collecte de documents, le parcours des demandes et les systèmes dont les entreprises dépendent.",
   eyebrow: "Perspectives",
-  title: "Des notes pratiques sur les systèmes qui font tourner votre entreprise.",
-  lead: "De courts articles pour les propriétaires et les gestionnaires, par secteur. Pas de battage, et pas de chiffres que nous ne pouvons pas appuyer.",
+  title: "Des notes pratiques sur le logiciel, les données et l'infonuagique.",
+  lead: "De courts articles pour les propriétaires d'entreprise et les gestionnaires de la technologie. Pas de battage, et pas de chiffres que nous ne pouvons pas appuyer.",
   readArticle: "Lire l'article",
   minutes: "{minutes} min de lecture",
   publishedOn: "Publié le {date}",
@@ -165,5 +165,5 @@ export const articlePage: ArticlePage = {
   relatedService: "Service connexe",
   relatedIndustry: "Secteur connexe",
   ctaTitle: "Vous voulez qu'on examine cela dans votre entreprise?",
-  ctaLead: "L'audit montre où vos systèmes vous coûtent du temps, des demandes et de l'argent.",
+  ctaLead: "Parlez-nous de votre situation. Nous vous dirons ce que nous ferions, et ce que cela implique.",
 };

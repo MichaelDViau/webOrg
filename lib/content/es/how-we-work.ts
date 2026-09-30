@@ -1,61 +1,99 @@
 import type { HowWeWork } from "../en/how-we-work";
 
 /**
- * Cómo trabajamos: reduce la sensación de riesgo. Auditoría, alcance, fases a precio fijo, construcción a la
- * vista (enlace de pruebas, informe escrito cada semana), controles de calidad, lanzamiento y 90 días de
- * cuidado, y luego un plan.
+ * Cómo trabajamos: cinco pasos flexibles (entender, planificar, construir, implementar, evolucionar), los
+ * principios que los acompañan, de quién es qué y respuestas para un revisor técnico cuidadoso. El proceso
+ * se adapta a cada proyecto: nunca es un único método rígido.
  */
 export const howWeWork: HowWeWork = {
-  metaTitle: "Cómo trabajamos",
+  metaTitle: "Cómo trabajamos: del desafío a la solución",
   metaDescription:
-    "Auditoría, alcance, fases a precio fijo, construcción a la vista con un informe escrito semanal, controles de calidad y 90 días de cuidado después del lanzamiento. El código, las cuentas y los dominios son suyos.",
+    "Nuestro enfoque para los proyectos tecnológicos: entender, planificar, construir, implementar y evolucionar. Un proceso flexible adaptado a cada proyecto, con una actualización escrita cada semana y plena propiedad del código.",
   eyebrow: "Cómo trabajamos",
-  title: "Un proceso claro, sin sorpresas.",
-  lead: "Todo proyecto sigue el mismo camino. En cada paso sabe qué sigue, cuánto cuesta y quién es responsable.",
+  title: "Del desafío a la solución.",
+  lead: "Cada proyecto tecnológico es distinto, así que nuestro proceso se adapta al trabajo. La mayoría de los proyectos sigue cinco pasos. Esto es lo que ocurre en cada uno y lo que usted recibe.",
 
-  stepsTitle: "El camino de la primera llamada a la operación diaria",
+  stepsTitle: "Cinco pasos, adaptados a cada proyecto",
   step: "Paso {number}",
   youGet: "Usted recibe",
   steps: [
     {
-      title: "Auditoría",
-      detail: "Revisamos cómo trabajan juntos su sitio web, su bandeja de entrada, sus herramientas y su equipo, y encontramos dónde se pierden tiempo y consultas.",
-      youGet: "Un mapa de sistemas, hallazgos con pruebas y un plan con costos.",
+      title: "Entender",
+      detail: "Conocemos el negocio, sus desafíos y objetivos, y la tecnología que ya está en funcionamiento.",
+      points: [
+        "Conversaciones con las personas que usan y operan los sistemas",
+        "Una revisión del software, los datos y la infraestructura existentes",
+        "Un planteamiento claro del problema y de lo que significa el éxito",
+      ],
+      youGet: "Un entendimiento compartido y por escrito del problema y de los objetivos.",
     },
     {
-      title: "Alcance",
-      detail: "Convertimos el plan en un alcance escrito: qué entra, qué no y cómo sabremos que funcionó.",
-      youGet: "Un alcance que usted aprueba antes de que se construya nada.",
+      title: "Planificar",
+      detail: "Definimos el enfoque técnico correcto, la arquitectura y el plan para llevarlo a cabo.",
+      points: [
+        "Opciones comparadas, con las compensaciones explicadas en lenguaje sencillo",
+        "Una recomendación de arquitectura y tecnología",
+        "Un plan por fases con alcance, plazos y costos",
+      ],
+      youGet: "Una recomendación y un plan escritos que puede aprobar, o llevarse a otro lado.",
     },
     {
-      title: "Fases a precio fijo",
-      detail: "Cada fase tiene sus propios entregables y su propio precio. Usted aprueba una a la vez.",
-      youGet: "Un precio fijo para la siguiente fase, por escrito.",
+      title: "Construir",
+      detail: "Diseñamos y desarrollamos el software, las aplicaciones, la infraestructura o las integraciones que el plan requiere.",
+      points: [
+        "Diseño y desarrollo en incrementos que funcionan",
+        "Un entorno de pruebas que puede abrir en cualquier momento",
+        "Una breve actualización escrita cada semana",
+      ],
+      youGet: "Software funcionando desde temprano, y visibilidad del avance de principio a fin.",
     },
     {
-      title: "Construir a la vista",
-      detail: "Usted puede ver el trabajo mientras ocurre. No hay nada que esperar hasta el final.",
-      youGet: "Un enlace de pruebas desde la primera semana y un informe escrito cada semana.",
+      title: "Implementar",
+      detail: "Desplegamos, integramos y probamos la solución para que funcione en su entorno real.",
+      points: [
+        "Integración con sus sistemas y datos existentes",
+        "Pruebas antes del lanzamiento, incluidas seguridad y rendimiento",
+        "Un lanzamiento planificado, con una vía de retorno si algo sale mal",
+      ],
+      youGet: "Una solución en línea, probada y funcionando en su negocio.",
     },
     {
-      title: "Controles de calidad",
-      detail: "Antes del lanzamiento, el trabajo pasa siempre las mismas revisiones.",
-      youGet: "Una lista de verificación: accesibilidad, velocidad en el teléfono, seguridad y formularios probados de principio a fin en cada idioma.",
-    },
-    {
-      title: "Lanzamiento y 90 días de cuidado",
-      detail: "Publicamos y luego vigilamos. Durante 90 días monitoreamos y corregimos lo que surja.",
-      youGet: "Un lanzamiento en el que puede confiar y una persona con nombre y apellido a quien llamar.",
-    },
-    {
-      title: "Plan",
-      detail: "Después usted elige lo que sigue: un plan de gestión, la siguiente fase o pasar el trabajo a su propio equipo.",
-      youGet: "Una recomendación clara y la libertad de decir que no.",
+      title: "Evolucionar",
+      detail: "Mejoramos, optimizamos, mantenemos y adaptamos la tecnología a medida que cambian sus necesidades.",
+      points: [
+        "Monitoreo y correcciones después del lanzamiento",
+        "Actualizaciones y mejoras a medida que el negocio crece",
+        "Documentación y una transición fluida, si quiere que su propio equipo tome el relevo",
+      ],
+      youGet: "Tecnología que acompaña al negocio, y la libertad de elegir quién la mantiene.",
     },
   ],
 
-  ownershipTitle: "De quién es cada cosa",
-  ownershipLead: "Suyo. Así lo hacemos realidad en la práctica, no solo en el contrato.",
+  flexibleTitle: "Un proceso flexible, no un método rígido",
+  flexibleBody:
+    "No hacemos pasar todos los proyectos por la misma secuencia. Un problema de rendimiento puede necesitar solo Entender y Construir. Una migración de plataforma requiere los cinco pasos. Acordamos los pasos que corresponden antes de empezar.",
+  principlesTitle: "Cómo trabajamos con usted",
+  principles: [
+    {
+      title: "Una persona designada es responsable",
+      detail: "Usted sabe quién responde por su proyecto y cómo comunicarse con ella.",
+    },
+    {
+      title: "Una actualización escrita cada semana",
+      detail: "Una breve actualización por escrito, para que siempre sepa cómo van las cosas.",
+    },
+    {
+      title: "Trabajo a la vista",
+      detail: "Un entorno de pruebas que puede abrir en cualquier momento, desde el inicio del proyecto.",
+    },
+    {
+      title: "Alcance acordado por escrito",
+      detail: "El alcance y el precio se acuerdan por escrito antes de cada fase, y usted los aprueba primero.",
+    },
+  ],
+
+  ownershipTitle: "De quién es qué",
+  ownershipLead: "Suyo. Así hacemos que sea cierto en la práctica, y no solo en el contrato.",
   ownership: [
     {
       title: "El código",
@@ -63,7 +101,7 @@ export const howWeWork: HowWeWork = {
     },
     {
       title: "Las cuentas",
-      detail: "Las cuentas de alojamiento, gestión de contenido, analítica y correo se abren a nombre de su empresa, protegidas con autenticación multifactor.",
+      detail: "Las cuentas de alojamiento, analítica y correo se abren a nombre de su empresa y se protegen con autenticación multifactor.",
     },
     {
       title: "Los dominios",
@@ -75,36 +113,36 @@ export const howWeWork: HowWeWork = {
     },
   ],
 
-  reviewerTitle: "Para su responsable de TI o asesor",
-  reviewerLead: "Las preguntas que hace un revisor cuidadoso, con respuestas claras.",
+  reviewerTitle: "Para su equipo técnico",
+  reviewerLead: "Las preguntas que hace un revisor cuidadoso, respondidas con claridad.",
   reviewerFaqs: [
     {
-      question: "¿Qué pasa si ustedes desaparecen?",
+      question: "¿Qué pasa si desaparecen?",
       answer:
-        "No se rompe nada. El código, las cuentas y los dominios ya son suyos, y la documentación está en su repositorio. Cualquier desarrollador competente puede tomar el relevo.",
+        "Nada se detiene. El código, las cuentas y los dominios ya son suyos, y la documentación está en su repositorio. Cualquier desarrollador competente puede tomar el relevo.",
     },
     {
       question: "¿Es seguro?",
       answer:
-        "Seguimos un estándar de seguridad publicado: HTTPS en todas partes, encabezados de seguridad, ningún secreto en el código, disponibilidad monitoreada, copias de seguridad y actualizaciones rápidas.",
+        "Seguimos un estándar de seguridad publicado: HTTPS en todas partes, encabezados de seguridad, ningún secreto en el código, disponibilidad monitoreada, respaldos y actualizaciones rápidas.",
     },
     {
       question: "¿Qué tecnología usan?",
       answer:
-        "Herramientas comunes y bien documentadas, como TypeScript, React y Next.js, PostgreSQL y alojamiento administrado, elegidas para cada proyecto de modo que cualquier persona capacitada pueda mantenerlas.",
+        "Herramientas comunes y bien documentadas, elegidas proyecto por proyecto, como TypeScript, React, PostgreSQL y las principales plataformas en la nube, para que cualquier persona calificada pueda mantenerlas.",
     },
     {
       question: "¿Quién tiene acceso a nuestros datos?",
       answer:
-        "Solo quienes lo necesitan, mediante cuentas nominales y con autenticación multifactor. Usted puede revisar y retirar accesos cuando quiera.",
+        "Solo las personas que lo necesitan, mediante cuentas nominales y autenticación multifactor. Usted puede revisar y retirar los accesos cuando quiera.",
     },
   ],
-  standardsLink: "Leer todos nuestros estándares",
+  standardsLink: "Leer todos nuestros estándares de ingeniería",
 
-  neededTitle: "Qué necesitamos de usted",
+  neededTitle: "Lo que necesitamos de usted",
   needed: [
     "Una persona que pueda tomar decisiones.",
     "Acceso a los sistemas que revisamos, en los términos que usted controle.",
-    "Una mirada breve cada semana al informe escrito.",
+    "Una breve mirada semanal a la actualización escrita.",
   ],
 };

@@ -31,13 +31,21 @@ const MIN_FILL_TIME_MS = 3000;
 /** Internal notifications are always in English, so the team reads them the same way whatever the visitor's language. */
 const intentLabels: Record<LeadIntent, string> = {
   audit: "Audit request",
-  contact: "Contact message",
+  contact: "Project inquiry",
   snapshot: "Snapshot request",
 };
 
 function safePagePath(value: FormDataEntryValue | null): string {
   const path = typeof value === "string" ? value : "";
   return /^\/[\w\-./]{0,199}$/.test(path) ? path : "/";
+}
+
+/** The visitor's project type and scope, in English, for the team's inbox and the CRM record. */
+function projectSummary(values: LeadValues): string[] {
+  const form = getContentFor("en").ui.leadForm;
+  const type = values.projectType ? form.projectTypes[values.projectType as keyof typeof form.projectTypes] : "";
+  const scope = values.scope ? form.scopes[values.scope as keyof typeof form.scopes] : "";
+  return [type && `Project type: ${type}`, scope && `Estimated scope: ${scope}`].filter(Boolean) as string[];
 }
 
 function formatInquiry(values: LeadValues, intent: LeadIntent, page: string, website: string): string {
@@ -47,11 +55,12 @@ function formatInquiry(values: LeadValues, intent: LeadIntent, page: string, web
     `Reply due: within one business hour of ${new Date().toISOString()}`,
     "",
     line("Name", values.name),
-    line("Role", values.role),
+    ...(intent === "contact" ? [] : [line("Role", values.role)]),
     line("Company", values.company),
-    line("Website", website),
+    ...(intent === "contact" ? [] : [line("Website", website)]),
     line("Email", values.email),
-    line("Phone", values.phone),
+    ...(intent === "contact" ? [] : [line("Phone", values.phone)]),
+    ...projectSummary(values),
     line("Preferred language", localeNames[values.language as Locale]),
     line("Source page", page),
     "",
@@ -129,7 +138,7 @@ export async function submitLead(_previous: LeadState, formData: FormData): Prom
       company: values.company,
       website,
       phone: values.phone,
-      message: values.need,
+      message: [...projectSummary(values), ...(projectSummary(values).length ? [""] : []), values.need].join("\n"),
       language,
       page,
       consentText: format(ui.leadForm.consent, { name: site.name }),

@@ -1,905 +1,520 @@
 import type { ServiceSlug, ServiceText } from "@/lib/services";
 
-/** Every service page follows the same structure so buyers can compare them. */
+/**
+ * The nine capability categories. Every capability the company offers is listed under one of them; none
+ * may be dropped. Tone: professional American English, plain, specific, no slogans and no claims about
+ * clients, years, awards or results. Never write "10x", "revolutionize", "cutting-edge" or "game-changing".
+ */
 export const services: Record<ServiceSlug, ServiceText> = {
-  "revenue-websites": {
-    name: "Revenue websites",
-    card: "Websites built to turn visitors into qualified inquiries, answered fast.",
-    seoTitle: "Revenue Websites for Service Businesses",
-    metaDescription:
-      "Company websites built around one job: getting the right visitors to ask for help, and answering fast. Fast, accessible, in English, French and Spanish.",
-    headline: "A website that brings in inquiries, not just visitors.",
-    lead: "We design and build company websites around one job: getting the right people to ask for help, and making sure someone answers quickly.",
-    forWhom: "For service and operations businesses whose website is their first salesperson.",
-    problemQuotes: [
-      "People visit, but few reach out.",
-      "Our website looks fine, but I can't tell what it earns us.",
-      "Inquiries land in an inbox and wait.",
-    ],
-    problemDetail:
-      "Most websites explain what a company is. A revenue website explains what will change for the visitor, shows what it costs to start, and connects every form to a fast reply.",
-    changes: [
-      "Visitors see what you do, for whom, and what to do next within ten seconds.",
-      "Every inquiry gets an instant confirmation and reaches the right person.",
-      "You see inquiries by page and by language, so you know what works.",
-      "Pages load fast on phones and meet accessibility standards.",
-    ],
-    included: [
-      {
-        title: "Content and structure",
-        detail: "Pages organized around your buyer's questions, not around your org chart.",
-      },
-      {
-        title: "Design and build",
-        detail: "A calm, fast, accessible site your team can edit in every language you need.",
-      },
-      {
-        title: "Lead flow",
-        detail: "Forms connected to your CRM, an instant confirmation, and routing to the right person.",
-      },
-      {
-        title: "Measurement",
-        detail: "Analytics and Search Console set up, with a monthly view of inquiries and reply times.",
-      },
-      {
-        title: "Launch checks",
-        detail: "Redirects, phone testing, keyboard and contrast checks, and forms tested in every language.",
-      },
-    ],
-    phases: [
-      {
-        title: "Plan",
-        detail: "Sitemap, messages and the inquiry flow, agreed in writing.",
-      },
-      {
-        title: "Design",
-        detail: "Layouts and a visual system you approve on real content.",
-      },
-      {
-        title: "Build in the open",
-        detail: "A staging link from the first week and a written update every week.",
-      },
-      {
-        title: "Launch and 90 days of care",
-        detail: "We go live, monitor and fix anything that comes up for 90 days.",
-      },
-    ],
-    faqs: [
-      {
-        question: "Can our team edit the site?",
-        answer:
-          "Yes. We set up content editing so your team can change pages in every language without calling a developer.",
-      },
-      {
-        question: "Do you rebuild or improve what we already have?",
-        answer: "Either. The audit tells you which one costs less for what you need.",
-      },
-      {
-        question: "Will the site rank on Google?",
-        answer:
-          "We build the technical foundation: structure, speed, metadata and structured data. We don't promise rankings, and we don't sell links.",
-      },
-    ],
-  },
-
-  "client-portals": {
-    name: "Client and owner portals",
-    card: "One secure place for status, documents and invoices, so clients stop calling.",
-    seoTitle: "Client and Owner Portals",
-    metaDescription:
-      "Secure portals where clients and owners see their status, documents and invoices without calling your office. Connected to the software you already use.",
-    headline: "Clients see their own status. Your team stops answering the same calls.",
-    lead: "We build secure portals where clients, tenants or owners find their status, documents and invoices themselves.",
-    forWhom: "For businesses whose clients keep calling or emailing to ask where things stand.",
-    problemQuotes: [
-      "Clients call to ask where things stand.",
-      "We send the same documents by email again and again.",
-      "Owners want reports, and we assemble them by hand.",
-    ],
-    problemDetail:
-      "Every status call is a sign that information exists somewhere your client can't see. A portal puts the right information in front of the right person, and nobody else.",
-    changes: [
-      "Clients find status, documents and invoices on their own.",
-      "Your team answers fewer status calls and emails.",
-      "Every request has a history: who asked, who answered, when.",
-      "Each person sees only their own information.",
-    ],
-    included: [
-      {
-        title: "Secure sign-in and permissions",
-        detail: "Each client, owner or tenant sees only their own records.",
-      },
-      {
-        title: "Status and documents",
-        detail: "Dashboards, files and statements, updated from your existing software.",
-      },
-      {
-        title: "Requests and messages",
-        detail: "One place to ask, with a clear record of who answered and when.",
-      },
-      {
-        title: "Connection to your software",
-        detail: "Billing, management or accounting software, through its API, exports or database.",
-      },
-      {
-        title: "Admin view for your team",
-        detail: "Everything in one queue, with status and history.",
-      },
-    ],
-    phases: [
-      {
-        title: "Map what clients ask",
-        detail: "We list the questions that fill your inbox and phone, and pick the ones to answer first.",
-      },
-      {
-        title: "First release",
-        detail: "The few screens that answer most questions, tested with real users.",
-      },
-      {
-        title: "Grow with real use",
-        detail: "We add what people ask for, in fixed-price phases.",
-      },
-      {
-        title: "Launch and 90 days of care",
-        detail: "We launch, monitor and fix anything that comes up for 90 days.",
-      },
-    ],
-    faqs: [
-      {
-        question: "How do you keep client data safe?",
-        answer:
-          "Each user sees only their own records, sign-in uses multi-factor authentication where it fits, and everything follows our published security standard.",
-      },
-      {
-        question: "Can it connect to the software we already use?",
-        answer:
-          "Often yes, through its API, exports or database access. We check what's possible during the audit, before you commit to anything.",
-      },
-      {
-        question: "Do clients need to install anything?",
-        answer: "No. It works in the browser, on a phone or a computer.",
-      },
-    ],
-  },
-
-  "operations-apps": {
-    name: "Operations apps and dashboards",
-    card: "Your process in one tool instead of five spreadsheets.",
-    seoTitle: "Operations Apps and Dashboards",
-    metaDescription:
-      "Internal tools and dashboards that replace spreadsheets and email threads with software shaped like your process, so your team sees what's late and what's next.",
-    headline: "Your process in one tool, not in five spreadsheets.",
-    lead: "We build internal apps and dashboards shaped like the way your team actually works, so everyone sees the same status.",
-    forWhom: "For teams running their operations on spreadsheets, shared inboxes and memory.",
-    problemQuotes: [
-      "The real process lives in a spreadsheet only one person understands.",
-      "We can't see what's late until someone tells us.",
-      "Reports take a day to assemble.",
-    ],
-    problemDetail:
-      "Spreadsheets are a fine start. They stop working when several people depend on them, and when the answer to \"what's late?\" takes a meeting.",
-    changes: [
-      "One place to see the work in progress and what's late.",
-      "The same information is entered once.",
-      "Managers get reports without assembling them.",
-      "New staff learn one tool, not a chain of files.",
-    ],
-    included: [
-      {
-        title: "Workflow mapping",
-        detail: "We follow the work as it really happens, then agree on how it should.",
-      },
-      {
-        title: "The internal app",
-        detail: "Screens and roles built for your team's daily tasks.",
-      },
-      {
-        title: "Dashboards",
-        detail: "What's in progress, what's late and what's next, without a meeting.",
-      },
-      {
-        title: "Data import",
-        detail: "Your current spreadsheets moved in, cleaned and checked.",
-      },
-      {
-        title: "Training and handover",
-        detail: "Short guides and a working session for your team.",
-      },
-    ],
-    phases: [
-      {
-        title: "Map the workflow",
-        detail: "Who does what, in what order, and where it gets stuck.",
-      },
-      {
-        title: "Build the smallest useful version",
-        detail: "The first version removes real work. Nothing more.",
-      },
-      {
-        title: "Improve with use",
-        detail: "We adjust with your team's feedback, in fixed-price phases.",
-      },
-      {
-        title: "Launch and 90 days of care",
-        detail: "We launch, monitor and fix anything that comes up for 90 days.",
-      },
-    ],
-    faqs: [
-      {
-        question: "Isn't off-the-shelf software cheaper?",
-        answer:
-          "Sometimes. If a standard product fits your process, we'll say so in the audit and skip the build.",
-      },
-      {
-        question: "Who owns the data and the code?",
-        answer: "You do. Both live in accounts in your company's name.",
-      },
-      {
-        question: "Can we start small?",
-        answer: "Yes. The first phase is the smallest version that removes real work.",
-      },
-    ],
-  },
-
-  automation: {
-    name: "Automation",
-    card: "Routine work that runs on its own, with a log you can read.",
-    seoTitle: "Business Process Automation",
-    metaDescription:
-      "Automations that move data between your tools, send reminders and route approvals, with a log of every step so mistakes are easy to trace.",
-    headline: "Routine work that runs on its own, with a record of what it did.",
-    lead: "We automate the predictable steps between your tools, so your people spend their time on the work that needs judgment.",
-    forWhom: "For teams that retype data, chase approvals or send the same reminders by hand.",
-    problemQuotes: [
-      "We retype the same details into three systems.",
-      "Reminders depend on someone remembering.",
-      "Approvals get stuck in inboxes.",
-    ],
-    problemDetail:
-      "If a step is predictable, a machine should do it. If it needs judgment, a person should. Good automation keeps that line clear and leaves a record.",
-    changes: [
-      "Data moves between your tools without retyping.",
-      "Reminders and approvals happen on time.",
-      "Every automated step is logged, so mistakes are easy to trace.",
-      "Your team keeps the judgment calls.",
-    ],
-    included: [
-      {
-        title: "Process review",
-        detail: "We pick the steps worth automating, and leave the rest alone.",
-      },
-      {
-        title: "Workflows",
-        detail: "Intake, reminders, approvals and reports that run without anyone starting them.",
-      },
-      {
-        title: "Error handling and alerts",
-        detail: "When something fails, a named person is told, and nothing is lost quietly.",
-      },
-      {
-        title: "Logs you can read",
-        detail: "A plain record of what ran, when, and with what result.",
-      },
-      {
-        title: "Documentation",
-        detail: "What each automation does and how to change it.",
-      },
-    ],
-    phases: [
-      {
-        title: "Choose the first workflow",
-        detail: "The one that costs the most time for the least risk.",
-      },
-      {
-        title: "Build and test",
-        detail: "We run it beside the manual process before we switch over.",
-      },
-      {
-        title: "Switch over",
-        detail: "The automation takes over, with alerts on.",
-      },
-      {
-        title: "Launch and 90 days of care",
-        detail: "We monitor and fix anything that comes up for 90 days.",
-      },
-    ],
-    faqs: [
-      {
-        question: "What if an automation makes a mistake?",
-        answer:
-          "Every run is logged and failures alert a named person. Steps with real consequences ask a person to approve first.",
-      },
-      {
-        question: "Which tools can you connect?",
-        answer:
-          "Most business software that offers an API, an export, or email in and out. We check what's possible during the audit.",
-      },
-    ],
-  },
-
-  "ai-with-judgment": {
-    name: "AI with judgment",
-    card: "AI drafts. Your team approves.",
-    seoTitle: "AI With Human Review for Operations",
-    metaDescription:
-      "AI that drafts, sorts and summarizes while your team reviews before anything reaches a client. Tested on your own examples, with your data kept in your accounts.",
-    headline: "AI drafts. Your team approves.",
-    lead: "We apply AI to specific, measurable tasks: reading documents, drafting replies, sorting requests. A person reviews the result before it reaches a client.",
-    forWhom: "For teams that spend hours reading, sorting or drafting, and want to stay in control.",
-    problemQuotes: [
-      "Staff spend hours reading documents to find one answer.",
-      "Replies to routine emails take too long.",
-      "We're curious about AI, but worried about mistakes.",
-    ],
-    problemDetail:
-      "AI is useful when the task is clear, the result can be checked and a person makes the final call. It's the wrong tool when a simple rule would do, and we'll tell you when that's the case.",
-    changes: [
-      "Drafts and summaries in minutes, each one reviewed by a person.",
-      "Answers point to the documents they came from.",
-      "You know how accurate it is, because we test it on your own examples.",
-      "Your data stays in accounts you own.",
-    ],
-    included: [
-      {
-        title: "Use-case selection",
-        detail: "We check that AI is the right tool at all, and pick one task to start.",
-      },
-      {
-        title: "A test set from your examples",
-        detail: "Real questions and documents, with answers your team has verified.",
-      },
-      {
-        title: "A prototype with human review",
-        detail: "Every result waits for a person's approval before it goes anywhere.",
-      },
-      {
-        title: "Access and privacy controls",
-        detail: "Who can see what, and where your data is processed, in line with our AI policy.",
-      },
-      {
-        title: "Monitoring",
-        detail: "We keep measuring accuracy after launch and tell you if it drifts.",
-      },
-    ],
-    phases: [
-      {
-        title: "Choose one task",
-        detail: "Narrow, measurable and low risk.",
-      },
-      {
-        title: "Test on your examples",
-        detail: "We measure accuracy before anyone relies on it.",
-      },
-      {
-        title: "Pilot with human review",
-        detail: "A small group uses it, and reviews every result.",
-      },
-      {
-        title: "Launch and 90 days of care",
-        detail: "We launch, monitor accuracy and fix issues for 90 days.",
-      },
-    ],
-    faqs: [
-      {
-        question: "Will AI send anything to clients without review?",
-        answer:
-          "Not by default. Our AI policy requires a person to review anything that reaches a client, unless you decide otherwise in writing for a specific, low-risk task.",
-      },
-      {
-        question: "Which AI models do you use?",
-        answer:
-          "We choose per task, for accuracy, cost and privacy, and we tell you which provider handles what.",
-      },
-      {
-        question: "Is our data used to train AI models?",
-        answer:
-          "Our policy is not to send your data to a provider that uses it for training without your written consent. The AI policy page has the details.",
-      },
-    ],
-  },
-
-  "integrations-and-data": {
-    name: "Integrations and data",
-    card: "Your tools sharing the same facts.",
-    seoTitle: "Software Integrations and Data Cleanup",
-    metaDescription:
-      "Connect your CRM, accounting, management and operations software so they share the same facts. Plan, test and monitor every integration and migration.",
-    headline: "Your tools, sharing the same facts.",
-    lead: "We connect the software you already use, so each fact lives in one place and every system stays up to date.",
-    forWhom: "For businesses whose numbers differ depending on which system you ask.",
-    problemQuotes: [
-      "The number in the CRM doesn't match the number in accounting.",
-      "Nobody trusts the report.",
-      "Moving to a new system scares us.",
-    ],
-    problemDetail:
-      "When the same information lives in several places, someone retypes it and someone forgets. Integrations decide which system is the source for each fact, and keep the others in step.",
-    changes: [
-      "One source of truth for each kind of information.",
-      "Systems update each other automatically.",
-      "Reports agree, because they read the same data.",
-      "Migrations are planned, tested and reversible.",
-    ],
-    included: [
-      {
-        title: "System and data inventory",
-        detail: "What you use, what data lives where, and what depends on what. It starts in the audit.",
-      },
-      {
-        title: "Integrations",
-        detail: "Connections through APIs, webhooks or scheduled sync, with monitoring.",
-      },
-      {
-        title: "Data cleanup and migration",
-        detail: "Duplicates found, records fixed, and moves rehearsed before the real one.",
-      },
-      {
-        title: "Reporting layer",
-        detail: "One set of numbers your team can trust.",
-      },
-      {
-        title: "Monitoring and alerts",
-        detail: "If a connection breaks, a named person knows the same day.",
-      },
-    ],
-    phases: [
-      {
-        title: "Inventory",
-        detail: "A map of your systems and the data that moves between them.",
-      },
-      {
-        title: "Connect the most painful pair",
-        detail: "The two systems where retyping costs the most.",
-      },
-      {
-        title: "Extend",
-        detail: "Add connections one at a time, in fixed-price phases.",
-      },
-      {
-        title: "Launch and 90 days of care",
-        detail: "We monitor every connection and fix issues for 90 days.",
-      },
-    ],
-    faqs: [
-      {
-        question: "What if our software has no API?",
-        answer:
-          "There are often other routes: exports, email parsing or database access. We check the options in the audit and tell you plainly what's not worth doing.",
-      },
-      {
-        question: "Can you migrate us to new software?",
-        answer:
-          "Yes. We plan the move, rehearse it on a copy, check the results with your team and keep a way back until you're sure.",
-      },
-    ],
-  },
-
   "custom-software": {
-    name: "Custom software",
-    card: "Tailored web applications, mobile apps and APIs, built to fit how your organization works.",
-    seoTitle: "Custom Software: Web Applications, Mobile Apps and APIs",
+    name: "Custom Software Development",
+    card: "Software built around how your business actually works: custom business systems, full-stack applications, and process automation.",
+    seoTitle: "Custom Software Development Company",
     metaDescription:
-      "Tailored web applications, enterprise mobile apps and APIs for established businesses and larger organizations. Fixed-price phases, code you own, and a written update every week.",
-    headline: "Software built around how your organization works.",
-    lead: "We design and build tailored web applications, enterprise mobile apps and the APIs that connect them, for organizations whose needs off-the-shelf software can't meet.",
-    forWhom: "For established businesses and larger organizations that need software no standard product provides.",
-    problemQuotes: [
-      "Off-the-shelf software doesn't fit our process.",
-      "We've outgrown the tools we started with.",
-      "Our systems can't talk to each other, and every connection is a one-off.",
+      "Custom business software, full-stack development, and process automation. We build scalable applications tailored to how your business operates.",
+    headline: "Custom software built around how your business works.",
+    lead: "When off-the-shelf tools force you to work around them, we build the software that fits: tailored to your process, engineered to scale, and owned by you.",
+    overview:
+      "We handle the full stack, from the interface people use to the services and data behind it. The result is software that removes manual work, fits your process, and can grow with the business.",
+    capabilities: [
+      "Custom business software",
+      "Tailored software solutions",
+      "Full-stack development",
+      "Frontend and backend engineering",
+      "Business process automation",
+      "Custom system development",
+      "Scalable software applications",
     ],
-    problemDetail:
-      "Custom software is worth it when your process is your advantage, or when no product does the job. It isn't worth it when a standard tool would. We tell you which case you're in before you commit.",
-    changes: [
-      "Software matches the way your teams actually work, not the other way around.",
-      "Web and mobile apps share one set of business rules through an API.",
-      "Other systems can connect to yours through documented, secure APIs.",
-      "You see progress every week, and every release is tested.",
-      "You own the code, so any capable developer can take over.",
+    challenges: [
+      "Off-the-shelf software doesn't match the way we work.",
+      "Our team keeps working around the tools we have.",
+      "Important processes live in spreadsheets and email.",
+      "We need something that can grow with the business.",
     ],
-    included: [
+    approach: [
       {
-        title: "Scoping",
-        detail: "Users, workflows and a first release small enough to build well, agreed in writing.",
+        title: "Start from the process",
+        detail:
+          "We map how the work really happens before deciding what to build, so the software fits the business and not the other way around.",
       },
       {
-        title: "Web applications",
-        detail: "Browser-based apps with roles and permissions, dashboards and reports.",
+        title: "Build in working increments",
+        detail: "You see working software early and often, and you steer it as we go.",
       },
       {
-        title: "Mobile apps",
-        detail: "Enterprise apps for phones and tablets, on iOS and Android, or a mobile-ready web app when that's enough.",
-      },
-      {
-        title: "APIs and integrations",
-        detail: "Documented, versioned and secure interfaces, so other systems can use yours.",
-      },
-      {
-        title: "Testing and documentation",
-        detail: "Automated tests for the flows that matter, and documentation for the people who maintain it.",
-      },
-      {
-        title: "Handover",
-        detail: "The code in your repository, your accounts in your name, and a working session for your team.",
-      },
-    ],
-    phases: [
-      {
-        title: "Scope",
-        detail: "Who uses it, what it must do first, and how we'll know it works.",
-      },
-      {
-        title: "Design and first release",
-        detail: "Clickable designs tested with real users, then the smallest release that removes real work.",
-      },
-      {
-        title: "Build in the open",
-        detail: "A staging link from the first week and a written update every week.",
-      },
-      {
-        title: "Launch and 90 days of care",
-        detail: "We launch, monitor and fix anything that comes up for 90 days.",
+        title: "Plan for growth",
+        detail:
+          "Clean structure, documentation, and tests make the system easy to extend, and easy for any capable developer to maintain.",
       },
     ],
     faqs: [
       {
-        question: "Do you build mobile apps?",
+        question: "Can you build on top of the tools we already use?",
         answer:
-          "Yes: enterprise apps for iOS and Android, or a mobile-ready web app when that meets the need. We recommend the simpler option when it does the job.",
-      },
-      {
-        question: "Can you build an API for a system we already have?",
-        answer:
-          "Yes. We design a documented API in front of it, so new apps and other systems can use it safely.",
+          "Yes. We connect new software to your existing systems through their APIs, exports, or databases, and replace only what needs replacing.",
       },
       {
         question: "Who owns the code?",
-        answer: "You do. It lives in a repository in your organization, and any capable developer can maintain it.",
+        answer: "You do. The code lives in a repository in your organization from the first day.",
       },
     ],
   },
 
-  "cloud-modernization": {
-    name: "Cloud modernization",
-    card: "Move legacy products to the cloud with a plan, in tested steps you can reverse.",
-    seoTitle: "Cloud Modernization and Migration to Azure and AWS",
+  "web-applications": {
+    name: "Web & Application Development",
+    card: "Websites, web applications, customer portals, and internal platforms, from progressive web apps to enterprise applications.",
+    seoTitle: "Web Application Development Services",
     metaDescription:
-      "Assess, re-architect and migrate legacy applications onto Microsoft Azure or Amazon Web Services, in tested steps that can be reversed. Fixed-price phases and code you own.",
-    headline: "Move legacy software to the cloud without stopping the business.",
-    lead: "We assess, re-architect and migrate legacy products onto major cloud platforms such as Microsoft Azure and Amazon Web Services, in steps that are tested and can be reversed.",
-    forWhom: "For organizations running older software on servers they would rather not maintain.",
-    problemQuotes: [
-      "Our software runs on servers nobody wants to touch.",
-      "Only one person understands how it works.",
-      "A migration scares us. What if it breaks?",
+      "Professional websites, custom web applications, customer portals, dashboards, and enterprise platforms, engineered for speed, security, and scale.",
+    headline: "Websites and web applications engineered for real use.",
+    lead: "From a professional company website to an enterprise platform your teams and customers rely on every day, we design, build, and maintain applications that work on every device.",
+    overview:
+      "Web technology is how most businesses reach customers and run their operations. We build both sides: the public site that earns inquiries and the applications behind the login.",
+    capabilities: [
+      "Professional website development",
+      "Custom web applications",
+      "Enterprise applications",
+      "Progressive web applications",
+      "Internal business platforms",
+      "Customer portals",
+      "Administrative dashboards",
+      "Interactive digital platforms",
     ],
-    problemDetail:
-      "Legacy software isn't a problem until it is: an unsupported system, an expert who is leaving, a security fix that can't be applied. Moving to the cloud isn't always the answer. Sometimes a smaller change does more for less. The assessment says which.",
-    changes: [
-      "You know what you run, what depends on what, and what it costs.",
-      "The move happens in small, tested steps, each with a way back.",
-      "Systems are easier to secure, update and scale.",
-      "Cloud costs are visible and controlled.",
-      "Your team knows how to run the result.",
+    challenges: [
+      "Customers call to ask for information they should be able to find themselves.",
+      "Our website looks fine but doesn't bring in qualified inquiries.",
+      "Our team needs one internal platform instead of five separate tools.",
+      "We need an application that works well on phones and tablets, too.",
     ],
-    included: [
+    approach: [
       {
-        title: "Assessment",
-        detail: "An inventory of applications, data and dependencies, and the risks in each. It starts in the audit.",
+        title: "Design for the people who use it",
+        detail:
+          "We start with who uses the application and what they need to get done, then design the flow and the interface around it.",
       },
       {
-        title: "Target design",
-        detail: "The architecture on Azure or AWS, with security, resilience and a cost estimate.",
+        title: "Engineer for speed and security",
+        detail:
+          "Fast on ordinary phones and connections, accessible, and protected with sensible defaults such as HTTPS, access control, and monitored uptime.",
       },
       {
-        title: "Re-architecture",
-        detail: "From moving as-is to reworking parts of the system, only where it pays off.",
-      },
-      {
-        title: "Data and application migration",
-        detail: "Rehearsed on a copy first, with a cutover plan and a way back.",
-      },
-      {
-        title: "Security and access",
-        detail: "Identity, permissions, backups and logging set up from the start.",
-      },
-      {
-        title: "Cost controls and handover",
-        detail: "Budgets and alerts, plus documentation and runbooks your team can use.",
-      },
-    ],
-    phases: [
-      {
-        title: "Assess",
-        detail: "What you run, what it depends on, and what should move, stay or retire.",
-      },
-      {
-        title: "Design the target",
-        detail: "The architecture, the security model and the costs, agreed in writing.",
-      },
-      {
-        title: "Migrate in steps",
-        detail: "One workload at a time, each rehearsed, tested and reversible.",
-      },
-      {
-        title: "Launch and 90 days of care",
-        detail: "We monitor the new environment and fix anything that comes up for 90 days.",
+        title: "Launch, then look after it",
+        detail: "We deploy, monitor, and keep improving the application after launch.",
       },
     ],
     faqs: [
       {
-        question: "Should we move everything?",
-        answer:
-          "Not necessarily. The assessment separates what benefits from the cloud from what should stay where it is or be retired.",
+        question: "Can our team edit the content ourselves?",
+        answer: "Yes. We set up content editing so your team can update pages without a developer.",
       },
       {
-        question: "Azure or AWS?",
+        question: "Do you build mobile apps?",
         answer:
-          "We recommend based on what you already run, your team's skills and the costs, and we tell you why. We can work on either.",
-      },
-      {
-        question: "What if the migration fails?",
-        answer:
-          "Each step is rehearsed on a copy and has a rollback plan. We don't cut over until it has been proven.",
+          "We build progressive web applications that install and work like apps on phones, and we build native mobile applications when a project needs them.",
       },
     ],
   },
 
-  devops: {
-    name: "DevOps and automation",
-    card: "Automated builds, tests and releases, so software ships often and safely.",
-    seoTitle: "DevOps: CI/CD Pipelines and Quality Engineering Automation",
+  "ai-solutions": {
+    name: "AI Solutions & Automation",
+    card: "AI integrated into your systems and workflows: assistants, intelligent automation, and data-driven processes with people in control.",
+    seoTitle: "AI Solutions and Business Automation",
     metaDescription:
-      "Continuous integration, deployment pipelines and automated testing, so your team releases software often, safely and with a record of every change.",
-    headline: "Ship changes often, and know they work.",
-    lead: "We set up continuous integration, deployment pipelines and automated quality checks, so every change is built, tested and released the same way.",
-    forWhom: "For engineering teams whose releases are slow, manual or stressful.",
-    problemQuotes: [
-      "Every release is a stressful, manual event.",
-      "We find bugs after customers do.",
-      "Only one person knows how to deploy.",
+      "AI-powered applications, AI integration into existing systems, AI agents and assistants, and intelligent business automation for real workflows.",
+    headline: "AI and automation that fit into the way you work.",
+    lead: "We build and integrate AI where it removes real work: drafting, classifying, routing, and answering, inside your existing systems and with people reviewing what matters.",
+    overview:
+      "AI is one capability among many. We use it when it solves a specific problem better than conventional software, and we design it with clear limits, human review, and measurable results.",
+    capabilities: [
+      "AI-powered applications",
+      "AI integration into existing systems",
+      "Intelligent business automation",
+      "AI agents and assistants",
+      "Data-driven automation",
+      "Custom AI business solutions",
+      "AI-enhanced workflows",
     ],
-    problemDetail:
-      "Manual releases depend on memory and luck. Automated pipelines make releases boring, which is what you want: the same steps and the same checks every time, with a record of each one.",
-    changes: [
-      "Every change is built and tested automatically.",
-      "Releases follow one repeatable path that anyone on the team can run.",
-      "Problems are caught before customers see them.",
-      "You can see what changed, when, and who approved it.",
-      "A bad release can be rolled back quickly.",
+    challenges: [
+      "My team spends hours sorting, copying, and answering the same things.",
+      "We want to use AI but don't know where it would actually help.",
+      "We tried an AI tool and it doesn't connect to our systems.",
+      "We want AI to help, but a person has to approve the result.",
     ],
-    included: [
+    approach: [
       {
-        title: "Continuous integration",
-        detail: "Automated builds and tests on every change.",
+        title: "Start with the workflow, not the model",
+        detail: "We find the step where AI removes real effort, then choose the simplest tool that does the job.",
       },
       {
-        title: "Deployment pipelines",
-        detail: "Repeatable releases to staging and production, with approvals where you need them.",
+        title: "Keep people in control",
+        detail:
+          "AI drafts and suggests. Your team reviews and approves anything that matters, and the system keeps a record.",
       },
       {
-        title: "Quality engineering automation",
-        detail: "Automated unit, API and end-to-end tests that guard the flows that matter most.",
-      },
-      {
-        title: "Infrastructure as code",
-        detail: "Environments defined in code, so they can be rebuilt and reviewed.",
-      },
-      {
-        title: "Security checks in the pipeline",
-        detail: "Scans for vulnerable dependencies and exposed secrets before anything ships.",
-      },
-      {
-        title: "Monitoring, documentation and training",
-        detail: "Alerts when something breaks, and guides so your team owns the process.",
+        title: "Measure what changes",
+        detail:
+          "We agree on how success will be measured, such as time saved or errors avoided, and check it after launch.",
       },
     ],
-    phases: [
+    faqs: [
       {
-        title: "Review the current process",
-        detail: "How code goes from a laptop to production today, and where it slows or breaks.",
+        question: "Will our data be used to train AI models?",
+        answer:
+          "Not by us. We choose providers and settings that keep your data out of model training where that option exists, and we document what data goes where.",
       },
       {
-        title: "Automate build and tests",
-        detail: "Every change is built and checked automatically.",
+        question: "Can AI work with our existing software?",
+        answer:
+          "Usually, yes. We integrate AI through your systems' APIs and databases, so people keep working in the tools they know.",
+      },
+    ],
+  },
+
+  "database-solutions": {
+    name: "Database Solutions",
+    card: "Database design, development, optimization, and migration, so your data is organized, fast, and reliable.",
+    seoTitle: "Database Development and Optimization",
+    metaDescription:
+      "Database architecture, development, management, optimization, and migration. We structure and integrate your data so it is accurate, fast, and usable.",
+    headline: "Databases designed so your data is organized, fast, and reliable.",
+    lead: "Every system depends on its data. We design, build, manage, and optimize the databases behind your applications, and move data safely from old systems to new ones.",
+    overview:
+      "Good data structure makes everything else easier: faster applications, accurate reports, and integrations that hold together. We treat the database as part of the product, not an afterthought.",
+    capabilities: [
+      "Database architecture and design",
+      "Database development",
+      "Database management",
+      "Database optimization",
+      "Data migration",
+      "Database integration",
+      "Data structuring and organization",
+    ],
+    challenges: [
+      "The same information lives in several places and doesn't match.",
+      "Reports are slow, or someone rebuilds them by hand every month.",
+      "Our application slows down as the data grows.",
+      "We need to move data from an old system without losing anything.",
+    ],
+    approach: [
+      {
+        title: "Model the business first",
+        detail: "We design the data structure around how your business works, so it stays clear as it grows.",
+      },
+      {
+        title: "Migrate with checks",
+        detail:
+          "We move data in rehearsed steps, compare the results, and keep a way back until everything is verified.",
+      },
+      {
+        title: "Tune for real workloads",
+        detail: "We measure the queries that matter and optimize those, rather than guessing.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Which databases do you work with?",
+        answer:
+          "We work with mainstream relational and document databases, and choose based on your requirements, your team's skills, and long-term maintenance.",
+      },
+      {
+        question: "Can you clean up our existing data?",
+        answer:
+          "Yes. Structuring, de-duplicating, and organizing existing data is often the first step before a migration or integration.",
+      },
+    ],
+  },
+
+  "cloud-solutions": {
+    name: "Cloud Solutions & Infrastructure",
+    card: "Cloud architecture, migration, and infrastructure: scalable deployments on the platforms your business chooses.",
+    seoTitle: "Cloud Migration and Infrastructure Services",
+    metaDescription:
+      "Cloud architecture, migration, infrastructure development, server management, and optimization. Scalable, secure deployments on major cloud platforms.",
+    headline: "Cloud infrastructure built to run reliably and scale.",
+    lead: "We design cloud architecture, migrate existing systems, and build the infrastructure and deployment pipelines that keep applications available, secure, and cost-aware.",
+    overview:
+      "Moving to the cloud is a means, not the goal. We plan around availability, security, cost, and how your team will operate the result, on platforms such as Microsoft Azure and Amazon Web Services.",
+    capabilities: [
+      "Cloud architecture",
+      "Cloud migration",
+      "Cloud infrastructure development",
+      "Server configuration and management",
+      "Scalable cloud applications",
+      "Cloud optimization",
+      "Deployment and infrastructure solutions",
+    ],
+    challenges: [
+      "Our servers are aging, and nobody wants to touch them.",
+      "We want to move to the cloud without interrupting the business.",
+      "Our cloud bill keeps growing and we don't know why.",
+      "Deployments are manual, slow, or risky.",
+    ],
+    approach: [
+      {
+        title: "Assess before moving",
+        detail: "We inventory what runs where, what depends on what, and what should change before anything moves.",
+      },
+      {
+        title: "Migrate in stages",
+        detail: "Each step is rehearsed and reversible, so the business keeps running throughout.",
       },
       {
         title: "Automate deployment",
-        detail: "Releases run through one pipeline, with approvals and a way back.",
-      },
-      {
-        title: "Launch and 90 days of care",
-        detail: "We monitor the pipelines and fix anything that comes up for 90 days.",
+        detail: "Repeatable pipelines and infrastructure defined in code make releases routine instead of risky.",
       },
     ],
     faqs: [
       {
-        question: "Do we have to rebuild our software?",
+        question: "Which cloud platforms do you work with?",
         answer:
-          "No. We add pipelines and tests around what you have, starting with the flows that matter most.",
+          "We work with major platforms such as Microsoft Azure and Amazon Web Services, and we recommend based on what you already run and what the project needs.",
       },
       {
-        question: "Which tools do you use?",
+        question: "Will we be locked in to one provider?",
         answer:
-          "Mainstream ones your team can keep, such as GitHub Actions or Azure DevOps. We choose based on where your code and cloud already live.",
-      },
-      {
-        question: "How much test automation is enough?",
-        answer:
-          "Enough to protect the flows that would hurt most if they broke. We agree on that list first, then grow it.",
+          "We design to keep your options open where that makes sense, and we document the architecture so it can be operated or moved later.",
       },
     ],
   },
 
-  "strategy-design": {
-    name: "Strategy and design",
-    card: "UX design, digital product strategy and technical advice, before you build.",
-    seoTitle: "Digital Product Strategy, UX Design and Technical Advisory",
+  "software-architecture": {
+    name: "Software Architecture",
+    card: "Architecture and planning for scalable systems: backend design, APIs, integrations, and technical infrastructure.",
+    seoTitle: "Software Architecture and System Design",
     metaDescription:
-      "User experience design, digital product strategy and technical advisory: decide what to build, and how, before you spend on building it.",
-    headline: "Decide what to build before you build it.",
-    lead: "We offer user experience design, digital product strategy and technical advisory, so you invest in the right things and build them once.",
-    forWhom: "For teams planning a new product or a big change who want clear, independent advice first.",
-    problemQuotes: [
-      "We're not sure what to build first.",
-      "Our users find the current system confusing.",
-      "We need a second opinion on the technical plan.",
+      "Software and application architecture, scalable system design, backend and API architecture, system integration, and technical infrastructure planning.",
+    headline: "Software architecture that lets systems grow without breaking.",
+    lead: "Good architecture decides how easily a system can change. We design the structure, interfaces, and integrations that keep your technology reliable as the business evolves.",
+    overview:
+      "We plan before we build: how components fit together, how data flows, how systems talk to each other, and where the system will need to scale. That planning prevents expensive rework later.",
+    capabilities: [
+      "Software architecture and planning",
+      "Scalable system design",
+      "Backend architecture",
+      "API architecture",
+      "System integration",
+      "Technical infrastructure planning",
+      "Application architecture",
     ],
-    problemDetail:
-      "The costliest software is the wrong software. Strategy and design work costs little compared with building the wrong thing, and it gives your team, and any developer you choose, something concrete to build from.",
-    changes: [
-      "Priorities are clear and written down.",
-      "Screens are tested with real users before development starts.",
-      "The technical approach is reviewed and its risks are named.",
-      "You get a roadmap with costed phases.",
-      "Developers, ours or yours, start from clear designs and decisions.",
+    challenges: [
+      "Every change breaks something else.",
+      "Our systems don't talk to each other.",
+      "We're about to build something big and want the foundation right.",
+      "We inherited a system nobody fully understands.",
     ],
-    included: [
+    approach: [
       {
-        title: "Discovery",
-        detail: "Interviews with users and stakeholders, and a look at how the work really happens.",
+        title: "Decide with the trade-offs in view",
+        detail:
+          "We write down the options, what each one costs, and why we recommend one, in language decision-makers can follow.",
       },
       {
-        title: "Digital product strategy",
-        detail: "Goals, priorities, a roadmap and the measures that will show it worked.",
+        title: "Define the boundaries",
+        detail:
+          "Clear interfaces between parts let teams work independently and let systems be replaced one piece at a time.",
       },
       {
-        title: "UX research and design",
-        detail: "User flows, wireframes and clickable prototypes, tested with real users.",
-      },
-      {
-        title: "A design system",
-        detail: "A consistent set of components, so every screen looks and works alike.",
-      },
-      {
-        title: "Technical advisory",
-        detail: "Architecture review, build-versus-buy decisions, vendor choices and risks, in writing.",
-      },
-      {
-        title: "A costed roadmap",
-        detail: "Prioritized phases with prices, ready for us or any other team to build.",
-      },
-    ],
-    phases: [
-      {
-        title: "Discover",
-        detail: "Who the users are, what they need and what stands in the way.",
-      },
-      {
-        title: "Define",
-        detail: "The goals, priorities and technical approach, agreed in writing.",
-      },
-      {
-        title: "Design and test",
-        detail: "Prototypes tested with real users, and adjusted before anything is built.",
-      },
-      {
-        title: "Roadmap and handover",
-        detail: "A costed roadmap and design files you own, ready for any team to build from.",
+        title: "Document what we design",
+        detail: "Diagrams and decisions are recorded so your team, or any capable developer, can continue the work.",
       },
     ],
     faqs: [
       {
-        question: "Do we have to build with you afterward?",
-        answer: "No. The strategy, designs and roadmap are yours to use with any team.",
+        question: "Do you only design, or also build?",
+        answer:
+          "Both. Some clients hire us for the architecture and build with their own team. Others have us design and build.",
       },
       {
-        question: "Can you review a plan another firm made?",
-        answer:
-          "Yes. A technical advisory review looks at the architecture, the risks and the estimate, and gives you a written opinion.",
+        question: "Can you review an architecture we already have?",
+        answer: "Yes. We review existing systems and report what is sound, what is risky, and what to change first.",
       },
     ],
   },
 
-  "managed-plans": {
-    name: "Managed plans",
-    card: "A named person responsible for your systems, every month.",
-    seoTitle: "Managed Care Plans for Websites and Systems",
+  "application-modernization": {
+    name: "Application Modernization",
+    card: "Upgrade, restructure, and migrate legacy applications, so aging systems stop holding the business back.",
+    seoTitle: "Legacy Application Modernization Services",
     metaDescription:
-      "Monthly care for your website and systems: monitoring, updates, backups and small improvements, with a named person responsible and a monthly report.",
-    headline: "A named person is responsible for your systems, every month.",
-    lead: "We monitor, update and improve what we've built, or what you already have, with a monthly report on what happened.",
-    forWhom: "For businesses whose systems work today and need someone to keep them that way.",
-    problemQuotes: [
-      "Our website was built years ago and nobody looks after it.",
-      "When something breaks, we don't know who to call.",
-      "Updates get skipped, and that worries me.",
+      "Legacy system modernization, application upgrades, performance optimization, system restructuring, and technology migration for outdated business systems.",
+    headline: "Modernize the systems your business already depends on.",
+    lead: "Outdated software is risky, slow, and hard to change. We upgrade, restructure, and migrate existing applications in stages, without stopping the work that depends on them.",
+    overview:
+      "Most businesses can't switch off a critical system and start over. We modernize around what works: keep what's sound, replace what isn't, and move to current technology one step at a time.",
+    capabilities: [
+      "Legacy system modernization",
+      "Existing application upgrades",
+      "Performance optimization",
+      "System restructuring",
+      "Technology migration",
+      "Codebase improvements",
+      "Modernization of outdated business systems",
     ],
-    problemDetail:
-      "Systems don't stay still. Software needs updates, certificates expire and small problems grow. A managed plan means someone is watching, and accountable.",
-    changes: [
-      "Uptime and errors are monitored.",
-      "Updates and security fixes are applied quickly.",
-      "Backups are checked.",
-      "A named person responds when something breaks.",
-      "You get a monthly report and a few improvements each month.",
+    challenges: [
+      "Our software runs on technology nobody supports anymore.",
+      "It's slow, and every change takes months.",
+      "Only one person understands how it works.",
+      "We want new features, but the old system can't support them.",
     ],
-    included: [
+    approach: [
       {
-        title: "Monitoring",
-        detail: "Uptime and errors watched, with alerts to a person.",
+        title: "Understand before changing",
+        detail:
+          "We read the code, map the dependencies, and find out what the system really does, including what nobody documented.",
       },
       {
-        title: "Updates and fixes",
-        detail: "Software updates and security fixes applied quickly.",
+        title: "Modernize in stages",
+        detail:
+          "We replace or upgrade one part at a time, so the business keeps running and each step can be verified.",
       },
       {
-        title: "Backups",
-        detail: "Data and configuration backed up, and checked.",
-      },
-      {
-        title: "Monthly report",
-        detail: "Inquiries, speed, issues and what we improved, in plain language.",
-      },
-      {
-        title: "Small improvements",
-        detail: "Changes agreed each month, based on the report.",
-      },
-    ],
-    phases: [
-      {
-        title: "Onboard",
-        detail: "Access, an inventory and accounts in your company's name.",
-      },
-      {
-        title: "Stabilize",
-        detail: "Fix what's outdated or fragile first.",
-      },
-      {
-        title: "Monthly care",
-        detail: "Monitoring, updates, and a written report every month.",
-      },
-      {
-        title: "Review",
-        detail: "Regular check-ins on what to improve next.",
+        title: "Leave it easier to maintain",
+        detail: "Cleaner code, tests, and documentation mean the next change costs less than the last one.",
       },
     ],
     faqs: [
       {
-        question: "Can you look after a system you didn't build?",
+        question: "Do we have to rebuild everything?",
         answer:
-          "Often yes. We start with a review to see what we'd be taking on, and tell you honestly if something needs fixing first.",
+          "Rarely. We usually recommend upgrading or replacing the parts that hold you back and keeping what works.",
       },
       {
-        question: "Who do I call when something breaks?",
-        answer: "A named person, whose details you receive when you start.",
+        question: "Can the system stay in use during modernization?",
+        answer:
+          "Yes. Staged migration and parallel running let the business keep working while the system changes underneath it.",
+      },
+    ],
+  },
+
+  "digital-transformation": {
+    name: "Digital Transformation",
+    card: "Digital workflows, process optimization, and integrated systems, so technology supports how the business operates.",
+    seoTitle: "Digital Transformation Consulting and Development",
+    metaDescription:
+      "Business technology transformation: digital workflow development, process optimization, technology integration, and business system modernization.",
+    headline: "Digital transformation grounded in how your business operates.",
+    lead: "We turn manual, disconnected processes into integrated digital workflows, and modernize the business systems around them, one practical step at a time.",
+    overview:
+      "Transformation means changing how work gets done, not just buying software. We start with the process, decide what technology should do, and build and connect it so the change sticks.",
+    capabilities: [
+      "Business technology transformation",
+      "Digital workflow development",
+      "Process optimization",
+      "Technology integration",
+      "Business system modernization",
+      "Digital infrastructure development",
+    ],
+    challenges: [
+      "Too much of our work still happens on paper, in email, or by hand.",
+      "Our tools don't share information, so people retype it.",
+      "We know we need to modernize but not where to begin.",
+      "We need a plan the whole company can follow.",
+    ],
+    approach: [
+      {
+        title: "Map the work as it is",
+        detail:
+          "We document how processes really run today, including the workarounds, before proposing any change.",
+      },
+      {
+        title: "Prioritize by impact",
+        detail: "We rank changes by the value they deliver and the effort they take, so you start where it matters most.",
+      },
+      {
+        title: "Deliver in steps",
+        detail:
+          "Each step ships something usable, so the business benefits along the way instead of waiting for one big launch.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Where do we start?",
+        answer:
+          "Usually with a technical assessment of your current processes and systems. It shows what to change first and what it would take.",
+      },
+      {
+        question: "Do we need to change everything at once?",
+        answer: "No. We plan the changes in steps, and each step delivers something useful on its own.",
+      },
+    ],
+  },
+
+  "technology-consulting": {
+    name: "Consulting & Technical Problem-Solving",
+    card: "Technology consulting, technical assessments, and troubleshooting, from planning through implementation.",
+    seoTitle: "Technology Consulting and Technical Assessments",
+    metaDescription:
+      "Technology consulting, technical assessments, software troubleshooting, system diagnostics, and custom technology strategy, from planning to implementation.",
+    headline: "Technical expertise for your hardest problems and biggest decisions.",
+    lead: "When something is broken, unclear, or about to change, we help you understand it, decide what to do, and then implement it, or hand a clear plan to your own team.",
+    overview:
+      "Sometimes the most valuable deliverable is a clear answer: what is wrong, what to do about it, and what it will cost. We diagnose the problem first and recommend only what the evidence supports.",
+    capabilities: [
+      "Technology consulting",
+      "Technical assessments",
+      "Software troubleshooting",
+      "Complex technical problem-solving",
+      "Custom technology strategies",
+      "Infrastructure improvements",
+      "System diagnostics",
+      "Technical planning and implementation",
+    ],
+    challenges: [
+      "Something in our system is failing and we can't find the cause.",
+      "We need an independent opinion before a big technology decision.",
+      "Our team is stretched and needs senior technical help.",
+      "We need a plan, and someone to help carry it out.",
+    ],
+    approach: [
+      {
+        title: "Diagnose with evidence",
+        detail: "We reproduce the problem, measure it, and trace it to its cause before recommending a fix.",
+      },
+      {
+        title: "Give a clear recommendation",
+        detail:
+          "You get a written assessment with priorities, options, and costs, whether or not you hire us to implement it.",
+      },
+      {
+        title: "Stay through implementation",
+        detail: "When you want it, we carry the plan out or work alongside your team until it's done.",
+      },
+    ],
+    faqs: [
+      {
+        question: "What is a technical assessment?",
+        answer:
+          "A fixed-scope review of your systems, processes, or code that ends with findings, priorities, and a costed plan. Our Digital Systems Audit is one form of it.",
+      },
+      {
+        question: "Can you help with a problem that's already in production?",
+        answer: "Yes. Troubleshooting live systems is part of the work. We stabilize first, then find and fix the cause.",
       },
     ],
   },
 };
 
 export const servicesPage = {
-  metaTitle: "Services: Websites, Portals, Apps, Automation and AI",
+  metaTitle: "Custom Software, Web, AI, Cloud and Technology Services",
   metaDescription:
-    "Revenue websites, portals, operations apps, custom software, automation, AI with human review, integrations, cloud modernization, DevOps, strategy and design, and managed plans. Fixed-price phases, from a Digital Systems Audit.",
+    "Custom software development, web and application development, AI solutions, database, cloud, software architecture, application modernization, digital transformation, and technology consulting.",
   eyebrow: "Services",
-  title: "Eleven services, organized around your problem.",
-  lead: "Every project starts with the audit. It shows which of these you need first, and what it costs.",
-  from: "Price",
-  ctaTitle: "Not sure which one you need?",
-  ctaLead: "That's what the audit is for. It ends with a prioritized, costed plan.",
-  problemOf: "Sound familiar?",
-  detailLabel: "See the service",
+  title: "Nine capabilities. One engineering team.",
+  lead: "Custom software, web applications, AI, databases, cloud, architecture, modernization, transformation, and technical consulting. Use one for a specific problem, or several for a complete solution.",
+  capabilitiesTitle: "What we do",
+  challengesTitle: "Does this sound familiar?",
+  approachTitle: "How we approach it",
+  relatedTitle: "Related capabilities",
+  faqTitle: "Common questions",
+  exploreLabel: "Explore",
+  capabilityCount: "{count} capabilities",
+  allServices: "All services",
+  assessmentTitle: "Start with a technical assessment",
+  assessmentBody:
+    "If you'd like a written, evidence-based view of your systems before committing to a project, our Digital Systems Audit is a fixed-scope assessment that ends with a prioritized, costed plan.",
+  assessmentLink: "About the Digital Systems Audit",
+  ctaTitle: "Not sure which capability you need?",
+  ctaLead: "Describe the challenge. We'll tell you what we'd do, and which capabilities it involves.",
 };
 
 export type ServicesPage = typeof servicesPage;

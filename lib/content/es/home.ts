@@ -1,140 +1,191 @@
 import type { Home } from "../en/home";
 
-/** La página de inicio, en español: escrita para quien la lee, no traducida palabra por palabra. */
+/**
+ * La página de inicio, en español latinoamericano: escrita para quien la lee, no traducida palabra por
+ * palabra. Ocho secciones: la portada, lo que hacemos, las capacidades, cómo resolvemos problemas, las
+ * soluciones tecnológicas, por qué trabajar con nosotros, los sectores y la consulta de proyecto.
+ */
 export const home: Home = {
-  metaTitle: "{name}: los sistemas que hacen funcionar su empresa",
+  metaTitle: "{name}: software a medida y soluciones tecnológicas",
   metaDescription:
-    "Diseñamos, construimos y operamos sitios web, portales de clientes, software interno y automatizaciones para empresas de servicios y operaciones. Empiece con una auditoría de sistemas digitales.",
+    "Diseñamos, construimos y modernizamos la tecnología que ayuda a las empresas a operar, resolver problemas y crecer: software a medida, aplicaciones web, IA, bases de datos, nube y sistemas empresariales.",
 
   hero: {
-    lead: "Construimos",
-    block1: "los sistemas",
-    block2: "que hacen funcionar",
-    tail: "su empresa.",
+    lead: "Desarrollamos",
+    block1: "tecnología.",
+    block2: "Resolvemos desafíos",
+    tail: "de negocio.",
     intro:
-      "Diseñamos, construimos y operamos sitios web, portales de clientes, software interno y automatizaciones para empresas de servicios y operaciones ya establecidas. Un solo equipo responsable, del diagnóstico a la operación diaria, en español, inglés y francés.",
+      "Desde software a medida y aplicaciones web hasta soluciones de IA, sistemas empresariales e infraestructura en la nube, diseñamos la tecnología que las empresas necesitan para operar, evolucionar y crecer.",
+    factsLabel: "De un vistazo",
     facts: [
-      "Empiece con una auditoría: {price}, acreditada por completo a un proyecto firmado dentro de {days} días",
       "Una persona le responde en una hora hábil",
       "El código, las cuentas y los dominios son suyos",
+      "Proyectos en español, inglés y francés",
     ],
-    factsLabel: "De un vistazo",
-    map: {
-      title: "Un mapa de sistemas: cómo se conectan sus herramientas",
-      caption:
-        "Este es el tipo de mapa que le entrega la auditoría: por dónde llegan las consultas, con qué se conectan y quién puede verlas.",
-      sources: { title: "Llegan las consultas", items: ["Formulario del sitio", "Correo electrónico", "Teléfono"] },
-      core: {
-        title: "Un sistema conectado",
-        items: ["CRM", "Portal de clientes", "Aplicación de operaciones"],
-        foot: "Una sola fuente de verdad para cada dato",
-      },
-      results: { title: "Todos ven los mismos datos", items: ["Su equipo", "Sus clientes", "Su contabilidad"] },
-    },
-  },
-
-  problem: {
-    eyebrow: "El problema",
-    title: "La mayoría de las empresas no necesitan otro sitio web. Necesitan que sus sistemas trabajen juntos.",
-    items: [
-      "Las consultas llegan por cinco canales, y algunas se contestan días después.",
-      "El personal captura la misma información en tres sistemas.",
-      "Los clientes llaman para pedir novedades.",
-    ],
+    visualLabel:
+      "Ilustración de una aplicación de negocio, las capas de arquitectura que la respaldan y el entorno en la nube donde se ejecuta",
   },
 
   whatWeDo: {
-    eyebrow: "Qué hacemos",
-    title: "Diagnosticar. Construir. Operar.",
+    eyebrow: "Lo que hacemos",
+    title: "Soluciones tecnológicas para desafíos de negocio reales.",
+    body: "Somos una empresa de ingeniería de software y soluciones tecnológicas. Desarrollamos software a medida, construimos aplicaciones web y móviles, diseñamos bases de datos e infraestructura en la nube, integramos IA, modernizamos sistemas que envejecen y resolvemos problemas técnicos complejos. Algunos clientes nos traen un solo desafío técnico. Otros necesitan un sistema completo.",
+    engineerLabel: "Lo que diseñamos",
+    outcomeLabel: "Lo que aporta al negocio",
+    outcomes: [
+      {
+        tech: "Software y aplicaciones a medida",
+        result: "Su proceso corre en un solo sistema hecho para él, en lugar de herramientas dispersas.",
+      },
+      {
+        tech: "Bases de datos e integraciones",
+        result: "Sus equipos trabajan con los mismos datos precisos.",
+      },
+      {
+        tech: "Nube e infraestructura",
+        result: "Sus sistemas se mantienen disponibles, seguros y listos para crecer.",
+      },
+      {
+        tech: "IA y automatización",
+        result: "El trabajo rutinario se hace solo, y las personas revisan lo que importa.",
+      },
+      {
+        tech: "Modernización y arquitectura",
+        result: "El software que envejece deja de frenar al negocio.",
+      },
+    ],
+  },
+
+  capabilities: {
+    eyebrow: "Nuestras capacidades",
+    title: "Todo lo que una empresa espera de un socio tecnológico.",
+    lead: "Nueve capacidades en un solo equipo de ingeniería. Use una para un problema concreto, o combine varias para una solución completa.",
+    explore: "Explorar",
+    viewAll: "Ver todos los servicios",
+    more: "+ {count} más",
+  },
+
+  approach: {
+    eyebrow: "Cómo resolvemos problemas",
+    title: "Del desafío a la solución.",
+    lead: "Cada proyecto es distinto, así que el proceso se adapta. La mayoría del trabajo sigue estos cinco pasos, y una solución puntual puede necesitar solo algunos.",
+    step: "Paso {number}",
     steps: [
       {
-        title: "Diagnosticar",
-        detail: "Dónde se pierden tiempo, consultas y dinero, con pruebas.",
+        title: "Entender",
+        detail: "Entender el negocio, sus desafíos, sus objetivos y la tecnología que ya tiene.",
+      },
+      {
+        title: "Planificar",
+        detail: "Definir el enfoque técnico correcto, la arquitectura y la estrategia de implementación.",
       },
       {
         title: "Construir",
-        detail: "Sistemas conectados, seguros y rápidos.",
+        detail: "Diseñar y desarrollar el software, las aplicaciones, la infraestructura o las integraciones adecuadas.",
       },
       {
-        title: "Operar",
-        detail: "Vigilados, actualizados y mejorados cada mes, con una persona responsable con nombre y apellido.",
+        title: "Implementar",
+        detail: "Desplegar, integrar y probar, y asegurarse de que la solución funcione en su entorno de negocio.",
+      },
+      {
+        title: "Evolucionar",
+        detail: "Mejorar, optimizar, mantener y adaptar la tecnología a medida que cambian sus necesidades.",
       },
     ],
-  },
-
-  whatWeBuild: {
-    eyebrow: "Qué construimos",
-    title: "Cinco tipos de sistemas, cada uno con una tarea clara.",
-    lead: "Todos parten de un problema que usted puede nombrar y terminan en algo que puede medir.",
-    linkLabel: "Ver cómo funciona",
-    also: "También ofrecemos:",
-    cards: [
+    engageTitle: "Trabaje con nosotros de la manera que le convenga",
+    engage: [
       {
-        title: "Sitios web que generan ingresos",
-        detail: "Sitios que convierten visitas en consultas calificadas, atendidas con rapidez.",
+        title: "Un desafío técnico específico",
+        detail: "Una corrección, una evaluación o una segunda opinión. Enfocado, rápido y acotado por escrito.",
       },
       {
-        title: "Portales para clientes y propietarios",
-        detail: "Un lugar seguro para consultar estado, documentos y facturas, y así sus clientes dejan de llamar.",
+        title: "Un proyecto definido",
+        detail: "Una aplicación, una migración o una integración, desde la planificación hasta el lanzamiento.",
       },
       {
-        title: "Aplicaciones de operaciones y paneles",
-        detail: "Su proceso en una sola herramienta en lugar de cinco hojas de cálculo.",
-      },
-      {
-        title: "Automatización e integraciones",
-        detail: "El trabajo rutinario se hace solo, y sus herramientas comparten los mismos datos.",
-      },
-      {
-        title: "IA con revisión humana",
-        detail: "La IA redacta. Su equipo aprueba.",
+        title: "Una implementación completa",
+        detail: "Un programa de varios sistemas: arquitectura, desarrollo, migración y soporte continuo.",
       },
     ],
+    link: "Ver cómo trabajamos",
   },
 
-  whoWeHelp: {
-    eyebrow: "A quién ayudamos",
-    title: "Hecho para tres tipos de negocio.",
-    lead: "Conocemos sus problemas diarios y el software que usan.",
-    linkLabel: "Ver la página del sector",
+  solutions: {
+    eyebrow: "Soluciones tecnológicas",
+    title: "Sea cual sea el desafío técnico, construimos la solución.",
+    lead: "Estos son los problemas que las empresas nos traen. Encuentre el suyo y vea cómo lo abordaríamos.",
+    items: [
+      { question: "¿Necesita una aplicación de negocio a medida?", answer: "Diseñamos y construimos software adaptado a su proceso." },
+      { question: "¿Su software actual ya no cubre sus necesidades?", answer: "Lo actualizamos, lo reestructuramos o lo reemplazamos por etapas." },
+      { question: "¿Quiere migrar a la nube?", answer: "Planificamos y realizamos el traslado sin interrumpir el negocio." },
+      { question: "¿Necesita una base de datos diseñada u optimizada?", answer: "Estructuramos sus datos para que sean precisos y rápidos." },
+      { question: "¿Quiere integrar IA en su empresa?", answer: "La añadimos donde elimina trabajo, con las personas al mando." },
+      { question: "¿Necesita conectar varios sistemas?", answer: "Diseñamos las integraciones y las API que los hacen trabajar juntos." },
+      { question: "¿Tiene problemas de rendimiento o de infraestructura?", answer: "Diagnosticamos la causa y la corregimos." },
+      { question: "¿Quiere automatizar procesos manuales?", answer: "Convertimos los pasos manuales en flujos de trabajo digitales confiables." },
+      { question: "¿Necesita desarrollar una plataforma digital completa?", answer: "La construimos desde cero, sobre una base que escala." },
+    ],
+    note: "La mayoría de los proyectos solo necesita algunas de estas capacidades. Recomendamos lo que encaja y dejamos fuera lo que no.",
   },
 
   whyUs: {
     eyebrow: "Por qué trabajar con nosotros",
-    title: "Pruebas antes que promesas.",
+    title: "Decisiones de ingeniería tomadas para su negocio.",
     items: [
       {
-        title: "Pruebas antes que propuestas",
-        detail: "La auditoría muestra dónde se pierden tiempo y consultas. Usted ve las pruebas antes de pagar por una construcción.",
+        title: "Soluciones diseñadas a medida",
+        detail: "Construimos para su proceso y sus restricciones, no a partir de una plantilla.",
       },
       {
-        title: "Fases a precio fijo",
-        detail: "Cada fase tiene un alcance por escrito y un precio. Sin horas abiertas.",
+        title: "Decisiones técnicas orientadas al negocio",
+        detail: "Cada recomendación se vincula con lo que significa para el costo, el riesgo y las operaciones.",
       },
       {
-        title: "Todo es suyo",
-        detail: "El código, las cuentas y los dominios son suyos desde el primer día.",
+        title: "Capacidades técnicas amplias",
+        detail: "Software, datos, nube, IA y arquitectura en un solo equipo, para que nada quede entre proveedores.",
       },
       {
-        title: "Estándares publicados",
-        detail: "Seguridad, rendimiento, accesibilidad, IA y privacidad. Lo que hacemos por defecto está escrito.",
+        title: "Enfoques de proyecto flexibles",
+        detail: "De una corrección puntual a un programa completo, adaptamos el proceso al trabajo.",
       },
       {
-        title: "Tres idiomas, escritos para quien los lee",
-        detail: "Español, inglés y francés, cada uno escrito pensando en las personas que lo leen.",
+        title: "Arquitectura escalable",
+        detail: "Sistemas diseñados para absorber el crecimiento en usuarios, datos y funciones.",
+      },
+      {
+        title: "Resolución práctica de problemas",
+        detail: "Elegimos el enfoque más simple que resuelve bien el problema.",
+      },
+      {
+        title: "Integración con sus sistemas actuales",
+        detail: "La nueva tecnología funciona con lo que ya opera, en lugar de reemplazarlo todo.",
+      },
+      {
+        title: "Visión tecnológica a largo plazo",
+        detail: "Documentación, responsabilidades claras y código mantenible, para que el sistema le sirva durante años.",
       },
     ],
-    standardsLink: "Leer los estándares",
+    standardsLink: "Leer nuestros estándares de ingeniería",
   },
 
-  honest: {
-    eyebrow: "Compruébelo usted mismo",
-    body: "Estas son demos funcionales de sistemas hechos para los sectores que atendemos, y los estándares que sigue cada proyecto. Véalas antes de hablar con nosotros.",
-    cta: "Ver las demos",
+  industries: {
+    eyebrow: "Sectores",
+    title: "Tecnología pensada para cómo funciona su sector.",
+    lead: "Los problemas cambian según el sector. La ingeniería se aplica en todos. Estos son los tipos de soluciones que las empresas de cada uno suelen necesitar.",
+    link: "Ver todos los sectores",
   },
 
-  finalCta: {
-    title: "Descubra dónde le están costando dinero sus sistemas.",
-    lead: "La auditoría termina con un plan priorizado y con costos. La tarifa se acredita por completo si inicia un proyecto dentro de {days} días.",
+  contact: {
+    eyebrow: "Contacto",
+    title: "Construyamos juntos su próxima solución.",
+    lead: "Ya sea que necesite una aplicación a medida, un sistema de software completo, infraestructura en la nube, integración de IA o ayuda para resolver un problema técnico existente, conversemos sobre lo que su negocio necesita.",
+    cta: "Iniciar una conversación",
+    points: [
+      "Recibe una confirmación de inmediato.",
+      "Una persona le responde en una hora hábil.",
+      "Sin compromiso. Empezamos por entender el problema.",
+    ],
+    emailLabel: "¿Prefiere el correo?",
   },
 };

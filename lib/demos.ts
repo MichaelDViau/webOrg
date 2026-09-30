@@ -8,18 +8,18 @@ export const demoSlugs: DemoSlug[] = ["property-portal", "firm-intake-hub", "rev
 /** Demo details that are the same in every language. */
 const demoBases: Record<DemoSlug, { industry: IndustrySlug | null; services: ServiceSlug[]; stack: string[] }> = {
   "property-portal": {
-    industry: "property",
-    services: ["client-portals", "integrations-and-data"],
+    industry: "real-estate",
+    services: ["web-applications", "database-solutions"],
     stack: ["Next.js", "TypeScript", "PostgreSQL", "Role-based access", "Email notifications"],
   },
   "firm-intake-hub": {
-    industry: "accounting",
-    services: ["operations-apps", "ai-with-judgment"],
+    industry: "professional-services",
+    services: ["custom-software", "ai-solutions"],
     stack: ["Next.js", "TypeScript", "PostgreSQL", "Encrypted file storage", "Human-in-the-loop AI"],
   },
   "revenue-website": {
     industry: null,
-    services: ["revenue-websites", "automation"],
+    services: ["web-applications", "ai-solutions"],
     stack: ["Next.js", "TypeScript", "CRM integration", "Transactional email", "Privacy-friendly analytics"],
   },
 };

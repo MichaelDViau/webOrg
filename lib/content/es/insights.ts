@@ -147,12 +147,12 @@ export const articles: Record<ArticleSlug, ArticleText> = {
 };
 
 export const insightsPage: InsightsPage = {
-  metaTitle: "Artículos: notas prácticas sobre los sistemas de las empresas de operaciones",
+  metaTitle: "Artículos: notas prácticas sobre software, datos y nube",
   metaDescription:
-    "Artículos prácticos para empresas de propiedades, contabilidad y distribución sobre portales de clientes, recepción de documentos, flujo de consultas y los sistemas que hacen funcionar su empresa.",
+    "Artículos prácticos sobre software a medida, portales de clientes, recepción de documentos, flujo de consultas y los sistemas de los que dependen las empresas.",
   eyebrow: "Artículos",
-  title: "Notas prácticas sobre los sistemas que hacen funcionar su empresa.",
-  lead: "Artículos breves para dueños y responsables de operaciones, por sector. Sin exageraciones y sin cifras que no podamos respaldar.",
+  title: "Notas prácticas sobre software, datos y nube.",
+  lead: "Artículos breves para dueños de empresas y responsables de tecnología. Sin exageraciones y sin cifras que no podamos respaldar.",
   readArticle: "Leer el artículo",
   minutes: "{minutes} min de lectura",
   publishedOn: "Publicado el {date}",
@@ -165,5 +165,5 @@ export const articlePage: ArticlePage = {
   relatedService: "Servicio relacionado",
   relatedIndustry: "Sector relacionado",
   ctaTitle: "¿Quiere que revisemos esto en su negocio?",
-  ctaLead: "La auditoría muestra dónde sus sistemas le cuestan tiempo, consultas y dinero.",
+  ctaLead: "Cuéntenos su situación. Le diremos qué haríamos y qué implica.",
 };

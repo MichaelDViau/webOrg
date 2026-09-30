@@ -1,20 +1,20 @@
 /**
- * About: human credibility. Why the company exists, the founder, how the team works across countries,
- * and a "read how we work" block. Never invent a biography, a client, a number or an award.
+ * About: human credibility. Why the company exists, the person you work with, how the team works across
+ * countries, and a "read how we work" block. Never invent a biography, a client, a number or an award.
  * Add a real photo through `founderPhoto` in lib/site.ts. No stock people.
  */
 export const about = {
   metaTitle: "About",
   metaDescription:
-    "{name} designs, builds and runs the systems established businesses run on. One accountable team, in English, French and Spanish.",
+    "{name} is a custom software development and technology solutions company. We design, build, integrate, and modernize the technology businesses depend on.",
   eyebrow: "About",
-  title: "One accountable team for the systems your business runs on.",
-  lead: "{name} designs, builds and runs websites, client portals, internal software and automations.",
+  title: "A software engineering team for your technology challenges.",
+  lead: "{name} designs, builds, integrates, and modernizes the software, data, cloud, and AI systems that businesses depend on. We solve technical problems through engineering.",
 
   whyTitle: "Why we exist",
   why: [
-    "Many established businesses run on tools that don't talk to each other. One vendor builds the website, another sells the software, and nobody looks after the gaps between them.",
-    "We exist to be the one accountable team for all of it: to diagnose where time and inquiries leak, to engineer connected systems, and to operate them afterward.",
+    "Businesses depend on technology, and technology problems rarely fit one specialty. A single project might need custom software, a database redesign, a cloud migration, and an integration. Businesses shouldn't have to coordinate four vendors to get there.",
+    "We exist to be the engineering partner for all of it: to understand the problem, design the right solution, build it, and keep it working as the business changes.",
   ],
 
   founderTitle: "Who you'll work with",
@@ -76,7 +76,7 @@ export const partners = {
     },
     {
       title: "How we work",
-      detail: "A process with fixed-price phases, weekly written updates and quality gates.",
+      detail: "A flexible process with scope agreed in writing, weekly written updates, and quality checks before launch.",
       href: "/how-we-work",
       link: "See how we work",
     },
@@ -91,7 +91,7 @@ export const partners = {
   howTitle: "How a referral works",
   how: [
     { title: "You introduce us", detail: "A short email is enough. We reply personally within one business hour." },
-    { title: "We start with the audit", detail: "It shows your client what's worth fixing, with evidence, before anyone commits to a build." },
+    { title: "We start with an assessment", detail: "It shows your client what's worth fixing, with evidence, before anyone commits to a build." },
     { title: "You stay in the loop", detail: "If your client agrees, we share the findings and the plan with you." },
     { title: "Your client owns everything", detail: "Code, accounts and domains belong to your client, so you can keep advising them." },
   ],

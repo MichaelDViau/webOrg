@@ -104,6 +104,18 @@ export const audit: Audit = {
         "Es confidencial y se usa solo para su auditoría. Nuestros estándares de privacidad y seguridad describen cómo lo manejamos.",
     },
   ],
+
+  /** Labels for the system map illustration on the audit page. */
+  map: {
+    title: "Un mapa de sistemas: cómo se conectan sus herramientas",
+    sources: { title: "Llegan las consultas", items: ["Formulario del sitio", "Correo electrónico", "Teléfono"] },
+    core: {
+      title: "Un sistema conectado",
+      items: ["CRM", "Portal de clientes", "Aplicación de operaciones"],
+      foot: "Una sola fuente de verdad para cada dato",
+    },
+    results: { title: "Todos ven los mismos datos", items: ["Su equipo", "Sus clientes", "Su contabilidad"] },
+  },
 };
 
 export const snapshot: Snapshot = {

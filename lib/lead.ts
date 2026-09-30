@@ -1,12 +1,15 @@
 import type { Ui } from "./content/en/ui";
 import { isLocale, type Locale } from "./i18n/config";
 import { format } from "./i18n/format";
+import { serviceSlugs } from "./services";
 import { normalizeWebsiteUrl } from "./website-check";
 
 /**
- * The three ways a visitor asks for something: the Digital Systems Audit, a free Snapshot of their site,
- * or a plain contact message. The audit and contact forms use five groups of fields at most (name and
- * role, company and website, email and phone, what to fix, preferred language) plus consent.
+ * The three ways a visitor asks for something: a project conversation (the contact form), the Digital
+ * Systems Audit, or a free Snapshot of their site. The project form asks for name, business email,
+ * company, project type, a description of the challenge and an optional scope, plus consent. The audit
+ * form uses five groups of fields at most (name and role, company and website, email and phone, what to
+ * fix, preferred language) plus consent.
  */
 export const leadIntents = ["audit", "contact", "snapshot"] as const;
 export type LeadIntent = (typeof leadIntents)[number];
@@ -15,22 +18,42 @@ export function isLeadIntent(value: unknown): value is LeadIntent {
   return typeof value === "string" && (leadIntents as readonly string[]).includes(value);
 }
 
-export const leadFields = ["name", "role", "company", "website", "email", "phone", "need", "language", "consent"] as const;
+export const leadFields = [
+  "name",
+  "role",
+  "company",
+  "website",
+  "email",
+  "phone",
+  "projectType",
+  "need",
+  "scope",
+  "language",
+  "consent",
+] as const;
 export type LeadField = (typeof leadFields)[number];
 export type LeadValues = Record<LeadField, string>;
 export type LeadErrors = Partial<Record<LeadField, string>>;
 export type LeadErrorText = Ui["leadErrors"];
 
+/** What a project inquiry is about: one of the nine capability categories, or "not sure yet". */
+export const projectTypes = [...serviceSlugs, "not-sure"] as const;
+export type ProjectType = (typeof projectTypes)[number];
+
+/** The optional size of the project, from exploring to a multi-system effort. */
+export const scopes = ["exploring", "focused", "project", "program"] as const;
+export type Scope = (typeof scopes)[number];
+
 /** The fields each form shows. Everything else is left out of the form and ignored by the server. */
 export const fieldsByIntent: Record<LeadIntent, readonly LeadField[]> = {
-  audit: leadFields,
-  contact: leadFields,
+  audit: ["name", "role", "company", "website", "email", "phone", "need", "language", "consent"],
+  contact: ["name", "company", "email", "projectType", "need", "scope", "language", "consent"],
   snapshot: ["name", "email", "website", "language", "consent"],
 };
 
 const requiredByIntent: Record<LeadIntent, readonly LeadField[]> = {
   audit: ["name", "email", "need", "language", "consent"],
-  contact: ["name", "email", "need", "language", "consent"],
+  contact: ["name", "email", "projectType", "need", "language", "consent"],
   snapshot: ["name", "email", "website", "language", "consent"],
 };
 
@@ -46,7 +69,19 @@ export const limits = {
 } as const;
 
 export function emptyLeadValues(language: Locale): LeadValues {
-  return { name: "", role: "", company: "", website: "", email: "", phone: "", need: "", language, consent: "" };
+  return {
+    name: "",
+    role: "",
+    company: "",
+    website: "",
+    email: "",
+    phone: "",
+    projectType: "",
+    need: "",
+    scope: "",
+    language,
+    consent: "",
+  };
 }
 
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
@@ -69,7 +104,9 @@ export function normalizeLeadValues(input: Partial<Record<LeadField, unknown>>):
     website: clean(input.website),
     email: clean(input.email).toLowerCase(),
     phone: clean(input.phone),
+    projectType: (projectTypes as readonly string[]).includes(clean(input.projectType)) ? clean(input.projectType) : "",
     need: clean(input.need, true),
+    scope: (scopes as readonly string[]).includes(clean(input.scope)) ? clean(input.scope) : "",
     language: isLocale(language) ? language : "",
     consent: clean(input.consent) === "yes" ? "yes" : "",
   };
@@ -106,6 +143,10 @@ export function validateLeadField(
       return;
     case "phone":
       if (value && (value.length > limits.phone || !PHONE_PATTERN.test(value))) return t.phoneInvalid;
+      return;
+    case "projectType":
+      return required && !value ? t.projectTypeRequired : undefined;
+    case "scope":
       return;
     case "need":
       if (!required) return;

@@ -13,7 +13,7 @@ import { getContentFor } from "@/lib/i18n/content";
 import { format } from "@/lib/i18n/format";
 import { organizationSchema } from "@/lib/structured-data";
 import { themeScript } from "@/lib/theme";
-import { auditHref, footerNav, mainNav, site, workEnabled } from "@/lib/site";
+import { contactHref, footerNav, mainNav, site, workEnabled } from "@/lib/site";
 import "../globals.css";
 
 export function generateStaticParams() {
@@ -64,7 +64,6 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
     ...mainNav.map((item) => item.href),
     ...footerNav.company.map((item) => item.href),
     ...content.services.map((service) => `/services/${service.slug}`),
-    ...content.industries.map((industry) => `/industries/${industry.slug}`),
     ...content.standards.map((standard) => `/standards/${standard.slug}`),
     ...(workEnabled ? content.demos.map((demo) => `/work/${demo.slug}`) : []),
   ].map((path) => localizePath(path, locale));
@@ -86,15 +85,15 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
           nav={mainNav.map((item) => ({ href: item.href, label: ui.nav[item.key] }))}
           labels={{
             ...ui.header,
-            audit: ui.cta.audit,
-            snapshot: ui.cta.snapshot,
+            primary: ui.cta.discuss,
+            secondary: ui.cta.explore,
             logo: format(ui.logoLabel, { name: site.name }),
           }}
         />
         <main id="main">{children}</main>
         <Footer />
         {assistantEnabled && (
-          <AssistantLoader linkablePaths={assistantLinks} bookingHref={auditHref} labels={ui.assistant} />
+          <AssistantLoader linkablePaths={assistantLinks} bookingHref={contactHref} labels={ui.assistant} />
         )}
         <JsonLd data={organizationSchema(content)} />
         <Analytics />

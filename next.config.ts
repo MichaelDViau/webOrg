@@ -63,11 +63,24 @@ const nextConfig: NextConfig = {
     const workHome = workEnabled ? "/work" : "/";
     const moved: [string, string][] = [
       ["/technology", "/standards"],
-      ["/services/website-development", "/services/revenue-websites"],
-      ["/services/web-applications", "/services/client-portals"],
-      ["/services/ai-solutions", "/services/ai-with-judgment"],
+      ["/services/website-development", "/services/web-applications"],
       ["/services/web-optimization", "/standards/performance"],
-      ["/services/seo", "/services/revenue-websites"],
+      ["/services/seo", "/services/web-applications"],
+      // The previous set of eleven services and three industry pages became nine capability categories
+      // and one industries page.
+      ["/services/revenue-websites", "/services/web-applications"],
+      ["/services/client-portals", "/services/web-applications"],
+      ["/services/operations-apps", "/services/custom-software"],
+      ["/services/automation", "/services/ai-solutions"],
+      ["/services/ai-with-judgment", "/services/ai-solutions"],
+      ["/services/integrations-and-data", "/services/software-architecture"],
+      ["/services/managed-plans", "/services/technology-consulting"],
+      ["/services/cloud-modernization", "/services/cloud-solutions"],
+      ["/services/devops", "/services/cloud-solutions"],
+      ["/services/strategy-design", "/services/technology-consulting"],
+      ["/industries/property", "/industries#real-estate"],
+      ["/industries/accounting", "/industries#professional-services"],
+      ["/industries/distribution", "/industries#logistics"],
       ["/work/harbor-line-customer-portal", workHome],
       ["/work/meridian-health-website", workHome],
       ["/work/cobalt-legal-document-assistant", workHome],

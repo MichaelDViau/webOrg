@@ -38,10 +38,9 @@ if (/email:\s*"[^"]*@example\.com"/.test(site)) errors.push("lib/site.ts: replac
 if (/legalAddress\s*=\s*"[^"]*\[/.test(site)) errors.push("lib/site.ts: replace legalAddress with the registered address (required in the Mexican privacy notice).");
 if (/founderPhoto[^=]*=\s*null/.test(site)) warnings.push("lib/site.ts: no founder photo yet. The About page needs a real photo, never a stock one.");
 
-// 2. Prices
+// 2. Prices: only the Digital Systems Audit has a published range; projects are quoted after a conversation.
 const pricing = read("lib/pricing.ts");
-const unset = [...pricing.matchAll(/"?([\w-]+)"?:\s*\{\s*from:\s*0\b/g)].map((match) => match[1]);
-if (unset.length) errors.push(`lib/pricing.ts: "from" price is still 0000 for ${unset.join(", ")}.`);
+if (/from:\s*0\b/.test(pricing)) errors.push("lib/pricing.ts: the audit's starting price is 0.");
 
 // 3. Environment variables
 const needed = {
@@ -72,9 +71,13 @@ for (const [name, purpose] of Object.entries(optional)) {
 
 // 4. Words the guideline forbids, in every language's content
 const banned = [
-  /\b10x\b/i, /skyrocket/i, /game[- ]changer/i, /digital transformation/i, /\bsynergy\b/i, /cutting[- ]edge/i,
-  /AI[- ]powered/i, /trusted by (hundreds|thousands)/i, /AI agency/i, /transformation num[ée]rique/i, /synergie/i, /à la fine pointe/i, /transformación digital/i, /sinergia/i,
+  /\b10x\b/i, /skyrocket/i, /game[- ]chang(er|ing)/i, /\bsynergy\b/i, /cutting[- ]edge/i,
+  /trusted by (hundreds|thousands)/i, /AI agency/i, /synergie/i, /à la fine pointe/i, /sinergia/i,
   /de vanguardia/i, /testimonial/i,
+  // Slogans and buzzwords the brief rules out.
+  /unlock your potential/i, /revolutioni[sz]e/i, /revolutionary/i, /disruptive/i, /next[- ]generation/i, /limitless/i,
+  /empowering innovation/i, /where innovation meets excellence/i, /transforming the future/i,
+  /proof before promises/i, /preuves avant les promesses/i, /pruebas antes que promesas/i,
   // The site never calls the company new or gives a founding year.
   /new company/i, /founded in/i, /nouvelle entreprise/i, /fondée en/i, /empresa nueva/i, /fundada en/i,
 ];

@@ -2,8 +2,8 @@ import type { StandardSlug, StandardText } from "@/lib/standards";
 import type { StandardPage, StandardsPage } from "../en/standards";
 
 /**
- * Normes publiées : ce que nous faisons par défaut, en langage clair, pour les acheteurs et leurs
- * examinateurs TI. Ce sont des engagements : confirmez que chacun correspond au manuel d'exploitation
+ * Normes publiées : ce que nous faisons par défaut, en langage clair, pour les acheteurs et leurs
+ * examinateurs TI. Ce sont des engagements : confirmez que chacun correspond au manuel d'exploitation
  * avant le lancement.
  */
 export const standards: Record<StandardSlug, StandardText> = {
@@ -12,7 +12,7 @@ export const standards: Record<StandardSlug, StandardText> = {
     card: "HTTPS partout, aucun secret dans le code, surveillance, sauvegardes et mises à jour rapides.",
     seoTitle: "Norme de sécurité",
     metaDescription:
-      "Comment nous sécurisons chaque projet par défaut : HTTPS partout, en-têtes de sécurité, protection des formulaires contre le pourriel, aucun secret dans le code, disponibilité surveillée, sauvegardes et mises à jour rapides.",
+      "Comment nous sécurisons chaque projet par défaut : HTTPS partout, en-têtes de sécurité, protection des formulaires contre le pourriel, aucun secret dans le code, disponibilité surveillée, sauvegardes et mises à jour rapides.",
     headline: "La sécurité par défaut, en langage clair.",
     lead: "Voici ce que nous faisons sur chaque projet sans qu'on nous le demande, et comment vous pouvez le vérifier.",
     defaults: [
@@ -67,7 +67,7 @@ export const standards: Record<StandardSlug, StandardText> = {
     card: "De bons Core Web Vitals pour les vrais visiteurs, jugés sur des données réelles.",
     seoTitle: "Norme de performance",
     metaDescription:
-      "Comment nous construisons des sites rapides : cibles Core Web Vitals (LCP 2,5 s, INP 200 ms, CLS 0,1) jugées sur des données d'utilisateurs réels, images optimisées, peu de polices et un minimum de scripts tiers.",
+      "Comment nous construisons des sites rapides : cibles Core Web Vitals (LCP 2,5 s, INP 200 ms, CLS 0,1) jugées sur des données d'utilisateurs réels, images optimisées, peu de polices et un minimum de scripts tiers.",
     headline: "Rapide pour de vrais visiteurs, sur de vrais téléphones.",
     lead: "Un beau site lent contredit tout ce que nous vendons. Voici comment nous gardons le nôtre, et le vôtre, rapide.",
     defaults: [
@@ -85,7 +85,7 @@ export const standards: Record<StandardSlug, StandardText> = {
       },
       {
         title: "Un minimum de scripts tiers",
-        detail: "Chaque script externe ralentit chaque visiteur : chacun doit donc mériter sa place.",
+        detail: "Chaque script externe ralentit chaque visiteur : chacun doit donc mériter sa place.",
       },
       {
         title: "Vérifié sur mobile",
@@ -101,7 +101,7 @@ export const standards: Record<StandardSlug, StandardText> = {
         { label: "Interaction to Next Paint (INP)", value: "200 millisecondes ou moins" },
         { label: "Cumulative Layout Shift (CLS)", value: "0,1 ou moins" },
       ],
-      note: "Source : web.dev, seuils des Core Web Vitals.",
+      note: "Source : web.dev, seuils des Core Web Vitals.",
     },
     wontPromiseTitle: "Ce que nous ne promettons pas",
     wontPromise: [
@@ -120,7 +120,7 @@ export const standards: Record<StandardSlug, StandardText> = {
     card: "WCAG 2.2 AA comme base, vérifiée par des outils et à la main.",
     seoTitle: "Norme d'accessibilité",
     metaDescription:
-      "Notre base d'accessibilité est WCAG 2.2 AA : utilisation au clavier, focus visible, contraste, étiquettes, titres et texte de remplacement, testés avec un vérificateur automatisé et un passage manuel au clavier.",
+      "Notre base d'accessibilité est WCAG 2.2 AA : utilisation au clavier, focus visible, contraste, étiquettes, titres et texte de remplacement, testés avec un vérificateur automatisé et un passage manuel au clavier.",
     headline: "Utilisable par tous, sur n'importe quel appareil.",
     lead: "L'accessibilité n'est pas un ajout. Elle fait partie de la construction de quelque chose qui fonctionne.",
     defaults: [
@@ -157,7 +157,7 @@ export const standards: Record<StandardSlug, StandardText> = {
     verifyTitle: "Comment nous testons, et comment vous pouvez le faire",
     verify: [
       "Un vérificateur automatisé sur chaque page, plus un passage manuel au clavier avant le lancement.",
-      "Essayez vous-même : appuyez sur la touche Tab sur n'importe quelle page de ce site et suivez le focus.",
+      "Essayez vous-même : appuyez sur la touche Tab sur n'importe quelle page de ce site et suivez le focus.",
       "Si quelque chose ne fonctionne pas pour vous, dites-le-nous. Nous le corrigerons.",
     ],
   },
@@ -167,7 +167,7 @@ export const standards: Record<StandardSlug, StandardText> = {
     card: "L'IA rédige. Votre équipe approuve.",
     seoTitle: "Politique sur l'IA",
     metaDescription:
-      "Comment nous utilisons l'IA dans les projets de nos clients : l'IA rédige et votre équipe approuve, testée sur vos propres exemples, vos données conservées dans vos comptes et non utilisées pour l'entraînement sans consentement écrit.",
+      "Comment nous utilisons l'IA dans les projets de nos clients : l'IA rédige et votre équipe approuve, testée sur vos propres exemples, vos données conservées dans vos comptes et non utilisées pour l'entraînement sans consentement écrit.",
     headline: "L'IA rédige. Votre équipe approuve.",
     lead: "L'IA est un outil pour des tâches précises, utilisé avec une personne aux commandes. Voici la politique que nous suivons dans chaque projet qui y fait appel.",
     defaults: [
@@ -218,7 +218,7 @@ export const standards: Record<StandardSlug, StandardText> = {
     card: "Ne recueillir que le nécessaire, le garder dans vos comptes et respecter les règles locales.",
     seoTitle: "Norme de protection de la vie privée",
     metaDescription:
-      "Comment nous traitons les renseignements personnels dans les projets de nos clients : ne recueillir que le nécessaire, les garder dans vos comptes et respecter les règles locales, y compris la Loi 25 du Québec et la loi fédérale mexicaine sur la protection des données.",
+      "Comment nous traitons les renseignements personnels dans les projets de nos clients : ne recueillir que le nécessaire, les garder dans vos comptes et respecter les règles locales, y compris la Loi 25 du Québec et la loi fédérale mexicaine sur la protection des données.",
     headline: "Seulement les données dont vous avez besoin, gardées là où vous en avez le contrôle.",
     lead: "Voici la norme de protection de la vie privée pour les projets de nos clients. La façon dont ce site traite vos données est décrite dans la politique de confidentialité.",
     defaults: [
@@ -261,9 +261,9 @@ export const standards: Record<StandardSlug, StandardText> = {
 };
 
 export const standardsPage: StandardsPage = {
-  metaTitle: "Normes : sécurité, performance, accessibilité, IA et vie privée",
+  metaTitle: "Normes : sécurité, performance, accessibilité, IA et vie privée",
   metaDescription:
-    "Les normes derrière chaque projet, en langage clair : sécurité, performance, accessibilité, politique sur l'IA et vie privée. Publiées pour que votre examinateur TI puisse nous vérifier.",
+    "Les normes derrière chaque projet, en langage clair : sécurité, performance, accessibilité, politique sur l'IA et vie privée. Publiées pour que votre examinateur TI puisse nous vérifier.",
   eyebrow: "Normes",
   title: "Ce que nous faisons par défaut, noir sur blanc.",
   lead: "Les acheteurs sérieux et leurs examinateurs TI devraient pouvoir nous vérifier avant de signer. Ces cinq normes s'appliquent à chaque projet.",

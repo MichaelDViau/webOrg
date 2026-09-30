@@ -1,7 +1,7 @@
 import type { Audit, Snapshot } from "../en/audit";
 
 /**
- * La page de l'audit des systèmes numériques et celle de l'aperçu gratuit : les deux gestes vers
+ * La page de l'audit des systèmes numériques et celle de l'aperçu gratuit : les deux gestes vers
  * lesquels tout le site mène. Les prix viennent de lib/pricing.ts et s'insèrent avec `{price}` et `{days}`.
  */
 export const audit: Audit = {
@@ -104,6 +104,18 @@ export const audit: Audit = {
         "Cela demeure confidentiel et n'est utilisé que pour votre audit. Nos normes de confidentialité et de sécurité décrivent la façon dont nous le traitons.",
     },
   ],
+
+  /** Labels for the system map illustration on the audit page. */
+  map: {
+    title: "Une carte des systèmes : comment vos outils se connectent",
+    sources: { title: "Les demandes arrivent", items: ["Formulaire du site", "Courriel", "Téléphone"] },
+    core: {
+      title: "Un système connecté",
+      items: ["CRM", "Portail client", "Application d'exploitation"],
+      foot: "Une seule source de vérité pour chaque donnée",
+    },
+    results: { title: "Tout le monde voit les mêmes faits", items: ["Votre équipe", "Vos clients", "Votre comptabilité"] },
+  },
 };
 
 export const snapshot: Snapshot = {
@@ -125,7 +137,7 @@ export const snapshot: Snapshot = {
     "Vous envoyez votre nom, votre courriel et l'adresse de votre site web.",
     "Vous recevez tout de suite un courriel de confirmation.",
     "Une personne vous répond en moins d'une heure ouvrable.",
-    "Votre aperçu suit : trois observations, chacune avec ce qu'il faut faire.",
+    "Votre aperçu suit : trois observations, chacune avec ce qu'il faut faire.",
   ],
   formTitle: "Obtenez votre aperçu gratuit",
   formLead: "Quatre courts champs. Nous ne les utilisons que pour vous envoyer votre aperçu.",
