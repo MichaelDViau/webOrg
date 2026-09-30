@@ -7,7 +7,19 @@ import { cn } from "@/lib/cn";
  * The illustrations sit in a dark panel, with light interface windows inside it.
  */
 
-/** A dark panel that holds one illustration. Its content is hidden from screen readers; `label` describes it. */
+/**
+ * A dark panel that holds one illustration. Its content is hidden from screen readers; `label` describes it.
+ *
+ * The content wrapper is a CSS size container, which does two things:
+ * - It has no intrinsic width, so wide diagram content can never stretch the page's grid column
+ *   (a nowrap `truncate` row inside an auto-sized track otherwise does).
+ * - Diagrams can switch layout on the panel's own width with `@lg:` and similar variants. A panel is about
+ *   400px wide in the two-column layout at 1024px but 900px in the single column at 1000px, so viewport
+ *   breakpoints (`sm:`, `md:`) do not describe the space a diagram actually has. By convention, layouts
+ *   that place nodes side by side start at `@lg` (512px).
+ * `overflow-hidden` is a last resort: if a future translation is too long, the illustration clips
+ * instead of adding a horizontal scrollbar to the page.
+ */
 export function VisualPanel({
   label,
   caption,
@@ -21,8 +33,10 @@ export function VisualPanel({
 }) {
   return (
     <figure className={cn("min-w-0", className)}>
-      <div role="img" aria-label={label} className="rounded-lg bg-night p-4 text-night-muted sm:p-6">
-        <div aria-hidden="true">{children}</div>
+      <div role="img" aria-label={label} className="overflow-hidden rounded-lg bg-night p-4 text-night-muted sm:p-6">
+        <div aria-hidden="true" className="@container">
+          {children}
+        </div>
       </div>
       {caption && <figcaption className="mt-2 text-sm text-muted">{caption}</figcaption>}
     </figure>

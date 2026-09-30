@@ -89,16 +89,16 @@ function Ai({ labels }: { labels: Labels }) {
   ];
   return (
     <div className="space-y-4">
-      <div className="flex flex-col items-stretch gap-2 md:flex-row md:items-center">
+      <div className="flex flex-col items-stretch gap-2 @lg:flex-row @lg:items-center">
         {steps.map((step, index) => (
           <div key={step.title} className="contents">
             {index > 0 && (
               <>
-                <Arrow down className="mx-auto md:hidden" />
-                <Arrow className="hidden md:block" />
+                <Arrow down className="mx-auto @lg:hidden" />
+                <Arrow className="hidden @lg:block" />
               </>
             )}
-            <Node accent={step.accent} className="md:flex-1">
+            <Node accent={step.accent} className="@lg:flex-1">
               <p className="text-paper">{step.title}</p>
               {step.note && <p className="mt-1 text-xs text-accent-light">{step.note}</p>}
             </Node>
@@ -137,17 +137,17 @@ function Table({ name, fields }: { name: string; fields: { name: string; key?: "
 /** Databases: three related tables. */
 function Database() {
   return (
-    <div className="grid items-start gap-3 sm:grid-cols-[1fr_auto_1fr_auto_1fr]">
+    <div className="grid items-start gap-3 @lg:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)_auto_minmax(0,1fr)]">
       <Table
         name="customers"
         fields={[{ name: "id", key: "PK" }, { name: "name" }, { name: "email" }]}
       />
-      <Arrow className="mx-auto hidden self-center sm:block" />
+      <Arrow className="mx-auto hidden self-center @lg:block" />
       <Table
         name="orders"
         fields={[{ name: "id", key: "PK" }, { name: "customer_id", key: "FK" }, { name: "total" }]}
       />
-      <Arrow className="mx-auto hidden self-center sm:block" />
+      <Arrow className="mx-auto hidden self-center @lg:block" />
       <Table
         name="invoices"
         fields={[{ name: "id", key: "PK" }, { name: "order_id", key: "FK" }, { name: "status" }]}
@@ -220,21 +220,31 @@ function Architecture({ labels }: { labels: Labels }) {
   );
 }
 
-/** Modernization: a legacy system replaced one module at a time. */
+/**
+ * Modernization: a legacy system replaced one module at a time. The columns use `minmax(0, 1fr)` so they can
+ * shrink below their content, and the stage label drops under the module name until the panel is wide enough
+ * to hold both on one line (a 320px phone leaves each column about 90px).
+ */
 function Modernization({ labels }: { labels: Labels }) {
   const m = labels.modern;
+  const columns = "grid grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] items-center gap-2 @sm:gap-3";
   return (
     <div className="space-y-2">
-      <div className="grid grid-cols-[1fr_auto_1fr] items-center gap-3">
+      <div className={columns}>
         <Tag>{m.legacy}</Tag>
         <span className="w-7" />
         <Tag>{m.modern}</Tag>
       </div>
       {m.modules.map((module, index) => (
-        <div key={module} className="grid grid-cols-[1fr_auto_1fr] items-center gap-3">
-          <Node dashed>{module}</Node>
+        <div key={module} className={columns}>
+          <Node dashed className="px-2 [overflow-wrap:anywhere] @sm:px-3">
+            {module}
+          </Node>
           <Arrow />
-          <Node accent className="flex items-center justify-between gap-2">
+          <Node
+            accent
+            className="flex flex-col gap-0.5 px-2 [overflow-wrap:anywhere] @sm:flex-row @sm:items-center @sm:justify-between @sm:gap-2 @sm:px-3"
+          >
             <span>{module}</span>
             <span className="text-xs text-accent-light">{format(m.stage, { number: index + 1 })}</span>
           </Node>
@@ -251,7 +261,7 @@ function Transformation({ labels }: { labels: Labels }) {
     <div className="space-y-3">
       <div>
         <Tag>{t.today}</Tag>
-        <div className="mt-2 grid gap-2 sm:grid-cols-3">
+        <div className="mt-2 grid gap-2 @lg:grid-cols-3">
           {t.manual.map((item) => (
             <Node key={item} dashed>
               {item}
@@ -262,16 +272,16 @@ function Transformation({ labels }: { labels: Labels }) {
       <Arrow down className="mx-auto" />
       <div>
         <Tag>{t.after}</Tag>
-        <div className="mt-2 flex flex-col items-stretch gap-2 sm:flex-row sm:items-center">
+        <div className="mt-2 flex flex-col items-stretch gap-2 @lg:flex-row @lg:items-center">
           {t.steps.map((step, index) => (
             <div key={step} className="contents">
               {index > 0 && (
                 <>
-                  <Arrow down className="mx-auto sm:hidden" />
-                  <Arrow className="hidden sm:block" />
+                  <Arrow down className="mx-auto @lg:hidden" />
+                  <Arrow className="hidden @lg:block" />
                 </>
               )}
-              <Node accent className="sm:flex-1 sm:text-center">
+              <Node accent className="@lg:flex-1 @lg:text-center">
                 {step}
               </Node>
             </div>

@@ -1,8 +1,8 @@
-import { GeistSans } from "geist/font/sans";
 import type { Metadata, Viewport } from "next";
 import { notFound } from "next/navigation";
 import { lang } from "next/root-params";
 import type { ReactNode } from "react";
+import { geistSans } from "@/app/fonts/geist";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
 import { JsonLd } from "@/components/JsonLd";
@@ -68,7 +68,7 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
   ].map((path) => localizePath(path, locale));
 
   return (
-    <html lang={locale} className={GeistSans.variable}>
+    <html lang={locale} className={geistSans.variable}>
       <body>
         <a
           href="#main"

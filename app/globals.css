@@ -70,10 +70,15 @@
  * Scroll reveal: progressive enhancement using scroll-driven animations.
  * Browsers without support, and visitors who prefer reduced motion,
  * simply see the content without animation. No JavaScript required.
+ *
+ * The content only slides into place; it never fades. With `both` fill, an opacity of 0 would hold
+ * every section below the fold invisible until it scrolls in, which automated contrast checks (axe,
+ * Lighthouse) read as near-white text on a light background, and which hides text from anyone who
+ * reaches it without scrolling (find in page, anchor links, printing). A transform also cannot
+ * cause layout shift.
  */
 @keyframes reveal {
   from {
-    opacity: 0;
     translate: 0 0.75rem;
   }
 }
