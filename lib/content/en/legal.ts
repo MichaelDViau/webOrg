@@ -178,10 +178,7 @@ export const legal: LegalContent = {
     sections: [
       {
         title: "What the site stores",
-        body: ["The site keeps one item in your browser's storage, and only if you use the feature:"],
-        list: [
-          "Theme: if you switch to the dark theme, your choice is saved in your browser so it's remembered next time. It never leaves your device.",
-        ],
+        body: ["The site itself stores nothing in your browser: no cookies and no saved settings."],
       },
       {
         title: "Analytics",

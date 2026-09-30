@@ -178,10 +178,7 @@ export const legal: LegalContent = {
     sections: [
       {
         title: "Qué guarda el sitio",
-        body: ["El sitio guarda un elemento en el almacenamiento de su navegador, y solo si usa la función:"],
-        list: [
-          "Tema: si cambia al tema oscuro, su elección se guarda en su navegador para recordarla la próxima vez. Nunca sale de su dispositivo.",
-        ],
+        body: ["El sitio en sí no guarda nada en su navegador: ni cookies ni preferencias guardadas."],
       },
       {
         title: "Analítica",

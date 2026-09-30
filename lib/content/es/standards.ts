@@ -133,7 +133,7 @@ export const standards: Record<StandardSlug, StandardText> = {
       },
       {
         title: "Contraste",
-        detail: "El texto y los controles se leen con facilidad sobre su fondo, en los temas claro y oscuro.",
+        detail: "El texto y los controles se leen con facilidad sobre su fondo.",
       },
       {
         title: "Etiquetas",

@@ -12,7 +12,6 @@ import { isLocale, localizePath, locales, ogLocales } from "@/lib/i18n/config";
 import { getContentFor } from "@/lib/i18n/content";
 import { format } from "@/lib/i18n/format";
 import { organizationSchema } from "@/lib/structured-data";
-import { themeScript } from "@/lib/theme";
 import { contactHref, footerNav, mainNav, site, workEnabled } from "@/lib/site";
 import "../globals.css";
 
@@ -69,11 +68,7 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
   ].map((path) => localizePath(path, locale));
 
   return (
-    // The theme script may set data-theme before hydration, hence suppressHydrationWarning.
-    <html lang={locale} className={GeistSans.variable} suppressHydrationWarning>
-      <head>
-        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
-      </head>
+    <html lang={locale} className={GeistSans.variable}>
       <body>
         <a
           href="#main"

@@ -10,7 +10,6 @@ import { splitLocale } from "@/lib/i18n/config";
 import { capabilitiesHref, contactHref } from "@/lib/site";
 import { Logo } from "./Logo";
 import { LanguageSwitch } from "./LanguageSwitch";
-import { ThemeToggle } from "./ThemeToggle";
 
 function isActive(pathname: string, href: string) {
   return pathname === href || pathname.startsWith(`${href}/`);
@@ -24,7 +23,6 @@ interface HeaderProps {
     home: string;
     openMenu: string;
     closeMenu: string;
-    darkTheme: string;
     language: string;
     /** The main button: "Discuss your project". */
     primary: string;
@@ -101,7 +99,6 @@ export function Header({ nav, labels }: HeaderProps) {
               {labels.primary}
             </ButtonLink>
           </div>
-          <ThemeToggle label={labels.darkTheme} />
           <LanguageSwitch label={labels.language} />
           <button
             type="button"

@@ -127,7 +127,7 @@ Secrets are only read on the server and are never exposed to the browser. For co
 ## Performance, accessibility and security
 
 - Static pages, one self-hosted font, no images on most pages, and no third-party scripts unless you enable analytics. The AI assistant loads only when the browser is idle. Target: good Core Web Vitals in real-user data (LCP ≤ 2.5 s, INP ≤ 200 ms, CLS ≤ 0.1). Check them in Search Console once there is traffic.
-- WCAG 2.2 AA baseline: skip link, visible focus, labeled fields with error messages, contrast in light and dark themes, reduced-motion support. The pages were checked with axe in both themes at desktop and phone widths, in all three languages.
+- WCAG 2.2 AA baseline: skip link, visible focus, labeled fields with error messages, contrast checked in every section, reduced-motion support. The pages were checked with axe at desktop and phone widths, in all three languages.
 - Strict security headers (CSP, HSTS, frame protection, referrer, permissions and cross-origin policies) in `next.config.ts`. Forms validate on the server, and email is sent as plain text so submitted content can't inject markup. The rate limiter is in memory; if you deploy across several instances, back it with a shared store such as Redis.
 
 ## Before launch

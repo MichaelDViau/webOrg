@@ -15,9 +15,7 @@ const order: Locale[] = ["en", "es", "fr"];
  * language, at its own address. Text only, no flags: a flag stands for a country, not a language.
  *
  * The options are plain links on purpose. The language is the root of the app: a new language means a new
- * <html>, so the browser should load a fresh document. A client-side transition would make React build
- * the new <html> and its inline theme script itself, which React warns about ("Encountered a script tag
- * while rendering React component") and which would not run the script anyway.
+ * <html lang> and new metadata, so the browser loads a fresh document instead of patching the old one.
  */
 export function LanguageSwitch({ label }: { label: string }) {
   const locale = useLocale();

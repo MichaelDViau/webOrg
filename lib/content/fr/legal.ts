@@ -179,10 +179,7 @@ export const legal: LegalContent = {
     sections: [
       {
         title: "Ce que le site stocke",
-        body: ["Le site conserve un élément dans le stockage de votre navigateur, et seulement si vous utilisez la fonction :"],
-        list: [
-          "Thème : si vous passez au thème sombre, votre choix est enregistré dans votre navigateur pour être retenu la prochaine fois. Il ne quitte jamais votre appareil.",
-        ],
+        body: ["Le site lui-même ne stocke rien dans votre navigateur : ni témoins ni préférences enregistrées."],
       },
       {
         title: "Analytique",

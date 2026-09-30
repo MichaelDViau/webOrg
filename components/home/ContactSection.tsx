@@ -29,7 +29,7 @@ export async function ContactSection() {
         </div>
 
         <div className="lg:col-span-7" data-reveal>
-          <div className="surface-light rounded-lg bg-paper p-6 text-body sm:p-10">
+          <div className="rounded-lg bg-paper p-6 text-body sm:p-10">
             <LeadForm
               locale={locale}
               intent="contact"

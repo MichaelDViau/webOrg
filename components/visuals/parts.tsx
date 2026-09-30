@@ -4,7 +4,7 @@ import { cn } from "@/lib/cn";
 /**
  * Building blocks for the technical illustrations. Everything is plain HTML and SVG in the site's own
  * colors, so it scales to any screen, reads in every language and is announced once, as one image.
- * The illustrations sit in a dark panel: light and dark themes show it the same way.
+ * The illustrations sit in a dark panel, with light interface windows inside it.
  */
 
 /** A dark panel that holds one illustration. Its content is hidden from screen readers; `label` describes it. */
@@ -84,7 +84,7 @@ export function AppWindow({
   className?: string;
 }) {
   return (
-    <div className={cn("surface-light overflow-hidden rounded-md border border-line-strong bg-paper text-ink", className)}>
+    <div className={cn("overflow-hidden rounded-md border border-line-strong bg-paper text-ink", className)}>
       <div className="flex items-center gap-2 border-b border-line bg-canvas px-3 py-2">
         <span className="text-xs font-medium text-ink">{title}</span>
       </div>

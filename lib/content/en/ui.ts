@@ -51,7 +51,6 @@ export const ui = {
     home: "Home",
     openMenu: "Open menu",
     closeMenu: "Close menu",
-    darkTheme: "Dark theme",
     language: "Language",
   },
 

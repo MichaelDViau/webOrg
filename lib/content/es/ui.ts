@@ -47,7 +47,6 @@ export const ui: Ui = {
     home: "Inicio",
     openMenu: "Abrir el menú",
     closeMenu: "Cerrar el menú",
-    darkTheme: "Tema oscuro",
     language: "Idioma",
   },
 

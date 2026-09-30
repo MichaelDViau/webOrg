@@ -62,7 +62,7 @@ function Web({ labels }: { labels: Labels }) {
         </div>
       </AppWindow>
       <div className="w-20 shrink-0 sm:w-24">
-        <div className="surface-light rounded-xl border-2 border-line-strong bg-paper p-2">
+        <div className="rounded-xl border-2 border-line-strong bg-paper p-2">
           <span className="mx-auto block h-1 w-6 rounded-full bg-line-strong" />
           <span className="mt-2 block h-9 rounded-sm bg-ink" />
           <div className="mt-2 space-y-1.5">
