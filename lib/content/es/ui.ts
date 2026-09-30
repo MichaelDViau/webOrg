@@ -37,8 +37,8 @@ export const ui: Ui = {
   },
 
   closingCta: {
-    title: "Construyamos juntos su próxima solución.",
-    lead: "Ya sea que necesite una aplicación a medida, un sistema de software completo, infraestructura en la nube, integración de IA o ayuda para resolver un problema técnico existente, conversemos sobre lo que su negocio necesita.",
+    title: "Cuéntenos qué necesita construir o corregir.",
+    lead: "Puede ser una aplicación nueva, un sistema antiguo que necesita trabajo o un problema técnico que no ha podido resolver. Una descripción breve basta para empezar.",
   },
 
   header: {
@@ -227,10 +227,10 @@ export const ui: Ui = {
   contactPage: {
     metaTitle: "Contacto: hablemos de su proyecto",
     metaDescription:
-      "Cuéntenos sobre su proyecto o desafío técnico: software a medida, aplicaciones web, IA, bases de datos, nube o modernización. Una persona le responde en una hora hábil.",
+      "Cuéntenos sobre su proyecto o desafío técnico: software a medida, web, IA, bases de datos, nube o modernización. Una persona le responde en una hora hábil.",
     eyebrow: "Contacto",
-    title: "Construyamos juntos su próxima solución.",
-    lead: "Ya sea que necesite una aplicación a medida, un sistema de software completo, infraestructura en la nube, integración de IA o ayuda para resolver un problema técnico existente, conversemos sobre lo que su negocio necesita.",
+    title: "Cuéntenos qué necesita construir o corregir.",
+    lead: "Puede ser una aplicación nueva, un sistema antiguo que necesita trabajo o un problema técnico que no ha podido resolver. Una descripción breve basta para empezar.",
     nextTitle: "Qué sigue",
     nextSteps: [
       "Recibe de inmediato un correo de confirmación, en su idioma.",
@@ -261,7 +261,7 @@ export const ui: Ui = {
   websiteCheckPage: {
     metaTitle: "Prueba de velocidad instantánea de su sitio web",
     metaDescription:
-      "Ejecute una prueba automatizada de Google Lighthouse en su sitio. Vea las puntuaciones de velocidad, accesibilidad, buenas prácticas y SEO en un teléfono, y qué corregir primero.",
+      "Ejecute una prueba de Google Lighthouse en su sitio: puntuaciones de velocidad, accesibilidad, buenas prácticas y SEO en un teléfono, y qué corregir primero.",
     eyebrow: "Prueba de velocidad instantánea",
     title: "Vea ahora mismo cómo funciona su sitio en un teléfono.",
     lead: "Una prueba automatizada que tarda menos de un minuto. Puntúa velocidad, accesibilidad, buenas prácticas y los fundamentos del SEO. Para la mirada de una persona sobre su sitio, pida la revisión gratuita.",

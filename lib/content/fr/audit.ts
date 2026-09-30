@@ -7,7 +7,7 @@ import type { Audit, Snapshot } from "../en/audit";
 export const audit: Audit = {
   metaTitle: "Audit des systèmes numériques",
   metaDescription:
-    "Un examen à portée fixe de la façon dont votre site web, votre boîte courriel, vos outils et votre équipe fonctionnent ensemble. Vous recevez une carte des systèmes, des constats appuyés de preuves et un plan chiffré. Frais crédités en totalité à un projet signé dans les 60 jours.",
+    "Un examen à portée fixe : carte des systèmes, constats appuyés de preuves et plan chiffré. Frais crédités en totalité à un projet signé dans les 60 jours.",
   eyebrow: "Audit des systèmes numériques",
   title: "Découvrez où vos systèmes vous coûtent du temps, des demandes et de l'argent.",
   lead: "Un examen à portée fixe de la façon dont votre site web, votre boîte courriel, vos outils et votre équipe fonctionnent ensemble. Vous recevez une carte des systèmes, des constats appuyés de preuves et un plan chiffré, que vous nous engagiez ou non par la suite.",

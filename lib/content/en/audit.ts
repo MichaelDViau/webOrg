@@ -6,7 +6,7 @@
 export const audit = {
   metaTitle: "Digital Systems Audit",
   metaDescription:
-    "A fixed-scope review of how your website, inbox, tools and team work together. You get a system map, findings with evidence and a costed plan. Fee credited in full to a project signed within 60 days.",
+    "A fixed-scope review of your website, tools and team: system map, findings with evidence and a costed plan. Fee credited in full to a project signed within 60 days.",
   eyebrow: "Digital Systems Audit",
   title: "Find out where your systems cost you time, inquiries and money.",
   lead: "A fixed-scope review of how your website, inbox, tools and team work together. You get a system map, findings backed by evidence and a costed plan, whether or not you hire us afterward.",

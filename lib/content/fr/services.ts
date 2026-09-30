@@ -12,7 +12,7 @@ export const services: Record<ServiceSlug, ServiceText> = {
     card: "Des logiciels conçus autour de la façon dont votre entreprise fonctionne vraiment : systèmes d'affaires sur mesure, applications full-stack et automatisation des processus.",
     seoTitle: "Développement de logiciels sur mesure",
     metaDescription:
-      "Logiciels d'affaires sur mesure, développement full-stack et automatisation des processus. Nous concevons des applications évolutives adaptées à votre façon de travailler.",
+      "Logiciels d'affaires sur mesure, développement full-stack et automatisation des processus : des applications évolutives adaptées à votre façon de travailler.",
     headline: "Des logiciels sur mesure, conçus autour de votre façon de travailler.",
     lead: "Quand les outils prêts à l'emploi vous obligent à les contourner, nous créons le logiciel qui vous convient : adapté à votre processus, conçu pour évoluer et qui vous appartient.",
     overview:
@@ -66,7 +66,7 @@ export const services: Record<ServiceSlug, ServiceText> = {
     card: "Sites web, applications web, portails clients et plateformes internes, des applications web progressives aux applications d'entreprise.",
     seoTitle: "Services de développement d'applications web",
     metaDescription:
-      "Sites web professionnels, applications web sur mesure, portails clients, tableaux de bord et plateformes d'entreprise, conçus pour la vitesse, la sécurité et la croissance.",
+      "Sites web professionnels, applications web sur mesure, portails clients, tableaux de bord et plateformes d'entreprise, conçus pour la vitesse et la sécurité.",
     headline: "Des sites et des applications web conçus pour un usage réel.",
     lead: "D'un site d'entreprise professionnel à une plateforme d'entreprise sur laquelle vos équipes et vos clients comptent chaque jour, nous concevons, construisons et maintenons des applications qui fonctionnent sur tous les appareils.",
     overview:
@@ -120,9 +120,9 @@ export const services: Record<ServiceSlug, ServiceText> = {
   "ai-solutions": {
     name: "Solutions d'IA et automatisation",
     card: "L'IA intégrée à vos systèmes et à vos flux de travail : assistants, automatisation intelligente et processus fondés sur les données, avec des personnes aux commandes.",
-    seoTitle: "Solutions d'IA et automatisation des processus d'affaires",
+    seoTitle: "Solutions d'IA et automatisation des processus",
     metaDescription:
-      "Applications propulsées par l'IA, intégration de l'IA aux systèmes existants, agents et assistants d'IA, et automatisation intelligente pour des flux de travail réels.",
+      "Applications propulsées par l'IA, intégration aux systèmes existants, agents et assistants d'IA, et automatisation intelligente pour des flux de travail réels.",
     headline: "Une IA et une automatisation qui s'intègrent à votre façon de travailler.",
     lead: "Nous concevons et intégrons l'IA là où elle supprime du vrai travail : rédiger, classer, acheminer et répondre, à l'intérieur de vos systèmes existants et avec des personnes qui révisent ce qui compte.",
     overview:
@@ -178,7 +178,7 @@ export const services: Record<ServiceSlug, ServiceText> = {
     card: "Conception, développement, optimisation et migration de bases de données, pour que vos données soient organisées, rapides et fiables.",
     seoTitle: "Développement et optimisation de bases de données",
     metaDescription:
-      "Architecture, développement, gestion, optimisation et migration de bases de données. Nous structurons et intégrons vos données pour qu'elles soient exactes, rapides et utilisables.",
+      "Architecture, développement, gestion, optimisation et migration de bases de données, pour des données exactes, rapides et utilisables.",
     headline: "Des bases de données conçues pour que vos données soient organisées, rapides et fiables.",
     lead: "Chaque système dépend de ses données. Nous concevons, construisons, gérons et optimisons les bases de données derrière vos applications, et nous déplaçons vos données en toute sécurité des anciens systèmes vers les nouveaux.",
     overview:
@@ -233,7 +233,7 @@ export const services: Record<ServiceSlug, ServiceText> = {
     card: "Architecture infonuagique, migration et infrastructure : des déploiements évolutifs sur les plateformes que votre entreprise choisit.",
     seoTitle: "Migration vers le nuage et services d'infrastructure",
     metaDescription:
-      "Architecture infonuagique, migration, développement d'infrastructure, gestion de serveurs et optimisation. Des déploiements évolutifs et sécurisés sur les grandes plateformes.",
+      "Architecture infonuagique, migration, infrastructure, gestion de serveurs et optimisation : des déploiements évolutifs et sécurisés sur les grandes plateformes.",
     headline: "Une infrastructure infonuagique conçue pour être fiable et évolutive.",
     lead: "Nous concevons l'architecture infonuagique, migrons les systèmes existants et bâtissons l'infrastructure et les chaînes de déploiement qui gardent vos applications disponibles, sécurisées et maîtrisées sur le plan des coûts.",
     overview:
@@ -288,7 +288,7 @@ export const services: Record<ServiceSlug, ServiceText> = {
     card: "Architecture et planification de systèmes évolutifs : conception back-end, API, intégrations et infrastructure technique.",
     seoTitle: "Architecture logicielle et conception de systèmes",
     metaDescription:
-      "Architecture logicielle et applicative, conception de systèmes évolutifs, architecture back-end et d'API, intégration de systèmes et planification de l'infrastructure technique.",
+      "Architecture logicielle et applicative, systèmes évolutifs, architecture back-end et d'API, intégration de systèmes et planification de l'infrastructure.",
     headline: "Une architecture logicielle qui permet aux systèmes de grandir sans se briser.",
     lead: "Une bonne architecture détermine avec quelle facilité un système peut changer. Nous concevons la structure, les interfaces et les intégrations qui gardent votre technologie fiable à mesure que l'entreprise évolue.",
     overview:
@@ -344,7 +344,7 @@ export const services: Record<ServiceSlug, ServiceText> = {
     card: "Mise à niveau, restructuration et migration d'applications héritées, pour que les systèmes vieillissants cessent de freiner l'entreprise.",
     seoTitle: "Services de modernisation d'applications héritées",
     metaDescription:
-      "Modernisation de systèmes hérités, mise à niveau d'applications, optimisation du rendement, restructuration de systèmes et migration technologique pour les systèmes d'affaires désuets.",
+      "Modernisation de systèmes hérités, mise à niveau d'applications, optimisation du rendement et migration technologique pour les systèmes d'affaires désuets.",
     headline: "Modernisez les systèmes dont votre entreprise dépend déjà.",
     lead: "Un logiciel désuet est risqué, lent et difficile à modifier. Nous mettons à niveau, restructurons et migrons les applications existantes par étapes, sans arrêter le travail qui en dépend.",
     overview:
@@ -400,7 +400,7 @@ export const services: Record<ServiceSlug, ServiceText> = {
     card: "Flux de travail numériques, optimisation des processus et systèmes intégrés, pour que la technologie soutienne la façon dont l'entreprise fonctionne.",
     seoTitle: "Conseil et développement en transformation numérique",
     metaDescription:
-      "Transformation technologique des affaires : développement de flux de travail numériques, optimisation des processus, intégration technologique et modernisation des systèmes d'affaires.",
+      "Transformation technologique des affaires : flux de travail numériques, optimisation des processus, intégration technologique et modernisation des systèmes.",
     headline: "Une transformation numérique ancrée dans la façon dont votre entreprise fonctionne.",
     lead: "Nous transformons des processus manuels et cloisonnés en flux de travail numériques intégrés, et nous modernisons les systèmes d'affaires qui les entourent, une étape pratique à la fois.",
     overview:
@@ -454,7 +454,7 @@ export const services: Record<ServiceSlug, ServiceText> = {
     card: "Conseil en technologie, évaluations techniques et dépannage, de la planification à la mise en œuvre.",
     seoTitle: "Conseil en technologie et évaluations techniques",
     metaDescription:
-      "Conseil en technologie, évaluations techniques, dépannage logiciel, diagnostic de systèmes et stratégie technologique sur mesure, de la planification à la mise en œuvre.",
+      "Conseil en technologie, évaluations techniques, dépannage logiciel, diagnostic de systèmes et stratégie sur mesure, de la planification à la mise en œuvre.",
     headline: "Une expertise technique pour vos problèmes les plus difficiles et vos plus grandes décisions.",
     lead: "Quand quelque chose est en panne, flou ou sur le point de changer, nous vous aidons à le comprendre, à décider quoi faire, puis à le réaliser, ou à remettre un plan clair à votre propre équipe.",
     overview:
@@ -506,9 +506,9 @@ export const services: Record<ServiceSlug, ServiceText> = {
 };
 
 export const servicesPage: ServicesPage = {
-  metaTitle: "Logiciels sur mesure, web, IA, infonuagique et services technologiques",
+  metaTitle: "Logiciels sur mesure, web, IA et infonuagique",
   metaDescription:
-    "Développement de logiciels sur mesure, développement web et d'applications, solutions d'IA, bases de données, infonuagique, architecture logicielle, modernisation d'applications, transformation numérique et conseil en technologie.",
+    "Logiciels sur mesure, web et applications, IA, bases de données, infonuagique, architecture, modernisation, transformation numérique et conseil en technologie.",
   eyebrow: "Services",
   title: "Neuf capacités. Une seule équipe d'ingénierie.",
   lead: "Logiciels sur mesure, applications web, IA, bases de données, infonuagique, architecture, modernisation, transformation et conseil technique. Faites appel à une capacité pour un problème précis, ou à plusieurs pour une solution complète.",

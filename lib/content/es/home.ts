@@ -8,7 +8,7 @@ import type { Home } from "../en/home";
 export const home: Home = {
   metaTitle: "{name}: software a medida y soluciones tecnológicas",
   metaDescription:
-    "Diseñamos, construimos y modernizamos la tecnología que ayuda a las empresas a operar, resolver problemas y crecer: software a medida, aplicaciones web, IA, bases de datos, nube y sistemas empresariales.",
+    "Diseñamos, construimos y modernizamos la tecnología de las empresas: software a medida, aplicaciones web, IA, bases de datos, nube y sistemas empresariales.",
 
   hero: {
     lead: "Desarrollamos",
@@ -178,8 +178,8 @@ export const home: Home = {
 
   contact: {
     eyebrow: "Contacto",
-    title: "Construyamos juntos su próxima solución.",
-    lead: "Ya sea que necesite una aplicación a medida, un sistema de software completo, infraestructura en la nube, integración de IA o ayuda para resolver un problema técnico existente, conversemos sobre lo que su negocio necesita.",
+    title: "Cuéntenos qué necesita construir o corregir.",
+    lead: "Puede ser una aplicación nueva, un sistema antiguo que necesita trabajo o un problema técnico que no ha podido resolver. Una descripción breve basta para empezar.",
     cta: "Iniciar una conversación",
     points: [
       "Recibe una confirmación de inmediato.",

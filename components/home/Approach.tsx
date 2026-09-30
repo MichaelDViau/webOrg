@@ -35,7 +35,7 @@ export async function Approach() {
             <li key={step.title} className="border-t-2 border-ink pt-5" data-reveal>
               <span className="text-sm text-muted tabular-nums">{format(t.step, { number: index + 1 })}</span>
               <h3 className="mt-3 text-xl font-semibold tracking-tight">{step.title}</h3>
-              <p className="mt-2 leading-relaxed">{step.detail}</p>
+              <p className="mt-2 text-base leading-relaxed">{step.detail}</p>
             </li>
           ))}
         </ol>
@@ -49,7 +49,7 @@ export async function Approach() {
               <li key={item.title} className="rounded-md border border-line bg-paper p-6" data-reveal>
                 <Scale level={index + 1} />
                 <h4 className="mt-4 text-lg font-semibold tracking-tight text-ink">{item.title}</h4>
-                <p className="mt-2 leading-relaxed">{item.detail}</p>
+                <p className="mt-2 text-base leading-relaxed">{item.detail}</p>
               </li>
             ))}
           </ul>

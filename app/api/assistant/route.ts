@@ -24,6 +24,20 @@ function badRequest(message: string, status = 400) {
   return Response.json({ error: message }, { status });
 }
 
+/**
+ * Whether the request comes from one of this site's own pages. Browsers send `Origin: null` from sandboxed
+ * frames and some privacy modes, which is not a URL, so a parse failure counts as a foreign origin.
+ */
+function isSameOrigin(request: Request): boolean {
+  const origin = request.headers.get("origin");
+  if (!origin) return false;
+  try {
+    return new URL(origin).host === request.headers.get("host");
+  } catch {
+    return false;
+  }
+}
+
 /** Accepts only an alternating user/assistant history that starts and ends with the visitor. */
 function parseMessages(body: unknown): Anthropic.Beta.BetaMessageParam[] | null {
   const messages = (body as { messages?: unknown })?.messages;
@@ -49,11 +63,7 @@ export async function POST(request: Request) {
 
   if (!process.env.ANTHROPIC_API_KEY) return badRequest(t.unavailable, 503);
 
-  // Only accept requests from this site's own pages.
-  const origin = request.headers.get("origin");
-  if (!origin || new URL(origin).host !== request.headers.get("host")) {
-    return badRequest(t.wrongOrigin, 403);
-  }
+  if (!isSameOrigin(request)) return badRequest(t.wrongOrigin, 403);
 
   if (!rateLimit(`assistant:${await clientIp()}`, { limit: 20, windowMs: 10 * 60 * 1000 })) {
     return badRequest(t.rateLimited, 429);

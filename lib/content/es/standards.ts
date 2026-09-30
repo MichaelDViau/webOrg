@@ -11,7 +11,7 @@ export const standards: Record<StandardSlug, StandardText> = {
     card: "HTTPS en todas partes, sin secretos en el código, monitoreo, copias de seguridad y actualizaciones rápidas.",
     seoTitle: "Estándar de seguridad",
     metaDescription:
-      "Cómo protegemos cada proyecto por defecto: HTTPS en todas partes, encabezados de seguridad, protección contra spam en formularios, ningún secreto en el código, disponibilidad monitoreada, copias de seguridad y actualizaciones rápidas.",
+      "Cómo protegemos cada proyecto: HTTPS, encabezados de seguridad, formularios contra spam, sin secretos en el código, copias de seguridad y actualizaciones rápidas.",
     headline: "Seguridad por defecto, en lenguaje claro.",
     lead: "Esto es lo que hacemos en cada proyecto sin que nos lo pidan, y cómo puede comprobarlo.",
     defaults: [
@@ -66,7 +66,7 @@ export const standards: Record<StandardSlug, StandardText> = {
     card: "Buenos Core Web Vitals para visitantes reales, juzgados con datos de campo.",
     seoTitle: "Estándar de rendimiento",
     metaDescription:
-      "Cómo construimos sitios rápidos: metas de Core Web Vitals (LCP 2,5 s, INP 200 ms, CLS 0,1) juzgadas con datos de usuarios reales, imágenes optimizadas, pocas fuentes y un mínimo de scripts de terceros.",
+      "Cómo construimos sitios rápidos: metas de Core Web Vitals (LCP 2,5 s, INP 200 ms, CLS 0,1) medidas con datos reales, imágenes optimizadas, pocos scripts de terceros.",
     headline: "Rápido para visitantes reales, en teléfonos reales.",
     lead: "Un sitio hermoso pero lento contradice todo lo que vendemos. Así mantenemos rápido el nuestro, y el suyo.",
     defaults: [
@@ -119,7 +119,7 @@ export const standards: Record<StandardSlug, StandardText> = {
     card: "WCAG 2.2 AA como base, comprobada con herramientas y a mano.",
     seoTitle: "Estándar de accesibilidad",
     metaDescription:
-      "Nuestra base de accesibilidad es WCAG 2.2 AA: uso con teclado, foco visible, contraste, etiquetas, encabezados y texto alternativo, probados con un verificador automático y una revisión manual con teclado.",
+      "Nuestra base de accesibilidad es WCAG 2.2 AA: teclado, foco visible, contraste, etiquetas, encabezados y texto alternativo, probados de forma automática y manual.",
     headline: "Utilizable por todas las personas, en cualquier dispositivo.",
     lead: "La accesibilidad no es un extra. Es parte de construir algo que funciona.",
     defaults: [
@@ -166,7 +166,7 @@ export const standards: Record<StandardSlug, StandardText> = {
     card: "La IA redacta. Su equipo aprueba.",
     seoTitle: "Política de IA",
     metaDescription:
-      "Cómo usamos la IA en el trabajo con clientes: la IA redacta y su equipo aprueba, probada con sus propios ejemplos, con sus datos guardados en sus cuentas y sin usarse para entrenamiento sin consentimiento por escrito.",
+      "Cómo usamos la IA con clientes: la IA redacta y su equipo aprueba. Sus datos se quedan en sus cuentas y no se usan para entrenamiento sin consentimiento por escrito.",
     headline: "La IA redacta. Su equipo aprueba.",
     lead: "La IA es una herramienta para tareas concretas, usada con una persona al mando. Esta es la política que seguimos en cada proyecto que la emplea.",
     defaults: [
@@ -217,7 +217,7 @@ export const standards: Record<StandardSlug, StandardText> = {
     card: "Recopilar solo lo necesario, guardarlo en sus cuentas y cumplir las normas locales.",
     seoTitle: "Estándar de privacidad",
     metaDescription:
-      "Cómo manejamos los datos personales en el trabajo con clientes: recopilar solo lo necesario, guardarlo en sus cuentas y cumplir las normas locales, incluida la Ley 25 de Quebec y la ley federal de privacidad de México.",
+      "Cómo manejamos los datos personales: solo lo necesario, guardado en sus cuentas, según las normas locales, incluidas la Ley 25 de Quebec y la ley federal de México.",
     headline: "Solo los datos que necesita, guardados donde usted los controla.",
     lead: "Este es el estándar de privacidad para el trabajo con clientes. Cómo trata este sitio web sus datos está en la política de privacidad.",
     defaults: [
@@ -260,9 +260,9 @@ export const standards: Record<StandardSlug, StandardText> = {
 };
 
 export const standardsPage: StandardsPage = {
-  metaTitle: "Estándares: seguridad, rendimiento, accesibilidad, IA y privacidad",
+  metaTitle: "Estándares: seguridad, rendimiento, accesibilidad e IA",
   metaDescription:
-    "Los estándares detrás de cada proyecto, en lenguaje claro: seguridad, rendimiento, accesibilidad, política de IA y privacidad. Publicados para que su revisor de TI pueda comprobarnos.",
+    "Los estándares de cada proyecto en lenguaje claro: seguridad, rendimiento, accesibilidad, IA y privacidad. Publicados para que su revisor de TI los compruebe.",
   eyebrow: "Estándares",
   title: "Lo que hacemos por defecto, por escrito.",
   lead: "Los compradores serios y sus revisores de TI deberían poder comprobarnos antes de firmar. Estos cinco estándares se aplican a cada proyecto.",

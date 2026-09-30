@@ -8,7 +8,7 @@ import type { HowWeWork } from "../en/how-we-work";
 export const howWeWork: HowWeWork = {
   metaTitle: "Notre façon de travailler : du défi à la solution",
   metaDescription:
-    "Notre démarche pour les projets technologiques : comprendre, planifier, concevoir, mettre en œuvre et faire évoluer. Un processus flexible adapté à chaque projet, avec un compte rendu écrit chaque semaine et la pleine propriété du code.",
+    "Comment se déroule un projet : comprendre, planifier, concevoir, mettre en œuvre, évoluer. Compte rendu écrit chaque semaine et pleine propriété du code.",
   eyebrow: "Notre façon de travailler",
   title: "Du défi à la solution.",
   lead: "Chaque projet technologique est différent, alors notre démarche s'adapte au travail. La plupart des projets suivent cinq étapes. Voici ce qui se passe à chacune, et ce que vous obtenez.",

@@ -8,8 +8,9 @@ import type { ArticlePage, InsightsPage } from "../en/insights";
 export const articles: Record<ArticleSlug, ArticleText> = {
   "client-portal-for-property-managers": {
     title: "Qué debe incluir la primera versión de un portal de clientes para administradores de propiedades",
+    seoTitle: "Portal de clientes para administradores de propiedades",
     description:
-      "Un portal de clientes para administradores de propiedades debe responder primero las preguntas que llenan su bandeja de entrada. Esto es lo que conviene incluir en la primera versión y lo que conviene dejar fuera.",
+      "Un portal de clientes debe responder primero las preguntas que llenan su bandeja de entrada. Qué incluir en la primera versión y qué dejar fuera.",
     topic: "Propiedades",
     readMinutes: 5,
     body: [
@@ -57,8 +58,9 @@ export const articles: Record<ArticleSlug, ArticleText> = {
 
   "document-intake-for-accounting-firms": {
     title: "Recepción de documentos para despachos contables: deje de perseguir PDF por correo",
+    seoTitle: "Recepción de documentos para despachos contables",
     description:
-      "Cómo pueden los despachos contables y las firmas profesionales recopilar los documentos de sus clientes sin perseguirlos: una lista de verificación por cliente, un solo lugar para cargarlos y recordatorios que se envían solos.",
+      "Cómo recopilar los documentos de sus clientes sin perseguirlos: una lista por cliente, un solo lugar para cargarlos y recordatorios automáticos.",
     topic: "Contabilidad",
     readMinutes: 5,
     body: [
@@ -101,8 +103,9 @@ export const articles: Record<ArticleSlug, ArticleText> = {
 
   "measure-your-inquiry-response-time": {
     title: "Cómo medir qué tan rápido responde su equipo a las consultas nuevas",
+    seoTitle: "Cómo medir su tiempo de respuesta a consultas nuevas",
     description:
-      "Si un visitante espera un día por una respuesta, su sitio web ha fallado. Esta es una manera sencilla de medir su tiempo de respuesta antes de tratar de mejorarlo.",
+      "Si un visitante espera un día por una respuesta, su sitio web ha fallado. Una manera sencilla de medir su tiempo de respuesta antes de mejorarlo.",
     topic: "Flujo de consultas",
     readMinutes: 4,
     body: [

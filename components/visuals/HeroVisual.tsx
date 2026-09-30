@@ -55,7 +55,7 @@ export function HeroVisual({ labels }: { labels: Ui["visuals"] }) {
           </ul>
         </AppWindow>
 
-        <div className="flex flex-col gap-4">
+        <div className="hidden flex-col gap-4 md:flex">
           <div className="grid flex-1 gap-1.5" style={{ gridTemplateRows: `repeat(${layers.length}, minmax(0, 1fr))` }}>
             {layers.map((layer, index) => (
               <Node key={layer} accent={index === 0} className="flex items-center justify-between gap-3">

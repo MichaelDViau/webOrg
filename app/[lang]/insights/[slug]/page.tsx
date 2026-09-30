@@ -29,7 +29,7 @@ export async function generateMetadata({ params }: ArticlePageProps): Promise<Me
   const article = (await getContent()).articles.find((item) => item.slug === slug);
   if (!article) return {};
   return pageMetadata({
-    title: article.title,
+    title: article.seoTitle ?? article.title,
     description: article.description,
     path: `/insights/${article.slug}`,
     type: "article",

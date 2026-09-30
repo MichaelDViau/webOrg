@@ -7,7 +7,7 @@ import type { Audit, Snapshot } from "../en/audit";
 export const audit: Audit = {
   metaTitle: "Auditoría de sistemas digitales",
   metaDescription:
-    "Una revisión de alcance fijo de cómo trabajan juntos su sitio web, su bandeja de entrada, sus herramientas y su equipo. Recibe un mapa de sistemas, hallazgos con pruebas y un plan con costos. Tarifa acreditada por completo a un proyecto firmado dentro de 60 días.",
+    "Una revisión de alcance fijo: mapa de sistemas, hallazgos con pruebas y plan con costos. Tarifa acreditada por completo a un proyecto firmado dentro de 60 días.",
   eyebrow: "Auditoría de sistemas digitales",
   title: "Descubra dónde sus sistemas le cuestan tiempo, consultas y dinero.",
   lead: "Una revisión de alcance fijo de cómo trabajan juntos su sitio web, su bandeja de entrada, sus herramientas y su equipo. Recibe un mapa de sistemas, hallazgos respaldados con pruebas y un plan con costos, contrate o no nuestros servicios después.",

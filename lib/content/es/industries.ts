@@ -122,7 +122,7 @@ export const industries: Record<IndustrySlug, IndustryText> = {
 export const industriesPage: IndustriesPage = {
   metaTitle: "Los sectores para los que construimos tecnología",
   metaDescription:
-    "Software a medida, aplicaciones y soluciones tecnológicas para el sector inmobiliario, hotelería, turismo, comercio minorista, servicios profesionales, logística, servicios financieros, salud, manufactura y empresas de tecnología.",
+    "Software a medida y soluciones tecnológicas para diez sectores, entre ellos inmobiliario, hotelería, logística, servicios financieros, salud y manufactura.",
   eyebrow: "Sectores",
   title: "Tecnología pensada para cómo funciona su sector.",
   lead: "Los detalles cambian según el sector. El enfoque de ingeniería se aplica en todos. Estos son los tipos de soluciones que las empresas de cada sector suelen necesitar.",

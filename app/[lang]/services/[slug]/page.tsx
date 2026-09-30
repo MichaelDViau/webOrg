@@ -70,7 +70,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
               </Link>
             </p>
             <h1 className="mt-4 max-w-2xl text-title text-balance text-ink">{service.headline}</h1>
-            <p className="mt-6 max-w-xl text-lg leading-relaxed text-pretty sm:text-xl">{service.lead}</p>
+            <p className="mt-6 max-w-xl text-lead text-pretty">{service.lead}</p>
             <CtaPair className="mt-8" />
           </div>
           <div className="lg:col-span-6">

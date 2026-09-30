@@ -8,7 +8,7 @@ import type { About, Partners } from "../en/about";
 export const about: About = {
   metaTitle: "Nosotros",
   metaDescription:
-    "{name} es una empresa de desarrollo de software a medida y soluciones tecnológicas. Diseñamos, construimos, integramos y modernizamos la tecnología de la que dependen las empresas.",
+    "{name} desarrolla software a medida y soluciones tecnológicas. Diseñamos, construimos, integramos y modernizamos la tecnología de la que dependen las empresas.",
   eyebrow: "Nosotros",
   title: "Un equipo de ingeniería de software para sus desafíos tecnológicos.",
   lead: "{name} diseña, construye, integra y moderniza el software, los datos, la nube y los sistemas de IA de los que dependen las empresas. Resolvemos los problemas técnicos con ingeniería.",
@@ -61,7 +61,7 @@ export const about: About = {
 export const partners: Partners = {
   metaTitle: "Aliados",
   metaDescription:
-    "Para firmas de TI, contadores y directores técnicos fraccionados: cómo funciona recomendarnos a un cliente, qué hacemos primero y los estándares que puede comprobar antes de recomendar.",
+    "Para firmas de TI, contadores y directores técnicos fraccionados: cómo funciona recomendarnos a un cliente, qué hacemos primero y los estándares que puede comprobar.",
   eyebrow: "Aliados",
   title: "¿Puede recomendarnos a sus clientes con tranquilidad?",
   lead: "Para firmas de TI, contadores y directores técnicos fraccionados cuyos clientes necesitan sistemas construidos y cuidados. Así manejaríamos una recomendación, y esto es lo que puede comprobar antes.",

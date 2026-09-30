@@ -25,7 +25,15 @@ const layout = [
   { span: "md:col-span-1 lg:col-span-3", show: 0, dark: false },
 ] as const;
 
-/** Section 3: all nine capability categories, each with a title, a short explanation and its capabilities. */
+/**
+ * Section 3: all nine capability categories, each with a title, a short explanation and its capabilities.
+ *
+ * Each card spans five rows of the grid and takes them over with `subgrid`: icon, title, description, list
+ * and link. Cards in the same row therefore share row heights, so a title that wraps to two lines (common
+ * in French and Spanish) pushes the descriptions of its neighbours down with it instead of leaving them
+ * misaligned. The grid has no row gap, because a gap would open up between the rows inside every card;
+ * cards get a bottom margin instead. See `subgrid-rows-*` in globals.css for the fallback.
+ */
 export async function Capabilities() {
   const { home, services } = await getContent();
   const t = home.capabilities;
@@ -40,16 +48,19 @@ export async function Capabilities() {
           </ButtonLink>
         </div>
 
-        <ul className="mt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-12">
+        <ul className="mt-12 -mb-4 grid gap-x-4 md:grid-cols-2 lg:grid-cols-12">
           {services.map((service, index) => {
             const { span, show, dark } = layout[index];
             const hidden = service.capabilities.length - show;
+            // The four compact cards sit in a row of narrow columns, so they get less padding.
+            const compact = show === 0;
             return (
               <li
                 key={service.slug}
                 data-reveal
                 className={cn(
-                  "group relative flex flex-col rounded-md border p-6 transition-colors duration-200 sm:p-8",
+                  "group subgrid-rows-5 relative mb-4 rounded-md border p-6 transition-colors duration-200",
+                  !compact && "sm:p-8",
                   dark
                     ? "border-night-line bg-night text-night-muted hover:border-accent-light"
                     : "border-line bg-paper hover:border-ink",
@@ -63,7 +74,7 @@ export async function Capabilities() {
                     {service.name}
                   </Link>
                 </h3>
-                <p className="mt-2 leading-relaxed">{service.card}</p>
+                <p className="mt-2 text-base leading-relaxed">{service.card}</p>
 
                 {show > 0 && (
                   <ul className={cn("mt-5 grid gap-x-8 gap-y-1.5 text-base", dark && "sm:grid-cols-2")}>
@@ -84,7 +95,7 @@ export async function Capabilities() {
                 <span
                   aria-hidden="true"
                   className={cn(
-                    "mt-auto inline-flex items-center gap-1.5 pt-6 font-medium group-hover:underline group-hover:underline-offset-4",
+                    "row-start-5 mt-auto inline-flex items-center gap-1.5 self-start pt-6 font-medium group-hover:underline group-hover:underline-offset-4",
                     dark ? "text-paper" : "text-ink",
                   )}
                 >

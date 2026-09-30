@@ -120,7 +120,7 @@ export const industries: Record<IndustrySlug, IndustryText> = {
 export const industriesPage = {
   metaTitle: "Industries We Build Technology For",
   metaDescription:
-    "Custom software, applications, and technology solutions for real estate, hospitality, tourism, retail, professional services, logistics, financial services, healthcare, manufacturing, and technology companies.",
+    "Custom software and technology solutions for ten industries, including real estate, hospitality, retail, logistics, financial services, healthcare and manufacturing.",
   eyebrow: "Industries",
   title: "Technology for the way your industry works.",
   lead: "The details differ by industry. The engineering approach carries across them. These are the kinds of solutions businesses in each industry often need.",

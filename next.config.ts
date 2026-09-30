@@ -25,6 +25,8 @@ const contentSecurityPolicy = [
   "upgrade-insecure-requests",
 ].join("; ");
 
+const staticAssetCache = "public, max-age=86400, stale-while-revalidate=604800";
+
 const securityHeaders = [
   { key: "Content-Security-Policy", value: contentSecurityPolicy },
   { key: "Strict-Transport-Security", value: "max-age=63072000; includeSubDomains; preload" },
@@ -96,7 +98,14 @@ const nextConfig: NextConfig = {
     ];
   },
   async headers() {
-    return [{ source: "/:path*", headers: securityHeaders }];
+    return [
+      { source: "/:path*", headers: securityHeaders },
+      // Files in public/ keep the same URL when they change, so they can't be cached forever like the
+      // fingerprinted files under /_next/static. A day of caching plus a week of stale-while-revalidate
+      // avoids a conditional request on every visit and every share preview.
+      { source: "/og/:file*", headers: [{ key: "Cache-Control", value: staticAssetCache }] },
+      { source: "/logo.png", headers: [{ key: "Cache-Control", value: staticAssetCache }] },
+    ];
   },
 };
 

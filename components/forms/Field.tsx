@@ -13,7 +13,7 @@ interface FieldProps {
 }
 
 export const inputClass =
-  "block w-full rounded-md border border-line-strong bg-paper px-3.5 py-3 text-base text-ink transition-colors duration-150 placeholder:text-muted/70 hover:border-muted focus:border-ink focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-0 focus-visible:outline-ink aria-invalid:border-danger aria-invalid:focus-visible:outline-danger";
+  "block w-full rounded-md border border-line-strong bg-paper px-3.5 py-2.5 text-base text-ink transition-colors duration-150 placeholder:text-muted/70 hover:border-muted focus:border-ink focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-0 focus-visible:outline-ink aria-invalid:border-danger aria-invalid:focus-visible:outline-danger";
 
 export function Field({ id, label, optional, optionalLabel, error, hint, className, children }: FieldProps) {
   return (

@@ -10,7 +10,7 @@ export const standards: Record<StandardSlug, StandardText> = {
     card: "HTTPS everywhere, no secrets in code, monitored, backed up and quickly updated.",
     seoTitle: "Security Standard",
     metaDescription:
-      "How we secure every project by default: HTTPS everywhere, security headers, spam protection on forms, no secrets in code, monitored uptime, backups and quick updates.",
+      "How we secure every project by default: HTTPS, security headers, form spam protection, no secrets in code, monitored uptime, backups and quick updates.",
     headline: "Security by default, in plain language.",
     lead: "This is what we do on every project without being asked, and how you can check it.",
     defaults: [
@@ -65,7 +65,7 @@ export const standards: Record<StandardSlug, StandardText> = {
     card: "Good Core Web Vitals for real visitors, judged on field data.",
     seoTitle: "Performance Standard",
     metaDescription:
-      "How we build fast sites: Core Web Vitals targets (LCP 2.5 s, INP 200 ms, CLS 0.1) judged on real-user data, optimized images, few fonts and minimal third-party scripts.",
+      "How we build fast sites: Core Web Vitals targets (LCP 2.5 s, INP 200 ms, CLS 0.1) judged on real-user data, optimized images, few fonts, few third-party scripts.",
     headline: "Fast for real visitors, on real phones.",
     lead: "A beautiful site that's slow contradicts everything we sell. This is how we keep ours, and yours, fast.",
     defaults: [
@@ -118,7 +118,7 @@ export const standards: Record<StandardSlug, StandardText> = {
     card: "WCAG 2.2 AA as the baseline, checked by tools and by hand.",
     seoTitle: "Accessibility Standard",
     metaDescription:
-      "Our accessibility baseline is WCAG 2.2 AA: keyboard use, visible focus, contrast, labels, headings and alternative text, tested with an automated checker and a manual keyboard pass.",
+      "Our accessibility baseline is WCAG 2.2 AA: keyboard use, visible focus, contrast, labels, headings and alt text, tested automatically and by hand.",
     headline: "Usable by everyone, on any device.",
     lead: "Accessibility isn't an extra. It's part of building something that works.",
     defaults: [
@@ -165,7 +165,7 @@ export const standards: Record<StandardSlug, StandardText> = {
     card: "AI drafts. Your team approves.",
     seoTitle: "AI Policy",
     metaDescription:
-      "How we use AI on client work: AI drafts and your team approves, tested on your own examples, your data kept in your accounts and not used for training without written consent.",
+      "How we use AI on client work: AI drafts and your team approves. Your data stays in your accounts and isn't used for training without written consent.",
     headline: "AI drafts. Your team approves.",
     lead: "AI is a tool for specific tasks, used with a person in charge. This is the policy we follow on every project that uses it.",
     defaults: [
@@ -216,7 +216,7 @@ export const standards: Record<StandardSlug, StandardText> = {
     card: "Collect only what's needed, keep it in your accounts, and follow the local rules.",
     seoTitle: "Privacy Standard",
     metaDescription:
-      "How we handle personal data on client work: collect only what's needed, keep it in your accounts, and follow local rules including Quebec's Law 25 and Mexico's federal privacy law.",
+      "How we handle personal data on client work: only what's needed, kept in your accounts, under local rules including Quebec's Law 25 and Mexico's federal privacy law.",
     headline: "Only the data you need, kept where you control it.",
     lead: "This is the privacy standard for client work. How this website handles your data is in the privacy policy.",
     defaults: [
@@ -259,7 +259,7 @@ export const standards: Record<StandardSlug, StandardText> = {
 };
 
 export const standardsPage = {
-  metaTitle: "Standards: Security, Performance, Accessibility, AI and Privacy",
+  metaTitle: "Standards: Security, Performance, Accessibility and AI",
   metaDescription:
     "The standards behind every project, in plain language: security, performance, accessibility, AI policy and privacy. Published so your IT reviewer can check us.",
   eyebrow: "Standards",

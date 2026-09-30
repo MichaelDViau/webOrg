@@ -7,11 +7,11 @@
     "build": "next build",
     "start": "next start",
     "typecheck": "tsc --noEmit",
-    "launch-check": "node scripts/launch-check.mjs"
+    "launch-check": "node scripts/launch-check.mjs",
+    "site-check": "node scripts/site-check.mjs"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.128.0",
-    "geist": "^1.7.2",
     "next": "^16.3.6",
     "react": "^19.3.0",
     "react-dom": "^19.3.0",

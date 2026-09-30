@@ -109,7 +109,7 @@ export const legal: LegalContent = {
 
   terms: {
     metaTitle: "Términos de uso",
-    metaDescription: "Los términos para usar el sitio web de {name}.",
+    metaDescription: "Los términos para usar el sitio web de {name}: uso aceptable, asistente de IA y herramientas, propiedad intelectual, límites de responsabilidad y ley aplicable.",
     title: "Términos de uso",
     updated: "septiembre de 2026",
     intro: "Al usar este sitio web, usted acepta estos términos. Si no está de acuerdo, le pedimos que no lo use.",

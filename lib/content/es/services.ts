@@ -12,7 +12,7 @@ export const services: Record<ServiceSlug, ServiceText> = {
     card: "Software construido alrededor de cómo trabaja realmente su empresa: sistemas de negocio a medida, aplicaciones full-stack y automatización de procesos.",
     seoTitle: "Empresa de desarrollo de software a medida",
     metaDescription:
-      "Software de negocio a medida, desarrollo full-stack y automatización de procesos. Construimos aplicaciones escalables adaptadas a la forma en que opera su empresa.",
+      "Software de negocio a medida, desarrollo full-stack y automatización de procesos: aplicaciones escalables adaptadas a la forma en que opera su empresa.",
     headline: "Software a medida, construido alrededor de cómo trabaja su empresa.",
     lead: "Cuando las herramientas listas para usar lo obligan a trabajar alrededor de ellas, construimos el software que sí encaja: adaptado a su proceso, diseñado para escalar y de su propiedad.",
     overview:
@@ -66,7 +66,7 @@ export const services: Record<ServiceSlug, ServiceText> = {
     card: "Sitios web, aplicaciones web, portales para clientes y plataformas internas, desde aplicaciones web progresivas hasta aplicaciones empresariales.",
     seoTitle: "Servicios de desarrollo de aplicaciones web",
     metaDescription:
-      "Sitios web profesionales, aplicaciones web a medida, portales para clientes, paneles y plataformas empresariales, diseñados para velocidad, seguridad y crecimiento.",
+      "Sitios web profesionales, aplicaciones web a medida, portales para clientes, paneles y plataformas empresariales, diseñados para velocidad y seguridad.",
     headline: "Sitios y aplicaciones web diseñados para el uso real.",
     lead: "Desde un sitio web profesional de empresa hasta una plataforma empresarial en la que sus equipos y clientes confían todos los días, diseñamos, construimos y mantenemos aplicaciones que funcionan en todos los dispositivos.",
     overview:
@@ -177,7 +177,7 @@ export const services: Record<ServiceSlug, ServiceText> = {
     card: "Diseño, desarrollo, optimización y migración de bases de datos, para que sus datos estén organizados, sean rápidos y confiables.",
     seoTitle: "Desarrollo y optimización de bases de datos",
     metaDescription:
-      "Arquitectura, desarrollo, gestión, optimización y migración de bases de datos. Estructuramos e integramos sus datos para que sean precisos, rápidos y utilizables.",
+      "Arquitectura, desarrollo, gestión, optimización y migración de bases de datos, para datos precisos, rápidos y utilizables.",
     headline: "Bases de datos diseñadas para que sus datos estén organizados, sean rápidos y confiables.",
     lead: "Todo sistema depende de sus datos. Diseñamos, construimos, gestionamos y optimizamos las bases de datos detrás de sus aplicaciones, y movemos los datos con seguridad de los sistemas antiguos a los nuevos.",
     overview:
@@ -232,7 +232,7 @@ export const services: Record<ServiceSlug, ServiceText> = {
     card: "Arquitectura en la nube, migración e infraestructura: despliegues escalables en las plataformas que su empresa elija.",
     seoTitle: "Servicios de migración a la nube e infraestructura",
     metaDescription:
-      "Arquitectura en la nube, migración, desarrollo de infraestructura, gestión de servidores y optimización. Despliegues escalables y seguros en las principales plataformas.",
+      "Arquitectura en la nube, migración, infraestructura, gestión de servidores y optimización: despliegues escalables y seguros en las principales plataformas.",
     headline: "Infraestructura en la nube diseñada para funcionar con fiabilidad y escalar.",
     lead: "Diseñamos la arquitectura en la nube, migramos los sistemas existentes y construimos la infraestructura y los flujos de despliegue que mantienen sus aplicaciones disponibles, seguras y con costos bajo control.",
     overview:
@@ -287,7 +287,7 @@ export const services: Record<ServiceSlug, ServiceText> = {
     card: "Arquitectura y planificación de sistemas escalables: diseño backend, API, integraciones e infraestructura técnica.",
     seoTitle: "Arquitectura de software y diseño de sistemas",
     metaDescription:
-      "Arquitectura de software y de aplicaciones, diseño de sistemas escalables, arquitectura backend y de API, integración de sistemas y planificación de infraestructura técnica.",
+      "Arquitectura de software y de aplicaciones, sistemas escalables, arquitectura backend y de API, integración de sistemas y planificación de infraestructura.",
     headline: "Arquitectura de software que permite que los sistemas crezcan sin romperse.",
     lead: "Una buena arquitectura determina con cuánta facilidad puede cambiar un sistema. Diseñamos la estructura, las interfaces y las integraciones que mantienen su tecnología confiable a medida que el negocio evoluciona.",
     overview:
@@ -343,7 +343,7 @@ export const services: Record<ServiceSlug, ServiceText> = {
     card: "Actualización, reestructuración y migración de aplicaciones heredadas, para que los sistemas antiguos dejen de frenar al negocio.",
     seoTitle: "Servicios de modernización de aplicaciones heredadas",
     metaDescription:
-      "Modernización de sistemas heredados, actualización de aplicaciones, optimización del rendimiento, reestructuración de sistemas y migración tecnológica para sistemas de negocio obsoletos.",
+      "Modernización de sistemas heredados, actualización de aplicaciones, optimización del rendimiento y migración tecnológica para sistemas de negocio obsoletos.",
     headline: "Modernice los sistemas de los que su empresa ya depende.",
     lead: "El software obsoleto es riesgoso, lento y difícil de cambiar. Actualizamos, reestructuramos y migramos aplicaciones existentes por etapas, sin detener el trabajo que depende de ellas.",
     overview:
@@ -399,7 +399,7 @@ export const services: Record<ServiceSlug, ServiceText> = {
     card: "Flujos de trabajo digitales, optimización de procesos y sistemas integrados, para que la tecnología respalde cómo opera el negocio.",
     seoTitle: "Consultoría y desarrollo de transformación digital",
     metaDescription:
-      "Transformación tecnológica del negocio: desarrollo de flujos de trabajo digitales, optimización de procesos, integración tecnológica y modernización de sistemas de negocio.",
+      "Transformación tecnológica del negocio: flujos de trabajo digitales, optimización de procesos, integración tecnológica y modernización de sistemas.",
     headline: "Una transformación digital basada en cómo opera su empresa.",
     lead: "Convertimos procesos manuales y desconectados en flujos de trabajo digitales integrados, y modernizamos los sistemas de negocio que los rodean, un paso práctico a la vez.",
     overview:
@@ -453,7 +453,7 @@ export const services: Record<ServiceSlug, ServiceText> = {
     card: "Consultoría tecnológica, evaluaciones técnicas y resolución de fallas, desde la planificación hasta la implementación.",
     seoTitle: "Consultoría tecnológica y evaluaciones técnicas",
     metaDescription:
-      "Consultoría tecnológica, evaluaciones técnicas, resolución de fallas de software, diagnóstico de sistemas y estrategia tecnológica a medida, de la planificación a la implementación.",
+      "Consultoría tecnológica, evaluaciones técnicas, resolución de fallas, diagnóstico de sistemas y estrategia a medida, de la planificación a la implementación.",
     headline: "Experiencia técnica para sus problemas más difíciles y sus decisiones más grandes.",
     lead: "Cuando algo falla, no está claro o está por cambiar, le ayudamos a entenderlo, a decidir qué hacer y luego a implementarlo, o a entregar un plan claro a su propio equipo.",
     overview:
@@ -505,9 +505,9 @@ export const services: Record<ServiceSlug, ServiceText> = {
 };
 
 export const servicesPage: ServicesPage = {
-  metaTitle: "Software a medida, web, IA, nube y servicios tecnológicos",
+  metaTitle: "Software a medida, web, IA, nube y tecnología",
   metaDescription:
-    "Desarrollo de software a medida, desarrollo web y de aplicaciones, soluciones de IA, bases de datos, nube, arquitectura de software, modernización de aplicaciones, transformación digital y consultoría tecnológica.",
+    "Software a medida, desarrollo web y de aplicaciones, IA, bases de datos, nube, arquitectura, modernización, transformación digital y consultoría tecnológica.",
   eyebrow: "Servicios",
   title: "Nueve capacidades. Un solo equipo de ingeniería.",
   lead: "Software a medida, aplicaciones web, IA, bases de datos, nube, arquitectura, modernización, transformación y consultoría técnica. Use una para un problema concreto, o varias para una solución completa.",

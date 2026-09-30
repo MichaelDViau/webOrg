@@ -15,7 +15,7 @@ export async function Footer() {
 
   return (
     <footer className="border-t border-line bg-canvas">
-      <Container className="py-14 sm:py-20">
+      <Container className="py-12 sm:py-16">
         <div className="grid grid-cols-2 gap-x-6 gap-y-10 lg:grid-cols-12 lg:gap-12">
           <div className="col-span-2 lg:col-span-3">
             <Logo label={format(ui.logoLabel, { name: site.name })} />
@@ -24,7 +24,7 @@ export async function Footer() {
 
           <nav aria-label={t.services} className="lg:col-span-3">
             <h2 className="text-base font-semibold text-ink">{t.services}</h2>
-            <ul className="mt-3 space-y-1">
+            <ul className="mt-3 space-y-0.5">
               {services.map((service) => (
                 <li key={service.slug}>
                   <Link href={`/services/${service.slug}`} className={linkClass}>
@@ -38,7 +38,7 @@ export async function Footer() {
           <div className="lg:col-span-3">
             <nav aria-label={t.industries}>
               <h2 className="text-base font-semibold text-ink">{t.industries}</h2>
-              <ul className="mt-3 space-y-1">
+              <ul className="mt-3 space-y-0.5">
                 {industries.map((industry) => (
                   <li key={industry.slug}>
                     <Link href={`/industries#${industry.slug}`} className={linkClass}>
@@ -52,7 +52,7 @@ export async function Footer() {
 
           <nav aria-label={t.company} className="col-span-2 sm:col-span-1 lg:col-span-3">
             <h2 className="text-base font-semibold text-ink">{t.company}</h2>
-            <ul className="mt-3 space-y-1">
+            <ul className="mt-3 space-y-0.5">
               {footerNav.company.map((item) => (
                 <li key={item.href}>
                   <Link href={item.href} className={linkClass}>
