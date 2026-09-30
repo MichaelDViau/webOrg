@@ -103,7 +103,7 @@ for (const [path, { entry, html }] of pages) {
   const description = tagsOf(head, "meta").map((tag) => (attr(tag, "name") === "description" ? attr(tag, "content") : null)).find(Boolean);
   if (!description) fail(path, "missing meta description");
   else {
-    if (description.length < 70 || description.length > 165) warn(path, `description is ${description.length} characters (aim for 70 to 160)`);
+    if (description.length < 70 || description.length > 165) warn(path, `description is ${description.length} characters (aim for 70 to 160, hard limit around 165)`);
     (descriptions.get(`${lang}|${description}`) ?? descriptions.set(`${lang}|${description}`, []).get(`${lang}|${description}`)).push(path);
   }
 

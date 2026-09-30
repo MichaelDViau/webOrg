@@ -2,7 +2,7 @@
 
 import Link from "@/components/i18n/Link";
 import { usePathname } from "next/navigation";
-import { useEffect, useId, useState } from "react";
+import { useEffect, useId, useRef, useState } from "react";
 import { ButtonLink } from "@/components/ui/Button";
 import { cn } from "@/lib/cn";
 import { splitLocale } from "@/lib/i18n/config";
@@ -12,6 +12,16 @@ import { LanguageSwitch } from "./LanguageSwitch";
 
 function isActive(pathname: string, href: string) {
   return pathname === href || pathname.startsWith(`${href}/`);
+}
+
+/** Non-visual elements that stay live while the menu is open (scripts, styles, the route announcer). */
+const alwaysLive = new Set(["SCRIPT", "STYLE", "NEXT-ROUTE-ANNOUNCER"]);
+
+/** Everything on the page except the header itself: the content the open mobile menu covers. */
+function pageBehindMenu(header: HTMLElement | null): HTMLElement[] {
+  return Array.from(document.body.children).filter(
+    (element): element is HTMLElement => element instanceof HTMLElement && element !== header && !alwaysLive.has(element.tagName),
+  );
 }
 
 interface HeaderProps {
@@ -37,6 +47,7 @@ export function Header({ nav, labels }: HeaderProps) {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const menuId = useId();
+  const headerRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 0);
@@ -50,11 +61,25 @@ export function Header({ nav, labels }: HeaderProps) {
     const onKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape") setOpen(false);
     };
+    // The menu only exists below the xl breakpoint (80rem). If the window grows past it while the menu is
+    // open (a tablet rotating to landscape), close it: otherwise the page would stay locked and inert with
+    // no visible menu to dismiss.
+    const desktop = window.matchMedia("(min-width: 80rem)");
+    const onBreakpoint = () => {
+      if (desktop.matches) setOpen(false);
+    };
+    // The menu covers the page and locks its scroll, so keep keyboard focus and screen readers out of
+    // what is underneath. Without this, Tab lands on links the visitor cannot see.
+    const covered = pageBehindMenu(headerRef.current);
+    covered.forEach((element) => element.setAttribute("inert", ""));
     document.body.style.overflow = "hidden";
     window.addEventListener("keydown", onKeyDown);
+    desktop.addEventListener("change", onBreakpoint);
     return () => {
+      covered.forEach((element) => element.removeAttribute("inert"));
       document.body.style.overflow = "";
       window.removeEventListener("keydown", onKeyDown);
+      desktop.removeEventListener("change", onBreakpoint);
     };
   }, [open]);
 
@@ -63,6 +88,7 @@ export function Header({ nav, labels }: HeaderProps) {
     // It stays solid while the mobile menu is open: backdrop-filter would make the header the
     // containing block for the menu's fixed panel and collapse it.
     <header
+      ref={headerRef}
       className={cn(
         "sticky top-0 z-40 border-b border-line transition-colors duration-200",
         scrolled && !open ? "bg-paper/80 backdrop-blur-md" : "bg-paper",

@@ -37,8 +37,8 @@ export const ui: Ui = {
   },
 
   closingCta: {
-    title: "Concevons ensemble votre prochaine solution.",
-    lead: "Que vous ayez besoin d'une application sur mesure, d'un système logiciel complet, d'une infrastructure infonuagique, d'une intégration de l'IA ou d'aide pour régler un problème technique existant, discutons de ce dont votre entreprise a besoin.",
+    title: "Dites-nous ce que vous devez construire ou corriger.",
+    lead: "Une nouvelle application, un ancien système à remettre en état ou un problème technique que vous n'arrivez pas à régler : une courte description suffit pour commencer.",
   },
 
   header: {
@@ -227,10 +227,10 @@ export const ui: Ui = {
   contactPage: {
     metaTitle: "Contact : discutons de votre projet",
     metaDescription:
-      "Parlez-nous de votre projet ou de votre défi technique : logiciel sur mesure, applications web, IA, bases de données, infonuagique ou modernisation. Une personne vous répond en moins d'une heure ouvrable.",
+      "Parlez-nous de votre projet ou défi technique : logiciel, web, IA, données, infonuagique ou modernisation. Une personne répond en moins d'une heure ouvrable.",
     eyebrow: "Contact",
-    title: "Concevons ensemble votre prochaine solution.",
-    lead: "Que vous ayez besoin d'une application sur mesure, d'un système logiciel complet, d'une infrastructure infonuagique, d'une intégration de l'IA ou d'aide pour régler un problème technique existant, discutons de ce dont votre entreprise a besoin.",
+    title: "Dites-nous ce que vous devez construire ou corriger.",
+    lead: "Une nouvelle application, un ancien système à remettre en état ou un problème technique que vous n'arrivez pas à régler : une courte description suffit pour commencer.",
     nextTitle: "La suite",
     nextSteps: [
       "Vous recevez tout de suite un courriel de confirmation, dans votre langue.",
@@ -261,7 +261,7 @@ export const ui: Ui = {
   websiteCheckPage: {
     metaTitle: "Test de vitesse instantané de votre site",
     metaDescription:
-      "Lancez un test automatisé Google Lighthouse sur votre site. Consultez les notes de vitesse, d'accessibilité, de bonnes pratiques et de référencement sur mobile, et ce qu'il faut corriger en premier.",
+      "Lancez un test Google Lighthouse sur votre site : vitesse, accessibilité, bonnes pratiques et référencement sur mobile, puis ce qu'il faut corriger en premier.",
     eyebrow: "Test de vitesse instantané",
     title: "Voyez tout de suite comment votre site se comporte sur un téléphone.",
     lead: "Un test automatisé qui prend moins d'une minute. Il note la vitesse, l'accessibilité, les bonnes pratiques et les bases du référencement. Pour le regard d'une personne sur votre site, demandez l'aperçu gratuit.",

@@ -6,7 +6,7 @@
 export const howWeWork = {
   metaTitle: "How We Work: From Challenge to Solution",
   metaDescription:
-    "Our approach to technology projects: understand, strategize, engineer, implement, and evolve. A flexible process adapted to each project, with weekly written updates and full ownership of the code.",
+    "How a technology project runs: understand, strategize, engineer, implement, evolve. A flexible process, weekly written updates and full ownership of the code.",
   eyebrow: "How we work",
   title: "From challenge to solution.",
   lead: "Every technology project is different, so our process adapts to the work. Most projects follow five steps. Here is what happens in each one, and what you get.",

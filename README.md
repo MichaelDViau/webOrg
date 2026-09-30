@@ -19,6 +19,7 @@ npm run dev
 | `npm run start`        | Serve the production build                                                  |
 | `npm run typecheck`    | TypeScript check without a build                                            |
 | `npm run launch-check` | Lists every placeholder and review still open before launch (exits 1 if any) |
+| `npm run site-check`   | Crawls a running copy of the site and checks what search engines rely on (see below) |
 
 In development, form submissions and confirmation emails are printed to the server console when email isn't configured. In production, the forms report an error instead of silently dropping requests.
 
@@ -74,7 +75,7 @@ All copy lives in typed data files, so most updates don't touch components. Each
 
 Details shared by every language stay in `lib/`: `site.ts` (company name, contact, navigation), `pricing.ts` (every price), `services.ts`, `industries.ts`, `demos.ts`, `standards.ts` and `insights.ts` (slugs, order and links between them).
 
-To add an article, add its slug and date in `lib/insights.ts` and its text in each language's `insights.ts`.
+To add an article, add its slug and date in `lib/insights.ts` and its text in each language's `insights.ts`. If the headline is too long for a search result (over about 55 characters), add a shorter `seoTitle`: it becomes the page's `<title>`, and the visible headline stays as written.
 
 ### Prices
 
@@ -113,13 +114,14 @@ Secrets are only read on the server and are never exposed to the browser. For co
 ## Look and feel
 
 - **The home headline keeps its "Z" in every language**: a plain lead-in and a black block on the first line, a black block and plain text on the second (`lead`, `block1`, `block2`, `tail` in `home.ts`, for example "We build [the systems] / [your business] runs on."). Its size follows the screen width so the two lines never wrap; on phones each phrase gets its own line. When you edit or translate it, keep all four parts and check the result at several widths.
-- Typeface: Geist Sans, self-hosted through the `geist` package. Colors and the heading scale are defined once in `app/globals.css`. One deep accent color plus neutrals; the deeper `accent-strong` shade is used for small text so it meets WCAG AA contrast.
+- Typeface: Geist Sans, self-hosted as a 17 KB Latin subset in `app/fonts/` (weights 400 to 600, loaded through `next/font/local`). It only contains the characters the site uses; `app/fonts/README.md` explains how to regenerate it if a new character or weight is needed. Colors and the heading scale are defined once in `app/globals.css`. One deep accent color plus neutrals; the deeper `accent-strong` shade is used for small text so it meets WCAG AA contrast.
+- Illustrations sit in a `VisualPanel` (`components/visuals/parts.tsx`), which is a CSS size container. Diagrams switch between stacked and side-by-side layouts on the *panel's* width (`@lg:` and similar variants), not the viewport's, because the same panel is 400px wide in the two-column layout at 1024px and 900px wide in the single column just below it. Use `@lg` (512px) as the point where nodes go side by side.
 - The signature illustration is the **system map** (`components/illustrations/SystemMap.tsx`), plain HTML and CSS so it reads in every language. There are no stock photos: the About page shows a real photo of the founder once you set `founderPhoto` in `lib/site.ts`.
 - Share images are in `public/og/` (one per language, 1200 × 630).
 
 ## Search (SEO)
 
-- Page metadata is built with `pageMetadata()` in `lib/metadata.ts`: title, description, canonical URL, Open Graph and X/Twitter tags, and the `hreflang` alternates.
+- Page metadata is built with `pageMetadata()` in `lib/metadata.ts`: title, description, canonical URL, Open Graph and X/Twitter tags, and the `hreflang` alternates. Keep titles to about 60 characters (65 with the site name) and descriptions to 160: search results cut them off beyond that, and `npm run site-check` warns.
 - Structured data (`lib/structured-data.ts`): the organization on every page, the website on the home page, service, breadcrumb and FAQ blocks, and an article block on each article.
 - `app/sitemap.ts` and `app/robots.ts` generate `/sitemap.xml` and `/robots.txt`. `/.well-known/security.txt` tells researchers how to report a vulnerability.
 - Old addresses from the previous version of the site redirect to their replacements (see `redirects()` in `next.config.ts`).
@@ -129,6 +131,12 @@ Secrets are only read on the server and are never exposed to the browser. For co
 - Static pages, one self-hosted font, no images on most pages, and no third-party scripts unless you enable analytics. The AI assistant loads only when the browser is idle. Target: good Core Web Vitals in real-user data (LCP ≤ 2.5 s, INP ≤ 200 ms, CLS ≤ 0.1). Check them in Search Console once there is traffic.
 - WCAG 2.2 AA baseline: skip link, visible focus, labeled fields with error messages, contrast checked in every section, reduced-motion support. The pages were checked with axe at desktop and phone widths, in all three languages.
 - Strict security headers (CSP, HSTS, frame protection, referrer, permissions and cross-origin policies) in `next.config.ts`. Forms validate on the server, and email is sent as plain text so submitted content can't inject markup. The rate limiter is in memory; if you deploy across several instances, back it with a shared store such as Redis.
+
+## Checking the site
+
+`npm run site-check` needs a running copy of the site (`npm run build && npm run start`, then in another terminal `npm run site-check`, or pass a URL to check another address). It reads `/sitemap.xml` and fetches every page in it, so a new page is covered automatically. It fails on: a status other than 200, a page without exactly one `<h1>`, a missing or duplicated title or description, a canonical that does not match the sitemap, missing or non-reciprocal `hreflang` links, missing Open Graph tags, invalid JSON-LD, images without `alt`, and internal links (including `#anchors`) that break or redirect. It also checks `robots.txt`. It has no dependencies.
+
+It does not measure speed or contrast. For those, run Lighthouse and axe against a production build.
 
 ## Before launch
 

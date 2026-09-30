@@ -7,7 +7,7 @@
 export const home = {
   metaTitle: "{name}: custom software and technology solutions",
   metaDescription:
-    "We design, build, and modernize the technology that helps businesses operate, solve problems, and grow: custom software, web applications, AI, databases, cloud, and enterprise systems.",
+    "We design, build, and modernize the technology businesses run on: custom software, web applications, AI, databases, cloud, and enterprise systems.",
 
   hero: {
     // The headline alternates plain text and ink blocks: [lead] [block1] / [block2] [tail]
@@ -178,8 +178,8 @@ export const home = {
 
   contact: {
     eyebrow: "Contact",
-    title: "Let's engineer your next solution.",
-    lead: "Whether you need a custom application, a complete software system, cloud infrastructure, AI integration, or help solving an existing technical problem, let's discuss what your business needs.",
+    title: "Tell us what you need to build or fix.",
+    lead: "It can be a new application, an older system that needs work, or a technical problem you haven't been able to solve. A short description is enough to start.",
     cta: "Start a conversation",
     points: [
       "You get a confirmation right away.",

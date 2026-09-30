@@ -120,9 +120,9 @@ export const industries: Record<IndustrySlug, IndustryText> = {
 };
 
 export const industriesPage: IndustriesPage = {
-  metaTitle: "Les secteurs pour lesquels nous construisons de la technologie",
+  metaTitle: "Les secteurs où nous construisons de la technologie",
   metaDescription:
-    "Logiciels sur mesure, applications et solutions technologiques pour l'immobilier, l'hôtellerie, le tourisme, le commerce de détail, les services professionnels, la logistique, les services financiers, la santé, la fabrication et les entreprises technologiques.",
+    "Logiciels et solutions technologiques pour dix secteurs, dont l'immobilier, l'hôtellerie, la logistique, les services financiers, la santé et la fabrication.",
   eyebrow: "Secteurs",
   title: "Une technologie adaptée à la façon dont votre secteur fonctionne.",
   lead: "Les détails varient selon le secteur. La démarche d'ingénierie, elle, s'applique partout. Voici le genre de solutions dont les entreprises de chaque secteur ont souvent besoin.",

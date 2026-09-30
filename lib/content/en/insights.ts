@@ -7,6 +7,7 @@ import type { ArticleSlug, ArticleText } from "@/lib/insights";
 export const articles: Record<ArticleSlug, ArticleText> = {
   "client-portal-for-property-managers": {
     title: "What belongs in the first version of a client portal for property managers",
+    seoTitle: "Client Portal for Property Managers: Where to Start",
     description:
       "A client portal for property managers should answer the questions that fill your inbox first. Here is what to include in version one, and what to leave out.",
     topic: "Property",
@@ -56,6 +57,7 @@ export const articles: Record<ArticleSlug, ArticleText> = {
 
   "document-intake-for-accounting-firms": {
     title: "Document intake for accounting firms: stop chasing PDFs by email",
+    seoTitle: "Document Intake for Accounting Firms: Stop Chasing PDFs",
     description:
       "How accounting and professional firms can collect client documents without chasing: a checklist per client, one place to upload and reminders that send themselves.",
     topic: "Accounting",

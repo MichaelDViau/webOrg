@@ -41,8 +41,8 @@ export const ui = {
   },
 
   closingCta: {
-    title: "Let's engineer your next solution.",
-    lead: "Whether you need a custom application, a complete software system, cloud infrastructure, AI integration, or help solving an existing technical problem, let's discuss what your business needs.",
+    title: "Tell us what you need to build or fix.",
+    lead: "It can be a new application, an older system that needs work, or a technical problem you haven't been able to solve. A short description is enough to start.",
   },
 
   header: {
@@ -232,10 +232,10 @@ export const ui = {
   contactPage: {
     metaTitle: "Contact: Discuss Your Project",
     metaDescription:
-      "Tell us about your project or technical challenge: custom software, web applications, AI, databases, cloud, or modernization. A person replies within one business hour.",
+      "Tell us about your project or technical challenge: custom software, web apps, AI, databases, cloud or modernization. A person replies within one business hour.",
     eyebrow: "Contact",
-    title: "Let's engineer your next solution.",
-    lead: "Whether you need a custom application, a complete software system, cloud infrastructure, AI integration, or help solving an existing technical problem, let's discuss what your business needs.",
+    title: "Tell us what you need to build or fix.",
+    lead: "It can be a new application, an older system that needs work, or a technical problem you haven't been able to solve. A short description is enough to start.",
     nextTitle: "What happens next",
     nextSteps: [
       "You get a confirmation email at once, in your language.",

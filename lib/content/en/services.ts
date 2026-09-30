@@ -497,7 +497,7 @@ export const services: Record<ServiceSlug, ServiceText> = {
 export const servicesPage = {
   metaTitle: "Custom Software, Web, AI, Cloud and Technology Services",
   metaDescription:
-    "Custom software development, web and application development, AI solutions, database, cloud, software architecture, application modernization, digital transformation, and technology consulting.",
+    "Custom software, web and application development, AI, databases, cloud, architecture, modernization, digital transformation, and technology consulting.",
   eyebrow: "Services",
   title: "Nine capabilities. One engineering team.",
   lead: "Custom software, web applications, AI, databases, cloud, architecture, modernization, transformation, and technical consulting. Use one for a specific problem, or several for a complete solution.",

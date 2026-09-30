@@ -37,7 +37,10 @@ export type ArticleBlock =
   | { type: "ul"; items: string[] };
 
 export interface ArticleText {
+  /** The visible headline (the page's h1). */
   title: string;
+  /** Shorter title for search results and browser tabs, when the headline is too long to show in full. */
+  seoTitle?: string;
   description: string;
   /** Short label such as "Property" or "Lead flow". */
   topic: string;

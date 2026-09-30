@@ -8,7 +8,7 @@ import type { About, Partners } from "../en/about";
 export const about: About = {
   metaTitle: "À propos",
   metaDescription:
-    "{name} est une entreprise de développement de logiciels sur mesure et de solutions technologiques. Nous concevons, construisons, intégrons et modernisons la technologie dont les entreprises dépendent.",
+    "{name} développe des logiciels sur mesure et des solutions technologiques : nous concevons, intégrons et modernisons la technologie dont les entreprises dépendent.",
   eyebrow: "À propos",
   title: "Une équipe d'ingénierie logicielle pour vos défis technologiques.",
   lead: "{name} conçoit, construit, intègre et modernise les logiciels, les données, l'infonuagique et les systèmes d'IA dont les entreprises dépendent. Nous résolvons les problèmes techniques par l'ingénierie.",
@@ -61,7 +61,7 @@ export const about: About = {
 export const partners: Partners = {
   metaTitle: "Partenaires",
   metaDescription:
-    "Pour les firmes TI, les comptables et les directeurs techniques à temps partiel : comment fonctionne une recommandation de client, ce que nous faisons d'abord et les normes que vous pouvez vérifier avant de recommander.",
+    "Pour les firmes TI, comptables et directeurs techniques à temps partiel : comment fonctionne une recommandation et les normes à vérifier avant de recommander.",
   eyebrow: "Partenaires",
   title: "Pouvez-vous nous recommander vos clients en toute confiance?",
   lead: "Pour les firmes TI, les comptables et les directeurs techniques à temps partiel dont les clients ont besoin de systèmes construits et entretenus. Voici comment nous traiterions une recommandation, et ce que vous pouvez vérifier d'abord.",

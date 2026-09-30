@@ -8,8 +8,9 @@ import type { ArticlePage, InsightsPage } from "../en/insights";
 export const articles: Record<ArticleSlug, ArticleText> = {
   "client-portal-for-property-managers": {
     title: "Ce que devrait contenir la première version d'un portail client pour gestionnaires immobiliers",
+    seoTitle: "Portail client pour gestionnaires immobiliers",
     description:
-      "Un portail client pour gestionnaires immobiliers devrait d'abord répondre aux questions qui remplissent votre boîte courriel. Voici ce qu'il faut inclure dans la première version, et ce qu'il faut laisser de côté.",
+      "Un portail client pour gestionnaires immobiliers doit d'abord répondre aux questions qui remplissent votre boîte courriel. Que mettre dans la première version.",
     topic: "Immobilier",
     readMinutes: 5,
     body: [
@@ -57,8 +58,9 @@ export const articles: Record<ArticleSlug, ArticleText> = {
 
   "document-intake-for-accounting-firms": {
     title: "Collecte de documents pour cabinets comptables : cessez de courir après les PDF par courriel",
+    seoTitle: "Collecte de documents pour cabinets comptables",
     description:
-      "Comment les cabinets comptables et les firmes de services professionnels peuvent recueillir les documents de leurs clients sans relances : une liste de vérification par client, un seul endroit pour téléverser et des rappels qui s'envoient tout seuls.",
+      "Recueillir les documents de vos clients sans relances : une liste par client, un seul endroit pour téléverser et des rappels automatiques.",
     topic: "Comptabilité",
     readMinutes: 5,
     body: [
@@ -101,8 +103,9 @@ export const articles: Record<ArticleSlug, ArticleText> = {
 
   "measure-your-inquiry-response-time": {
     title: "Comment mesurer la rapidité avec laquelle votre équipe répond aux nouvelles demandes",
+    seoTitle: "Mesurer votre délai de réponse aux nouvelles demandes",
     description:
-      "Si un visiteur attend une journée pour obtenir une réponse, votre site web a échoué. Voici une façon simple de mesurer votre délai de réponse avant d'essayer de l'améliorer.",
+      "Si un visiteur attend une journée pour obtenir une réponse, votre site web a échoué. Une façon simple de mesurer votre délai de réponse avant de l'améliorer.",
     topic: "Parcours des demandes",
     readMinutes: 4,
     body: [
@@ -147,9 +150,9 @@ export const articles: Record<ArticleSlug, ArticleText> = {
 };
 
 export const insightsPage: InsightsPage = {
-  metaTitle: "Perspectives : notes pratiques sur le logiciel, les données et l'infonuagique",
+  metaTitle: "Perspectives : logiciel, données et infonuagique",
   metaDescription:
-    "Des articles pratiques sur les logiciels sur mesure, les portails clients, la collecte de documents, le parcours des demandes et les systèmes dont les entreprises dépendent.",
+    "Des articles pratiques sur les logiciels sur mesure, les portails clients, la collecte de documents et le suivi des demandes.",
   eyebrow: "Perspectives",
   title: "Des notes pratiques sur le logiciel, les données et l'infonuagique.",
   lead: "De courts articles pour les propriétaires d'entreprise et les gestionnaires de la technologie. Pas de battage, et pas de chiffres que nous ne pouvons pas appuyer.",
