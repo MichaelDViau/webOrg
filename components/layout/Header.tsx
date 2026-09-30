@@ -4,7 +4,6 @@ import Link from "@/components/i18n/Link";
 import { usePathname } from "next/navigation";
 import { useEffect, useId, useState } from "react";
 import { ButtonLink } from "@/components/ui/Button";
-import { Container } from "@/components/ui/Container";
 import { cn } from "@/lib/cn";
 import { splitLocale } from "@/lib/i18n/config";
 import { capabilitiesHref, contactHref } from "@/lib/site";
@@ -69,7 +68,8 @@ export function Header({ nav, labels }: HeaderProps) {
         scrolled && !open ? "bg-paper/80 backdrop-blur-md" : "bg-paper",
       )}
     >
-      <Container className="flex h-16 items-center justify-between gap-3 sm:gap-6 lg:h-18 xl:grid xl:grid-cols-[1fr_auto_1fr]">
+      {/* The bar spans the full width, wider than the page content below it, so the logo and the buttons sit near the edges. */}
+      <div className="flex h-16 w-full items-center justify-between gap-3 px-5 sm:gap-6 sm:px-8 lg:h-18 lg:px-10 xl:grid xl:grid-cols-[1fr_auto_1fr] xl:px-12 2xl:px-16">
         <div className="flex justify-start">
           <Logo label={labels.logo} />
         </div>
@@ -117,14 +117,14 @@ export function Header({ nav, labels }: HeaderProps) {
             </svg>
           </button>
         </div>
-      </Container>
+      </div>
 
       <div
         id={menuId}
         hidden={!open}
         className="fixed inset-x-0 top-16 bottom-0 overflow-y-auto border-t border-line bg-paper xl:hidden"
       >
-        <Container className="flex flex-col py-6">
+        <div className="flex flex-col px-5 py-6 sm:px-8 lg:px-10">
           <nav aria-label={labels.mobileNav}>
             <ul className="divide-y divide-line">
               <li>
@@ -158,7 +158,7 @@ export function Header({ nav, labels }: HeaderProps) {
               {labels.secondary}
             </ButtonLink>
           </div>
-        </Container>
+        </div>
       </div>
     </header>
   );
