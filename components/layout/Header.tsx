@@ -77,12 +77,12 @@ export function Header({ nav, labels }: HeaderProps) {
         <nav aria-label={labels.mainNav} className="hidden xl:block">
           <ul className="flex items-center gap-6 whitespace-nowrap xl:gap-8">
             {nav.map((item) => (
-              <li key={item.href}>
+              <li key={item.href} className="flex">
                 <Link
                   href={item.href}
                   aria-current={isActive(pathname, item.href) ? "page" : undefined}
                   className={cn(
-                    "text-sm transition-colors duration-200 hover:text-ink",
+                    "flex h-10 items-center text-sm leading-none transition-colors duration-200 hover:text-ink",
                     isActive(pathname, item.href) ? "font-medium text-ink" : "text-body",
                   )}
                 >
